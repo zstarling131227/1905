@@ -1,0 +1,578 @@
+#　*#!/usr/bin/python3
+>  /usr/local/bin/python 是 Python 的安装目录。 
+    >>　脚本语言的第一行，目的就是指出，你想要你的这个文件中的代码用什么可执行程序去运行它，就这么简单。
+        #!/usr/bin/python3 是告诉操作系统执行这个脚本的时候，调用 /usr/bin 下的 python3 解释器；
+        #!/usr/bin/env python3 这种用法是为了防止操作系统用户没有将 python3 装在默认的 /usr/bin 路径
+        里。当系统看到这一行的时候，首先会到 env 设置里查找 python3 的安装路径，再调用对应路径下的解释器程
+        序完成操作。
+        #!/usr/bin/python3 相当于写死了 python3 路径;
+        #!/usr/bin/env python3 会去环境设置寻找 python3 目录，推荐这种写法．
+    ```
+    /usr/bin/env python3
+    ```
+--------------------------------------------------------------------
+# *is 和==和=的区别
+> =
+    等号（=）用来给变量赋值。
+    等号（=）运算符左边是一个变量名,等号（=）运算符右边是存储在变量中的值。
+    >> is/is not
+        is 是判断两个标识符是不是引用自一个对象	x is y, 类似 id(x) == id(y) , 如果引用的是同一个对象则返回 True，否则返回 False
+        is not 是判断两个标识符是不是引用自不同对象	x is not y ， 类似 id(a) != id(b)。如果引用的不是同一个对象则返回结果 True，否则返回 False。
+        >>  id() 函数用于获取对象内存地址。
+    >> ==
+        等于(==)比较对象是否相等
+    >> is 与 == 区别：
+        is 用于判断两个变量引用对象是否为同一个,即判断id()是否相同
+        == 用于判断引用变量的值是否相等。
+    ```
+    x = "123"
+    y = "123"
+    q = [1, 2, 3]
+    p = [1, 2, 3]
+    z = set('1231')
+    w = set('1231')
+    a = (1, 2, 3)
+    b = (1, 2, 3)
+    s = {1: 4}
+    v = {1: 4}
+
+    print(id(x))
+    print(id(y))
+    print(id(p))
+    print(id(q))
+    print(id(z))
+    print(id(w))
+    print(id(a))
+    print(id(b))
+    print(id(s))
+    print(id(v))
+    print("=======")
+    print(x)
+    print(y)
+    print(p)
+    print(q)
+    print(z)
+    print(w)
+    print(a)
+    print(b)
+    print(s)
+    print(v)
+    print(x is y)
+    print(p is q)
+    print(z is w)
+    print(a is b)
+    print(s is v)
+    print("=========")
+    print(x == y)
+    print(p == q)
+    print(z == w)
+    print(a == b)
+    print(s == v)
+    print("=========")
+    print(q == b)
+    ```
+--------------------------------------------------------------------
+# *复制
+> 变量赋值
+    **在 Python 中，对象赋值实际上是对象的引用。**当创建一个对象，然后把它赋给另一个变量的时候，Python 并没有拷贝这个对象，
+    而只是拷贝了这个对象的引用。*
+    >> 赋值引用,深拷贝，浅拷贝(画内存图)
+    赋值引用：其实就是对象的引用（别名）。
+    浅拷贝(copy)：拷贝父对象，不会拷贝对象的内部的子对象。
+    深拷贝(deepcopy)： copy 模块的 deepcopy 方法，完全拷贝了父对象及其子对象
+    ```
+    import copy
+    kvps={'1':1,'2':2,'3':3}
+    kvps=['1',1,'2',2,'3',3]
+    kvps=['1',1,'2',[2,'3',3]]
+    thecopy=kvps  #########赋值引用
+    thecopy0=kvps.copy()  #########浅拷贝
+    thecopy1=copy.copy(kvps)  #########浅拷贝
+    thecopy2=copy.deepcopy(kvps)  #########深拷贝
+    print(id(kvps))
+    print(id(thecopy))
+    print(id(thecopy0))
+    print(id(thecopy1))
+    print(id(thecopy2))
+    print("========================")
+    print(kvps)
+    print(thecopy)
+    print(thecopy0)
+    print(thecopy1)
+    print(thecopy2)
+    print("========================")
+    kvps['1']=5
+    kvps[1]=5
+    kvps[3][0]=9
+    print(kvps)
+    print(thecopy)
+    print(thecopy0)
+    print(thecopy1)
+    print(thecopy2)
+    sum=kvps['1']+thecopy['1']
+    sum1=kvps['1']+thecopy1['1']
+    print(sum)
+    print(sum1)
+    ```
+--------------------------------------------------------------------
+# *__name__属性
+> __name__的值
+    每个python模块（python文件）都包含内置的变量 __name__，
+    __name__的值只有两种:（输出结果不包含后缀.py）
+    一种是'__main__':当该模块被直接执行的时候，__name__ 等于“__main__” .
+    一种是(import的模块)的模块名:如果该模块 import 到其他模块中，则该模块的 __name__ 等于模块名称.
+    >>  if __name__ == '__main__':的运行原理
+        当模块被直接执行时，__name__ == '__main__' 结果为真。
+        一个模块被另一个程序第一次引入时，其主程序将运行。如果我们想在模块被引入时，
+        模块中的某一程序块不执行，我们可以用__name__属性来使该程序块仅在该模块自身运行时执行。
+    ```
+    ########## 模块1名:print_func.py
+    print('hello world!')
+    print('__name__value:',__name__)
+    # def  main():
+    #     print("this message is from main function")
+    # if __name__ == '__main__':
+    #     main()
+    def  wang():
+        print("this message is from main function")
+    # print(type(__name__))
+    # wang()
+    if __name__ == '__main__':
+        wang()
+    # if __name__ == '__wang__':
+    #     wang()
+
+    ########## 模块2名:print_modle.py
+    import print_func
+    print("done!")
+    ```
+--------------------------------------------------------------------
+# *逻辑运算符and or not
+> 
+    运算符|逻辑表达式|描述
+    -----|:------:|---:
+    and|x and y	｜布尔"与" - 如果 x 为 False，x and y 返回 False，否则它返回 y 的计算值。	
+    or｜x or y	｜布尔"或" - 如果 x 是 True，它返回 x 的值，否则它返回 y 的计算值。
+    not｜not x	｜布尔"非" - 如果 x 为 True，返回 False 。如果 x 为 False，它返回 True。
+        >> and 真真返回第二個真值（没有值时返回true）,其他均返回False.
+            or 真真返回第一個真值，一真一假返回真值（没有值时返回true）,假假返回False
+        not 返回值只能是True或False，不能是数值。
+    ```
+    a="a"
+    b="b"
+    c="c"
+    print(a>b)
+    print(a or c)
+    print(a<b or c)
+    print(False or c)
+    print(c or False)
+    print(a>b or False)
+    print("-------------")
+    print(False and c )
+    print(a>b and c )
+    print(True and c )
+    print(a<b and c )
+    print("-------------")
+    print(not a>"b")
+    print(not a<"b")
+    print(not a>b and c )
+    print(not (a>b and c ))
+    ```
+--------------------------------------------------------------------
+# *print用法
+> 这个方法里第三个为缺省参数 sep=' '。
+    >  print(...)
+        print(value, ..., sep=' ', end='\n', file=sys.stdout, flush=False)
+        Prints the values to a stream, or to sys.stdout by default.
+        Optional keyword arguments:
+        file:  a file-like object (stream); defaults to the current sys.stdout.
+        sep:   string inserted between values, default a space.
+        end:   string appended after the last value, default a newline.
+        flush: whether to forcibly flush the stream.
+    ```
+    print('a','b',sep='kbdfgfg')
+    def getPairs(dict):
+        for k,v in dict.items() :
+            print(k,v,sep=':')
+    getPairs({ x : x ** 3 for x in (1,2,3,4)})
+    ```
+--------------------------------------------------------------------
+# *import 和from...import 的区别
+> 1、将整个模块导入
+  2、将整个模块中全部函数导入
+  3、将模块中特定函数导入
+  4、将模块换个别名
+    ```
+    import time
+    print(time.ctime())
+    from time import *
+    print(ctime())
+    from time import ctime
+    print(ctime())
+    import time as ad
+    print(ad.ctime())
+    ```
+---------------------------------------------------------------------
+# *从包中导入模块或函数
+> 包:目录只有包含一个叫做 __init__.py 的文件才会被认作是一个包
+    >>>  from sound.effects import * 与__all__连用 
+        导入语句遵循如下规则：如果包定义文件 __init__.py 存在一个叫做 __all__ 的列表变量，
+        那么在使用 from package import * 的时候就把这个列表中的所有名字作为包内容导入。
+        在更新包之后保证 __all__ 也更新.
+
+    >>  sound/                          顶层包
+            __init__.py               初始化 sound 包
+            formats/                  文件格式转换子包
+                    __init__.py
+                    wavread.py
+                    wavwrite.py
+                    aiffread.py
+                    aiffwrite.py
+                    auread.py
+                    auwrite.py
+                    ...
+            effects/                  声音效果子包
+                    __init__.py
+                    echo.py
+                    surround.py
+                    reverse.py
+                    ...
+            filters/                  filters 子包
+                    __init__.py
+                    equalizer.py
+                    vocoder.py
+                    karaoke.py
+                    ...
+    ```
+    import sound.effects.echo
+    sound.effects.echo.echofilter(input, output, delay=0.7, atten=4)
+    from sound.effects import echo
+    echo.echofilter(input, output, delay=0.7, atten=4)
+    from sound.effects.echo import echofilter
+    echofilter(input, output, delay=0.7, atten=4)
+    '''
+    在:file:sounds/effects/__init__.py中包含如下代码:
+    __all__ = ["echo", "surround", "reverse"]
+    这表示当你使用from sound.effects import *这种用法时，你只会导入包里面这三个子模块。
+    '''
+    from sound.effects import *
+    echo.echofilter(input, output, delay=0.7, atten=4)
+    ......
+    ```
+---------------------------------------------------------------------
+# *isinstance 和 type 和 insubance　的区别
+> isinstance() 函数来判断一个对象是否是一个已知的类型，类似 type()。
+    issubclass() 方法用于判断参数 class 是否是类型参数 classinfo 的子类。
+    type() 函数如果只有第一个参数则返回对象的类型
+> isinstance 和 type 的区别在于：
+    type()不会认为子类是一种父类类型。
+    isinstance()会认为子类是一种父类类型。
+    如果要判断两个类型是否相同推荐使用 isinstance()。
+    >>type() 函数如果有三个参数则返回新的类型对象。
+            type(name, bases, dict)
+    ```            
+    # 三个参数
+    class X(object):
+        a = 1
+    X = type('X', (object,), dict(a=1))  # 产生一个新的类型 X
+    X #####输出结果为：<class '__main__.X'>
+
+    a = 111
+    print(isinstance(a, int))
+    class A:
+        pass
+    class B(A):
+        pass
+    b=B()
+    class C(object):
+        pass
+    c=C()
+    print(isinstance(A(), A))
+    print(isinstance(B(), A))
+    print(isinstance(b, A))
+    print(isinstance(b, B))
+    print("----------------")
+    print(type(A()) == A)
+    print(type(B()) == A)
+    print("----------------")
+    print(issubclass(A,A))
+    print(issubclass(A,B))
+    print(issubclass(B,A))
+    # print(issubclass(b,A))
+    print("----------------")
+    print(isinstance(c, C))
+    print(isinstance(C, object))
+    print(isinstance(c, object))
+    print(type(C()) == object)
+    print(issubclass(C,object))
+    # print(issubclass(c,object))
+    ```
+---------------------------------------------------------------------
+# *六个标准的数据类型：number、string、list、tuple、dictionary、set
+> 区别
+    >> 不可变数据（3 个）：Number（数字）、String（字符串）、Tuple（元组）；
+    可变数据（3 个）：List（列表）、Dictionary（字典）、Set（集合）。
+    >> 虽然tuple的元素不可改变，但它可以包含可变的对象，比如list列表。
+        键(key)必须使用不可变类型且不能重复。
+    >> string、list 和 tuple 都属于 sequence（序列）
+        字典是一种映射类型，它的元素是键值对。 
+        >>> ***注意：***
+            创建一个空集合必须用 set() 而不是 { }，因为 { } 是用来创建一个空字典。
+            frozenset()转换为不可变集合
+            列表不能通过list直接生成'runboo'字符串,而是会拆分成'r','u',等形式.
+            生成'runboo'字符串形式的列表需要用split()或者['runboo'],也就是说不能用list['runboo']
+    ```
+    str1=''
+    list1=[]
+    list2=list()
+    tuple1=()
+    tuple2=tuple()
+    set1={}##不可以创建空集合
+    set2=set()
+    dict1={}
+    dict2=dict()
+    print("-----------------------------------------")
+    str2="sd"
+    list3 = [ 'abcd', 786 , 2.23, 'runoob', 70.2 ]
+    list4 = list("'abcd', 786 , 2.23, 'runoob', 70.2 ")
+    tuple3 = ( 'abcd', 786 , 2.23, 'runoob', 70.2)
+    tuple4 = tuple( "'abcd', 786 , 2.23, 'runoob', 70.2")
+    set3={'Tom', 'Jim', 'Mary', 'Tom', 'Jack', 'Rose'}
+    set4=set("'Tom', 'Jim', 'Mary', 'Tom', 'Jack', 'Rose'")
+    dict3={'Runoob':1, 'Google':2, 'Taobao':3}
+    dict4=dict(Runoob=1, Google=2, Taobao=3)
+    dict5=dict([('Runoob', 1), ('Google', 2), ('Taobao', 3)])
+    tuple5 = (2,)
+    tuple6 = (2)
+    print(str1)
+    print(str2)
+    print(list1)
+    print(list2)
+    print(list3)
+    print(list4)
+    print(tuple1)
+    print(tuple2)
+    print(tuple3)
+    print(tuple4)
+    print(tuple5)
+    print(tuple6)
+    print(set1)
+    print(set2)
+    print(set3)
+    print(set4)
+    print(dict1)
+    print(dict2)
+    print(dict3)
+    print(dict4)
+    ```
+---------------------------------------------------------------------
+# *join 和 split
+> join() 方法用于将序列中的元素以指定的字符连接生成一个新的字符串。
+  split()通过指定分隔符对字符串进行切片，如果参数 num 有指定值
+  ，则仅分隔 num+1 个子字符串.
+  >> jion返回通过指定字符连接序列中元素后生成的***新字符串***。
+     split返回分割后的***字符串列表***。
+    ```
+    st="Mary, Jack"
+    st1=" ".join(st)
+    st2="".join(st)
+    print(st1)
+    print(st2)
+    print("-----------")
+    list="Mary, Jack"
+    l1=st.split(",")
+    l2=st.split(" ")
+    print(l1)
+    print(l2)
+    print("-----------")
+    list4 ="'abcd', 786 , 2.23, 'runoob', 70.2 "
+    print(list4.split(","))
+    print(list4.split(" "))
+    ```
+---------------------------------------------------------------------
+# *变量形式（单双下划线）
+> 单前导下划线：_var
+        下划线前缀的含义是告知其他程序员：以单个下划线开头的变量或方法仅供内部使用。
+    ```
+    class Test:
+    def __init__(self):
+        self.foo = 11
+        self._bar = 23
+    t=Test()
+    print(t.foo)
+    print(t._bar)
+    ###实例化此类，并尝试访问在__init__构造函数中定义的foo和_bar属性,会看到_bar中的单个下划线
+    # 并没有阻止我们"进入"类并访问该变量的值
+    ###This is print_module.py:
+    # def external_func():
+    #    return 23
+    # def _internal_func():
+    #    return 42
+
+    ###前导下划线的确会影响从模块中导入名称的方式。如果使用通配符从模块中导入所有名称，
+    # 则Python不会导入带有前导下划线的名称（除非模块定义了覆盖此行为的__all__列表）
+    from print_module import *
+    print(external_func())
+    # print(_internal_func())
+    # # NameError: "name '_internal_func' is not defined"
+    ###常规导入不受前导单个下划线命名约定的影响
+    import print_module
+    print(print_module.external_func())
+    print(print_module._internal_func())
+    ```
+********************
+> 单末尾下划线：var_
+    像class或def这样的名称不能用作Python中的变量名称。在这种情况下，可以附加一个下划线来解决命名冲突
+    ```
+    ###一个变量的最合适的名称已经被一个关键字所占用
+    # def make_object(name,class):##SyntaxError: "invalid syntax"
+    #     pass
+    ###一个变量的最合适的名称已经被一个关键字所占用,可以附加一个下划线来解决命名冲突
+    def make_object1(name,class_):
+        pass
+    ```
+*************************
+> 双前导下划线：__var
+    当在类上写文中使用时，触发“名称修饰”。由Ｐｙｔｈｏｎ解释器强制执行。
+    ```
+    ###双前导下划线 __var
+    class Test:
+    def __init__(self):
+        self.foo = 11
+        self._bar = 23
+        self.__baz = 23
+    t=Test()
+    print(dir(t))
+    ###输出结果为：['_Test__baz', '__class__', '__delattr__', '__dict__', '__dir__', '__doc__', '__eq__', '__format__',
+    # '__ge__', '__getattribute__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__le__', '__lt__', '_
+    # _module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__',
+    # '__str__', '__subclasshook__', '__weakref__', '_bar', 'foo']
+    ###self.foo变量在属性列表中显示为未修改为foo。self._bar的行为方式相同 - 它以_bar的形式显示在类上。
+    ###会看到此对象上有一个名为_Test__baz的属性。 这就是Python解释器所做的名称修饰。 它这样做是为了防止变量在子类中被重写。
+    class ExtendedTest(Test):
+    def __init__(self):
+        super().__init__()
+        self.foo = 'overridden'
+        self._bar = 'overridden'
+        self.__baz = 'overridden'
+    t2=ExtendedTest()
+    print(t2.foo)
+    print(t2._bar)
+    # print(t2.__baz)####AttributeError: "'ExtendedTest' object has no attribute '__baz'"
+    print(dir(t2))
+    ###输出结果为：
+    # ['_ExtendedTest__baz', '_Test__baz', '__class__', '__delattr__', '__dict__', '__dir__', '__doc__',
+    #  '__eq__', '__format__', '__ge__', '__getattribute__', '__gt__', '__hash__', '__init__',
+    #  '__init_subclass__', '__le__', '__lt__', '__module__', '__ne__', '__new__', '__reduce__',
+    # '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '
+    # __weakref__', '_bar', 'foo']
+    ###这个对象甚至没有__baz属性;可以看到__baz变成_ExtendedTest__baz以防止意外修改;但原来的_Test__baz还在
+    print(t2._ExtendedTest__baz)
+    print(t2._Test__baz)
+
+    ###双下划线名称修饰对程序员是完全透明的
+    class ManglingTest:
+    def __init__(self):
+        self.__mangled = 'hello'
+    def get_mangled(self):
+        return self.__mangled
+    print(ManglingTest().get_mangled())
+    # ManglingTest().__mangled##AttributeError: "'ManglingTest' object has no attribute '__mangled'"
+
+    ###名称修饰是否也适用于方法名称
+    class MangledMethod:
+    def __method(self):
+        return 42
+    def call_it(self):
+        return self.__method()
+    # MangledMethod().__method()##__methodAttributeError: "'MangledMethod' object has no attribute '__method'"
+    print(MangledMethod().call_it())
+
+    _MangledGlobal__mangled = 23
+    class MangledGlobal:
+    def test(self):
+        return __mangled
+    print(MangledGlobal().test())
+    ###在这个例子中，我声明了一个名为_MangledGlobal__mangled的全局变量。然后我在名为MangledGlobal的类的上下文中访问变量。
+    # 由于名称修饰，我能够在类的test()方法内，以__mangled来引用_MangledGlobal__mangled全局变量。Python解释器自动将名称
+    # __mangled扩展为_MangledGlobal__mangled，因为它以两个下划线字符开头。这表明名称修饰不是专门与类属性关联的。
+    # 它适用于在类上下文中使用的两个下划线字符开头的任何名称。
+    ```
+****************************
+> 双前导和末尾下划线：__var__
+    由双下划线前缀和后缀包围的变量不会被Python解释器修改.
+    表示Ｐｙｔｈｏｎ语言定义的特殊方法，避免在你自己的属性中使用这种命名方案。
+    ```
+    ###Python保留了有双前导和双末尾下划线的名称，用于特殊用途。
+    #  这样的例子有，__init__对象构造函数，或__call__ --- 它使得一个对象可以被调用
+    class PrefixPostfixTest:
+    def __init__(self):
+        self.__bam__ = 42
+    print(PrefixPostfixTest().__bam__)
+    ```
+**********************************
+> 单下划线：_
+    单个下划线仅仅是一个有效的变量名称，有时候单个独立下划线是用作一个名字，来表示某个变量是临时的或无关紧要的。
+    ```
+    car = ('red', 'auto', 12, 3812.4)
+    color, _, _, mileage = car
+    print(color)
+    print(mileage)
+    print(_)
+    >>> 20+3
+    23
+    >>> _
+    23
+    >>> print(_)
+    23
+    >>> list()
+    []
+    >>> _.append(1)
+    >>> _.append(2)
+    >>> _
+    [1, 2]
+    ```
+--------------------------------------------------------------
+# *私有变量和私有方法
+> 类的私有属性
+    __private_attrs：两个下划线开头，声明该属性为私有，不能在类的外部被使用或直接访问。在类内部的方法中使用时 self.__private_attrs。
+   ```
+    class JustCounter:
+        __secretCount = 0  # 私有变量
+        publicCount = 0    # 公开变量
+    
+        def count(self):
+            self.__secretCount += 1  # 内部调用
+            self.publicCount += 1
+            print (self.__secretCount) 
+    counter = JustCounter()
+    counter.count()
+    counter.count()
+    print (counter.publicCount)
+    print (counter.__secretCount)  # 报错，实例不能访问私有变量
+    ```
+> 类的私有方法
+    __private_method：两个下划线开头，声明该方法为私有方法，只能在类的内部调用 ，不能在类的外部调用。self.__private_methods。
+    ```
+    class Site:
+    def __init__(self, name, url):
+        self.name = name       # public
+        self.__url = url   # private
+ 
+    def who(self):
+        print('name  : ', self.name)
+        print('url : ', self.__url)
+ 
+    def __foo(self):          # 私有方法
+        print('这是私有方法')
+ 
+    def foo(self):            # 公共方法
+        print('这是公共方法')
+        self.__foo()
+ 
+    x = Site('菜鸟教程', 'www.runoob.com')
+    x.who()        # 正常输出
+    x.foo()        # 正常输出
+    x.__foo()      # 报错
+    ```
+--------------------------------------------------------------

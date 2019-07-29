@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>表单</title>
+</head>
+<body>
+    <form action="#">
+        <!--表单中一定要加入name属性-->
+        <div>
+            <!--for与id相对应，去掉for点击文字不会处于选中状态，只能选择文本框才可以输入文字。-->
+            <label for="name">姓名：</label>
+            <!--placeholder是占位符。内容会显示在文本框，输入文字时会消失-->
+            <input type="text" id="name" placeholder="请输入用户名" name="name">
+        </div>
+        <div>
+            <label for="password">密码：</label>
+            <input type="password" id="password" placeholder="请输入密码" name="name">
+        </div>
+        <div>
+            <label for="想">学历：</label>
+            <!--下拉列表框元素-->
+            <select name="x1" id="想">
+                <option value="1">大学</option>
+                <option value="2">高学</option>
+                <option value="3">中学</option>
+                <option value="4">小学</option>
+            </select>
+        </div>
+
+        <div>
+            <!--单选项元素，name属性值与for 相同。checked表默认值-->
+            <label for="sex">性别：</label>
+            <!--name的值相同表示互斥，不同表示多选-->
+            <!--readonly表示只读，不可更改-->
+            <input type="radio" name="sex" value="1" checked />男
+            <input type="radio" name="sex" value="2"/>女
+            <input type="radio" name="sex" value="2" readonly/>妖孽
+            <!--选中后不可取消-->
+
+            <input type="radio" value="2" />女
+        </div>
+        <div>
+            <label for="like">爱好：</label>
+            <!--多选项元素-->
+            <input type="checkbox" name="like1">dance
+            <input type="checkbox" name="like2" checked>sing
+            <input type="checkbox" name="like3">draw
+        </div>
+        <div>
+            <label for="demo">简介：</label>
+            <textarea name="demo" id="demo" cols="30" rows="10"></textarea>
+        </div>
+        <div>
+            <!--内容被传到地址栏后面，写入数据库-->
+            <input type="submit" value="注册"/>
+            <!--全部内容清空-->
+            <input type="reset" value="重置"/>
+            <!--disabled表示不可操作-->
+            <input type="reset" disabled value="重置"/>
+        </div>
+    </form>
+</body>
+</html>

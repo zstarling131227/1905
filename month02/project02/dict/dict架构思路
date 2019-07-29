@@ -1,0 +1,102 @@
+1.确定需求
+用户可以登录和注册
+* 登录凭借用户名和密码登录
+* 注册要求用户必须填写用户名，密码，其他内容自定
+* 用户名要求不能重复
+* 要求用户信息能够长期保存
+
+可以通过基本的图形界面print以提示客户端输入。
+* 程序分为服务端和客户端两部分
+* 客户端通过print打印简单界面输入命令发起请求
+* 服务端主要负责逻辑数据处理
+* 启动服务端后应该能满足多个客户端同时操作
+
+客户端启动后即进入一级界面，包含如下功能：登录 注册 退出
+
+* 退出后即退出该软件
+* 登录成功即进入二级界面，失败回到一级界面
+* 注册成功可以回到一级界面继续登录，也可以直接用注册用户进入二级界面
+用户登录后进入二级界面，功能如下：查单词 历史记录 注销
+
+* 选择注销则回到一级界面
+* 查单词：循环输入单词，得到单词解释，输入特殊符号退出单词查询状态
+* 历史记录：查询当前用户的查词记录，要求记录包含name   word   time。可以查看所有记录或者前10条均可。
+单词本说明
+
+每个单词一定占一行
+单词按照从小到大顺序排列
+单词和解释之间一定有空格
+
+查词说明
+
+直接使用单词本查询（文本操作）
+先将单词存入数据库，然后通过数据库查询。（数据库操作）
+
+2.确定好技术方案（套接字，并发，细节确定）
+    * 套接字 tcp
+    * 多进程
+    * 历史记录：前10条
+    * 注册成功 直接登录
+
+3.数据表进行建立
+    tarena@tarena:~$ mysql -uroot -p123456
+    mysql> show databases;
+    mysql> create database dict;
+    mysql> show databases;
+    mysql> use dict;
+    mysql> show tables;
+
+    *（dict:history）(id name word time)
+    mysql> create table hist(id int primary key auto_increment,name varchar(32) not null ,word varchar(28) not null,time datetime default now());
+
+    *（dict:user）(id name password)
+    mysql>  create table user (id int primary key auto_increment,name varchar(32) not null,password varchar(128) not null);
+
+    *（dict:wordss）(id word mean)
+
+    mysql> create table wordss(id int primary key auto_increment,word varchar(32) not null,mean text not null);
+    mysql> show tables;
+    +----------------+
+    | Tables_in_dict |
+    +----------------+
+    | hist           |
+    | user           |
+    | wordss         |
+    +----------------+
+    3 rows in set (0.00 sec)
+
+4.结构设计：几个模块 封装设计
+   客户端
+   服务端： 逻辑请求处理  ，  数据库操作处理
+   函数封装： 直接写一个功能程序提供给使用者使用。使用者直接运行，而不是需要使用我的代码的某一部分。
+5.功能分析 和 通信的搭建io
+    一级界面--总：登录和注册和退出
+    登录：进入查询
+    注册：返回登录
+    退出：
+    * 服务端
+    二级界面：查单词和历史记录和注销
+    查单词：
+    历史记录：name\word\time（查看所有记录，或前10 条记录）
+    注销：
+6.罗列功能逻辑（参考chat）(每个功能能做什么，并测试代码)
+    登录  客户端：输入登录信息 发送请求 得到反馈
+          服务端：接受请求 判断是否允许登录 反馈结果
+    注册  客户端：输入注册信息 发送请求 得到反馈
+          服务端：接受请求 判断是否允许注册 允许注册将用户信息存入数据 给客户端反馈结果
+    查单词   客户端：输入单词 发送请求 等待结果
+          服务端：接受请求 查找单词 发送结果 插入历史记录
+    历史记录：name\word\time（查看所有记录，或前10 条记录）
+
+7.设定客户端服务端协议
+    登录：L 成功：W 失败：B
+    注册：R 成功：W 失败：B 存在：E
+    查单词：Q
+    历史记录：H
+
+
+user 密码
+R 吱吱 123
+R 钥玥 123
+R 嘻嘻 123
+R 哈哈 12341234
