@@ -5,8 +5,81 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>zstarling</title>
+    <style>
+        #tip{
+            border: 1px solid #cccccc;
+            width: 350px;
+            height: 140px;
+            margin: 0 auto;
+            border-radius: 5px;
+        }
+        #tip>div:nth-child(1){
+            border: 0px solid red;
+            height: 30px;
+            color: #ffffff;
+            background-color: rgb(37, 159, 163);
+            padding-left:15px;
+            padding-top: 4px;
+        }
+        #tip>div:nth-child(1)>button{
+            background-color:  rgb(37, 159, 163);
+            float: right;
+            font-size: 21px;
+            margin-right: 15px;
+            border: none;
+            outline: none;
+        }
+        #tip>div:nth-child(2){
+            border: 0px solid red;
+            width: 140px;
+            height: 104px;
+            float: left;
+            text-align: center;
+        }
+        #tip>div:nth-child(2)>img{
+            width: 56px;
+            height: 52px;
+            margin: 21px 42px;
+        }
+        #tip>div:nth-child(3){
+            border: 0px solid red;
+            width: 152px;
+            height: 104px;
+             float: left;
+             margin-right: 45px;
+        }
+        #tip>div:nth-child(3)>#p{
+            width: 152px;
+            margin-top: 20px;
+            position: relative;
+            margin-right: 45px;
+        }
+        #tip>div:nth-child(3)>#p>button{
+            width: 89px;
+            height: 34px;
+            color: #ffffff;
+            background-color: rgb(37, 159, 163);
+            text-align: center;
+            position: absolute;
+            right: 4px;
+            bottom: -44px;
+        }
+    </style>
 </head>
 <body>
-    
+    <div id="tip">
+        <div>提示
+            <button onclick='a=document.getElementById("tip");a.style.display="none";'>x</button>
+        </div>
+        <div>
+            <img src="/home/tarena/1905/month03/code/day05/day05/imgs/img03.png" alt="图片不存在">
+        </div>
+        <div>
+            <div id="p">
+                <p>你看到的是SimplePop</p>
+                <button onclick='a=document.getElementById("tip");a.style.display="none";'>确定</button>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
