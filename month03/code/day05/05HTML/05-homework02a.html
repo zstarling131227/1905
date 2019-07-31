@@ -32,7 +32,7 @@
             display: none;
             /* box-shadow: -3px -3px 3px #cccccc;  */
         }
-        #box>.title{
+        #box .title{
             border: 0px solid red;
             color: #ffffff;
             background-color: #008081;
@@ -46,17 +46,17 @@
             border: none;
             outline: none;
         } */
-        .con{
-            border: 0px solid red;
+       #box .con{
+            border: 1px solid red;
             overflow: hidden;
             background-color: #ffffff;
         }
-        .con>.img{
+        #box .con .img{
             float: left;
             margin: 10px 10px 0px 10px;
+
         }
-        .con>.rright{
-            border: 0px solid red;
+        #box .con .rright{
             float: left;
             margin-bottom: 30px;
             margin-top:10px;
@@ -64,7 +64,7 @@
         #box .con .rright .btn{
             text-align: center;
         }
-        .con>.rright>#btn>button{
+        #box .con .rright .btn>button{
             width: 62px;
             color: #ffffff;
             background-color: #008081;
@@ -85,9 +85,9 @@
             <div class="img">
                 <img src="/home/tarena/1905/month03/code/day05/day05/imgs/img03.png" alt="图片不存在">
             </div>
-            <div class="rrgiht">
+            <div class="rright">
                 <p>你看到的是SimplePop</p>
-                <div id="btn">
+                <div class="btn">
                     <button  id="cls">确定</button>                  
                 </div>
            </div>           
