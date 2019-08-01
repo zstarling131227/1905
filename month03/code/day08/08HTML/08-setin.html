@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>zstarling</title>
+    <style>
+        #box{
+            width: 120px;
+            border: solid 1px #cccccc;
+            padding: 10px 5px;
+            margin: 0 auto;
+        }
+        #box>span{
+            display: inline-block;
+            width: 20px;
+            font-size: 20px;
+            text-align: center;
+        }
+    </style>
+    <style>
+        /* 在这个元素中只能写样式代码 */
+    </style>
+</head>
+<body>
+    <!-- <button id="stop">停止</button> -->
+    <div id="box" >
+        <span id="hou">00</span>
+        <span>:</span>
+        <span id="min">00</span>
+        <span>:</span>
+        <span id="sec">00</span>
+    </div>
+    <script>
+    // 在这个元素中只能写js代码
+    /*
+        // 需求：在 控制台每隔1s输出一次OK
+        var taskId=setInterval(function(){
+            console.log("ok");
+        },1000)
+        //先获取按钮元素对象，并绑定单机事件
+        document.getElementById('stop').onclick=function(){
+            //停止定时器的进程
+            clearInterval(taskId);
+        }
+       
+        // 定义一个定时器，每隔一秒获取一次时间对象值，并赋值到元素中
+        var taskId2=setInterval(function(){
+            var dt=new Date();//获取当前系统时间
+            document.getElementById("hou").innerText=change(dt.getHours());
+            document.getElementById("min").innerText=change(dt.getMinutes());
+            document.getElementById("sec").innerText=change(dt.getSeconds());
+        },1000)
+        //定义一个补0 的函数
+        function change(n){
+            if(n<10)
+                return "0"+n;
+            else
+                return n;    
+        } 
+        */
+        var taskId3=setTimeout(function(){
+           console.log("从你的全世界路过")  
+        },2000)
+        var taskId4=setTimeout(function(){
+           console.log("从你的全世界路过,")  
+        },4000)
+    </script>
+</body>
+</html>
