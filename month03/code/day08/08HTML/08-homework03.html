@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>zstarlinig</title>
+    <style>
+        #cha{
+            width: 352px;
+            height: 220px;
+            margin: 0 auto;
+            border: 1px olive solid;
+            position: relative;
+        }
+        button{
+            border-radius: 50%;
+            position: absolute;
+            right: 5px;
+            background-color: #ebe7e77c;
+            color: thistle;
+        }
+        button:hover{
+            background-color: orange;
+            color:#fff;
+        }
+        #cha>#btn1{
+            top:10px;
+        }
+        #cha>#btn2{
+            top:36px;
+        }
+        #cha>#btn3{
+            top:62px;
+        }
+        #cha>#btn4{
+            top:88px;
+        }
+        #cha>#btn5{
+            top:114px;
+        }
+    </style>
+</head>
+<body>
+    <div id="cha">
+        <img id="img" src="/home/tarena/1905/month03/code/day08/day08/imgs/img01.jpg" alt="图片不存在">
+        <button id="btn1">1</button>
+        <button id="btn2">2</button>
+        <button id="btn3">3</button>
+        <button id="btn4">4</button>
+        <button id="btn5">5</button>
+    </div>
+    <script>
+                var arrimg=[
+            '/home/tarena/1905/month03/code/day08/day08/imgs/img01.jpg',
+            '/home/tarena/1905/month03/code/day08/day08/imgs/img02.jpg',
+            '/home/tarena/1905/month03/code/day08/day08/imgs/img03.jpg',
+            '/home/tarena/1905/month03/code/day08/day08/imgs/img04.jpg',
+            '/home/tarena/1905/month03/code/day08/day08/imgs/img05.png'
+        ]
+        var btn1=document.getElementById('btn1');
+        var btn2=document.getElementById('btn2');
+        var btn3=document.getElementById('btn3');
+        var btn4=document.getElementById('btn4');
+        var btn5=document.getElementById('btn5');
+        var img=document.getElementById('img');
+        var index=0;
+        btn1.onclick=function(){
+            img.setAttribute('src',arrimg[0]);
+            console.log(index++);
+        }
+        btn2.onclick=function(){
+            img.setAttribute('src',arrimg[1]);
+            console.log(index++);
+        }
+        btn3.onclick=function(){
+            img.setAttribute('src',arrimg[2]);
+            console.log(index++);
+        }
+        btn4.onclick=function(){
+            img.setAttribute('src',arrimg[3]);
+            console.log(index++);
+        }
+        btn5.onclick=function(){
+            img.setAttribute('src',arrimg[4]);
+            console.log(index++);
+        }
+    </script>
+</body>
+</html>

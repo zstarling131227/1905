@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>zstarling</title>
+    <style>
+        /* 权重：内联元素自己写>id>class>外嵌 */
+        div{
+            color: #ffffff;
+        }
+        #aa{
+            background-color:blue;
+
+        }
+        .red{
+            /* background-color: red; */
+            /* 修改方法，提高权重 */
+            background-color: red !important;
+        }
+    </style>
+    <script src="/home/tarena/1905/month03/code/day09/day09/day09/js/jquery.min.js"></script>
+</head>
+<body>
+    <div id="aa">
+        这是一个测试内容
+    </div>
+    <script>
+        //默认为蓝色。点击变红色
+        // $("#aa").toggleClass("red")
+
+        $("#aa").on("click",function(){
+            console.log("ok")
+            $("#aa").toggleClass("red")//事件被触发了，但是被覆盖了（修改方法是提高权重）
+        })
+    </script>
+</body>
+</html>

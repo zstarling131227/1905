@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>zstarling</title>
+    <script src="/home/tarena/1905/month03/code/day09/day09/day09/js/jquery.min.js"></script>
+</head>
+<body>
+    <div>abc</div>
+    <div>def</div>
+    <div>ghj</div>
+    <script>
+        //each函数完成
+        //写法：选择器。each（function（index，element）{
+                // index表示索引号
+                // element表示原生元素
+        //})
+        $("div").each(function(index,elem){
+                // console.log(index);
+                // console.log(elem);
+                console.log(index);
+                //转成jq对象
+                console.log($(elem));
+                //获取元素内容
+                console.log($(elem).text())
+        })
+    </script>
+</body>
+</html>
