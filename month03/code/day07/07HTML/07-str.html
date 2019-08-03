@@ -29,29 +29,33 @@
         var s=str.substring(0,3);
         console.log(s);
         */
+
         // 方法2
-        var sp=objtxt.value.indexOf('a');
-        if (sp!=-1)
-        var s=objtip.value.substring(sp,sp+1);
-        objtip.innerText=s;   
+        // var sp=objtxt.value.indexOf('a');
+        // if (sp!=-1)
+        // var s=objtip.value.substring(sp,sp+1);
+        // objtip.innerText=s;   
     
 
-    var str='ie=utf-8&f=3&resv_bp=1&rsv_'
+    var str='ie=utf-8&f=3&rsv_bp=1&rsv_idx=1&tn=baidu';
     var arr2=str.split('&');
-    for(var i=0;li<arr2.length;i++){
+    var arr4=[];
+    for(var i=0;i<arr2.length;i++){
         console.log(arr2[i])
 
-        var arr3=arr2[i].split('=');
+        arr3=arr2[i].split('=');
         var _obj={}
-        _obj.name=arr2[0];
-        _obj.age=arr3[1];
-        var objtip(_obj);
+        _obj.name=arr3[0];
+        _obj.value=arr3[1];
+        arr4.push(_obj);
     }
-        console.log(arr3.toString());
-        if (arr3[0]='ie'){
-            console.log(arr3(1))
-            break;
-        }
+    console.log(arr4.toString());
+    console.log(arr4[4].value);
+        // console.log(arr3.toString());
+        // if (arr3[0]='ie'){
+        //     console.log(arr3(1))
+        //     break;
+        // }
     }
     </script>
 </body>
