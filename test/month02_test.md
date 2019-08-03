@@ -66,7 +66,7 @@ C.协程可以同时处理多个IO的并发
 D.协程实际是一个单线程程序 
 【正确答案】B
 【答题时间】2019-07-30 10:02:33
-【答案解析】因为协程是但线程程序，所以协程中如果
+【答案解析】因为协程是单线程程序，所以协程中如果
 遇到死循环或者阻塞的情况会影响到整个程序的运行
  ```
 ```　
@@ -402,7 +402,7 @@ D.span{ margin-top : 20px}
 ```　 
 35、【多选题】
 以下(   )能隐藏id为flower的div
-A.document.getElementById("flower").style.visibility="hidden"; 
+A.document.getElementById("flower".style.visibility="hidden";
 B.document.getElementById("flower").style.visibility="none"; 
 C.document.getElementById("flower").style.display="hidden"; 
 D.document.getElementById("flower").style.display="none"; 
@@ -420,7 +420,7 @@ C.可以在文档中使用<style></style>标签书写CSS选择器
 D.可以在标签中使用style属性书写CSS选择器 
 【正确答案】B,C
 【答题时间】2019-07-30 10:02:33
-【答案解析】CSS的引入方式主要有三种，行内样式使用style属性书写CSS样式声明，文档内嵌使用标签书写CSS选择器，外部样式表通过
+【答案解析】CSS的引入方式主要有三种，行内样式使用style属性书写CSS样式声明，文档内嵌使用标签书写CSS选择器，外部样式表通过<link href=””rel=”stylesheet” type=”text/css”>
  ```
 ```　
 37、【多选题】
@@ -536,7 +536,7 @@ C.60
 D.9 
 【正确答案】A,B,C,D
 【答题时间】2019-07-30 10:02:33
-【答案解析】nt数据类型为大整型，有符号存储范围为-2**31 ~ +2**31 – 1，int(2)括号中的2仅仅为显示宽度，和存储数据的位数无关，而字符类型的宽度则为实际存储数据的宽度，二者在本质上是不同的。
+【答案解析】int数据类型为大整型，有符号存储范围为-2**31 ~ +2**31 – 1，int(2)括号中的2仅仅为显示宽度，和存储数据的位数无关，而字符类型的宽度则为实际存储数据的宽度，二者在本质上是不同的。
  ```
 ```　
  47、【多选题】
