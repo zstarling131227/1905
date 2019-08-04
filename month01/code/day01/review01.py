@@ -9,9 +9,9 @@
 #     print(i)
 #     i = i + 1
 
-# str='hello world'
-# for i in str:
-#     print(i)
+str='hello world'
+for i in str:
+    print(i)
 
 # n=int(input('输入整数：'))
 # a=0
