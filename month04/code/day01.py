@@ -1,0 +1,1 @@
+shaichu="str"
