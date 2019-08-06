@@ -7,6 +7,7 @@
 /* 设置页面显示的样式字体大小 */
 body{
     font-size: 13px;
+    background-color: #F2F2F0;
 }
 /* 消除列表元素默认样式 */
 ul{
@@ -20,6 +21,15 @@ a{
 /* 焦点颜色 */
 .focus{
     color: #B8EAEE !important;
+}
+/* 全局广告图片样式 */
+.adimg{
+    margin-top:75px;
+    margin-bottom: 20px;
+    width: 100%;
+}
+.adimg>img{
+    width: 100%;
 }
 /* 编写导航条的样式 */
 #nav{
@@ -66,9 +76,6 @@ a{
 }
 
 /* 登录页的样式 */
-#login{
-
-}
 #login>img{
     width: 100%;
     position: fixed;
@@ -117,7 +124,6 @@ a{
 #log>.btn{
     margin-top:  20px;
 }
-
 #log>.btn>input{
     margin-left:28px;
     width: 70px;
@@ -131,3 +137,112 @@ a{
     background-color: #666666;
     color: #ffffff;
 }
+
+/* 列表页的样式 */
+#list,#pics{
+    width: 960px;
+    margin:  0px auto;
+    border: solid 0px red;
+}
+/* 编写标题样式 */
+#list>.top,#pics>.top{
+    border-bottom: solid  1px #cccccc;
+    overflow: hidden;
+}
+#list>.top>.tleft,#pics>.top>.tleft{
+    float: left;
+    background-color: black;
+    color: #ffffff;
+    padding: 10px 15px;
+}
+#list>.top>.tright,#pics>.top>.tright{
+    float: right;
+    padding-top: 15px;
+}
+/* 编写列表主体元素样式 */
+#list>.body{
+    overflow: hidden;
+    border: solid 0px blue;
+}
+#list>.body>.lst{
+    float: left;
+}
+#list>.body>.lst>.item{
+    border:0px solid gold;
+    background-color: #ffffff;
+    padding: 12px 15px 20px 15px;
+    margin-top: 20px;
+}
+#list>.body>.lst>.item>.title{
+    margin-bottom: 8px;
+}
+#list>.body>.lst>.item>.con{
+    overflow: hidden;
+}
+/* 设置选项框的样式 */
+#list>.body>.lst>.item>.con>.cleft{
+    width: 210px;
+    float: left;
+}
+#list>.body>.lst>.item>.con>.cright{
+    width: 370px;
+    float: left;
+    padding:15px 0 15px 15px; 
+}
+#list>.body>.lst>.item>.con>.cright>.pbottom{
+    margin-top:26px;
+    font-size: 11px;
+}
+/* 设置图片的大小 */
+#list>.body>.lst>.item>.con>.cleft>img{
+    width: 100%;
+}
+#list>.body>.ad{
+    float: right;
+    margin-top: 20px;
+    background-color: #ffffff;
+    padding: 20px 15px;
+}
+#list>.body>.ad>.adtip>.line{
+    margin-top:20px; 
+    border-bottom: 2px solid #000000;
+    width: 40px;
+}
+/* 设置广告区域的图片大小 */
+#list>.body>.ad>.imglst>ul>li{
+   width: 275px;
+   margin-top: 20px;
+}
+#list>.body>.ad>.imglst>ul>li>img{
+    width: 100%;
+ }
+
+ /* 设置图片列表的表项样式 */
+ #pics>.item{
+     float: left;
+     border: 0px solid red;
+     margin: 20px 7px 20px 7px;
+ }
+ #pics>.item>.imgs{
+    width: 226px;
+    position: relative;
+    height: 150px;
+ }
+ #pics>.item>.title{
+    padding: 10px 15px;
+    background-color: #ffffff;
+    height: 45px;
+ }
+ #pics>.item>.imgs>.tip{
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    background-color: #cc0138;
+    color: #ffffff;
+    padding: 4px 6px;
+    border-radius: 5px;
+}
+ #pics>.item>.imgs>img{
+     width: 100%;
+     height: 100%;
+ }
