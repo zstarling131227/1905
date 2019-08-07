@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>zstarling</title>
+    <style>
+        ul{
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            overflow: hidden;
+        }
+        ul>li{
+            float: left;
+            border: 1px solid red;
+            text-align: center;
+        }
+        .top{
+            width: 606px;
+            overflow: hidden;
+        }
+        .tip{
+            float: left;
+        }
+        .change{
+            float: right;
+        }
+    </style>
+    <script src="/home/tarena/1905/month03/code/day09/day09/day09/js/jquery.min.js"></script>
+</head>
+<body>
+    <div class="top">
+        <div class="tip">相关书籍</div>
+        <div class="change">换一换</div>
+    </div>
+    <ul>
+        <li>
+            <img id="d1" src="/home/tarena/1905/month03/code/day08/day08/imgs/bk0.jpg" alt="图片不存在">
+            <!-- <a href="javascript:;">Javascript经典实例</a> -->
+            <h3>  <a href="javascript:;">Javascript经典实例</a></h3>
+            <p>ShelleyPowers著</p>
+        </li>
+        <li>
+            <img id="d1" src="/home/tarena/1905/month03/code/day08/day08/imgs/bk1.jpg" alt="图片不存在">
+            <h3>  <a href="javascript:;">Javascript经典实例</a></h3>
+            <p>ShelleyPowers著</p>
+        </li>
+        <li>
+            <img id="d1" src="/home/tarena/1905/month03/code/day08/day08/imgs/bk2.jpg" alt="图片不存在">
+            <h3>  <a href="javascript:;">Javascript经典实例</a></h3>
+            <p>ShelleyPowers著</p>
+        </li>
+    </ul>
+    <script>
+        var arrBooks=[
+           {url: '/home/tarena/1905/month03/code/day08/day08/imgs/bk0.jpg',name:"java经典示例",cls:"属于第一类"},
+           { url:'/home/tarena/1905/month03/code/day08/day08/imgs/bk1.jpg',name:"Python经典示例",cls:"属于第二类"},
+           { url: '/home/tarena/1905/month03/code/day08/day08/imgs/bk2.jpg',name:"javaScript经典示例",cls:"属于第三类"},
+           { url: '/home/tarena/1905/month03/code/day08/day08/imgs/bk3.jpg',name:"jquery经典示例",cls:"属于第四类"},
+           { url: '/home/tarena/1905/month03/code/day08/day08/imgs/bk4.jpg',name:"C+=经典示例",cls:"属于第五类"},
+           { url: '/home/tarena/1905/month03/code/day08/day08/imgs/bk5.jpg',name:"C语言经典示例",cls:"属于第六类"}
+           ] 
+        $(".change").on("click",function(){
+            // console.log(rand(3).toString());
+            var _tmparr=rand(3);
+            var HTML="";
+            for (var i=0;i<_tmparr.length;i++){
+                console.log(_tmparr[i]);
+                HTML+='<li>'
+                HTML+='<img src="'+arrBooks[_tmparr[i]].url+'"  alt="">'
+                HTML+='<h3><a href="javascript:;">'+arrBooks[_tmparr[i]].name+'</a></h3>'
+                HTML+='<p>'+arrBooks[_tmparr[i]].cls+"</p>"
+                HTML+='</li>'
+            }
+
+            $("ul").html($(HTML));
+            console.log(HTML);
+            $("ul").append($(HTML));//添加，追加。不是替换
+        })
+        function rand(n){
+            var arrtmp=[]
+           for(var i=0;i<n;i++){
+                var _index=Math.floor(Math.random()*arrBooks.length)
+                arrtmp.push(_index);
+            }
+            return arrtmp;
+        }
+    </script>
+</body>
+</html>

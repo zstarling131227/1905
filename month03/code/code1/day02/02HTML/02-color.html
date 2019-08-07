@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>zxl</title>
+    <style>
+        /* 此时的p针对的是全局的p模块，所以p1也用于p的属性 */
+        p{background-color:rgba(0, 0, 255, 0.5);color:sandybrown;width: 100px;text-align: center;}
+        /* 内容超出宽度和高度 */
+        /* #p1{width: 100px;height: 100px;} */
+        #p1{width: 100px;height: 100px; overflow: scroll;}
+    </style>
+</head>
+<body>
+    <p>
+        一个有修养的人必须饱读诗书
+    </p>
+    <p id="p1">
+            一个有修养的人必须饱读诗书        一个有修养的人必须饱读诗书        一个有修养的人必须饱读诗书        一个有修养的人必须饱读诗书
+    </p>
+</body>
+</html>

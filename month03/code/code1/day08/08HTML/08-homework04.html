@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>zstarling</title>
+    <style>
+        #cha{
+            border: #cccccc 0px solid;
+            width: 953px;
+            height: 135px;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+        #cha>div{
+            width: 90px;
+            height: 90px;
+            color: #ffffff;
+            background-color:red;
+            border-radius: 50%; 
+            float: left;
+            margin:24px 10px;
+            font-size: 55px;
+            text-align: center;
+            line-height: 90px;
+        }
+        #cha>button{
+            font-size: 55px;
+            width: 270px;
+            background-color: #cccccc;
+            text-align: center;
+            border-radius: 60px;
+            float: left;
+            margin: 24px 10px  ;
+        }
+    </style>
+</head>
+<body>
+    <div id="cha">
+        <div id="d1"></div>
+        <div id="d2"></div>
+        <div id="d3"></div>
+        <div id="d4"></div>
+        <div id="d5"></div>
+        <div id="d6"></div>
+        <button id="btn">换一换</button>
+    </div>
+    <script>
+        var d1=document.getElementById('d1');
+        var d2=document.getElementById('d2');
+        var d3=document.getElementById('d3');
+        var d4=document.getElementById('d4');
+        var d5=document.getElementById('d5');
+        var d6=document.getElementById('d6');
+        var btn=document.getElementById('btn');
+        btn.onclick=function(){
+            d1.innerText=change(Math.ceil(Math.random()*33));
+            d2.innerText=change(Math.ceil(Math.random()*33));
+            d3.innerText=change(Math.ceil(Math.random()*33));
+            d4.innerText=change(Math.ceil(Math.random()*33));
+            d5.innerText=change(Math.ceil(Math.random()*33));
+            d6.innerText=change(Math.ceil(Math.random()*33));
+        }
+        function change(n){
+            if (n<10)
+                return "0"+n
+            else
+                return n
+            }
+    </script>
+</body>
+</html>

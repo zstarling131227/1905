@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>zstarling</title>
+    <style>
+        #reg{width: 345px;}
+        /* display将原来的内联元素变成块元素，方便调整宽度 */
+        label{display:inline-block;width: 88px;border: solid 0px red;text-align: right;}
+        /* .h{height: 100px;} */
+        .btn{width: 180px;background-color: green;color: #ffffff;padding: 15px;outline: none;border: 0px;border-radius: 5px;}
+        div{margin: 20px 0px;}
+        .pad{padding:8px; }
+    </style>
+</head>
+<body>
+    <div id="reg">
+        <form action="#">
+            <div>
+                <label for="email">*邮箱地址：</label>
+                <input type="text" name="email" id="email" placeholder="请输入邮箱" class="pad">
+            </div>
+            <div>
+                <label for="pass">*设置密码：</label>
+                <input type="password" name="pass" id="pass"  class="pad">
+            </div>
+            <div>
+                <label for="hobby" >*兴趣标签：</label>
+                <!-- <span style="display: inline-block"> -->
+                    <input type="checkbox" >新闻
+                    <input type="checkbox" >娱乐
+                    <input type="checkbox" >文化              
+                    <input type="checkbox" >体育
+                    <input type="checkbox" >IT
+                    <input type="checkbox" >财经
+                    <input type="checkbox" >时尚
+                    <input type="checkbox" >汽车
+                    <input type="checkbox" >房产
+                    <input type="checkbox" >生活
+                <!-- </span> -->
+            </div>
+            <div>
+                <label for="code">*验证码：</label>
+                <input type="text" name="code" id="code" style=" width:80px" class="pad">
+            </div>
+            <div>
+                <label for=""  ></label>
+                <input type="submit" value="立即注册" class="btn" >
+            </div>
+            <div>
+                <label for=""></label>
+                <a href="#">《新浪网络使用协议》</a>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

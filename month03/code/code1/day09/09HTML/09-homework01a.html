@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>zstarling</title>
+    <style>
+        ul{
+            width: 550px;
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            border: 5px solid brown;
+        }
+        ul>li{
+            border-bottom: #cee2df 1px solid;
+            overflow: hidden;
+        }
+        ul>li>span{
+            width: 101px;
+            padding: 5px 4px;
+            float: left;
+            /* 转为块元素才能生效.但是元素之间仍旧有空隙。所以建议使用浮动，会严丝合缝。
+            display: inline-block; */
+            border-right: #cee2df 1px solid;
+        }
+    </style>
+    <script src="/home/tarena/1905/month03/code/day09/day09/day09/js/jquery.min.js"></script>
+</head>
+<body>
+    <!-- 快捷写法ul>li*7>span*5 -->
+    <ul>
+        <li>
+            <span>Product</span>
+            <span>price</span>
+            <span>IDcode</span>
+            <span>quality</span>
+            <span>expdate</span>
+        </li>
+        <li>
+            <span>pro 1</span>
+            <span>51 $</span>
+            <span>4587</span>
+            <span>good</span>
+            <span>02/01/2019</span>
+        </li>
+        <li>
+            <span>pro 1</span>
+            <span>51 $</span>
+            <span>4587</span>
+            <span>good</span>
+            <span>02/01/2019</span>
+        </li>
+        <li>
+            <span>pro 1</span>
+            <span>51 $</span>
+            <span>4587</span>
+            <span>good</span>
+            <span>02/01/2019</span>
+        </li>
+        <li>
+                <span>pro 1</span>
+                <span>51 $</span>
+                <span>4587</span>
+                <span>good</span>
+                <span>02/01/2019</span>
+        </li>
+        <li>
+                <span>pro 1</span>
+                <span>51 $</span>
+                <span>4587</span>
+                <span>good</span>
+                <span>02/01/2019</span>
+        </li>
+        <li>
+                <span>pro 1</span>
+                <span>51 $</span>
+                <span>4587</span>
+                <span>good</span>
+                <span>02/01/2019</span>
+        </li>
+    </ul>
+    <script>
+        //获取除第一行以外的行元素集合
+        $("ul>li:not(li:first)")
+        //    console.log($("ul>li:not(li:first)"))
+        //遍历
+        $("ul>li:not(li:first)").each(function(index,elem){
+            //将每一项元素转成jq对象
+            $(elem).on("mouseover",function(){
+                $(this).css({"background-color":"#aaa","color":"#fff"})
+            }).on("mouseout",function(){
+                $(this).css({"background-color":"#fff","color":"#000"})
+            })
+        })
+    </script>
+</body>
+</html>

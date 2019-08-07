@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>zxl</title>
+    <!--针对body中所有元素的样式-->
+    <!--<style>-->
+    <!--id选择器。查找id时通过#加需要查询的id值-->
+        <!--#p1{color:red}-->
+        <!--#div1{background-color:blue}-->
+    <!--</style>-->
+    <!--将style样式用link导入-->
+    <link rel="stylesheet" href="css/index.css">
+    <!--*表示所有的元素-->
+    <!--<style>-->
+        <!--#div2{color:red;}-->
+        <!--*{margin:0;padding:0}-->
+    <!--</style>-->
+    <!--使用标签名匹配，性能低，范围广-->
+    <!--<style>p{} div{}</style>-->
+    <!--类选择器----class的复用用法：.class的属性值{属性：属性值}-->
+    <style>.blue{color:green}</style>
+</head>
+<body>
+    <!--<p id="p1" style="color:red">从你的全世界路过</p>-->
+    <!--style可以设置在head部分-->
+    <p id="p1" style="font-size:18px">从你的全世界路过</p>
+    <div id="div1" style="color:red">从我的全世界路过
+        <!--子类div继承父类的字体（文本）样式属性，但是外围大小并不继承-->
+        <div>全世界</div>
+    </div>
+    <p id="p2" style="font-size:18px">从你我的世界路过</p>
+    <!--优先级原则：就近原则（内部--头部--外部--浏览器默认样式）-->
+    <div id="div2" style="color:green">路过</div>
+    <!--class表示样式类别-->
+    <div class="blue">王</div>
+    <p class="blue">王八</p>
+    <h3 class="blue">王八蛋</h3>
+</body>
+</html>

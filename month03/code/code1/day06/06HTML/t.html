@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>zstarling</title>
+</head>
+<style>
+#tip{
+/* display: none; */
+}
+</style>
+
+<body>
+    <div>看display功能，控制台输出</div>
+    <!-- 属性display的默认值是"",(""=block) 表示显示。(none)表示隐藏。-->
+        <div id="tip">
+            nihso !
+        </div>
+    <script>
+        var a="2";
+        /*
+        该两行会报错
+        console.log(b);
+        console.log(a);*/
+
+        // 解决办法：
+        try{
+            console.log(b);
+        }catch{
+            console.log(a);
+        }
+        var x=document.getElementById('tip')
+        console.log(x.style);
+        console.log(x.style.display);
+    </script>
+</body>
+</html>

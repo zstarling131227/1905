@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>zstarling</title>
+    <style>
+        #ball{
+            width: 20px;
+            height: 20px;
+            background-color: aqua;
+            border-radius: 50%;
+            position: absolute;
+            top:500px;
+            left: 500px;
+        }
+    </style>
+    <script src="/home/tarena/1905/month03/code/day09/day09/day09/js/jquery.min.js"></script>
+</head>
+<body>
+    <div id="tab">
+        <img id="img" src="/home/tarena/1905/month03/code/day09/day09/day09/imgs/img01.jpg" alt="图片不存在">
+     </div>    
+        <button id="btn">隐藏</button>
+
+    <div id="ball">
+
+    </div>
+        <button id="move">移动</button>
+
+    <script>
+        $("#btn").on("click",function(){
+            // if ($("#btn").text()=="隐藏"){
+                if ($(this).text()=="隐藏"){
+                    $("#img").fadeOut(1000,function(){
+                        $("#btn").text("显示");
+                 })
+            }else{
+                $("img").fadeIn(1000,function(){
+                         $("#btn").text("隐藏")
+                })
+            }
+        })
+    </script>
+        <!-- <script>
+        //自定义移动
+            //向左上走
+        $("#move").on("click",function(){
+
+            $("#ball").fadeIn(2000) 
+            // $("#ball").animate({
+            //     left:"20px",
+            //     top:"10px"
+            // })  
+        
+            $("#ball").animate({
+                left:"350px"//350不是移动的距离，而是原定义相对位置的距离
+            })
+            setTimeout(function(){
+            $("#ball").animate({
+                    top:"350px"
+                })
+            },500)
+        
+        setTimeout(function(){
+                $("#ball").animate({
+                    // right:"50px",
+                    left:"450px",
+                })       
+            },700)
+        
+        setTimeout(function(){
+            $("#ball").animate({
+                // bottom:"50px",
+                top:"450px",
+                }) 
+            },900) 
+        setTimeout(function(){
+            $("#ball").fadeOut(2000)
+            },1000)
+        })
+    
+/*
+    window.onload=function(){
+        alert("原生页面加载完成")
+    }
+    window.onload=function(){
+        alert("原生页面加载完成1")
+    }
+    $(function(){
+        alert("jq页面加载完成")
+    })
+    $(function(){
+        alert("jq页面加载完成1")
+    })
+    */
+        </script> -->
+</body>
+</html>

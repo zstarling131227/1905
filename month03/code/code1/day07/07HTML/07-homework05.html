@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>zstarling</title>
+</head>
+<body>
+    <script>
+    var  str="zhangsan@sina.com";
+    var  str1=str.split("@");
+    for (var i=0;i<str1.length;i++){
+         console.log(str1[i])
+    }
+    var str2=str1[1].split(".");
+    for (var i=0;i<str2.length;i++){
+         console.log(str2[i])
+    }
+   
+    var  birth1="100233186012057663";
+    var birth2=birth1.split("");
+    console.log(birth2)
+    var birth3=[]
+    for (var i=6;i<birth2.length-4;i++){
+        console.log(birth2[i])
+        birth3.push(birth2[i]);
+    }
+    console.log(birth3)
+    var reg2=new RegExp(birth1[6,13],"ig")
+    console.log(reg2)
+
+    var num="1045_5&2033_6&0112_10"
+    var num1=num.split("&")
+    for (var i=0;i<num.length;i++){
+        console.log(num1[i]);
+        var num3=num1[i].split("_");
+        console.log(num3);
+        for (var j=0;j<num3.length;j++){
+                console.log(num3[j])
+        }
+    }
+    </script>
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>zstarling</title>
+    <style>
+        #d{
+            width: 254px;
+            height: 156px;
+            margin: 0 auto;
+            border: 1px solid #cccccc;
+        }
+        #d>div:nth-child(1){
+            height: 30px;
+            border: 0px solid #000000;
+            color: brown;
+            font-size: 19px; 
+            padding: 0 123px 0 33px;
+        }
+        #p1{
+            border: 0px solid purple;
+            width: 254px;
+            height: 122px; 
+            position: relative;
+        }
+        #p1>div:nth-child(2){
+            width: 90px;
+            height: 95px;
+            border: 1px solid saddlebrown;
+            margin:10px 149px 30px 15px;
+             position: relative;
+        }
+        #p1>div:nth-child(2):hover{
+            z-index: 2;
+        }
+        #p1>div:nth-child(2)>#d2{
+            color: #ffffff;
+            text-align: center;
+            background-color: saddlebrown;
+            font-size: 13px;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+        }
+        #p1>div:nth-child(1){
+            height: 100px;
+            font-size: 12px;
+            position: absolute;
+            top:0px;
+            right: 0;
+        }
+         #p1>div:nth-child(1)>#d3{
+             margin-top:10px;
+             width: 133px;
+            color: #ffffff;
+            background-color: saddlebrown;
+            padding-top: 5px ;
+            padding-left: 121px;
+            padding-bottom: 5px; 
+        }
+        #p1>div:nth-child(1)>#d4{
+            color: darkgray;
+            padding-top: 5px ;
+            padding-left: 121px;
+            padding-bottom: 5px; 
+        }
+    </style>
+</head>
+<body>
+    <div id="d">
+        <div>
+           名中医推荐 
+        </div>
+        <div id="p1">
+                <div>
+                        <div id="d3">
+                                <div>张学智教授谭聪脾胃治</div>
+                                <div>糖尿病</div>
+                        </div>
+                        <div id="d4">
+                            <div>北大医院中医科</div>
+                            <div>主任医师</div>
+                        </div>
+                </div>
+                <div id="pic">
+                        <img src="/home/tarena/1905/month03/code/day04/day04/imgs/img01.png" alt="">
+                        <div id="d2">张学智</div>
+                </div>
+        </div>     
+    </div>
+</body>
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>zstarling</title>
+    <style>
+        #cha{
+            border: 0px solid red;
+            width: 810px;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+        #cha> .div{
+            padding: 10px 0 10px 20px;
+            font-size: 20px;
+        }
+        #cha> .div>#btn{
+            font-size: 20px;
+            float: right;
+            border: none;
+            outline: none;
+            background-color: #fff;
+            padding: 0px 35px;
+            overflow: hidden;
+        }       
+        #cha>.div1{
+            border: 0px solid red;
+            width: 200px;
+            float: left;
+            text-align: center;
+        }
+        img{
+            width: 200px;
+            height: 200px;
+        }
+        a{
+            font-size: 20px;
+            margin: 0 auto;
+        }
+        p{
+            color: rgba(80, 84, 87, 0.459);
+            font-size: 18px; 
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <div id="cha">
+        <div class="div">相关书籍
+            <button id="btn">换一换</button>
+        </div>
+        <div class="div1">
+            <img id="d1" src="/home/tarena/1905/month03/code/day08/day08/imgs/bk0.jpg" alt="图片不存在">
+            <a href="javascript:;">Javascript经典实例</a>
+            <p>ShelleyPowers著</p>
+        </div>
+        <div class="div1">
+            <img id="d2" src="/home/tarena/1905/month03/code/day08/day08/imgs/bk1.jpg" alt="图片不存在">
+            <a href="javascript:;">Javascript经典实</a>
+            <p>ShelleyPowers著</p>
+        </div>
+        <div class="div1">
+            <img id="d3" src="/home/tarena/1905/month03/code/day08/day08/imgs/bk2.jpg" alt="图片不存在">
+            <a href="javascript:;">Javascript经例</a>
+            <p>ShelleyPowers著</p>
+        </div>
+        <div class="div1">
+            <img id="d4" src="/home/tarena/1905/month03/code/day08/day08/imgs/bk3.jpg" alt="图片不存在">
+            <a href="javascript:;">Javascript典实例</a>
+            <p>ShelleyPowers著</p>
+        </div>
+    </div>
+    <script>
+        var arrimg=[
+            '/home/tarena/1905/month03/code/day08/day08/imgs/bk0.jpg',
+            '/home/tarena/1905/month03/code/day08/day08/imgs/bk1.jpg',
+            '/home/tarena/1905/month03/code/day08/day08/imgs/bk2.jpg',
+            '/home/tarena/1905/month03/code/day08/day08/imgs/bk3.jpg',
+            '/home/tarena/1905/month03/code/day08/day08/imgs/bk4.jpg',
+            '/home/tarena/1905/month03/code/day08/day08/imgs/bk5.jpg',
+            '/home/tarena/1905/month03/code/day08/day08/imgs/img01.jpg',
+            '/home/tarena/1905/month03/code/day08/day08/imgs/img02.jpg',
+            '/home/tarena/1905/month03/code/day08/day08/imgs/img03.jpg',
+            '/home/tarena/1905/month03/code/day08/day08/imgs/img04.jpg'
+        ]
+        var btn=document.getElementById('btn');
+        var img1=document.getElementById('d1');
+        var img2=document.getElementById('d2');
+        var img3=document.getElementById('d3');
+        var img4=document.getElementById('d4');
+        var index=3;
+        btn.onclick=function(){
+            if(index>=arrimg.length) index=0;
+            img1.setAttribute("src",arrimg[index++]);
+             console.log(index);
+            if(index>=arrimg.length) index=0;
+            img2.setAttribute("src",arrimg[index++]);
+            console.log(index);
+            if(index>=arrimg.length) index=0;
+            img3.setAttribute("src",arrimg[index++]);
+            console.log(index);
+            if(index>=arrimg.length) index=0;
+            img4.setAttribute("src",arrimg[index++]);
+            console.log(index);        
+        }
+    </script>
+</body>
+</html>

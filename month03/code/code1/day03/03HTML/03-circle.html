@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>zstarling</title>
+    <style>
+        #c{
+            margin: 0 auto;
+            width: 300px;
+            height: 300px;
+            border: red 2px solid;
+        }
+        #c>#cir{
+            width: 0;
+            height: 0;
+            float: right;
+            border: 50px solid   #cccccc;
+            border-radius: 50%;
+            border-right-color: transparent;
+        }
+        #c>.cir{
+            width: 0;
+            height: 0;
+            float: left;
+            border: 25px solid #cccccc;
+            border-radius: 50%;
+            border-right-color: transparent;
+            border-left-color: transparent;
+            border-top-color: red;
+            border-bottom-color: green;
+        }
+        #c>.cir1{
+            height:0;
+            width: 0;
+            float: right;
+            border-radius: 50%;
+            border-top: green 25px solid;
+            border-bottom: 25px solid red;
+            border-right: 25px solid transparent;
+            border-left: transparent 25px solid;
+        }
+    </style>
+</head>
+<body>
+    <div id="c">
+        <div id="cir">
+
+        </div>
+        <div class="cir">
+    
+        </div>
+        <div class="cir1">
+    
+        </div>
+    </div>
+</body>
+</html>
