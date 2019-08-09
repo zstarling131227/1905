@@ -85,10 +85,12 @@ SQL命令运行时间监测
 
 - **使用规则**
 
-1、主表、从表字段数据类型要一致
-2、主表被参考字段 ：KEY的一种，一般为主键
+1. 主表、从表字段数据类型要一致
+2. 主表被参考字段 ：KEY的一种，一般为主键
 
 - **示例**
+*-该表在数据库db2中*
+*-对从表做操作时主表要有数据*
 
 表1、缴费信息表(财务)
 
@@ -97,6 +99,19 @@ id   姓名     班级     缴费金额
 1   唐伯虎   AID1903     300
 2   点秋香   AID1903     300
 3   祝枝山   AID1903     300
+
+create table master(
+  id int primary key auto_increment,
+  name varchar(20),
+  class varchar(30),
+  money decimal(6,2)
+  )charset=utf8;
+
+ insert into master (name,class,money) values('唐伯虎','AID1905',300);
+
+insert into master (name,class,money) values('点秋香','AID1905',300),('祝枝山','AID1905',300);
+
+insert into master (name,class,money) values('腊梅','AID1905',300),('秋菊','AID1905',300);
 
 ```
 
@@ -107,6 +122,39 @@ stu_id   姓名   缴费金额
   1     唐伯虎    300
   2     点秋香    300
 
+create table slave(
+  stu_id int,
+  name varchar(20),
+  money decimal(6,2),
+  foreign key(stu_id)
+  references master(id) 
+  on delete cascade
+  on update cascade
+  )charset=utf8;
+
+insert into slave values(1,'唐伯虎',300),(2,'点秋香',300);
+insert into slave values(3,'腊梅',300),(4,'秋菊',300);
+
+ insert into slave values(6,'xixi',300);
+```
+*报错：*
+在从表中插入主表master中没有的数据时，会报错
+```
+ERROR 1452 (23000): Cannot add or update a child row: a foreign key constraint fails (`stu`.`slave`, CONSTRAINT `slave_ibfk_1` FOREIGN KEY (`stu_id`) REFERENCES `master` (`id`) ON DELETE CASCADE ON UPDATE CASCADE)
+```
+表结构：有外键的会多出  《CONSTRAINT `slave_ibfk_1`……》
+```
+mysql> show create table slave\G;
+*************************** 1. row ***************************
+       Table: slave
+Create Table: CREATE TABLE `slave` (
+  `stu_id` int(11) DEFAULT NULL,
+  `name` varchar(20) DEFAULT NULL,
+  `money` decimal(6,2) DEFAULT NULL,
+  KEY `stu_id` (`stu_id`),
+  CONSTRAINT `slave_ibfk_1` FOREIGN KEY (`stu_id`) REFERENCES `master` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8
+1 row in set (0.00 sec)
 ```
 
 - **删除外键**
@@ -114,26 +162,103 @@ stu_id   姓名   缴费金额
 ```mysql
 alter table 表名 drop foreign key 外键名;
 ​外键名 ：show create table 表名;
-```
 
+create table slave1(
+  stu_id int ,
+  name varchar(20),
+  money decimal(6,2),
+  foreign key(stu_id) references master(id)
+  on delete cascade
+  on update cascade)
+  charset=utf8;
+
+insert into slave1 values
+(1,'唐伯虎',300),
+(2,'点秋香',300),
+(3,'腊梅',300),
+(4,'秋菊',300);
+
+stu_id 是字段名，关键字是slave1_ibfk_1；
+alter table slave1 drop foreign key(stu_id);##报错
+alter table slave1 drop foreign key slave1_ibfk_1;
+
+show create table slave1\G;
+*************************** 1. row ***************************
+       Table: slave1
+Create Table: CREATE TABLE `slave1` (
+  `stu_id` int(11) DEFAULT NULL,
+  `name` varchar(20) DEFAULT NULL,
+  `money` decimal(6,2) DEFAULT NULL,
+  KEY `stu_id` (`stu_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8
+1 row in set (0.00 sec)
+```
 - **级联动作**
-
+#### 1)cascade ​数据级联删除、更新(参考字段)
 ```mysql
-cascade
-​数据级联删除、更新(参考字段)
-restrict(默认)
-​从表有相关联记录,不允许主表操作
-set null
-​主表删除、更新,从表相关联记录字段值为NULL
-```
+create table slave2(
+  stu_id int ,
+  name varchar(20),
+  money decimal(6,2),
+  foreign key(stu_id) references master(id)
+  on delete cascade
+  on update cascade)
+  charset=utf8;
 
+ insert into slave2 values(1,'唐伯虎',300),(2,'点秋香',300),(3,'祝枝山',300);
+insert into slave2 values(1,'腊梅',300),(2,'秋菊',300);
+```
+**主从表的操作一致。** *也就是说，主表master删除id=1的数据时，从表slave2的stu_id=1数据自动同步删除。主表master更新id=5的数据时，从表slave2的stu_id=5数据自动同步更新。如果从表中没有主表中的数据，则只对主表进行操作。*
+```
+ delete from master where id=1;
+ update master set id=10 where id=4;
+```
+#### 2)restrict(默认)  ​从表有相关联记录,不允许主表操作
+```mysql
+ create table slave3(
+   stu_id int,
+   name varchar(20),
+   money decimal(6,2),
+   foreign key(stu_id) 
+   references master(id)
+   )charset=utf8;
+
+ insert into slave3 values(1,'唐伯虎',300),(2,'点秋香',300);
+ERROR 1452 (23000): Cannot add or update a child row: a foreign key constraint fails (`stu`.`slave3`, CONSTRAINT `slave3_ibfk_1` FOREIGN KEY (`stu_id`) REFERENCES `master` (`id`))
+```
+#### 3) set null 主表删除、更新,从表相关联记录字段值为NULL
+```mysql
+create table slave4(
+  stu_id int,
+  name varchar(20),
+  money decimal(6,2),
+  foreign key(stu_id) references master(id) 
+  on delete set null on update set null)
+  charset=utf8;
+
+insert into slave4 values
+(1,'唐伯虎',300),
+(2,'点秋香',300),
+(3,'祝枝山',300);
+
+delete from master where id=2;
+```
+**主从表的操作不一致。** *也就是说，主表master删除id=2的数据时，从表slave4的stu_id=2数据不会自动同步删除。主表master中id=2的数据全部删除，从表slave4的stu_id=2变为stu_id=NULL。如果从表中没有主表中的数据，则只对主表进行操作。*
+```
+mysql> select * from slave3;
++--------+-----------+--------+
+| stu_id | name      | money  |
++--------+-----------+--------+
+|   NULL | 点秋香    | 300.00 |
+|      3 | 祝枝山    | 300.00 |
++--------+-----------+--------+
+
+```
 - **已有表添加外键**
 
 ```mysql
 alter table 表名 add foreign key(参考字段) references 主表(被参考字段) on delete 级联动作 on update 级联动作
 ```
-
-
 
 ## 嵌套查询(子查询)
 
@@ -151,13 +276,11 @@ select ... from 表名 where 条件(select ....);
 
 ```mysql
 1、把攻击值小于平均攻击值的英雄名字和攻击值显示出来
-  
+  select  name,attack from sanguo where attack<(select avg(attack) from sanguo);
+
 2、找出每个国家攻击力最高的英雄的名字和攻击值(子查询)
-  
- 
+  select  name,attack from sanguo where (country,attack) in (select country,max(attack) from sanguo group by country);
 ```
-
-
 
 ## **多表查询**
 
@@ -165,9 +288,12 @@ select ... from 表名 where 条件(select ....);
 
 ```mysql
 mysql -uroot -p123456
+此时的文件在根目录下
 mysql>source /home/tarena/join_query.sql
+##指文件所在路径
+source /home/tarena/1905/month03/code/code2/day02/mysql_day02/mysql_day02/join_query.sql
 ```
-
+***该数据表在country数据库下***
 ```mysql
 create database if not exists db1 character set utf8;
 use db1;
@@ -236,8 +362,19 @@ insert into county values
 
 ```mysql
 select 字段名列表 from 表名列表; 
-```
 
+create table ttl(tt1name varchar(20));
+create table tt2(tt2name varchar(20));
+create table tt3(tt3name varchar(20));
+
+insert into ttl values('A1'),('A2'),('A3');
+insert into tt2 values('B1'),('B2'),('B3');
+insert into tt3 values('C1'),('C2');
+
+select * from ttl,tt2;
+select * from tt2,tt3;
+
+```
 - **多表查询**
 
 ```mysql
@@ -251,12 +388,15 @@ select 字段名列表 from 表名列表 where 条件;
    河北省  石家庄市
    河北省  廊坊市
    湖北省  武汉市
-   
+
+  select province.pname, city.cname from province,city
+  where province.pid=city.cp_id;
+
 2、显示 省 市 县 详细信息
-  
+  select province.pname, city.cname,county.coname    
+  from province,city,county
+  where province.pid=city.cp_id and city.cid=county.copid;
 ```
-
-
 
 ## 连接查询
 
@@ -265,9 +405,21 @@ select 字段名列表 from 表名列表 where 条件;
 ````mysql
 select 字段名 from  表1 inner join 表2 on 条件 inner join 表3 on 条件;
 eg1 : 显示省市详细信息
-  
+  select province.pname, city.cname    from province inner join city     on  province.pid=city.cp_id;
+
 eg2 : 显示 省 市 县 详细信息
-  
+  select province.pname, city.cname,county.coname  
+  from province 
+  inner join city  join county    
+  on province.pid=city.cp_id and city.cid=county.copid;
+
+  select province.pname, city.cname,county.coname
+  from province
+  inner join city 
+  on province.pid=city.cp_id
+  inner  join county
+   on city.cid=county.copid;
+
 ````
 
 - **左外连接**
@@ -278,6 +430,13 @@ eg2 : 显示 省 市 县 详细信息
 select 字段名 from 表1 left join 表2 on 条件 left join 表3 on 条件;
 eg1 : 显示 省 市 详细信息（要求省全部显示）
  
+ select province.pname, city.cname,county.coname
+ from province
+ right join city
+ on province.pid=city.cp_id
+ right  join county 
+ on city.cid=county.copid;
+
 ```
 
 - **右外连接**
@@ -286,6 +445,14 @@ eg1 : 显示 省 市 详细信息（要求省全部显示）
 
 ```mysql
 select 字段名 from 表1 right join 表2 on 条件 right join 表3 on 条件;
+
+eg1 : 显示 省 市 详细信息（要求县全部显示）
+select province.pname, city.cname,county.coname
+from province
+right  join city
+on province.pid=city.cp_id
+right  join county
+on city.cid=county.copid;
 ```
 
 ## **数据导入**
@@ -305,13 +472,16 @@ fields terminated by "分隔符"
 lines terminated by "\n"
 **示例**
 scoretable.csv文件导入到数据库db2的表
+*该表在数据库代表db2中*
 
-```mysql
-1、将scoretable.csv放到数据库搜索路径中
-   mysql>show variables like 'secure_file_priv';
+**1、将scoretable.csv放到数据库搜索路径中**
+```mysql 
+  mysql>show variables like 'secure_file_priv';
          /var/lib/mysql-files/
    Linux: sudo cp /home/tarena/scoreTable.csv /var/lib/mysql-files/
-2、在数据库中创建对应的表
+```
+**2、在数据库中创建对应的表**
+```
   create table scoretab(
   rank int,
   name varchar(20),
@@ -319,12 +489,15 @@ scoretable.csv文件导入到数据库db2的表
   phone char(11),
   class char(7)
   )charset=utf8;
-3、执行数据导入语句
-load data infile '/var/lib/mysql-files/scoreTable.csv'
+```
+**3、执行数据导入语句**
+```load data infile '/var/lib/mysql-files/scoreTable.csv'
 into table scoretab
 fields terminated by ','
 lines terminated by '\n'
-4、练习
+```
+**4、练习**
+```
   添加id字段,要求主键自增长,显示宽度为3,位数不够用0填充
   alter table scoretab add id int(3) zerofill primary key auto_increment first;
 ```

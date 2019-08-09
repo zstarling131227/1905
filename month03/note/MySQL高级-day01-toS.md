@@ -70,13 +70,13 @@ mysql -hIP地址 -u用户名 -p密码
 
 ```mysql
     1、创建表并指定字符集；
-          create table 表名 
+          create table 表名 charset-utf8;
     2、查看创建表的语句 (字符集、存储引擎)；
-      
+      show create table 表名;
     3、查看表结构;
-           desc 表名
+           desc 表名;
     4、删除表;
-           delect table 表名
+           delect table 表名;
 ```
 
 **表记录管理**
@@ -109,7 +109,19 @@ mysql -hIP地址 -u用户名 -p密码
  int  smallint  bigint  tinyint[1]
  float(m,n)  double  decimal
 ```
-
+**补充 zerofill宽度显示符**
+*test表在db2库中*
+```
+create table test(id int(3) zerofill);
+insert into test values(1);
+输出结果：
+mysql> select * from test;
++------+
+| id   |
++------+
+|  001 |
++------+
+```
 - 字符类型
 
 ```mysql
@@ -247,46 +259,62 @@ limit m,n ：从第(m+1)条记录开始，显示n条
                
 - **插入5条表记录（id 1-5,name-诸葛亮、司马懿、貂蝉、张飞、赵云），攻击>100,防御<100）**
 
+
+**创建表**
+```
+create table sanguo(id int primary key auto_increment,name varchar(32) not null,attack int not null,defense int not null, gender enum('M','F') not null,country varchar(32)) charset=utf8;
+
+insert into sanguo values(1,'诸葛亮',167,56,'M','蜀国'); 
+ insert into sanguo2 values(2,'司马懿',145,66,'M','魏国'),(3,'貂蝉',134,55,'F','吴国'),(4,'zha',123,34,'M','蜀国'),(5,'赵云',200,88,'M','蜀国');
+
+```
+
 - **查找所有蜀国人的信息**
 
      ```mysql
-     
+     select * from sanguo where country="蜀国";
+
      ```
 
 - **将赵云的攻击力设置为360,防御力设置为68**
 
      ```mysql
-     
+     update sanguo set attack=350,defense=68 where name='赵云'; 
      ```
 
 - **将吴国英雄中攻击值为110的英雄的攻击值改为100,防御力改为60**
 
      ```mysql
-     
+     update sanguo set attack=100,defense=60 where country='吴国' and attack=134;
+
      ```
 
 - **找出攻击值高于200的蜀国英雄的名字、攻击力**
 
      ```mysql
-     
+     mysql> select name,attack from sanguo where attack>200;
+
      ```
 
 - **将蜀国英雄按攻击值从高到低排序**
 
      ```mysql
-     
+      select * from sanguo where country in ('魏国','蜀国')  and name like "___" order by defense;
+
      ```
 
 - **魏蜀两国英雄中名字为三个字的按防御值升序排列**
 
      ```mysql
-     
+      select name,attack,country from sanguo where name is NULL and country="蜀国" order by attack limit 3;
+
      ```
 
 - **在蜀国英雄中,查找攻击值前3名且名字不为 NULL 的英雄的姓名、攻击值和国家**
 
      ```mysql
-     
+     select name,attack,country from sanguo where name is not  NULL and country="蜀国" order by attack DESC limit 3;
+
      ```
 
 ## MySQL普通查询
@@ -314,19 +342,20 @@ limit m,n ：从第(m+1)条记录开始，显示n条
 eg1 : 找出表中的最大攻击力的值？
 
 ```mysql
+ select max(attack) from sanguo;
 
 ```
 
 eg2 : 表中共有多少个英雄？
 
 ```mysql
-
+select count(name) from sanguo;
 ```
 
 eg3 : 蜀国英雄中攻击值大于200的英雄的数量
 
 ```mysql
-
+select count(name) from sanguo where attack>200 and country="蜀国";
 ```
 
 - **group by**
@@ -335,13 +364,14 @@ eg3 : 蜀国英雄中攻击值大于200的英雄的数量
 eg1 : 计算每个国家的平均攻击力
 
 ```mysql
-
+ select country,avg(attack) from sanguo group by country;
 ```
 
 
 eg2 : 所有国家的男英雄中 英雄数量最多的前2名的 国家名称及英雄数量
 
 ```mysql
+select country,count(id) as number from sanguo where gender='M' group by country order by number desc limit 2;
 
 ```
 
@@ -354,6 +384,8 @@ eg2 : 所有国家的男英雄中 英雄数量最多的前2名的 国家名称�
 
 ```mysql
 eg1 : 找出平均攻击力大于105的国家的前2名,显示国家名称和平均攻击力
+select country,avg(attack) as num from sanguo group by country having num>105 order by num limit 2;
+
 ```
 
 注意
@@ -369,9 +401,11 @@ having语句存在弥补了where关键字不能与聚合函数联合使用的不
 
 ```mysql
 eg1 : 表中都有哪些国家
-  
+  select distinct country from sanguo ;
+
 eg2 : 计算一共有多少个国家
-  
+  select count(distinct country) from sanguo ;
+
 ```
 
 
@@ -388,8 +422,10 @@ distinct不能对任何字段做聚合处理
 
 ```mysql
 eg1: 查询时显示攻击力翻倍
-  
+  mysql> select name,attack*2 from sanguo ;
+
 eg2: 更新蜀国所有英雄攻击力 * 2
+update sanguo set attack=attack*2 where country='蜀国';
 
 ```
 
@@ -556,9 +592,24 @@ alter table 表名 add primary key(id);
 
 ​            user_id 指用户id
 
+**该数据表在country下**
+```
+create table comment(
+  id int primary key auto_increment,
+  article int(30),
+  user int(32), 
+  date varchar(32)
+  )charset=utf8;
+
+insert into comment (article,user,date) values(10000,10000,'2018-0103 09:00:00');
+
+```
+
 - **3、操作题**
 
 综述：两张表，一张顾客信息表customers，一张订单表orders
+
+**在country的库名中**
 
 表1：顾客信息表，完成后插入3条表记录
 
@@ -570,7 +621,16 @@ c_sex 枚举类型，要求只能在('M','F')中选择一个值
 c_city 字符类型，变长，宽度为20
 c_salary 浮点类型，要求整数部分最大为10位，小数部分为2位
 ```
-
+```
+ create table customers(
+   id int primary key auto_increment,
+   name varchar(20),
+   age smallint unsigned ,
+   sex enum('M','F'),
+   city varchar(20),
+   salary decimal(10,2)
+   )charset=utf8;
+```
 表2：顾客订单表（在表中插入5条记录）
 
 ```mysql
@@ -578,19 +638,59 @@ o_id 整型
 o_name 字符类型，变长，宽度为30
 o_price 浮点类型，整数最大为10位，小数部分为2位
 设置此表中的o_id字段为customers表中c_id字段的外键,更新删除同步
-insert into orders values(1,"iphone",5288),(1,"ipad",3299),(3,"mate9",3688),(2,"iwatch",2222),(2,"r11",4400);
+```
+**创建库**
+```
+create table orde(
+o_id int, 
+name varchar(20), 
+price decimal(10,2),
+foreign key(o_id) 
+references customers(id)
+on delete cascade
+on update cascade)
+charset=utf8;
+
+
+insert into orders values(
+  1,"iphone",5288),
+  (1,"ipad",3299),
+  (3,"mate9",3688),
+  (2,"iwatch",2222),
+  (2,"r11",4400);
 ```
 
-增删改查题
+**增删改查题**
 
 ```mysql
 1、返回customers表中，工资大于4000元，或者年龄小于29岁，满足这样条件的前2条记录
+select * from customers where salary>4000 or age<29 limit 2; 
+
 2、把customers表中，年龄大于等于25岁，并且地址是北京或者上海，这样的人的工资上调15%
+update customers set salary=salary*1.15 where age>=23 and city in('北京','上海');
+
 3、把customers表中，城市为北京的顾客，按照工资降序排列，并且只返回结果中的第一条记录
+select * from customers where city='北京' order by salary desc limit 1;
+
 4、选择工资c_salary最少的顾客的信息
-5、找到工资大于5000的顾客都买过哪些产品的记录明细			
+ select * from customers where salary in (select min(salary) from customers);
+
+5、找到工资大于5000的顾客都买过哪些产品的记录明细	
+	select * from customers inner join orde on customers.salary>10000 and orde.o_id=customers.id;
+
 6、删除外键限制			
+ show create table orde;
+alter table orde drop foreign key orde_ibfk_1;
+show create table orde;
+
 7、删除customers主键限制
+mysql> alter table customers modify id int;
+mysql> alter table customers drop primary key;
+
 8、增加customers主键限制c_id
+mysql> alter table customers add primary key(id);
+mysql> alter table customers modify id int auto_increment;
+mysql> alter table customers auto_increment=1;
+
 ```
 
