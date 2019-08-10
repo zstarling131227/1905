@@ -638,23 +638,24 @@ limit 10;
 2、把 /etc/passwd 文件的内容导入到数据库的表中
 
 ```mysql
-(1)sudo cp /etc/passwd /var/lid/mysql-files/
-(2)建表
-create table user_p(
-   username varchar(20),
-   password char(1),
-   uid int,
-   gid int,
-   comment varchar(50),
-   home varchar(50),
-   shell varchar(50),
-)charset=utf8;
-(3)
-load data infile '/var/lib/mysql=files/passwd'
-into table user_p 
-fileds terminated by ':'
-lines terminated bu '\n';
-
+tarena:x:1000:1000:tarena,,,:/home/tarena:/bin/bash
+1、拷贝文件
+   sudo cp /etc/passwd /var/lib/mysql-files
+2、建表
+  create table user(
+  username varchar(20),
+  password char(1),
+  uid int,
+  gid int,
+  comment varchar(50),
+  homedir varchar(100),
+  shell varchar(50)
+  )charset=utf8;
+3、导入
+  load data infile '/var/lib/mysql-files/passwd'
+  into table user
+  fields terminated by ':'
+  lines terminated by '\n';
 ```
 
 **3、外键及查询题目**

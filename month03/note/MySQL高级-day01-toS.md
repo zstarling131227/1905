@@ -110,12 +110,12 @@ mysql -hIP地址 -u用户名 -p密码
  float(m,n)  double  decimal
 ```
 **补充 zerofill宽度显示符**
-*test表在db2库中*
+*test_int表在db2库中*
 ```
-create table test(id int(3) zerofill);
-insert into test values(1);
+create table test_int(id int(3) zerofill);
+ insert into test_int values(1);
 输出结果：
-mysql> select * from test;
+mysql> select * from test_int;
 +------+
 | id   |
 +------+

@@ -99,7 +99,8 @@ id   姓名     班级     缴费金额
 1   唐伯虎   AID1903     300
 2   点秋香   AID1903     300
 3   祝枝山   AID1903     300
-
+create database db2 charset utf8;
+use db2;
 create table master(
   id int primary key auto_increment,
   name varchar(20),
@@ -194,6 +195,8 @@ Create Table: CREATE TABLE `slave1` (
 1 row in set (0.00 sec)
 ```
 - **级联动作**
+*多从表关联同一个主表的时候，从表中的数据不可以重复，且都要在主表中存在，否则会报错。*
+
 #### 1)cascade ​数据级联删除、更新(参考字段)
 ```mysql
 create table slave2(
@@ -206,7 +209,7 @@ create table slave2(
   charset=utf8;
 
  insert into slave2 values(1,'唐伯虎',300),(2,'点秋香',300),(3,'祝枝山',300);
-insert into slave2 values(1,'腊梅',300),(2,'秋菊',300);
+ insert into slave2 values(1,'腊梅',300),(2,'秋菊',300);
 ```
 **主从表的操作一致。** *也就是说，主表master删除id=1的数据时，从表slave2的stu_id=1数据自动同步删除。主表master更新id=5的数据时，从表slave2的stu_id=5数据自动同步更新。如果从表中没有主表中的数据，则只对主表进行操作。*
 ```
@@ -222,10 +225,26 @@ insert into slave2 values(1,'腊梅',300),(2,'秋菊',300);
    foreign key(stu_id) 
    references master(id)
    )charset=utf8;
-
- insert into slave3 values(1,'唐伯虎',300),(2,'点秋香',300);
+```
+**数据插入注意**
+```
+##插入主表中有的数据，外键（id)数据要相同，否则会报错
+   insert into slave3 values(2,'点秋香',300);
+##主表中没有(1,'唐伯虎',300)故报错
+insert into slave3 values(1,'唐伯虎',300),(2,'点秋香',300);
 ERROR 1452 (23000): Cannot add or update a child row: a foreign key constraint fails (`stu`.`slave3`, CONSTRAINT `slave3_ibfk_1` FOREIGN KEY (`stu_id`) REFERENCES `master` (`id`))
 ```
+对主表不能做任何更新或删除数据，只能对主表做插入操作
+```
+mysql> delete from master where id=2;
+ERROR 1451 (23000): Cannot delete or update a parent row: a foreign key constraint fails (`test`.`slave3`, CONSTRAINT `slave3_ibfk_1` FOREIGN KEY (`stu_id`) REFERENCES `master` (`id`))
+```
+若是想对主表做删除等操作，需要先从从表中删除数据,再对主表进行操作
+```
+mysql> delete from slave3 where stu_id=2;
+mysql> delete from master where id=2;
+```
+
 #### 3) set null 主表删除、更新,从表相关联记录字段值为NULL
 ```mysql
 create table slave4(
@@ -245,14 +264,15 @@ delete from master where id=2;
 ```
 **主从表的操作不一致。** *也就是说，主表master删除id=2的数据时，从表slave4的stu_id=2数据不会自动同步删除。主表master中id=2的数据全部删除，从表slave4的stu_id=2变为stu_id=NULL。如果从表中没有主表中的数据，则只对主表进行操作。*
 ```
-mysql> select * from slave3;
+mysql> select * from slave4;
 +--------+-----------+--------+
 | stu_id | name      | money  |
 +--------+-----------+--------+
+|      1 | 唐伯虎    | 300.00 |
 |   NULL | 点秋香    | 300.00 |
 |      3 | 祝枝山    | 300.00 |
 +--------+-----------+--------+
-
+3 rows in set (0.00 sec)
 ```
 - **已有表添加外键**
 
@@ -286,14 +306,23 @@ select ... from 表名 where 条件(select ....);
 
 **sql脚本资料：join_query.sql**
 
+***该数据表在country数据库下***
 ```mysql
 mysql -uroot -p123456
 此时的文件在根目录下
 mysql>source /home/tarena/join_query.sql
 ##指文件所在路径
-source /home/tarena/1905/month03/code/code2/day02/mysql_day02/mysql_day02/join_query.sql
+source /home/tarena/1905/month03/code/code2/day02/mysql_day02/join_query.sql
 ```
-***该数据表在country数据库下***
+*执行后country库中多出下列3个表*
+```
++----------------+
+| city           |
+| county         |
+| province       |
++----------------+
+```
+**windows系统下的插入：直接创建表再粘贴数据**
 ```mysql
 create database if not exists db1 character set utf8;
 use db1;
@@ -359,7 +388,7 @@ insert into county values
 ```
 
 - **笛卡尔积**
-
+*ttl，tt2，tt3都在数据库country下*
 ```mysql
 select 字段名列表 from 表名列表; 
 
@@ -432,9 +461,9 @@ eg1 : 显示 省 市 详细信息（要求省全部显示）
  
  select province.pname, city.cname,county.coname
  from province
- right join city
+ left  join city
  on province.pid=city.cp_id
- right  join county 
+ left  join county 
  on city.cid=county.copid;
 
 ```
@@ -476,11 +505,60 @@ scoretable.csv文件导入到数据库db2的表
 
 **1、将scoretable.csv放到数据库搜索路径中**
 ```mysql 
+  查询位置
   mysql>show variables like 'secure_file_priv';
-         /var/lib/mysql-files/
+  存入到指定位置：/var/lib/mysql-files/
+  从主目录下复制到指定存入位置
    Linux: sudo cp /home/tarena/scoreTable.csv /var/lib/mysql-files/
+  从自己目录下复制到指定存入位置
+    Linux: sudo cp /home/tarena/1905/month03/code/code2/day02/mysql_day02/scoreTable.csv /var/lib/mysql-files
+```
+终端下的操作
+```
+tarena@tarena:~$ sudo cp /home/tarena/1905/month03/code/code2/day02/mysql_day02/scoreTable.csv /var/lib/mysql-files
+tarena@tarena:~$ sudo su
+root@tarena:/home/tarena# cd /var/lib/mysql-files/
+root@tarena:/var/lib/mysql-files# ls
+scoreTable.csv
+root@tarena:/var/lib/mysql-files# 
+
+此时是没有修改权限的
+root@tarena:/var/lib/mysql-files# ll |grep 'sc'
+-rw-rw-rw-  1 root  root  1719 8月  10 18:01 scoreTable.csv
+
+##修改文件权限
+root@tarena:/var/lib/mysql-files# chmod 666 scoreTable.csv
+root@tarena:/var/lib/mysql-files# ll |grep 'sc'
+-rw-rw-rw-  1 root  root  1719 8月  10 18:01 scoreTable.csv
+```
+### 补充
+#### 1)管道符操作：ll列表形式查看文件列表，grep 管道模糊匹配查询文件 'sc'为查询字符
+```
+root@tarena:/var/lib/mysql-files# ll |grep 'sc'
+-rw-rw-rw-  1 root  root  1719 8月  10 18:01 
+```
+#### 2)查看mysql进程：ps aux|grep "mysql"
+```
+tarena@tarena:~$ ps aux|grep "mysql"
+mysql     1067  1.4  4.5 2072896 181744 ?      Sl   10:06   6:50 /usr/sbin/mysqld --daemonize --pid-file=/run/mysqld/mysqld.pid
+tarena    7859  0.0  0.1  43216  4204 pts/0    S+   10:54   0:06 mysql -uroot -px xxxx
+tarena   14519  0.0  0.0  21532   996 pts/2    S+   18:08   0:00 grep --color=auto mysql
+
+```
+#### 3)修改文件权限
+```
+root@tarena:/var/lib/mysql-files# chmod 666 scoreTable.csv
+```
+#### 4)目前系统下的所有ubantu用户和相应的密码，和相应的家在哪里。退出时输入：':q'回车
+```
+tarena@tarena:~$ vim /etc/passwd
+
+tarena:x:1000:1000:tarena,,,:/home/tarena:/bin/bash
+x是密码占位符；':'是分隔符；'/home/tarena'是家的位置；'/bin/bash'是登录权限
 ```
 **2、在数据库中创建对应的表**
+*该scoretab表在数据库db2中由于创建数据库时没有设置字符编码为charset=utf8,name一列出现乱码*
+*不乱码的scoretab表在数据库db22中*
 ```
   create table scoretab(
   rank int,
@@ -491,10 +569,11 @@ scoretable.csv文件导入到数据库db2的表
   )charset=utf8;
 ```
 **3、执行数据导入语句**
-```load data infile '/var/lib/mysql-files/scoreTable.csv'
+```
+load data infile '/var/lib/mysql-files/scoreTable.csv'
 into table scoretab
 fields terminated by ','
-lines terminated by '\n'
+lines terminated by '\n';
 ```
 **4、练习**
 ```
@@ -513,26 +592,65 @@ source 文件名.sql
 将数据库中表的记录保存到系统文件里
 
 **语法格式**
+***文件名一般指带有路径的文件名***
 
 select ... from 表名
-into outfile "文件名"
+into outfile "文件名"   
 fields terminated by "分隔符"
 lines terminated by "分隔符";
 
 **练习**
+#### 1、把sanguo表中英雄的姓名、攻击值和国家三个字段导出来,放到 sanguo.csv中
 
+先导出到指定位置，
 ```mysql
-1、把sanguo表中英雄的姓名、攻击值和国家三个字段导出来,放到 sanguo.csv中
- 
-2、将mysql库下的user表中的 user、host两个字段的值导出到 user2.txt，将其存放在数据库目录下
- 
+select name,attack,country  from sanguo
+into outfile "/var/lib/mysql-files/sanguo.csv"
+fields terminated by ","
+lines terminated by "\n";
+```
+再复制或移动到自己所定位置
+```
+root@tarena:/var/lib/mysql-files# ls
+sanguo.csv  scoreTable.csv
+root@tarena:/var/lib/mysql-files# cp sanguo.csv /home/tarena/1905/month03/code/code2/day02/
+root@tarena:/var/lib/mysql-files# mv sanguo.csv /home/tarena/1905/month03/code/code2/day02/
+root@tarena:/var/lib/mysql-files# ls
+scoreTable.csv
+```
+#### 2、将mysql库下的user表中的 user、host两个字段的值导出到 user2.txt，将其存放在数据库目录下
+
+ ```mysql
+
+use mysql
+
+select user,host  from user
+into outfile "/var/lib/mysql-files/user2.txt"
+fields terminated by "*"
+lines terminated by "\n";
+
+root@tarena:/var/lib/mysql-files# ls
+scoreTable.csv  user2.txt
+root@tarena:/var/lib/mysql-files# mv user2.txt /home/tarena/1905/month03/code/code2/day02/
+root@tarena:/var/lib/mysql-files# ls
+scoreTable.csv
+```
+*不可以直接从mysql中直接导入到自己指定位置，否则会报错*
+```
+select user,host  from user
+into outfile "/home/tarena/user2.txt"
+fields terminated by "*"
+lines terminated by "\n";
+
+出现下面报错是路径问题
+ERROR 1290 (HY000): The MySQL server is running with the --secure-file-priv option so it cannot execute this statement
 ```
 
 **注意**
 
 ```
 1、导出的内容由SQL查询语句决定
-2、执行导出命令时路径必须指定在对应的数据库目录下
+2、执行导出命令时路径必须指定在对应的数据库目录下(/var/lib/mysql-files/)
 ```
 
 ## **表的复制**
@@ -548,12 +666,12 @@ create table 表名 select 查询命令;
 ```
 
 **练习**
-
+*sanguo2,3,4表在country中*
 ```mysql
 1、复制sanguo表的全部记录和字段,sanguo2
-  
+  create table sanguo2 select * from sanguo;
 2、复制sanguo表的 id,name,country 三个字段的前3条记录,sanguo4
-  
+  create table sanguo4 select id,name,country from sanguo;
 ```
 
 **注意**
@@ -561,8 +679,14 @@ create table 表名 select 查询命令;
 复制表的时候不会把原有表的 KEY 属性复制过来
 
 **复制表结构**
+只复制结构，数据不复制
+```
 create table 表名 select 查询命令 where false;
 
+create table sanguo3 select * from sanguo where false;
+select * from sanguo3;
+Empty set (0.00 sec)
+```
 ## **锁（自动加锁和释放锁）**
 
 ==全程重点，理论和锁分类及特点==
@@ -586,9 +710,39 @@ create table 表名 select 查询命令 where false;
 # 今日作业
 
 1、把 /etc/passwd 文件的内容导入到数据库的表中
-
+*该passwd在数据库country中*
 ```
 tarena:x:1000:1000:tarena,,,:/home/tarena:/bin/bash
+```
+终端操作
+```
+tarena@tarena:~$ cp /etc/passwd /home/tarena/
+tarena@tarena:~$ sudo cp /home/tarena/passwd /var/lib/mysql-files/
+[sudo] tarena 的密码： 
+tarena@tarena:~$ sudo su
+root@tarena:/home/tarena# cd /var/lib/mysql-files/
+root@tarena:/var/lib/mysql-files# ls
+passwd  scoreTable.csv
+root@tarena:/var/lib/mysql-files# vim passwd
+```
+mysql操作
+```
+use country;
+
+create table passwd(
+  username varchar(20),
+  passwd varchar(10),
+  group1 int,
+  group2 int,
+  name1 varchar(50),
+  home varchar(100),
+  path varchar(50)
+)charset=utf8;
+
+load data infile '/var/lib/mysql-files/passwd'
+into table passwd
+fields terminated by ':'
+lines terminated by '\n';
 ```
 
 2、Day01的md文件中的外键及查询作业题
