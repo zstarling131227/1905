@@ -1,0 +1,1338 @@
+Python 面试宝典
+第二章 Python 基础
+
+一、基础语法
+1. 输入与输出
+1.1 代码中要修改不可变数据会出现什么问题? 抛出什么异常? 
+
+代码不会正常运行，抛出 TypeError 异常。
+
+1.2 a=1,b=2,不用中间变量交换 a 和 b 的值？
+
+方法一：
+
+1. a = a+b
+2. b = a-b
+3. a = a-b
+
+方法二：
+
+1. a = a^b
+2. b =b^a
+3. a = a^b
+
+方法三：
+
+1. a,b = b,a
+
+1.3 print 调用 Python 中底层的什么方法?
+
+print 方法默认调用 sys.stdout.write 方法，即往控制台打印字符串。
+
+1.4 下面这段代码的输出结果将是什么？请解释？
+class Parent(object):
+	x = 1
+class Child1(Parent):
+	pass
+class Child2(Parent):
+	pass
+print(Parent.x, Child1.x, Child2.x)
+Child1.x = 2
+print(parent.x, Child1.x, Child2.x)
+parent.x = 3
+print(Parent.x, Child1.x, Child2.x)
+
+结果为：
+
+1 1 1 #继承自父类的类属性 x，所以都一样，指向同一块内存地址。
+
+1 2 1 #更改 Child1，Child1 的 x 指向了新的内存地址。
+
+3 2 3 #更改 Parent，Parent 的 x 指向了新的内存地址。
+
+1.5 简述你对 input()函数的理解?
+
+在 Python3 中，input()获取用户输入，不论用户输入的是什么，获取到的都是字符串类型的。
+
+在 Python2 中有 raw_input()和 input(), raw_input()和 Python3 中的 input()作用是一样的，
+
+input()输入的是什么数据类型的，获取到的就是什么数据类型的。
+
+2. 条件与循环
+
+2.1 阅读下面的代码，写出 A0，A1 至 An 的最终值。
+
+A0 = dict(zip(('a'，'b'，'c'，'d'，'e')，(1，2，3，4，5)))
+A1 = range(10)
+A2 = [i for i in A1 if i in A0]
+A3 = [A0[s] for s in A0]
+A4 = [i for i in A1 if i in A3]
+A5 = {i:i*i for i in A1}
+A6 = [[i，i*i] for i in A1]
+
+答：
+
+A0 = {'a': 1， 'c': 3， 'b': 2， 'e': 5， 'd': 4}
+A1 = [0， 1， 2， 3， 4， 5， 6， 7， 8， 9]
+A2 = []
+A3 = [1， 3， 2， 5， 4]
+A4 = [1， 2， 3， 4， 5]
+A5 = {0: 0， 1: 1， 2: 4， 3: 9， 4: 16， 5: 25， 6: 36， 7: 49， 8: 64， 9: 81}
+A6 = [[0， 0]， [1， 1]， [2， 4]， [3， 9]， [4， 16]， [5， 25]， [6， 36]，[7， 49]，[8， 64] [9，81]]
+
+2.2 range 和 xrange 的区别？
+两者用法相同，不同的是 range 返回的结果是一个列表，而 xrange 的结果是一个生成器，前者是
+直接开辟一块内存空间来保存列表，后者是边循环边使用，只有使用时才会开辟内存空间，所以当列表
+很长时，使用 xrange 性能要比 range 好。
+
+2.3 考虑以下 Python 代码，如果运行结束，命令行中的运行结果是什么？
+l = []
+for i in xrange(10):
+	l.append({‘num’:i})
+print l
+再考虑以下代码，运行结束后的结果是什么？
+l = []
+a = {‘num’:0}
+for i in xrange(10):
+	a[‘num’] = i
+	l.append(a)
+print l
+
+以上两段代码的运行结果是否相同，如果不相同，原因是什么？
+
+上方代码的结果：
+
+[{‘num’:0}，{‘num’:1}，{‘num’:2}，{‘num’:3}，{‘num’:4}，{‘num’:5}，{‘num’:6}，{‘num’:7}，{‘num’:8}，{‘num’:9}]
+
+下方代码结果：
+
+[{‘num’:9}，{‘num’:9}，{‘num’:9}，{‘num’:9}，{‘num’:9}，{‘num’:9}，{‘num’:9}，{‘num’:9}，{‘num’:9}，{‘num’:9}]
+原因是：字典是可变对象，在下方的 l.append(a)的操作中是把字典 a 的引用传到列表 l 中，当后
+续操作修改 a[‘num’]的值的时候，l 中的值也会跟着改变，相当于浅拷贝。
+
+2.4 以下 Python 程序的输出？
+for i in range(5，0，-1):
+	print(i)
+
+答：5 4 3 2 1
+
+三. 文件操作
+3.1 4G 内存怎么读取一个 5G 的数据？
+方法一：
+可以通过生成器，分多次读取，每次读取数量相对少的数据（比如 500MB）进行处理，处理结束后
+在读取后面的 500MB 的数据。
+方法二：
+可以通过 linux 命令 split 切割成小文件，然后再对数据进行处理，此方法效率比较高。可以按照行
+数切割，可以按照文件大小切割。
+更多知识请点击网址或扫描二维码。
+https://blog.csdn.net/mxgsgtc/article/details/12048919
+
+3.2 现在考虑有一个 jsonline 格式的文件 file.txt 大小约为 10K，之前处理文件的
+代码如下所示：
+
+def get_lines():
+	l = []
+	with open(‘file.txt’，‘rb’) as f:
+		for eachline in f:
+			l.append(eachline)
+	return l
+if __name__ == ‘__main__’:
+	for e in get_lines():
+		process(e) #处理每一行数据
+
+现在要处理一个大小为 10G 的文件，但是内存只有 4G，如果在只修改 get_lines 函数而其他代
+码保持不变的情况下，应该如何实现？需要考虑的问题都有哪些？
+def get_lines():
+	l = []
+	with open(‘file.txt’，’rb’) as f:
+		data = f.readlines(60000)
+	l.append(data)
+	yield l
+要考虑到的问题有：
+内存只有 4G 无法一次性读入 10G 的文件，需要分批读入。分批读入数据要记录每次读入数据的位
+置。分批每次读入数据的大小，太小就会在读取操作上花费过多时间。
+
+3.3 read、readline 和 readlines 的区别? 
+read:读取整个文件。
+readline：读取下一行，使用生成器方法。
+readlines：读取整个文件到一个迭代器以供我们遍历。
+
+3.4.补充缺失的代码？
+def print_directory_contents(sPath):
+    """
+    这个函数接收文件夹的名称作为输入参数
+    返回该文件夹中文件的路径
+    以及其包含文件夹中文件的路径
+    """
+ # 补充代码
+------------代码如下--------------------
+import os
+for sChild in os.listdir(sPath):
+    sChildPath = os.path.join(sPath, sChild)
+    if os.path.isdir(sChildPath):
+        print_directory_contents(sChildPath)
+    else:
+        print(sChildPath)
+
+4. 异常
+4.1 在 except 中 return 后还会不会执行 finally 中的代码？怎么抛出自定义异常？
+答:会继续处理 finally 中的代码；用 raise 方法可以抛出自定义异常。
+4.2 介绍一下 except 的作用和用法？
+except: #捕获所有异常
+except: <异常名>: #捕获指定异常
+except:<异常名 1，异常名 2):捕获异常 1 或者异常 2
+except:<异常名>,<数据>:捕获指定异常及其附加的数据
+except:<异常名 1,异常名 2>:<数据>:捕获异常名 1 或者异常名 2,及附加的数据
+
+5. 模块与包
+5.1 常用的 Python 标准库都有哪些？
+os 操作系统，time 时间，random 随机，pymysql 连接数据库，threading 线程，multiprocessing
+进程，queue 队列。
+第三方库：
+django 和 flask 也是第三方库，requests，virtualenv，selenium，scrapy，xadmin，celery，
+re，hashlib，md5。
+常用的科学计算库（如 Numpy，Scipy，Pandas)。
+
+5.2 赋值、浅拷贝和深拷贝的区别？
+一、赋值
+在 Python 中，对象的赋值就是简单的对象引用，这点和 C++不同，如下所示：
+a = [1,2,"hello",['python', 'C++']]
+b = a
+在上述情况下，a 和 b 是一样的，他们指向同一片内存，b 不过是 a 的别名，是引用。
+我们可以使用 b is a 去判断，返回 True，表明他们地址相同，内容相同，也可以使用 id()函数来查
+看两个列表的地址是否相同。
+赋值操作(包括对象作为参数、返回值)不会开辟新的内存空间，它只是复制了对象的引用。也就是
+说除了 b 这个名字之外，没有其他的内存开销。修改了 a，也就影响了 b，同理，修改了 b，也就影响
+了 a。
+二、浅拷贝(shallow copy)
+浅拷贝会创建新对象，其内容非原对象本身的引用，而是原对象内第一层对象的引用。
+浅拷贝有三种形式:切片操作、工厂函数、copy 模块中的 copy 函数。
+比如上述的列表 a；
+切片操作：b = a[:] 或者 b = [x for x in a]；
+工厂函数：b = list(a)；
+copy 函数：b = copy.copy(a)；
+浅拷贝产生的列表 b 不再是列表 a 了，使用 is 判断可以发现他们不是同一个对象，使用 id 查看，
+他们也不指向同一片内存空间。但是当我们使用 id(x) for x in a 和 id(x) for x in b 来查看 a 和 b 中元素的地址时，可以看到二者包含的元素的地址是相同的。
+在这种情况下，列表 a 和 b 是不同的对象，修改列表 b 理论上不会影响到列表 a。
+但是要注意的是，浅拷贝之所以称之为浅拷贝，是它仅仅只拷贝了一层，在列表 a 中有一个嵌套的
+list，如果我们修改了它，情况就不一样了。
+比如：a[3].append('java')。查看列表 b，会发现列表 b 也发生了变化，这是因为，我们修改了嵌
+套的 list，修改外层元素，会修改它的引用，让它们指向别的位置，修改嵌套列表中的元素，列表的地
+址并未发生变化，指向的都是用一个位置。
+三、深拷贝(deep copy)
+深拷贝只有一种形式，copy 模块中的 deepcopy()函数。
+深拷贝和浅拷贝对应，深拷贝拷贝了对象的所有元素，包括多层嵌套的元素。因此，它的时间和空
+间开销要高。
+同样的对列表 a，如果使用 b = copy.deepcopy(a)，再修改列表 b 将不会影响到列表 a，即使嵌
+套的列表具有更深的层次，也不会产生任何影响，因为深拷贝拷贝出来的对象根本就是一个全新的对象，
+不再与原来的对象有任何的关联。
+
+四、拷贝的注意点？
+对于非容器类型，如数字、字符，以及其他的“原子”类型，没有拷贝一说，产生的都是原对象的
+引用。如果元组变量值包含原子类型对象，即使采用了深拷贝，也只能得到浅拷贝。
+
+5.3 init 和 new 的区别？
+init 在对象创建后，对对象进行初始化。
+new 是在对象创建之前创建一个对象，并将该对象返回给init。
+
+5.4 Python 里面如何生成随机数？
+在 Python 中用于生成随机数的模块是 random，在使用前需要 import. 如下例子可以酌情列举：
+random.random()：生成一个 0-1 之间的随机浮点数；
+random.uniform(a, b)：生成[a,b]之间的浮点数；
+random.randint(a, b)：生成[a,b]之间的整数；
+random.randrange(a, b, step)：在指定的集合[a,b)中，以 step 为基数随机取一个数；
+random.choice(sequence)：从特定序列中随机取一个元素，这里的序列可以是字符串，列表，元组等。
+
+5.5 输入某年某月某日，判断这一天是这一年的第几天？(可以用 Python 标准库)
+import datetime
+def dayofyear():
+	year = input("请输入年份：")
+	month = input("请输入月份：")
+	day = input("请输入天：")
+	date1 = datetime.date(year=int(year)，month=int(month)，day=int(day))
+	date2 = datetime.date(year=int(year)，month=1，day=1)
+	return (date1 - date2 + 1).days
+
+5.6 打乱一个排好序的 list 对象 alist？
+import random
+random.shuffle(alist)
+
+5.7 说明一下 os.path 和 sys.path 分别代表什么？
+os.path 主要是用于对系统路径文件的操作。
+sys.path 主要是对 Python 解释器的系统环境参数的操作（动态的改变 Python 解释器搜索路径）。
+
+5.8 Python 中的 os 模块常见方法？
+ os.remove()删除文件
+ os.rename()重命名文件
+ os.walk()生成目录树下的所有文件名
+ os.chdir()改变目录
+ os.mkdir/makedirs 创建目录/多层目录
+ os.rmdir/removedirs 删除目录/多层目录
+ os.listdir()列出指定目录的文件
+ os.getcwd()取得当前工作目录
+ os.chmod()改变目录权限
+ os.path.basename()去掉目录路径，返回文件名
+ os.path.dirname()去掉文件名，返回目录路径
+ os.path.join()将分离的各部分组合成一个路径名
+ os.path.split()返回（dirname(),basename())元组
+ os.path.splitext()(返回 filename,extension)元组
+ os.path.getatime\ctime\mtime 分别返回最近访问、创建、修改时间
+ os.path.getsize()返回文件大小
+ os.path.exists()是否存在
+ os.path.isabs()是否为绝对路径
+ os.path.isdir()是否为目录
+ os.path.isfile()是否为文件
+
+5.9 Python 的 sys 模块常用方法？
+sys.argv 命令行参数 List，第一个元素是程序本身路径
+sys.modules.keys() 返回所有已经导入的模块列表
+sys.exc_info() 获取当前正在处理的异常类,exc_type、exc_value、exc_traceback 当前处理的异常详细信息
+sys.exit(n) 退出程序，正常退出时 exit(0)
+sys.hexversion 获取 Python 解释程序的版本值，16 进制格式如：0x020403F0
+sys.version 获取 Python 解释程序的版本信息
+sys.maxint 最大的 Int 值
+sys.maxunicode 最大的 Unicode 值
+sys.modules 返回系统导入的模块字段，key 是模块名，value 是模块
+sys.path 返回模块的搜索路径，初始化时使用 PYTHONPATH 环境变量的值
+sys.platform 返回操作系统平台名称
+sys.stdout 标准输出
+sys.stdin 标准输入
+sys.stderr 错误输出
+sys.exc_clear() 用来清除当前线程所出现的当前的或最近的错误信息
+sys.exec_prefix 返回平台独立的 python 文件安装的位置
+sys.byteorder 本地字节规则的指示器，big-endian 平台的值是'big',little-endian 平台的值是'little'
+sys.copyright 记录 python 版权相关的东西
+sys.api_version 解释器的 C 的 API 版本
+sys.version_info 元组则提供一个更简单的方法来使你的程序具备 Python 版本要求功能
+
+5.10 unittest 是什么？
+在 Python 中，unittest 是 Python 中的单元测试框架。它拥有支持共享建、自动测试、在测试
+中暂停代码、将不同测试迭代成一组，等的功能。
+
+5.11 模块和包是什么？
+在 Python 中，模块是搭建程序的一种方式。每一个 Python 代码文件都是一个模块，并可以引用
+其他的模块，比如对象和属性。
+一个包含许多 Python 代码的文件夹是一个包。一个包可以包含模块和子文件夹。
+
+6. Python 特性
+6.1 Python 是强语言类型还是弱语言类型？
+Python 是强类型的动态脚本语言。
+强类型：不允许不同类型相加。
+动态：不使用显示数据类型声明，且确定一个变量的类型是在第一次给它赋值的时候。
+脚本语言：一般也是解释型语言，运行代码只需要一个解释器，不需要编译。
+
+6.2 谈一下什么是解释性语言，什么是编译性语言? 
+计算机不能直接理解高级语言，只能直接理解机器语言，所以必须要把高级语言翻译成机器语言，
+计算机才能执行高级语言编写的程序。
+解释性语言在运行程序的时候才会进行翻译。
+编译型语言写的程序在执行之前，需要一个专门的编译过程，把程序编译成机器语言（可执行文件）。
+
+6.3 Python 中有日志吗?怎么使用? 
+有日志。
+Python 自带 logging 模块，调用 logging.basicConfig()方法，配置需要的日志等级和相应的参数，
+Python 解释器会按照配置的参数生成相应的日志。
+
+6.4 Python 是如何进行类型转换的？
+内建函数封装了各种转换函数，可以使用目标类型关键字强制类型转换，进制之间的转换可以用
+int(‘str’，base=’n’)将特定进制的字符串转换为十进制，再用相应的进制转换函数将十进制转换
+为目标进制。
+可以使用内置函数直接转换的有：
+list---->tuple    tuple(list)
+tuple---->list    list(tuple)
+
+6.5 Python2 与 Python3 的区别？
+1) 核心类差异
+1. Python3 对 Unicode 字符的原生支持。
+Python2 中使用 ASCII 码作为默认编码方式导致 string 有两种类型 str 和 unicode，Python3 只
+支持 unicode 的 string。Python2 和 Python3 字节和字符对应关系为：
+   python2   python3     表现    转换       作用
+   str        bytes      字节    encode    存储
+   unicode    str    	 字符    decode    显示
+2. Python3 采用的是绝对路径的方式进行 import。
+Python2 中相对路径的 import 会导致标准库导入变得困难（想象一下，同一目录下有 file.py，如
+何同时导入这个文件和标准库 file）。Python3 中这一点将被修改，如果还需要导入同一目录的文件必
+须使用绝对路径，否则只能使用相关导入的方式来进行导入。
+3. Python2 中存在老式类和新式类的区别，Python3 统一采用新式类。新式类声明要求继承 object，
+必须用新式类应用多重继承。
+4. Python3 使用更加严格的缩进。Python2 的缩进机制中，1 个 tab 和 8 个 space 是等价的，所
+以在缩进中可以同时允许 tab 和 space 在代码中共存。这种等价机制会导致部分 IDE 使用存在问题。
+Python3 中 1 个 tab 只能找另外一个 tab 替代，因此 tab 和 space 共存会导致报错：TabError:
+inconsistent use of tabs and spaces in indentation.
+
+2) 废弃类差异
+1. print 语句被 Python3 废弃，统一使用 print 函数
+2. exec 语句被 python3 废弃，统一使用 exec 函数
+3. execfile 语句被 Python3 废弃，推荐使用 exec(open("./filename").read())
+4. 不相等操作符"<>"被 Python3 废弃，统一使用"!="
+5. long 整数类型被 Python3 废弃，统一使用 int
+6. xrange 函数被 Python3 废弃，统一使用 range，Python3 中 range 的机制也进行修改并提高了大数据集生成效率
+7. Python3 中这些方法再不再返回 list 对象：dictionary 关联的 keys()、values()、items()，zip()，map()，filter()，但是可以通过 list 强行转换：
+mydict={"a":1,"b":2,"c":3}
+mydict.keys() #<built-in method keys of dict object at 0x000000000040B4C8>
+list(mydict.keys()) #['a', 'c', 'b']
+8. 迭代器 iterator 的 next()函数被 Python3 废弃，统一使用 next(iterator)
+9. raw_input 函数被 Python3 废弃，统一使用 input 函数
+10. 字典变量的 has_key 函数被 Python 废弃，统一使用 in 关键词
+11. file 函数被 Python3 废弃，统一使用 open 来处理文件，可以通过 io.IOBase 检查文件类型
+12. apply 函数被 Python3 废弃
+13. 异常 StandardError 被 Python3 废弃，统一使用 Exception
+3) 修改类差异
+1. 浮点数除法操作符“/”和“//”的区别
+“ / ”：
+Python2：若为两个整形数进行运算，结果为整形，但若两个数中有一个为浮点数，则结果为浮点数；
+Python3:为真除法，运算结果不再根据参加运算的数的类型。
+“//”：
+Python2：返回小于除法运算结果的最大整数；从类型上讲，与"/"运算符返回类型逻辑一致。
+Python3：和 Python2 运算结果一样。
+2. 异常抛出和捕捉机制区别
+Python2
+raise IOError, "file error" #抛出异常
+except NameError, err: #捕捉异常
+Python3
+raise IOError("file error") #抛出异常
+except NameError as err: #捕捉异常
+3. for 循环中变量值区别
+Python2，for 循环会修改外部相同名称变量的值
+i = 1
+print('comprehension: ', [i for i in range(5)])
+print('after: i =', i)  #i=4
+Python3，for 循环不会修改外部相同名称变量的值
+i = 1
+print('comprehension: ', [i for i in range(5)])
+print('after: i =', i) #i=1
+4. round 函数返回值区别
+Python2，round 函数返回 float 类型值
+isinstance(round(15.5),int) #True
+Python3，round 函数返回 int 类型值
+isinstance(round(15.5),float) #True
+5. 比较操作符区别
+Python2 中任意两个对象都可以比较
+11 < 'test' #True
+Python3 中只有同一数据类型的对象可以比较
+11 < 'test' # TypeError: unorderable types: int() < str()
+4) 第三方工具包差异
+我们在 pip 官方下载源 pypi 搜索 Python2.7 和 Python3.5 的第三方工具包数可以发现，Python2.7
+版本对应的第三方工具类目数量是 28523,Python3.5 版本的数量是 12457，这两个版本在第三方工具
+包支持数量差距相当大。
+我们从数据分析的应用角度列举了常见实用的第三方工具包（如下表），并分析这些工具包在
+Python2.7 和 Python3.5 的支持情况：
+   	 分类    			工具名  					用途
+	数据收集 				scrapy 				网页采集，爬虫
+	数据收集 				scrapy-redis 		分布式爬虫
+	数据收集    			selenium 			web 测试，仿真浏览器
+	数据处理 				beautifulsoup 		网页解释库，提供 lxml 的支持
+	数据处理 				lxml 				xml 解释库
+	数据处理  			xlrd 				excel 文件读取
+    数据处理 				xlwt 				excel 文件写入
+	数据处理 				xlutils				excel 文件简单格式修改
+	数据处理 				pywin32 			excel 文件的读取写入及复杂格式定制
+	数据处理 				Python-docx 		Word 文件的读取写入
+	数据分析 				numpy 				基于矩阵的数学计算库
+	数据分析 				pandas 				基于表格的统计分析库
+	数据分析 				scipy 				科学计算库，支持高阶抽象和复杂模型
+	数据分析 				statsmodels 		统计建模和计量经济学工具包
+	数据分析 				scikit-learn 		机器学习工具库
+	数据分析 				gensim 				自然语言处理工具库
+	数据分析 				jieba 				中文分词工具库
+	数据存储 				MySQL-python 		mysql 的读写接口库
+	数据存储 				mysqlclient 		mysql 的读写接口库
+	数据存储       		SQLAlchemy          数据库的 ORM 封装
+	数据存储 				pymssql	  			sql server 读写接口库
+	数据存储 				redis				redis 的读写接口
+	数据存储 				PyMongo				mongodb 的读写接口
+	数据呈现 				matplotlib			流行的数据可视化库
+	数据呈现 				seaborn 			美观的数据可是湖库，基于 matplotlib
+	工具辅助				jupyter 			基于 web 的 python IDE，常用于数据分析
+	工具辅助				chardet 			字符检查工具
+	工具辅助              ConfigParser 		配置文件读写支持
+	工具辅助				requests 			HTTP 库，用于网络访问
+
+5) 工具安装问题
+windows 环境
+Python2 无法安装 mysqlclient。Python3 无法安装 MySQL-python、 flup、functools32、
+Gooey、Pywin32、 webencodings。
+matplotlib 在 python3 环境中安装报错：The following required packages can not be
+built:freetype, png。需要手动下载安装源码包安装解决。
+scipy 在 Python3 环境中安装报错，numpy.distutils.system_info.NotFoundError，需要自己手
+工下载对应的安装包，依赖 numpy,pandas 必须严格根据 python 版本、操作系统、64 位与否。运行
+matplotlib 后发现基础包 numpy+mkl 安装失败，需要自己下载，国内暂无下载源
+centos 环境下
+Python2 无法安装 mysql-python 和 mysqlclient 包，报错：EnvironmentError: mysql_config not
+found，解决方案是安装 mysql-devel 包解决。使用 matplotlib 报错：no module named _tkinter，
+安装 Tkinter、tk-devel、tc-devel 解决。
+pywin32 也无法在 centos 环境下安装。
+
+6.6 关于 Python 程序的运行方面，有什么手段能提升性能？
+1、使用多进程，充分利用机器的多核性能
+2、对于性能影响较大的部分代码，可以使用 C 或 C++编写
+3、对于 IO 阻塞造成的性能影响，可以使用 IO 多路复用来解决
+4、尽量使用 Python 的内建函数
+5、尽量使用局部变量
+
+6.7 Python 中的作用域？
+Python 中，一个变量的作用域总是由在代码中被赋值的地方所决定。当 Python 遇到一个变量的话
+它会按照这的顺序进行搜索：
+本地作用域(Local)--->当前作用域被嵌入的本地作用域(Enclosing locals)--->全局/模块作用域(Global)--->内置作用域(Built-in)。
+
+6.8 什么是 Python？
+ Python 是一种编程语言，它有对象、模块、线程、异常处理和自动内存管理，可以加入其他语
+言的对比。
+ Python 是一种解释型语言，Python 在代码运行之前不需要解释。
+ Python 是动态类型语言，在声明变量时，不需要说明变量的类型。
+ Python 适合面向对象的编程，因为它支持通过组合与继承的方式定义类。
+ 在 Python 语言中，函数是第一类对象。
+ Python 代码编写快，但是运行速度比编译型语言通常要慢。
+ Python 用途广泛，常被用走"胶水语言"，可帮助其他语言和组件改善运行状况。
+ 使用 Python，程序员可以专注于算法和数据结构的设计，而不用处理底层的细节。
+
+6.9 什么是 Python 自省？
+Python 自省是 Python 具有的一种能力，使程序员面向对象的语言所写的程序在运行时,能够获得
+对象的类 Python 型。Python 是一种解释型语言，为程序员提供了极大的灵活性和控制力。
+
+6.10 什么是 Python 的命名空间？
+在 Python 中，所有的名字都存在于一个空间中，它们在该空间中存在和被操作——这就是命名空
+间。它就好像一个盒子，每一个变量名字都对应装着一个对象。当查询变量的时候，会从该盒子里面寻
+找相应的对象。
+
+6.11 你所遵循的代码规范是什么？请举例说明其要求？
+PEP8 规范。
+1. 变量
+常量：大写加下划线 USER_CONSTANT。
+私有变量 : 小写和一个前导下划线 _private_value。
+Python 中不存在私有变量一说，若是遇到需要保护的变量，使用小写和一个前导下划线。但这只是
+程序员之间的一个约定，用于警告说明这是一个私有变量，外部类不要去访问它。但实际上，外部类还
+是可以访问到这个变量。
+内置变量 : 小写，两个前导下划线和两个后置下划线 __class__
+两个前导下划线会导致变量在解释期间被更名。这是为了避免内置变量和其他变量产生冲突。用户
+定义的变量要严格避免这种风格。以免导致混乱。
+
+2. 函数和方法
+总体而言应该使用，小写和下划线。但有些比较老的库使用的是混合大小写，即首单词小写，之后
+每个单词第一个字母大写，其余小写。但现在，小写和下划线已成为规范。
+私有方法 ：小写和一个前导下划线
+这里和私有变量一样，并不是真正的私有访问权限。同时也应该注意一般函数不要使用两个前导下
+划线(当遇到两个前导下划线时，Python 的名称改编特性将发挥作用)。
+特殊方法 ：小写和两个前导下划线，两个后置下划线
+这种风格只应用于特殊函数，比如操作符重载等。
+函数参数 : 小写和下划线，缺省值等号两边无空格
+
+3. 类
+类总是使用驼峰格式命名，即所有单词首字母大写其余字母小写。类名应该简明，精确，并足以从
+中理解类所完成的工作。常见的一个方法是使用表示其类型或者特性的后缀，例如:
+SQLEngine，MimeTypes 对于基类而言，可以使用一个 Base 或者 Abstract 前缀 BaseCookie，
+AbstractGroup
+
+4. 模块和包
+除特殊模块 __init__ 之外，模块名称都使用不带下划线的小写字母。
+若是它们实现一个协议，那么通常使用 lib 为后缀，例如:
+import smtplib
+import os
+import sys
+
+5. 关于参数
+5.1 不要用断言来实现静态类型检测。断言可以用于检查参数，但不应仅仅是进行静态类型检测。
+Python 是动态类型语言，静态类型检测违背了其设计思想。断言应该用于避免函数不被毫无意义的调
+用。
+5.2 不要滥用 *args 和 **kwargs。*args 和 **kwargs 参数可能会破坏函数的健壮性。它们使签
+名变得模糊，而且代码常常开始在不应该的地方构建小的参数解析器。
+
+6. 其他
+6.1 使用 has 或 is 前缀命名布尔元素
+is_connect = True
+has_member = False
+6.2 用复数形式命名序列
+members = ['user_1', 'user_2']
+6.3 用显式名称命名字典
+person_address = {'user_1':'10 road WD', 'user_2' : '20 street huafu'}
+6.4 避免通用名称
+诸如 list, dict, sequence 或者 element 这样的名称应该避免。
+6.5 避免现有名称
+诸如 os, sys 这种系统已经存在的名称应该避免。
+
+7. 一些数字
+一行列数 : PEP 8 规定为 79 列。根据自己的情况，比如不要超过满屏时编辑器的显示列数。
+一个函数 : 不要超过 30 行代码, 即可显示在一个屏幕类，可以不使用垂直游标即可看到整个函数。
+一个类 : 不要超过 200 行代码，不要有超过 10 个方法。一个模块 不要超过 500 行。
+
+8. 验证脚本
+可以安装一个 pep8 脚本用于验证你的代码风格是否符合 PEP8。
+
+7. Linux 基础和 git
+7.1 Linux 的基本命令（怎么区分一个文件还是文件夹）
+ls -F 在显示名称的时候会在文件夹后添加“/”，在文件后面加“*”。
+
+7.2 日志以什么格式，存放在哪里？
+日志以文本可以存储在“/var/log/”目录下后缀名为.log。
+
+7.3 Linux 查看某个服务的端口? 
+netstat -anp | grep service_name
+
+7.4 ubuntu 系统如何设置开机自启动一个程序? 
+直接修改/etc/rc0.d ~ /etc/rc6.d 和/etc/rcS.d 文件夹的内容，添加需启动的程序，S 开头的表示
+启动，K 开头的表示不启动。
+
+7.5 在 linux 中 find 和 grep 的区别
+Linux 系统中 grep 命令是一种强大的文本搜索工具，它能使用正则表达式搜索文本，并把匹配的行
+打印出来。grep 全称是 Global Regular Expression Print，表示全局正则表达式版本，它的使用权限
+是所有用户。
+linux 下的 find：
+功能：在目录结构中搜索文件，并执行指定的操作。此命令提供了相当多的查找条件，功能很强大。
+语法：find 起始目录寻找条件操作
+说明：find 命令从指定的起始目录开始，递归地搜索其各个子目录，查找满足寻找条件的文件并对
+之采取相关的操作。
+简单点说说，grep 是查找匹配条件的行，find 是搜索匹配条件的文件。
+
+7.6 Linux 重定向命令有哪些？有什么区别？
+1、重定向>
+Linux 允许将命令执行结果重定向到一个文件，本应显示在终端上的内容保存到指定文件中。如：ls >
+test.txt ( test.txt 如果不存在，则创建，存在则覆盖其内容 )。
+2、重定向>>
+>>这个是将输出内容追加到目标文件中。如果文件不存在，就创建文件；如果文件存在,则将新的
+内容追加到那个文件的末尾，该文件中的原有内容不受影响。
+
+7.7 软连接和硬链接的区别？
+软连接类似 Windows 的快捷方式，当删除源文件时，那么软链接也失效了。硬链接可以理解为源
+文件的一个别名，多个别名所代表的是同一个文件。当 rm 一个文件的时候，那么此文件的硬链接数减
+1，当硬链接数为 0 的时候，文件被删除。
+
+7.8 10 个常用的 Linux 命令？
+pwd 显示工作路径
+ls 查看目录中的文件
+cd /home 进入 '/ home' 目录'
+cd .. 返回上一级目录
+cd ../.. 返回上两级目录
+mkdir dir1 创建一个叫做 'dir1' 的目录'
+rm -f file1 删除一个叫做 'file1' 的文件'，-f 参数，忽略不存在的文件，从不给出提示。
+rmdir dir1 删除一个叫做 'dir1' 的目录'
+groupadd group_name 创建一个新用户组
+groupdel group_name 删除一个用户组
+tar -cvf archive.tar file1 创建一个非压缩的 tarball
+tar -cvf archive.tar file1 file2 dir1 创建一个包含了 'file1', 'file2' 以及 'dir1'的档案文件
+tar -tf archive.tar 显示一个包中的内容
+tar -xvf archive.tar 释放一个包
+tar -xvf archive.tar -C /tmp 将压缩包释放到 /tmp 目录下
+tar -cvfj archive.tar.bz2 dir1 创建一个 bzip2 格式的压缩包
+tar -xvfj archive.tar.bz2 解压一个 bzip2 格式的压缩包
+tar -cvfz archive.tar.gz dir1 创建一个 gzip 格式的压缩包
+tar -xvfz archive.tar.gz 解压一个 gzip 格式的压缩包
+
+7.9 Linux 关机命令有哪些？(2018-4-20-lxy)
+	命令 					含义
+	reboot 				重新启动操作系统
+	shutdown –r now 	重新启动操作系统，shutdown 会给别的用户提示
+	shutdown -h now 	立刻关机，其中 now 相当于时间为 0 的状态
+	shutdown -h 20:25 	系统在今天的 20:25 会关机
+	shutdown -h +10 	系统再过十分钟后自动关机
+	init 0				关机
+	init 6				重启
+
+7.10 git 合并文件有冲突，如何处理? 
+1、git merge 冲突了，根据提示找到冲突的文件，解决冲突如果文件有冲突，那么会有类似的标记
+2、修改完之后，执行 git add 冲突文件名
+3、git commit 注意:没有-m 选项 进去类似于 vim 的操作界面，把 conflict 相关的行删除掉
+直接 push 就可以了，因为刚刚已经执行过相关 merge 操作了。
+
+二．数据类型
+1. 字典
+dict:字典，字典是一组键(key)和值(value)的组合，通过键(key)进行查找，没有顺序， 使用大括号”{}”;
+应用场景：dict，使用键和值进行关联的数据;
+1.1 现有字典 d={‘a’:24，‘g’:52，‘i’:12，‘k’:33}请按字典中的 value
+值进行排序？ 
+sorted(d.items()，key = lambda x:x[1]) 。
+1.2 说一下字典和 json 的区别？
+字典是一种数据结构，json 是一种数据的表现形式，字典的 key 值只要是能 hash 的就行，json 的
+必须是字符串。
+1.3 什么是可变、不可变类型？
+可变不可变指的是内存中的值是否可以被改变，不可变类型指的是对象所在内存块里面的值不可以
+改变，有数值、字符串、元组；可变类型则是可以改变，主要有列表、字典。
+1.4 存入字典里的数据有没有先后排序？
+存入的数据不会自动排序，可以使用 sort 函数对字典进行排序。
+1.5 字典推导式？
+d = {key: value for (key, value) in iterable}
+1.6 现有字典 d={‘a’:24，’g’:52，’l’:12，’k’:33}请按字 典中的 value
+值进行排序？ 
+sorted(d.items()，key = lambda x:x[1])
+
+2. 字符串
+str:字符串是 Python 中最常用的数据类型。我们可以使用引号('或")来创建字符串。
+2.1 如何理解 Python 中字符串中的\字符？
+有三种不同的含义：
+1、转义字符 2、路径名中用来连接路径名 3、编写太长代码手动软换行。
+2.2 请反转字符串“aStr”?
+print(‘aStr’[::-1])
+2.3 将字符串"k:1|k1:2|k2:3|k3:4"，处理成 Python 字典：{k:1， k1:2， ... } # 字
+典里的 K 作为字符串处理
+str1 = "k:1|k1:2|k2:3|k3:4"
+def str2dict(str1):
+	dict1 = {}
+	for iterms in str1.split('|'):
+		key，value = iterms.split(':')
+		dict1[key] = value
+	return dict1
+2.4 请按 alist 中元素的 age 由大到小排序
+alist [{'name':'a'，'age':20}，{'name':'b'，'age':30}，{'name':'c'，'age':25}]
+def sort_by_age(list1):
+	return sorted(alist，key=lambda x:x['age']，reverse=True)
+
+3. 列表
+list:是 Python 中使用最频繁的数据类型，在其他语言中通常叫做数组，通过索引进行查找，使用方括号” []”,
+列表是有序的集合。
+应用场景：定义列表使用 [ ] 定义，数据之间使用 “，”分割。
+列表的索引从 0 开始：索引就是数据在列表中的位置编号，索引又可以被称为下标。
+【注意】: 从列表中取值时,如果超出索引范围,程序会产生异常。
+IndexError: list index out of range
+列表的常用操作：
+1．name_list = ["zhangsan", "lisi", "wangwu", "zhaoliu"]
+1）增加
+列表名.insert(index, 数据)：在指定位置插入数据(位置前有空元素会补位)。
+# 往列表 name_list 下标为 0 的地方插入数据
+In [3]: name_list.insert(0, "Sasuke")
+In [4]: name_list
+Out[4]: ['Sasuke', 'zhangsan', 'lisi', 'wangwu', 'zhaoliu']
+# 现有的列表下标是 0-4，如果我们要在下标是 6 的地方插入数据，那个会自动插入到下标为 5 的地方，也就是# 插入到最后
+In [5]: name_list.insert(6, "Tom")
+In [6]: name_list
+Out[6]: ['Sasuke', 'zhangsan', 'lisi', 'wangwu', 'zhaoliu', 'Tom']
+列表名.append(数据)：在列表的末尾追加数据(最常用的方法)。
+In [7]: name_list.append("Python")
+In [8]: name_list
+Out[8]: ['Sasuke', 'zhangsan', 'lisi', 'wangwu', 'zhaoliu', 'Tom', 'Python']
+列表.extend(Iterable)：将可迭代对象中的元素追加到列表。
+# 有两个列表 a 和 b a.extend(b) 会将 b 中的元素追加到列表 a 中
+In [10]: a = [11, 22, 33]
+In [11]: b = [44, 55, 66]
+In [12]: a.extend(b)
+In [13]: a
+Out[13]: [11, 22, 33, 44, 55, 66]# 有列表 c 和 字符串 d c.extend(d) 会将字符串 d 中的每个字符拆开作为元素插入到列表c
+In [14]: c = ['j', 'a', 'v', 'a']
+In [15]: d = "python"
+In [16]: c.extend(d)
+In [17]: c
+Out[17]: ['j', 'a', 'v', 'a', 'p', 'y', 't', 'h', 'o', 'n']
+2）取值和修改
+取值：列表名[index] ：根据下标来取值。
+In [19]: name_list = ["zhangsan", "lisi", "wangwu", "zhaoliu"]
+In [20]: name_list[0]
+Out[20]: 'zhangsan'
+In [21]: name_list[3]
+Out[21]: 'zhaoliu'
+修改：列表名[index] = 数据：修改指定索引的数据。
+In [22]: name_list[0] = "Sasuke"
+In [23]: name_list
+Out[23]: ['Sasuke', 'lisi', 'wangwu', 'zhaoliu']
+3）删除
+del 列表名[index]：删除指定索引的数据。
+In [25]: name_list = ["zhangsan", "lisi", "wangwu", "zhaoliu"]# 删除索引是 1 的数据
+In [26]: del name_list[1]
+In [27]: name_list
+Out[27]: ['zhangsan', 'wangwu', 'zhaoliu']
+列表名.remove(数据)：删除第一个出现的指定数据。
+In [30]: name_list = ["zhangsan", "lisi", "wangwu", "zhaoliu", "lisi"]# 删除 第一次出现的 lisi 的数据
+In [31]: name_list.remove("lisi")
+In [32]: name_list
+Out[32]: ['zhangsan', 'wangwu', 'zhaoliu', 'lisi']
+列表名.pop()：删除末尾的数据,返回值: 返回被删除的元素。
+In [33]: name_list = ["zhangsan", "lisi", "wangwu", "zhaoliu"]# 删除最后一个元素 zhaoliu 并将元素 zhaoliu 返回
+In [34]: name_list.pop()
+Out[34]: 'zhaoliu'
+In [35]: name_list
+Out[35]: ['zhangsan', 'lisi', 'wangwu']
+列表名.pop(index)：删除指定索引的数据，返回被删除的元素。
+In [36]: name_list = ["zhangsan", "lisi", "wangwu", "zhaoliu"]# 删除索引为 1 的数据 lisi
+In [37]: name_list.pop(1)
+Out[37]: 'lisi'
+In [38]: name_list
+Out[38]: ['zhangsan', 'wangwu', 'zhaoliu']
+列表名.clear()：清空整个列表的元素。
+19．In [40]: name_list = ["zhangsan", "lisi", "wangwu", "zhaoliu"]
+20．In [41]: name_list.clear()
+21．In [42]: name_list
+22．Out[42]: []
+4）排序
+列表名.sort()：升序排序 从小到大。
+In [43]: a = [33, 44, 22, 66, 11]
+In [44]: a.sort()
+In [45]: a
+Out[45]: [11, 22, 33, 44, 66]
+列表名.sort(reverse=True)：降序排序 从大到小。
+In [46]: a = [33, 44, 22, 66, 11]
+In [47]: a.sort(reverse=True)
+In [48]: a
+Out[48]: [66, 44, 33, 22, 11]
+列表名.reverse()：列表逆序、反转。
+In [50]: a = [11, 22, 33, 44, 55]
+In [51]: a.reverse()
+In [52]: a
+Out[52]: [55, 44, 33, 22, 11]
+5）统计相关
+len(列表名)：得到列表的长度。
+In [53]: a = [11, 22, 33, 44, 55]
+In [54]: len(a)
+Out[54]: 5
+列表名.count(数据)：数据在列表中出现的次数。
+In [56]: a = [11, 22, 11, 33, 11]
+In [57]: a.count(11)
+Out[57]: 3
+列表名.index(数据)：数据在列表中首次出现时的索引，没有查到会报错。
+In [59]: a = [11, 22, 33, 44, 22]
+In [60]: a.index(22)
+Out[60]: 1
+if 数据 in 列表： 判断列表中是否包含某元素。
+a = [11, 22, 33, 44 ,55]
+if 33 in a:
+	print("找到了....")
+6）循环遍历
+使用 while 循环：
+a = [11, 22, 33, 44, 55]
+i = 0
+while i < len(a):
+	print(a[i])
+	i += 1
+使用 for 循环：
+a = [11, 22, 33, 44, 55]
+for i in a:
+	print(i)
+
+3.1 下面代码的输出结果将是什么？
+list = ['a'， 'b'， 'c'， 'd'， 'e']
+print list[10:]
+下面的代码将输出[]，不会产生 IndexError 错误。就像所期望的那样，尝试用超出成员的个数的 index
+来获取某个列表的成员。例如，尝试获取 list[10]和之后的成员，会导致 IndexError。
+然而，尝试获取列表的切片，开始的 index 超过了成员个数不会产生 IndexError，而是仅仅返回一
+个空列表。这成为特别让人恶心的疑难杂症，因为运行的时候没有错误产生，导致 bug 很难被追踪到。
+3.2 写一个列表生成式，产生一个公差为 11 的等差数列
+print([x*11 for x in range(10)])
+
+3.3 给定两个列表，怎么找出他们相同的元素和不同的元素? 
+list1 = [1，2，3]
+list2 = [3，4，5]
+set1 = set(list1)
+set2 = set(list2)
+print(set1&set2)
+print(set1^set2)
+
+3.4 请写出一段 Python 代码实现删除一个 list 里面的重复元素?
+比较容易记忆的是用内置的 set：
+l1 = ['b'，'c'，'d'，'b'，'c'，'a'，'a']
+l2 = list(set(l1))
+print l2
+如果想要保持他们原来的排序：
+用 list 类的 sort 方法：
+l1 = ['b'，'c'，'d'，'b'，'c'，'a'，'a']
+l2 = list(set(l1))
+l2.sort(key=l1.index)
+print l2
+也可以这样写：
+l1 = ['b'，'c'，'d'，'b'，'c'，'a'，'a']
+l2 = sorted(set(l1)，key=l1.index)
+print l2
+也可以用遍历：
+l1 = ['b', 'c', 'd', 'b', 'c', 'a', 'a']
+l2 = []
+for i in l1:
+	if not i in l2:
+	l2.append(i)
+print l2
+
+3.5 给定两个 list A ,B，请用找出 A ,B 中相同的元素，A ,B 中不同的元素
+A、B 中相同元素：print(set(A)&set(B))
+A、B 中不同元素：print(set(A)^set(B))
+
+3.6 有如下数组 list = range(10)我想取以下几个数组，应该如何切片？
+[1，2，3，4，5，6，7，8，9]
+[1，2，3，4，5，6]
+[3，4，5，6]
+[9]
+[1，3，5，7，9]
+答：
+[1:]
+[1:7]
+[3:7]
+[-1]
+[1::2]
+
+3.7 下面这段代码的输出结果是什么？请解释？
+def extendlist(val, list=[]):
+	list.append(val)
+	return list
+list1 = extendlist(10)
+list2 = extendlist(123, [])
+list3 = extendlist('a')
+print("list1 = %s" %list1)
+print("list2 = %s" %list2)
+print("list3 = %s" %list3)
+
+输出结果：
+list1 = [10, 'a']
+list2 = [123]
+list3 = [10, 'a']
+新的默认列表只在函数被定义的那一刻创建一次。当 extendList 被没有指定特定参数 list 调用时，这组 list 的值
+随后将被使用。这是因为带有默认参数的表达式在函数被定义的时候被计算，不是在调用的时候被计算。
+
+3.8.将以下 3 个函数按照执行效率高低排序
+def f1(lIn):
+	l1 = sorted(lIn)
+	l2 = [i for i in l1 if i<0.5]
+	return [i*i for i in l2]
+def f2(lIn):
+	l1 = [i for i in l1 if i<0.5]
+	l2 = sorted(l1)
+	return [i*i for i in l2]
+def f3(lIn):
+	l1 = [i*i for i in lIn]
+	l2 = sorted(l1)
+	return [i for i in l1 if i<(0.5*0.5)]
+按执行效率从高到低排列：f2、f1 和 f3。要证明这个答案是正确的，你应该知道如何分析自己代码的性能。Python
+中有一个很好的程序分析包，可以满足这个需求。
+
+import random
+import cProfile
+lIn = [random.random() for i in range(100000)]
+cProfile.run('f1(lIn)')
+cProfile.run('f2(lIn)')
+cProfile.run('f3(lIn)')
+
+3.9 获取 1~100 被 6 整除的偶数？
+def A():
+	alist = []
+	for i in range(1，100):
+		if i % 6 == 0:
+			alist.append(i)
+	last_num = alist[-3:]
+	print(last_num)
+
+4. 元组
+tuple:元组，元组将多样的对象集合到一起，不能修改，通过索引进行查找，使用括号”()”;
+应用场景：把一些数据当做一个整体去使用，不能修改；
+
+5. 集合
+set:set 集合，在 Python 中的书写方式的{}，集合与之前列表、元组类似，可以存储多个数据，但
+是这些数据是不重复的。集合对象还支持 union(联合), intersection(交), difference(差)
+sysmmetric_difference(对称差集)等数学运算.
+快速去除列表中的重复元素
+1．In [4]: a = [11,22,33,33,44,22,55]
+2．
+3．In [5]: set(a)
+4．Out[5]: {11, 22, 33, 44, 55}
+
+交集：共有的部分
+1．In [7]: a = {11,22,33,44,55}
+2．In [8]: b = {22,44,55,66,77}
+3．In [9]: a&b
+4．Out[9]: {22, 44, 55}
+
+并集：总共的部分
+1．In [11]: a = {11,22,33,44,55}
+2．In [12]: b = {22,44,55,66,77}
+3．In [13]: a | b
+4．Out[13]: {11, 22, 33, 44, 55, 66, 77}
+
+差集：另一个集合中没有的部分
+1．In [15]: a = {11,22,33,44,55}
+2．In [16]: b = {22,44,55,66,77}
+3．In [17]: b - a
+4．Out[17]: {66, 77}
+
+对称差集(在 a 或 b 中，但不会同时出现在二者中)
+1．In [19]: a = {11,22,33,44,55}
+2．In [20]: b = {22,44,55,66,77}
+3．In [21]: a ^ b
+4．Out[21]: {11, 33, 66, 77}
+
+第三章 Python 高级
+
+一．元类
+1.Python 中类方法、类实例方法、静态方法有何区别？
+类方法：是类对象的方法，在定义时需要在上方使用“@classmethod”进行装饰，形参为 cls，
+表示类对象，类对象和实例对象都可调用；
+类实例方法：是类实例化对象的方法，只有实例对象可以调用，形参为 self，指代对象本身；
+静态方法：是一个任意函数，在其上方使用“@staticmethod”进行装饰，可以用对象直接调用，
+静态方法实际上跟该类没有太大关系。
+
+2.Python 中如何动态获取和设置对象的属性？
+if hasattr(Parent，'x'):
+	print(getattr(Parent，'x'))
+	setattr(Parent，'x'，3)
+	print(getattr(Parent，'x'))
+
+二．内存管理与垃圾回收机制
+1. Python 的内存管理机制及调优手段？
+内存管理机制：引用计数、垃圾回收、内存池。
+引用计数：
+引用计数是一种非常高效的内存管理手段， 当一个 Python 对象被引用时其引用计数增加 1， 当
+其不再被一个变量引用时则计数减 1. 当引用计数等于 0 时对象被删除。
+垃圾回收 ：
+1. 引用计数
+引用计数也是一种垃圾收集机制，而且也是一种最直观，最简单的垃圾收集技术。当 Python 的某
+个对象的引用计数降为 0 时，说明没有任何引用指向该对象，该对象就成为要被回收的垃圾了。比如
+某个新建对象，它被分配给某个引用，对象的引用计数变为 1。如果引用被删除，对象的引用计数为 0，
+那么该对象就可以被垃圾回收。不过如果出现循环引用的话，引用计数机制就不再起有效的作用了
+2. 标记清除
+如果两个对象的引用计数都为 1，但是仅仅存在他们之间的循环引用，那么这两个对象都是需要被
+回收的，也就是说，它们的引用计数虽然表现为非 0，但实际上有效的引用计数为 0。所以先将循环引
+用摘掉，就会得出这两个对象的有效计数。
+3. 分代回收
+从前面“标记-清除”这样的垃圾收集机制来看，这种垃圾收集机制所带来的额外操作实际上与系统
+中总的内存块的数量是相关的，当需要回收的内存块越多时，垃圾检测带来的额外操作就越多，而垃圾
+回收带来的额外操作就越少；反之，当需回收的内存块越少时，垃圾检测就将比垃圾回收带来更少的额
+外操作。
+举个例子：
+当某些内存块 M 经过了 3 次垃圾收集的清洗之后还存活时，我们就将内存块 M 划到一个集合
+A 中去，而新分配的内存都划分到集合 B 中去。当垃圾收集开始工作时，大多数情况都只对集合 B 进
+行垃圾回收，而对集合 A 进行垃圾回收要隔相当长一段时间后才进行，这就使得垃圾收集机制需要处
+理的内存少了，效率自然就提高了。在这个过程中，集合 B 中的某些内存块由于存活时间长而会被转
+移到集合 A 中，当然，集合 A 中实际上也存在一些垃圾，这些垃圾的回收会因为这种分代的机制而
+被延迟。
+内存池：
+1. Python 的内存机制呈现金字塔形状，-1，-2 层主要有操作系统进行操作；
+2. 第 0 层是 C 中的 malloc，free 等内存分配和释放函数进行操作；
+3. 第 1 层和第 2 层是内存池，有 Python 的接口函数 PyMem_Malloc 函数实现，当对象小于
+256K 时有该层直接分配内存；
+4. 第 3 层是最上层，也就是我们对 Python 对象的直接操作；
+Python 在运行期间会大量地执行 malloc 和 free 的操作，频繁地在用户态和核心态之间进行切
+换，这将严重影响 Python 的执行效率。为了加速 Python 的执行效率，Python 引入了一个内存池
+机制，用于管理对小块内存的申请和释放。
+Python 内部默认的小块内存与大块内存的分界点定在 256 个字节，当申请的内存小于 256 字节
+时，PyObject_Malloc 会在内存池中申请内存；当申请的内存大于 256 字节时，PyObject_Malloc 的
+行为将蜕化为 malloc 的行为。当然，通过修改 Python 源代码，我们可以改变这个默认值，从而改
+变 Python 的默认内存管理行为。
+
+调优手段（了解）
+1.手动垃圾回收
+2.调高垃圾回收阈值
+3.避免循环引用（手动解循环引用和使用弱引用）
+
+2.内存泄露是什么？如何避免？
+指由于疏忽或错误造成程序未能释放已经不再使用的内存的情况。内存泄漏并非指内存在物理上的
+消失，而是应用程序分配某段内存后，由于设计错误，失去了对该段内存的控制，因而造成了内存的浪
+费。导致程序运行速度减慢甚至系统崩溃等严重后果。
+有 __del__() 函数的对象间的循环引用是导致内存泄漏的主凶。
+不使用一个对象时使用:del object 来删除一个对象的引用计数就可以有效防止内存泄漏问题。
+通过 Python 扩展模块 gc 来查看不能回收的对象的详细信息。
+可以通过 sys.getrefcount(obj) 来获取对象的引用计数，并根据返回值是否为 0 来判断是否内存
+泄漏。
+
+三．函数
+1. 函数参数
+1.1 Python 函数调用的时候参数的传递方式是值传递还是引用传递？
+Python 的参数传递有：位置参数、默认参数、可变参数、关键字参数。
+函数的传值到底是值传递还是引用传递，要分情况：
+不可变参数用值传递：
+像整数和字符串这样的不可变对象，是通过拷贝进行传递的，因为你无论如何都不可能在原处改变
+不可变对象
+可变参数是引用传递的：
+比如像列表，字典这样的对象是通过引用传递、和 C 语言里面的用指针传递数组很相似，可变对象
+能在函数内部改变。
+1.2 对缺省参数的理解 ？
+缺省参数指在调用函数的时候没有传入参数的情况下，调用默认的参数，在调用函数的同时赋值时，
+所传入的参数会替代默认参数。
+*args 是不定长参数，他可以表示输入参数是不确定的，可以是任意多个。
+**kwargs 是关键字参数，赋值的时候是以键 = 值的方式，参数是可以任意多对在定义函数的时候
+不确定会有多少参数会传入时，就可以使用两个参数。
+
+1.3 为什么函数名字可以当做参数用?
+Python 中一切皆对象，函数名是函数在内存中的空间，也是一个对象。
+
+1.4 Python 中 pass 语句的作用是什么？
+在编写代码时只写框架思路，具体实现还未编写就可以用 pass 进行占位，使程序不报错，不会进
+行任何操作。
+
+1.5 有这样一段代码，print c 会输出什么，为什么？
+a = 10
+b = 20
+c = [a]
+a = 15
+答：10 对于字符串、数字，传递是相应的值。
+
+1.6 交换两个变量的值？
+a,b = b,a
+
+2. 内建函数
+2.1 map 函数和 reduce 函数？ 
+①从参数方面来讲：
+map()包含两个参数，第一个参数是一个函数，第二个是序列（列表 或元组）。其中，函数（即 map
+的第一个参数位置的函数）可以接收一个或多个参数。
+reduce()第一个参数是函数，第二个是序列（列表或元组）。但是，其函数必须接收两个参数。
+
+②从对传进去的数值作用来讲：
+map()是将传入的函数依次作用到序列的每个元素，每个元素都是独自被函数“作用”一次 。
+reduce()是将传人的函数作用在序列的第一个元素得到结果后，把这个结果继续与下一个元素作用
+（累积计算）。
+
+2.2 递归函数停止的条件？
+递归的终止条件一般定义在递归函数内部，在递归调用前要做一个条件判断，根据判断的结果选择
+是继续调用自身，还是 return;返回终止递归。
+终止的条件：
+1. 判断递归的次数是否达到某一限定值
+2. 判断运算的结果是否达到某个范围等，根据设计的目的来选择
+
+2.3 回调函数，如何通信的? 
+回调函数是把函数的指针(地址)作为参数传递给另一个函数，将整个函数当作一个对象，赋值给调
+用的函数。
+
+2.4 Python 主要的内置数据类型都有哪些？ print dir( ‘a ’) 的输出？
+内建类型：布尔类型、数字、字符串、列表、元组、字典、集合；
+输出字符串‘a’的内建方法；
+
+2.5 map(lambda x:x*x，[y for y in range(3)])的输出？
+[0， 1， 4]
+
+2.6 hasattr() getattr() setattr() 函数使用详解？
+hasattr(object, name)函数：
+判断一个对象里面是否有 name 属性或者 name 方法，返回 bool 值，有 name 属性(方法)返回 True，
+否则返回 False。
+注意：name 要使用引号括起来。
+class function_demo(object):
+	name = 'demo'
+	def run(self):
+		return "hello function"
+functiondemo = function_demo()
+res = hasattr(functiondemo, 'name') #判断对象是否有 name 属性，True
+res = hasattr(functiondemo, "run") #判断对象是否有 run 方法，True
+res = hasattr(functiondemo, "age") #判断对象是否有 age 属性，Falsw
+print(res)
+
+getattr(object, name[,default]) 函数：
+获取对象 object 的属性或者方法，如果存在则打印出来，如果不存在，打印默认值，默认值可选。
+注意：如果返回的是对象的方法，则打印结果是：方法的内存地址，如果需要运行这个方法，可以在后
+面添加括号()。
+functiondemo = function_demo()
+getattr(functiondemo, 'name') #获取 name 属性，存在就打印出来--- demo
+getattr(functiondemo, "run") #获取 run 方法，存在打印出 方法的内存地址---<bound method function_demo.run of
+<__main__.function_demo object at 0x10244f320>>
+getattr(functiondemo, "age") #获取不存在的属性，报错如下：
+Traceback (most recent call last):
+File "/Users/liuhuiling/Desktop/MT_code/OpAPIDemo/conf/OPCommUtil.py", line 39, in <module>
+res = getattr(functiondemo, "age")
+AttributeError: 'function_demo' object has no attribute 'age'
+getattr(functiondemo, "age", 18) #获取不存在的属性，返回一个默认值
+
+setattr(object,name,values)函数：
+给对象的属性赋值，若属性不存在，先创建再赋值
+1．class function_demo(object):
+2．    name = 'demo'
+3．    def run(self):
+4．        return "hello function"
+5．functiondemo = function_demo()
+6．res = hasattr(functiondemo, 'age') # 判断 age 属性是否存在，False
+7．print(res)
+8．setattr(functiondemo, 'age', 18 ) #对 age 属性进行赋值，无返回值
+9．res1 = hasattr(functiondemo, 'age') #再次判断属性是否存在，True
+
+综合使用：
+1．class function_demo(object):
+2．    name = 'demo'
+3． 	   def run(self):
+4．        return "hello function"
+5．functiondemo = function_demo()
+6．res = hasattr(functiondemo, 'addr') # 先判断是否存在 if res:
+7．addr = getattr(functiondemo, 'addr')
+8．print(addr)else:
+9．addr = getattr(functiondemo, 'addr', setattr(functiondemo, 'addr', '北京首都'))
+10．#addr = getattr(functiondemo, 'addr', '美国纽约')
+11．print(addr)
+
+2.7 一句话解决阶乘函数？
+reduce(lambda x,y: x*y, range(1,n+1))
+
+3.Lambda
+3.1 什么是 lambda 函数？ 有什么好处？
+lambda 函数是一个可以接收任意多个参数(包括可选参数)并且返回单个表达式值的函数
+1、lambda 函数比较轻便，即用即仍，很适合需要完成一项功能，但是此功能只在此一处使用，
+连名字都很随意的情况下；
+2、匿名函数，一般用来给 filter， map 这样的函数式编程服务;
+3、作为回调函数，传递给某些应用，比如消息处理
+
+3.2 下面这段代码的输出结果将是什么？请解释。
+def multipliers():
+	return [lambda x : i * x for i in range(4)]
+print [m(2) for m in multipliers()]
+上面代码输出的结果是[6， 6， 6， 6] (不是我们想的[0， 2， 4， 6])。
+你如何修改上面的 multipliers 的定义产生想要的结果？
+上述问题产生的原因是 Python 闭包的延迟绑定。这意味着内部函数被调用时，参数的值在闭包内
+进行查找。因此，当任何由 multipliers()返回的函数被调用时，i 的值将在附近的范围进行查找。那时，
+不管返回的函数是否被调用，for 循环已经完成，i 被赋予了最终的值 3。
+因此，每次返回的函数乘以传递过来的值 3，因为上段代码传过来的值是 2，它们最终返回的都是 6。
+(3*2)碰巧的是，《The Hitchhiker’s Guide to Python》也指出，在与 lambdas 函数相关也有一个被
+广泛被误解的知识点，不过跟这个 case 不一样。由 lambda 表达式创造的函数没有什么特殊的地方，
+它其实是和 def 创造的函数式一样的。
+下面是解决这一问题的一些方法。
+一种解决方法就是用 Python 生成器。
+def multipliers():
+	for i in range(4): 
+		yield lambda x : i * x
+另外一个解决方案就是创造一个闭包，利用默认函数立即绑定。
+def multipliers():
+	return [lambda x， i=i : i * x for i in range(4)]
+
+3.3 什么是 lambda 函数？它有什么好处？写一个匿名函数求两个数的和？
+lambda 函数是匿名函数；使用 lambda 函数能创建小型匿名函数。这种函数得名于省略了用 def
+声明函数的标准步骤；
+f = lambda x，y:x+y
+print(f(2017，2018))
+
+四．设计模式
+1. 单例
+1.1 请手写一个单例
+
+class A(object):
+	__instance = None
+	def __new__(cls， *args， **kwargs):
+		if cls.__instance is None:
+			cls.__instance = object.__new__(cls)
+			return cls.__instance
+		else:
+			return cls.__instance
+
+
+1.2 单例模式的应用场景有哪些？
+单例模式应用的场景一般发现在以下条件下：
+（1）资源共享的情况下，避免由于资源操作时导致的性能或损耗等。如日志文件，应用配置。
+（2）控制资源的情况下，方便资源之间的互相通信。如线程池等。 1.网站的计数器 2.应用配置 3.多线程池 4.
+数据库配置，数据库连接池 5.应用程序的日志应用....
+
+2. 工厂
+
+3. 装饰器
+3.1 对装饰器的理解 ，并写出一个计时器记录方法执行性能的装饰器？
+装饰器本质上是一个 Python 函数，它可以让其他函数在不需要做任何代码变动的前提下增加额外
+功能，装饰器的返回值也是一个函数对象。
+import time
+def timeit(func):
+	def wrapper():
+		start = time.clock()
+		func()
+		end =time.clock()
+		print 'used:'， end - start
+		return wrapper
+@timeit
+def foo():
+	print 'in foo()'foo()
+
+3.2 解释一下什么是闭包?
+在函数内部再定义一个函数，并且这个函数用到了外边函数的变量，那么将这个函数以及用到的一些变量称之为
+闭包。
+
+3.3 函数装饰器有什么作用？ 
+装饰器本质上是一个 Python 函数，它可以在让其他函数在不需要做任何代码的变动的前提下增加额外的功能。装
+饰器的返回值也是一个函数的对象，它经常用于有切面需求的场景。 比如：插入日志、性能测试、事务处理、缓存、
+权限的校验等场景 有了装饰器就可以抽离出大量的与函数功能本身无关的雷同代码并发并继续使用。
+
+4. 生成器
+4.1 生成器、迭代器的区别？
+迭代器是一个更抽象的概念，任何对象，如果它的类有 next 方法和 iter 方法返回自己本身，对于 string、list、
+dict、tuple 等这类容器对象，使用 for 循环遍历是很方便的。在后台 for 语句对容器对象调用 iter()函数，iter()
+是 python 的内置函数。iter()会返回一个定义了 next()方法的迭代器对象，它在容器中逐个访问容器内元素，next()
+也是 python 的内置函数。在没有后续元素时，next()会抛出一个 StopIteration 异常。
+生成器（Generator）是创建迭代器的简单而强大的工具。它们写起来就像是正规的函数，只是在需要返回数
+据的时候使用 yield 语句。每次 next()被调用时，生成器会返回它脱离的位置（它记忆语句最后一次执行的位置
+和所有的数据值）
+区别：生成器能做到迭代器能做的所有事,而且因为自动创建了 iter()和 next()方法,生成器显得特别简洁,而且
+生成器也是高效的，使用生成器表达式取代列表解析可以同时节省内存。除了创建和保存程序状态的自动方法,当
+发生器终结时,还会自动抛出 StopIteration 异常。
+
+4.2 X 是什么类型？
+X = (for i in ramg(10))
+答：X 是 generator 类型。
+
+4.3 请尝试用“一行代码”实现将 1-N 的整数列表以 3 为单位分组，比如 1-100
+分组后为? 
+print([[x for x in range(1，100)][i:i+3] for i in range(0，len(list_a)，3)])
+
+4.4Python 中 yield 的用法？
+yield 就是保存当前程序执行状态。你用 for 循环的时候，每次取一个元素的时候就会计算一次。用 yield 的函数
+叫 generator，和 iterator 一样，它的好处是不用一次计算所有元素，而是用一次算一次，可以节省很多空间。generator
+每次计算需要上一次计算结果，所以用 yield，否则一 return，上次计算结果就没了。
+def createGenerator():
+	mylist = range(3)
+	for i in mylist:
+		yield i*i
+mygenerator = createGenerator() # create a generator 
+print(mygenerator) # mygenerator is an object! <generator object createGenerator at 0xb7555c34>
+for i in mygenerator:
+	print(i) # 0 1 4
+
+五．面向对象
+1. 类
+
+2. 对象
+2.1 Python 中的可变对象和不可变对象？
+不可变对象，该对象所指向的内存中的值不能被改变。当改变某个变量时候，由于其所指的值不能被改变，相当
+于把原来的值复制一份后再改变，这会开辟一个新的地址，变量再指向这个新的地址。
+可变对象，该对象所指向的内存中的值可以被改变。变量（准确的说是引用）改变后，实际上是其所指的值直接
+发生改变，并没有发生复制行为，也没有开辟新的出地址，通俗点说就是原地改变。
+Python 中，数值类型（int 和 float）、字符串 str、元组 tuple 都是不可变类型。而列表 list、字典 dict、集合
+set 是可变类型。
+
+2.2 Python 中 is 和==的区别？
+is 判断的是 a 对象是否就是 b 对象，是通过 id 来判断的。
+==判断的是 a 对象的值是否和 b 对象的值相等，是通过 value 来判断的。
+
+2.3 Python 的魔法方法 
+魔法方法就是可以给你的类增加魔力的特殊方法，如果你的对象实现 （重载）了这些方法中的某一个，那么这个
+方法就会在特殊的情况下被 Python 所调用，你可以定义自己想要的行为，而这一切都是自动发生的。 它们经常是
+两个下划线包围来命名的（比如 __init__，__lt__），Python 的魔法方法是非常强大的，所以了解其使用方法也变得
+尤为重要！
+__init__ 构造器，当一个实例被创建的时候初始化的方法。但是它并 不是实例化调用的第一个方法。
+__new__才是实例化对象调用的第一个方法，它只取下 cls 参数，并把 其他参数传给 __init__。 __new__很少使
+用，但是也有它适合的场景，尤其 是当类继承自一个像元组或者字符串这样不经常改变的类型的时候。
+__call__ 允许一个类的实例像函数一样被调用 。
+__getitem__ 定义获取容器中指定元素的行为，相当于 self[key] 。
+__getattr__ 定义当用户试图访问一个不存在属性的时候的行为 。
+__setattr__ 定义当一个属性被设置的时候的行为 。
+__getattribute__ 定义当一个属性被访问的时候的行为 。
+
+2.4 面向对象中怎么实现只读属性? 
+将对象私有化，通过共有方法提供一个读取数据的接口。
+
+class person:
+    def __init__(self,x):
+		self.__age = 10;
+    def age(self):
+		return self.__age;
+t = person(22)
+# t.__age = 100
+print(t.age())
+
+最好的方法
+
+class MyCls(object):
+	__weight = 50
+
+	@property #以访问属性的方式来访问 weight 方法
+	def weight(self):
+		return self.__weight
+
+if __name__ == '__main__':
+	obj = MyCls()
+	print(obj.weight)
+	obj.weight = 12
+Traceback (most recent call last):
+50
+File "C:/PythonTest/test.py", line 11, in <module>
+ obj.weight = 12
+AttributeError: can't set attribute
+
+2.5 谈谈你对面向对象的理解？
+面向对象是相对于面向过程而言的。面向过程语言是一种基于功能分析的、以算法为中心的程序设计方法；而面
+向对象是一种基于结构分析的、以数据为中心的程序设计思想。在面向对象语言中有一个有很重要东西，叫做类。
+面向对象有三大特性：封装、继承、多态。
+
+六．正则表达式
+1. Python 里 match 与 search 的区别？
+match()函数只检测 RE 是不是在 string 的开始位置匹配，
+search()会扫描整个 string 查找匹配；
+也就是说 match()只有在 0 位置匹配成功的话才有返回，
+如果不是开始位置匹配成功的话，match()就返回 none。
+
+2. Python 字符串查找和替换？
+re.findall(r’目的字符串’，’原有字符串’) #查询
+re.findall(r'cast'，'itcast.cn')[0]
+re.sub(r‘要替换原字符’，’要替换新字符’，’原始字符串’)
+re.sub(r'cast'，'heima'，'itcast.cn')
+
+3. 用 Python 匹配 HTML g tag 的时候，<.*> 和 <.*?> 有什么区别？
+<.*>是贪婪匹配，会从第一个“<”开始匹配，直到最后一个“>”中间所有的字符都会匹配到，中间可能会包含“<>”。
+<.*?>是非贪婪匹配，从第一个“<”开始往后，遇到第一个“>”结束匹配，这中间的字符串都会匹配到，但是不会有“<>”。
+
+4.自行百度正则关键字的含义
