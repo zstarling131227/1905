@@ -125,7 +125,7 @@ mysql> source /home/tarena/xxx.sql
 处理表的处理器
 ```
 
-**基本操作**
+### **基本操作**
 
 ```mysql
 1、查看所有存储引擎
@@ -142,18 +142,57 @@ mysql> source /home/tarena/xxx.sql
    alter table 表名 engine=InnoDB;
 ```
 
-**==常用存储引擎及特点==**
+### **==常用存储引擎及特点==**
 
 - InnoDB		
 
+1. 支持行级锁　　＃＃行之间的影响小
+2. 支持外键、事务、事务回滚
+3. 表字段和索引同存储在一个文件中
+   1. 表名.frm ：表结构
+   2. 表名.ibd : 表记录及索引文件
+
+创建innodb_test表检测数据存储结构
 ```mysql
-1、支持行级锁　　＃＃行之间的影响小
-2、支持外键、事务、事务回滚
-3、表字段和索引同存储在一个文件中
-   1、表名.frm ：表结构
-   2、表名.ibd : 表记录及索引文件
+mysql> use db3;
+mysql> create table innodb_test(id int);
+mysql> SHOw create table innodb_test;
+mysql> insert into innodb_test values(1),(2);
+mysql> select * from innodb_test;
 ```
-**只限于查看.frm类型，不能查看内容，也不要轻易修改。**
+
+- MyISAM
+
+1. 支持表级锁
+2. 表字段和索引分开存储
+   1. 表名.frm ：表结构
+   2. 表名.MYI : 索引文件(my index)
+   3. 表名.MYD : 表记录(my data) ##只存叶子节点，也就是查询地址，不存储数据。
+
+创建myisam_test表检测数据存储结构
+```mysql
+mysql> use db3;
+mysql> create table myisam_test(id int) engine=MyISAM;
+mysql> SHOw create table myisam_test;
+mysql> insert into myisam_test values(1),(2);
+mysql> select * from myisam_test;
+```
+
+- MEMORY
+
+1. 表记录存储在内存中，效率高
+2. 服务或主机重启，表记录清除
+
+创建memory_test1表检测数据存储结构
+```mysql
+mysql> use db3;
+mysql> create table memory_test1(id int) engine=MEMORY;
+mysql> SHOw create table memory_test1;
+mysql> insert into memory_test1 values(1),(2);
+mysql> select * from memory_test1;
+```
+结果展示
+**只限于查看文档类型，不能查看内容，也不要轻易修改。**
 ```
 tarena@tarena:~$ sudo su
 [sudo] tarena 的密码： 
@@ -162,47 +201,26 @@ root@tarena:/var/lib/mysql# ls
 auto.cnf  db22             ib_buffer_pool  ib_logfile1  mysql_upgrade_info  stu
 country   debian-5.7.flag  ibdata1         ibtmp1       performance_schema  sys
 db2       dict             ib_logfile0     mysql        spider
-
-root@tarena:/var/lib/mysql# cd country
-root@tarena:/var/lib/mysql/country# ls
-city.frm     customers.frm  province.ibd      sanguo_test.ibd  tt2.frm
-city.ibd     customers.ibd  sanguo.frm        students.frm     tt2.ibd
-comment.frm  db.opt         sanguo.ibd        students.ibd     tt3.frm
-comment.ibd  orders.frm     sanguo_test1.frm  test_myisam.frm  tt3.ibd
-county.frm   orders.ibd     sanguo_test1.ibd  test_myisam.MYD  ttl.frm
-county.ibd   province.frm   sanguo_test.frm   test_myisam.MYI  ttl.ibd
-
-##管道查询，匹配字符'sanguo'查找显示
-root@tarena:/var/lib/mysql/country# ls |grep 'sanguo'
-sanguo.frm
-sanguo.ibd
-sanguo_test1.frm
-sanguo_test1.ibd
-sanguo_test.frm
-sanguo_test.ibd
-root@tarena:/var/lib/mysql/country# vim sanguo.frm
-root@tarena:/var/lib/mysql/country# vim sanguo.ibd
-
+root@tarena:/var/lib/mysql# cd db3
+root@tarena:/var/lib/mysql/db3# ls
+bank.frm    db.opt            memory_test.frm  myisam_test.MYD
+bank.ibd    innodb_test.frm   middle.frm       myisam_test.MYI
+course.frm  innodb_test.ibd   middle.ibd       teacher.frm
+course.ibd  memory_test1.frm  myisam_test.frm  teacher.ibd
 ```
-
-- MyISAM
-
-```mysql
-1、支持表级锁
-2、表字段和索引分开存储
-   1、表名.frm ：表结构
-   2、表名.MYI : 索引文件(my index)
-   3、表名.MYD : 表记录(my data) ##只存叶子节点，也就是查询地址，不存储数据。
-
+创建memory_test表检测重启是否会失去数据
 ```
+mysql> use db3;
+mysql> create table memory_test(id int) engine=MEMORY;
+mysql> SHOw create table memory_test;
+mysql> insert into memory_test values(1),(2);
+mysql> select * from memory_test;
 
-- MEMORY
+tarena@tarena:~$ service mysql restart
 
-```mysql
-1、表记录存储在内存中，效率高
-2、服务或主机重启，表记录清除
+mysql> select * from memory_test;
+Empty set (0.00 sec)
 ```
-
 **如何选择存储引擎**
 
 ```mysql
@@ -221,9 +239,9 @@ key_buffer-->内存中缓存索引，64M-12BM
 
 ## **MySQL的用户账户管理**
 
-**开启MySQL远程连接**
+### **开启MySQL远程连接**
 
-更改配置文件，重启服务！
+**更改配置文件，重启服务！**
 #### 1、sudo su
 ```mysql
 tarena@tarena:~$ sudo su
@@ -250,57 +268,57 @@ drwxr-xr-x 4 root root  4096 7月  25 08:26 ../
 -rw-r--r-- 1 root root 12288 8月   9 11:16 .mysqld.cnf.swp
 -rw-r--r-- 1 root root    21 1月  12  2018 mysqld_safe_syslog.cnf
 ```
-#### 4、vi mysqld.cnf #找到44行左右,加 # 注释
-
-      vi打不开的时候，可以使用vim
-      vim修改时要点击i进入插入状态，
-      方向键：k是上移，j是下移,h是左移，l右移；
-      set number 添加行号
-      o从光标当前行 换行，并进入插入模式
-      插入模式后摁esc键切回阅读模式，
-      输入内件指定：w保存 q退出
-      3dd删除指定行数内容，3为指定行
-      u撤销
-      在只读状态时末尾输入'\log'搜索含有log的字段。n是下一个，N是上一个。
-         
+#### 4、修改配置文件vi mysqld.cnf 
+ 
 （1） 修改监听地址
 ```
-   #bind-address = 127.0.0.1
+#找到44行左右, bind-address = 127.0.0.1加 # 注释，变成#bind-address = 127.0.0.1
 ```
-（2）###### 修改编码方式
-修改之前先进行模糊查询：show variables like '%chara%'
+（2）修改编码方式
+
+   修改之前先进行模糊查询：show variables like '%chara%'
 ```
-   [mysqld]
-   character_set_server = utf8
+   找到配置文件，打开，寻找[mysqld]，然后另起一行添加character_set_server = utf8
 ```
 #### 5、保存退出
-
+```
+vi使用 : 按a ->编辑文件 ->ESC ->shift+: ->wq
+```
 #### 6、service mysql restart
 ```
 tarena@tarena:~$ service mysql restart
 tarena@tarena:~$ ps aux|grep 'mysql'
-
-```
-**补充：**
-```
-vi使用 : 按a ->编辑文件 ->ESC ->shift+: ->wq
-
-#数据库出错了，在error中查看日志
-log_error = /var/log/mysql/error.log
-
-#查看当前进程
-tarena@tarena:~$ ps aux|grep 'mysql'
-
 ```
 
-**添加授权用户**
+### **添加授权用户**
 
+1. 用root用户登录mysql
 ```mysql
-1、用root用户登录mysql
    mysql -uroot -p123456
-2、授权
-   grant 权限列表 on 库.表 to "用户名"@"%" identified by "密码" with grant option;
-3、刷新权限
+   mysql -uroot -h176.23.4.102 -p
+   mysql> select * from mysql.user\G;
+
+*************************** 1. row ***************************
+                  Host: localhost
+                  User: root
+
+监听本地地址
+  终端输入mysql -uroot -p123456
+  查看用户select * from mysql.user\G;  host显示localhost；
+```
+2. 授权
+```
+   grant 权限列表 on 库.表 to "用户名"@"localhost" identified by "密码" with grant option;
+```
+**登录地址localhost**
+```
+localhost表示登录地址。默认是127.0.0.1
+当localhost是%时，表示所有的IP都可以登录服务
+当localhost是特定IP地址（xixi，但是xixi是不存在的网址）时，不能可以进入服务
+当localhost是特定IP地址（内网地址176.23.4.102）时，只有用户通过改地址才可以进入服务
+```
+3. 刷新权限
+```
    flush privileges;
 ```
 
@@ -311,78 +329,138 @@ all privileges 、select 、insert ... ...
 库.表 ： *.* 代表所有库的所有表
 ```
 
-**示例**
-
+### **示例**
+**示例一**
 #### 1、添加授权用户work,密码123
-```mysql
 （1）对所有库的所有表有所有权限
+```mysql
   mysql>grant all privileges on *.* to 'work'@'%' identified by '123' with grant option;
   mysql>flush privileges;
+  mysql> select * from mysql.user\G;
+
+  *************************** 6. row ***************************
+                  Host: %
+                  User: work
+
 终端输入mysql -uwork -p123
 查看用户select * from mysql.user\G;  host显示%；
 可以查看所有的库：show databases;
 
+
+ ##两种方法都可以登录
+mysql -uwork -p
+mysql -uwork -h176.23.4.102 -p
+```
 （2）对country库的sanguo数据表有所有权限：只能看当前的库
-mysql>grant all privileges on country.sanguo* to 'work'@'%' identified by '123' with grant option;
+```
+mysql>grant all privileges on country.sanguo* to 'work1'@'%' identified by '123' with grant option;
   mysql>flush privileges;
+  mysql> select * from mysql.user\G;
+
+*************************** 8. row ***************************
+                  Host: %
+                  User: work1
 
 只能查看country库中的sanguo数据表：show databases;
-```
-  **补充**
-```
-   ifconfig查看网址，监听内网地址 （第一行的网址）
-  终端输入mysql -u176.23.4.102 -p123456
-  查看用户select * from mysql.user\G;  此时host显示localhost；
-   
-   监听本地地址
-  终端输入mysql -uroot -p123456
-  查看用户select * from mysql.user\G;  host显示localhost；
-```
 
-#### 2、添加用户duty,对db2库中所有表有所有权限
+mysql -uwork1 -p   ##不可以登录
+```
+#### 2、添加指定网址
+（1）添加指定不存在网址
+```
+  mysql>grant all privileges on *.* to 'xixi'@'xixi' identified by '131227' with grant option;
+  mysql>flush privileges;
+  mysql> select * from mysql.user\G;
+
+*************************** 7. row ***************************
+                  Host: xixi
+                  User: xixi
+
+mysql -uxixi -p   ##不可以登录
+mysql -uxixi -h176.23.4.102 -p   ##不可以登录
+```
+（2）添加特定存在网址
+```
+  mysql>grant all privileges on *.* to 'yaoyue'@'176.23.4.102' identified by '131227' with grant option;
+  mysql>flush privileges;
+  mysql> select * from mysql.user\G;
+
+*************************** 10. row ***************************
+                  Host: 176.23.4.102
+                  User: yaoyue
+
+mysql -uyaoyue -p   ##不可以登录
+mysql -uyaoyue -h176.23.4.102 -p  ##可以登录
+```
+#### 3、添加用户duty,对db2库中所有表有所有权限
 ```
   mysql>grant all privileges on db2.* to 'duty'@'%' identified by '123' with grant option;
   mysql>flush privileges;
+  mysql> select * from mysql.user\G;
+
+  *************************** 5. row ***************************
+                  Host: %
+                  User: duty
 终端输入mysql -uduty  -p123
 查看用户select * from mysql.user\G;  host显示%；
-可以查看所有的库：show databases;
+
+可以查看db2库中的所有表：show databases;
+
+mysql -uduty -p
 ```
+**示例二**
+
+test_utf8是在修改配置文件后，在创建表时也没有添加编码方式utf8的数据库结构
 ```
-mysql> use db3;
-mysql> create table memory_test(id int) engine=MEMORY;
-mysql> SHOw create table memory_test;
-mysql> insert into memory_test values(1),(2);
-mysql> select * from memory_test;
+mysql> show create database test_utf8;
++-----------+--------------------------------------------------------------------+
+| Database  | Create Database                                                    |
++-----------+--------------------------------------------------------------------+
+| test_utf8 | CREATE DATABASE `test_utf8` /*!40100 DEFAULT CHARACTER SET utf8 */ |
++-----------+--------------------------------------------------------------------+
+1 row in set (0.00 sec)
+```
+db2是在没有修改配置文件，在创建表时也没有添加编码方式utf8的数据库结构
+```
+mysql> show create database db2;
++----------+----------------------------------------------------------------+
+| Database | Create Database                                                |
++----------+----------------------------------------------------------------+
+| db2      | CREATE DATABASE `db2` /*!40100 DEFAULT CHARACTER SET latin1 */ |
++----------+----------------------------------------------------------------+
+1 row in set (0.00 sec)
 
 ```
 
 ## **==事务和事务回滚==**
 
-**事务定义**
+### **事务定义**
 
 ```mysql
  一件事从开始发生到结束的过程
 ```
 
-**作用**
+### **作用**
 
 ```mysql
 确保数据的一致性、准确性、有效性
 ```
 
-**事务操作**
+### **事务操作**
 
-```mysql
-1、开启事务
+1. 开启事务
    mysql>begin; # 方法1
    mysql>start transaction; # 方法2
-2、开始执行事务中的1条或者n条SQL命令
-3、终止事务
+2. 开始执行事务中的1条或者n条SQL命令
+3. 终止事务
    mysql>commit; # 事务中SQL命令都执行成功,提交到数据库,结束!
    mysql>rollback; # 有SQL命令执行失败,回滚到初始状态,结束!
-```
+
+**模拟示例**
+
+*创建表*
 ```mysql
- create table bank1(
+ create table bank(
    name varchar(20),
    money decimal(20,2)
    )charset=utf8;
@@ -390,14 +468,79 @@ mysql> select * from memory_test;
  insert into bank values
  ('vip1',20000),
  ('vip2',2000);
-
+ ```
+*rollback示例*
+```
   begin;
 
  update bank set money=money-3000
   where name='vip1';
 
+   select * from bank:
+  +------+----------+
+| name | money    |
++------+----------+
+| vip1 | 17000.00 |
+| vip2 |  2000.00 |
++------+----------+
+
+work用户
+因为没有提交，所以另一个用户的数据并未改变
+   select * from bank:
+  +------+----------+
+| name | money    |
++------+----------+
+| vip1 | 20000.00 |
+| vip2 |  2000.00 |
++------+----------+
+
+root用户
+输入rollback后，root用户的数据恢复初始状态，数据更新失败，前提是要是‘事物’；
+
+rollback
+
+select * from bank:
+  +------+----------+
+| name | money    |
++------+----------+
+| vip1 | 20000.00 |
+| vip2 |  2000.00 |
++------+----------+
+
 ```
-pymysql
+*commit示例*
+```
+root 用户
+
+  begin;
+
+ update bank set money=money-3000
+  where name='vip2';
+
+  commit;
+
+ select * from bank:
+
++------+----------+
+| name | money    |
++------+----------+
+| vip1 | 20000.00 |
+| vip2 |  5000.00 |
++------+----------+
+
+
+work用户
+select * from bank;
+    
++------+----------+
+| name | money    |
++------+----------+
+| vip1 | 20000.00 |
+| vip2 |  5000.00 |
++------+----------+
+
+```
+*在pycharm中的pymysql逻辑编写过程中大量使用*
 ```
 try:
    转账1
@@ -407,7 +550,7 @@ except:
 db.commit()
 ```
 
-**==事务四大特性（ACID）==**
+## **==事务四大特性（ACID）==**
 
 - **1、原子性（atomicity）**
 
@@ -726,7 +869,27 @@ insert into orders values(1,"iphone",5288),(1,"ipad",3299),(2,"iwatch",2222),(2,
   
 ```
 
-# 查看系统日志
+# 补充
+## 1）管道查询
+```
+root@tarena:/var/lib/mysql/country# ls |grep 'sanguo'
+tarena@tarena:~$ ps aux|grep 'mysqld' 
+```
+匹配字符'sanguo'查找显示
+
+## 2）查看错误日志
+```
+数据库出错了，在error中查看日志
+log_error = /var/log/mysql/error.log
+
+打开方式
+tarena@tarena:~$ cd /var/log/mysql
+tarena@tarena:/var/log/mysql$ ls
+error.log       error.log.2.gz  error.log.4.gz  error.log.6.gz
+error.log.1.gz  error.log.3.gz  error.log.5.gz  error.log.7.gz
+```
+## 3） 查看系统日志
+```
 tarena@tarena:~$  cd /var/log
 - 方法一：
 tarena@tarena:/var/log$ vim /var/log/syslog
@@ -735,3 +898,55 @@ tarena@tarena:/var/log$ vim /var/log/syslog
 /MySQL 
 - 方法二：
 或者cat /var/log/syslog |grep 'MySQL '|more +
+```
+
+## 4）vim使用
+   1. vi打不开的时候，可以使用vim
+   2. vim修改时要点击i进入插入状态，
+   3. 方向键：k是上移，j是下移,h是左移，l右移；
+   4. set number 添加行号
+   5. o从光标当前行 换行，并进入插入模式
+   6. 插入模式后摁esc键切回阅读模式，
+   7. 输入内件指定：w保存 q退出
+   8. 3dd删除指定行数内容，3为指定行
+   9. u撤销
+   10. 在只读状态时末尾输入'\log'搜索含有log的字段。n是下一个，N是上一个。
+   11. vim严格区分大小写
+        
+## 5）ifconfig查看网址
+内网网址
+```
+enp3s0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 176.23.4.102  netmask 255.255.255.0  broadcast 176.23.4.255
+        inet6 fe80::be50:e020:e3d8:30a9  prefixlen 64  scopeid 0x20<link>
+        ether fc:aa:14:eb:a5:58  txqueuelen 1000  (以太网)
+        RX packets 4116  bytes 4459337 (4.4 MB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 2287  bytes 256541 (256.5 KB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+```
+本地网址
+```
+lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
+        inet 127.0.0.1  netmask 255.0.0.0
+        inet6 ::1  prefixlen 128  scopeid 0x10<host>
+        loop  txqueuelen 1000  (本地环回)
+        RX packets 514  bytes 521475 (521.4 KB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 514  bytes 521475 (521.4 KB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+```
+
+## 6）查看进程
+```
+查看当前进程
+tarena@tarena:~$ ps aux
+查看mysql进程在哪些用户下进行
+tarena@tarena:~$ ps aux|grep 'mysqld'
+mysql     1081  0.0  4.7 1417112 189108 ?      Sl   08:13   0:02 /usr/sbin/mysqld --daemonize --pid-file=/run/mysqld/mysqld.pid
+tarena   14473  0.0  0.0  21532  1004 pts/2    S+   09:35   0:00 grep --color=auto mysqld
+tarena@tarena:~$ 
+查看mysql进程进行的总个数
+tarena@tarena:~$ ps aux|grep 'mysqld'|wc -l
+2
+```
