@@ -15,6 +15,10 @@ import os
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
+###可以自己打印查看(记录项目文件夹的绝对路径）
+# print('BASE_DIR:',BASE_DIR)
+#输出结果为：BASE_DIR: /home/tarena/1905/month03/code/code3/day01/mysite1
+
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
@@ -24,9 +28,13 @@ SECRET_KEY = '0mas#f_@u4ewu#x4zvb)_#gyd_)m!%a02b_8#q$9ajzib*o5_y'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
+#当DEBUG = False时，调试开关，服务器自动重新启动
+# DEBUG = False
+
 
 ALLOWED_HOSTS = []
-
+##括号内为*时，世界上所有网站都可以访问
+# ALLOWED_HOSTS = ['*']
 
 # Application definition
 
@@ -103,9 +111,15 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/1.11/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+#页面显示为英文
+# LANGUAGE_CODE = 'en-us'
+#页面显示为中文
+LANGUAGE_CODE = 'zh-hans'
 
-TIME_ZONE = 'UTC'
+#世界（美国）时间
+# TIME_ZONE = 'UTC'
+##上海时间（在终端显示）
+TIME_ZONE = 'Asia/Shanghai'
 
 USE_I18N = True
 

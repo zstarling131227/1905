@@ -96,6 +96,13 @@
     # 或
     $ python3 manage.py runserver 5000  # 指定只能本机使用127.0.0.1的5000端口访问本机
     ```
+    **补充**
+    ```
+    0.0.0.0 让其它电脑可连接到开发服务器，8000 为端口号。如果不说明，那么端口号默认为 8000。
+    tarena@tarena:~/1905/month03/code/code3/day01/mysite1$ python3 manage.py runserver 
+    tarena@tarena:~/1905/month03/code/code3/day01/mysite1$ python3 manage.py runserver 0.0.0.0:8000
+    tarena@tarena:~/1905/month03/code/code3/day01/mysite1$ python3 manage.py runserver 176.23.4.102:8000
+    ```
 ### Django项目的目录结构
 - 示例:
     ```shell
@@ -149,6 +156,9 @@
             - 注意:
                 - 如果要在局域网其它主机也能访问此主机,启动方式应使用如下模式:
             - `python3 manage.py runserver 0.0.0.0:5000` # 指定网络设备所有主机都可以通过5000端口访问(需加`ALLOWED_HOSTS = ['*']`) 
+                ```
+                tarena@tarena:~/1905/month03/code/code3/day01/mysite1$ python3 manage.py runserver 5000
+                ```
     
     4. `INSTALLED_APPS`
         
@@ -207,7 +217,7 @@
         
     - port（端口号）
         - 整数，可选，省略时使用方案的默认端口；
-        - 各种传输协议都有默认的端口号，如http的默认端口为80。
+        - 各种传输协议都有默认的端口号，如http的默认端口为80。http的默认端口是443。
     - path（路由地址）
         - 由零或多个“/”符号隔开的字符串，一般用来表示主机上的一个目录或文件地址。路由地址决定了服务器端如何处理这个请求
 
@@ -274,7 +284,7 @@
             - 建立如上一百个网页该怎么办？
 
 #### 带有分组的路由和视图函数
-- 在视图函数内，可以用正则表达式分组 `()` 提取参数后用函数位置传参传递给视图函数
+- 在视图函数内，可以用正则表达式分组 `()` 提取参数后用函数关键字传参传递给视图函数
 - 一个分组表示一个参数,多个参数需要使用多个分组,并且使用个/隔开
     - 如:
         - http://127.0.0.1:8000/year/2018
@@ -313,7 +323,9 @@
         ]
         ```
 - 练习:
-    - 访问地址:http://127.0.0.1:8000/birthday/四位数字/一到两位数字/一到两位数字
+    - 访问地址:
+        - http://127.0.0.1:8000/birthday/四位数字/一到两位数字/一到两位数字
+        - http://127.0.0.1:8000/birthday/一到两位数字/一到两位数/字四位数字
     - 最终输出: 生日为: xxxx年xx月xx日
     - 如:
         输入网址: http://127.0.0.1:8000/birthday/2015/12/11
@@ -446,6 +458,10 @@
             request.GET['参数名']
             request.GET.get('参数名','默认值')
             request.GET.getlist('参数名')
+            # mypage?a=100&b=200&c=300&b=400
+            # request.GET=QueryDict({'a':['100'], 'b':['200','400'], 'c':['300']})
+            # a = request.GET['a']
+            # b = request.GET['b']  # Error
             ```
         2. 能够产生get请求方式的场合
             1. 地址栏手动输入, 如: http://www.sina.com.cn/?a=100&b=200
@@ -459,10 +475,10 @@
 > 一般查询字符串的大小会受到浏览器的的限制(不建议超过2048字节)
     
 - 练习:
-    - 访问地址:<http://127.0.0.1:8000/sum?start=整数&stop=整数&step整=字>
+    - 访问地址:<http://127.0.0.1:8000/sum?start=整数&stop=整数&step整数>
     - 输出结果为sum(range(start, step, stop)) 和:
     - 如:
-        - 输入网址: http://127.0.0.1:8000/sum?start=1&stop=101&step=1
+        - 输入网址: http://127.0.0.1:8000/sum?start=1&stop=101&step=1   ###不包含101
         - 页面显示: 结果: 5050
         - 输入网址: http://127.0.0.1:8000/sum?stop=101&step=2
         - 页面显示: 结果: 2550

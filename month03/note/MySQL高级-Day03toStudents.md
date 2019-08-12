@@ -63,25 +63,35 @@ select 表名.字段名 from 表1 inner join 表2 on 条件；
 **2、锁分类**
 
 ```mysql
-1、锁类型 : 读锁 写锁
-2、锁粒度 : 行级锁(InnoDB) 表级锁(MyISAM)
+1、锁类型 : 
+      读锁：读的时候别人不能碰
+      写锁：更新的时候别人不能更新，只能一个人更新
+2、锁粒度 : 
+      行级锁(InnoDB) ：锁粒度小。行之间的
+      表级锁(MyISAM)：锁粒度大。表之间的。表级锁会造成程序阻塞。
 ```
 
 ## **数据导入**
 
 **方式一（使用source命令）**
-
+不需要自己创建表，结构式文件
 ```mysql
 mysql> source /home/tarena/xxx.sql
 ```
 
 **方式二（使用load命令）**
-
+需要自己创建表
 ```mysql
 1、将导入文件拷贝到数据库搜索路径中
    show variables like 'secure%';
 2、在数据库中创建对应的表
 3、执行数据导入语句
+```
+乱码
+```text
+哪个场景的乱码？
+1、表乱码（修改表的编码方式）
+2、使用load导入或导出的时候容易乱码（打开文件的时候修改编码方式）
 ```
 
 ## **索引**
@@ -119,12 +129,11 @@ mysql> source /home/tarena/xxx.sql
 ## **存储引擎**
 ***不要轻易切换存储引擎***
 
-**定义**
+### **定义**
 
 ```mysql
-处理表的处理器
+处理表的处理器（使数据落地就是存入磁盘的引擎）
 ```
-
 ### **基本操作**
 
 ```mysql
@@ -144,13 +153,13 @@ mysql> source /home/tarena/xxx.sql
 
 ### **==常用存储引擎及特点==**
 
-- InnoDB		
+- InnoDB	(默认的存储引擎)	
 
 1. 支持行级锁　　＃＃行之间的影响小
-2. 支持外键、事务、事务回滚
+2. 支持外键、事务（跟钱相关的一般都使用事务）、事务回滚
 3. 表字段和索引同存储在一个文件中
    1. 表名.frm ：表结构
-   2. 表名.ibd : 表记录及索引文件
+   2. 表名.ibd : 表记录及索引文件 （聚集：存储数据+索引）（数据结构是B树）
 
 创建innodb_test表检测数据存储结构
 ```mysql
@@ -166,8 +175,8 @@ mysql> select * from innodb_test;
 1. 支持表级锁
 2. 表字段和索引分开存储
    1. 表名.frm ：表结构
-   2. 表名.MYI : 索引文件(my index)
-   3. 表名.MYD : 表记录(my data) ##只存叶子节点，也就是查询地址，不存储数据。
+   2. 表名.MYI : 索引文件(my index)##叶子节点，不存储数据，存储指向磁盘的物理指针，也就是查询地址。
+   3. 表名.MYD : 表记录(my data) 
 
 创建myisam_test表检测数据存储结构
 ```mysql
@@ -180,8 +189,11 @@ mysql> select * from myisam_test;
 
 - MEMORY
 
-1. 表记录存储在内存中，效率高
+1. 表记录存储在内存中，效率高（hash哈希算法）
+*跟B+ ，Ｂ树不在一个量级上,memory查找速度超级快*
 2. 服务或主机重启，表记录清除
+
+*可删除的，可有可无的数据可以用内存存储。eg:游戏皮肤，称号。*
 
 创建memory_test1表检测数据存储结构
 ```mysql
@@ -192,7 +204,7 @@ mysql> insert into memory_test1 values(1),(2);
 mysql> select * from memory_test1;
 ```
 结果展示
-**只限于查看文档类型，不能查看内容，也不要轻易修改。**
+*只限于查看文档类型，不能查看内容，也不要轻易修改。*
 ```
 tarena@tarena:~$ sudo su
 [sudo] tarena 的密码： 
@@ -227,8 +239,8 @@ Empty set (0.00 sec)
 1、执行查操作多的表用 MyISAM(使用InnoDB浪费资源)
 
 ###建议：具体问题具体分析 -->不知道用什么的时候，选择Innodb.
-key_buffer-->内存中缓存索引，64M-12BM 
- M:存索引    In:存索引+数据
+mysql中有key_buffer-->内存中缓存索引，大小为64M-12BM的内存
+ M:存索引    In:存索引+数据    两者相比，M的索引数量很大；Innodb也会产生大量的内存交换
  M：A  In：A+数据  IN快
  M：A   AAAAAA  In：A+数据  AAAAAA  M快
  具体情况根据压测结果对待。
@@ -249,6 +261,8 @@ tarena@tarena:~$ sudo su
 root@tarena:/home/tarena# cd
 ```
 #### 2、cd /etc/mysql/mysql.conf.d
+etc：该目录一般会存当前系统（ubantu)的所有安装的软件的配置文件，前提是有超级用户root权限才能打开
+
 ```
 root@tarena:~# cd /etc/mysql/mysql.conf.d
 root@tarena:/etc/mysql/mysql.conf.d# ls
@@ -332,7 +346,7 @@ all privileges 、select 、insert ... ...
 ### **示例**
 **示例一**
 #### 1、添加授权用户work,密码123
-（1）对所有库的所有表有所有权限
+（1）对**所有库**的**所有表**有**所有权限**
 ```mysql
   mysql>grant all privileges on *.* to 'work'@'%' identified by '123' with grant option;
   mysql>flush privileges;
@@ -346,12 +360,11 @@ all privileges 、select 、insert ... ...
 查看用户select * from mysql.user\G;  host显示%；
 可以查看所有的库：show databases;
 
-
  ##两种方法都可以登录
 mysql -uwork -p
 mysql -uwork -h176.23.4.102 -p
 ```
-（2）对country库的sanguo数据表有所有权限：只能看当前的库
+（2）对**country库**的**sanguo数据表**有**所有权限**：只能看当前的库
 ```
 mysql>grant all privileges on country.sanguo* to 'work1'@'%' identified by '123' with grant option;
   mysql>flush privileges;
@@ -365,7 +378,7 @@ mysql>grant all privileges on country.sanguo* to 'work1'@'%' identified by '123'
 
 mysql -uwork1 -p   ##不可以登录
 ```
-#### 2、添加指定网址
+#### 2、改变登录地址
 （1）添加指定不存在网址
 ```
   mysql>grant all privileges on *.* to 'xixi'@'xixi' identified by '131227' with grant option;
@@ -553,13 +566,13 @@ db.commit()
 ## **==事务四大特性（ACID）==**
 
 - **1、原子性（atomicity）**
-
+注重结果
 ```
 一个事务必须视为一个不可分割的最小工作单元，整个事务中的所有操作要么全部提交成功，要么全部失败回滚，对于一个事务来说，不可能只执行其中的一部分操作
 ```
 
 - **2、一致性（consistency）**
-
+每个过程的状态。开始到结束中间有很多状态。
 ```
 数据库总是从一个一致性的状态转换到另一个一致性的状态
 ```
@@ -888,6 +901,7 @@ tarena@tarena:/var/log/mysql$ ls
 error.log       error.log.2.gz  error.log.4.gz  error.log.6.gz
 error.log.1.gz  error.log.3.gz  error.log.5.gz  error.log.7.gz
 ```
+
 ## 3） 查看系统日志
 ```
 tarena@tarena:~$  cd /var/log
@@ -913,7 +927,7 @@ tarena@tarena:/var/log$ vim /var/log/syslog
    10. 在只读状态时末尾输入'\log'搜索含有log的字段。n是下一个，N是上一个。
    11. vim严格区分大小写
         
-## 5）ifconfig查看网址
+## 5）ifconfig查看网址（IP）
 内网网址
 ```
 enp3s0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
@@ -941,12 +955,34 @@ lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
 ```
 查看当前进程
 tarena@tarena:~$ ps aux
-查看mysql进程在哪些用户下进行
+查看当前进程在哪些用户下进行
 tarena@tarena:~$ ps aux|grep 'mysqld'
 mysql     1081  0.0  4.7 1417112 189108 ?      Sl   08:13   0:02 /usr/sbin/mysqld --daemonize --pid-file=/run/mysqld/mysqld.pid
 tarena   14473  0.0  0.0  21532  1004 pts/2    S+   09:35   0:00 grep --color=auto mysqld
 tarena@tarena:~$ 
-查看mysql进程进行的总个数
+查看当前进程进行的总个数
 tarena@tarena:~$ ps aux|grep 'mysqld'|wc -l
 2
+```
+
+## 7）哈希算法
+```
+哈希算法就是散列函数，散列值（在下载环境中大量使用）
+
+eg: '12345678'--->'ABCDE'（MD5）
+
+特点：
+1. 输入为不定长的值，输出一定为定长值
+2.不可逆，不可以由定长值转换为不定长值  '12345678'<-!=--'ABCDE'
+3.雪崩效应，修改不定长字符中的任意一个，输出的结果一定大不相同
+
+密码（散列，散列值）
+用char类型的字段，因为肯定会对密码进行哈希算法，根据散列的三大特点之一，因为输出为定长，所以char更好。varchar也可以存储密码，但是由于varchar有扩展字段，去存储一个输入字符的实际长度，由于已经定长了，就会浪费磁盘空间。
+```
+
+## 8）配置文件etc
+```
+etc：该目录一般会存当前系统（ubantu)的所有安装的软件的配置文件，前提是有超级用户root权限才能打开，在修改配置文件之前最好备份copy一份。
+eg:mysql的配置文件
+cd /etc/mysql/mysql.conf.d
 ```
