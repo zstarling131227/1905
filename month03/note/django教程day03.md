@@ -12,13 +12,13 @@
     - 如:图片,css,js,音频,视频,html文件(部分)
 2. 静态文件配置
     - 在 settings.py 中配置一下两项内容:
-    1. 配置静态文件的访问路径
+    1. 配置静态文件的访问路径（eg:路由）
         - 通过哪个url地址找静态文件
         - STATIC_URL = '/static/'
         - 说明:
             - 指定访问静态文件时是需要通过 /static/xxx或 127.0.0.1:8000/static/xxx
             - xxx 表示具体的静态资源位置
-    2. 配置静态文件的存储路径 `STATICFILES_DIRS`
+    2. 配置静态文件的存储路径 `STATICFILES_DIRS`（eg:hone/tarena/...)
       
         - STATICFILES_DIRS保存的是静态文件在服务器端的存储位置
     3. 示例:
@@ -35,17 +35,36 @@
             ```python
             <img src="/static/images/lena.jpg">
             <img src="http://127.0.0.1:8000/static/images/lena.jpg">
+            直接在终端显示图片
+            http://127.0.0.1:8000/static/imgs/img1.jpg
             ```
-    2. 通过 {% static %}标签访问静态文件
+2. 通过 {% static %}标签访问静态文件
         - `{% static %}` 表示的就是静态文件访问路径
-
+    
         1. 加载 static
+            
             - `{% load static %}`
+            
         2. 使用静态资源时
             - 语法:
                 - `{% static '静态资源路径' %}`
             - 示例:
                 - `<img src="{% static 'images/lena.jpg' %}">`
+            
+        3. 示例
+        
+            - 代码
+        
+                - ```html
+                    {% load static %}
+                    <img src="{% static 'imgs/img4.jpg' %}" alt="图片不存在">
+                    ```
+        
+            - STATIC_URL = '/sss/'时，代码检查会显示为
+              - ```<img src="/sss/imgs/img4.jpg" alt="图片不存在">```
+        
+            - STATIC_URL = '/static/'时，代码检查会显示为
+              - ```<img src="/static/imgs/img4.jpg" alt="图片不存在">```
 
 ## Django中的应用 - app
 - 应用在Django项目中是一个独立的业务模块,可以包含自己的路由,视图,模板,模型
@@ -103,12 +122,16 @@
 - 作用:
     
     - 用于分发将当前路由转到各个应用的路由配置文件的 urlpatterns 进行分布式处理
+    
 - 函数格式
     - include('app命字.url模块名')
     > 模块`app命字/url模块名.py` 文件件里必须有urlpatterns 列表
     > 使用前需要使用 `from django.conf.urls import include` 导入此函数
 
+- http://127.0.0.1:8000/music/page1
+    
 - 练习:
+    
     ```
     1.创建四个应用
         1.创建 index 应用,并注册
@@ -139,6 +162,7 @@
         - 创建 `create database 数据库名 default charset utf8 collate utf8_general_ci;`
         ```sql
         create database mywebdb default charset utf8 collate utf8_general_ci;
+        mysql> create database mysite3_db default charset utf8 collate utf8_general_ci;
         ```
     2. 数据库的配置
         - sqlite 数据库配置
@@ -174,8 +198,8 @@
             'django.db.backends.postgresql'
             ```
             - mysql引擎如下:
-                - 'django.db.backends.mysql'
-
+            - 'django.db.backends.mysql'
+    
         2. NAME
             - 指定要连接的数据库的名称
             - `'NAME': 'mywebdb'`
@@ -195,7 +219,7 @@
         - 安装pymysql 模块
           
             - `$ sudo pip install pymysql`
-        - 修改项目中__init__.py 加入如下内容来提供pymysql引擎的支持
+        - 修改项目中'__init__.py '加入如下内容来提供pymysql引擎的支持
             ```python
             import pymysql
             pymysql.install_as_MySQLdb()
@@ -422,6 +446,7 @@
     1. 删除 所有 migrations 里所有的 000?_XXXX.py (`__init__.py`除外)
     2. 删除 数据表
         - sql> drop database mywebdb;
+        - sql> drop database mysite3_db;
     3. 重新创建 数据表
         - sql> create datebase mywebdb default charset...;
     4. 重新生成migrations里所有的 000?_XXXX.py
@@ -464,8 +489,18 @@
 - 启动方式:
     ```shell
     $ python3 manage.py shell
+    from bookstore.models import Book
+Book.objects.create(title='sanguo',price=100)
+    Book.objects.create(title='python')
+    abook=Book()
+    abook.title='django'
+    abook.save()
+    abook.price=56
+    abook.save()
+    abook.delete()
+    
     ```
-
+    
 - 练习:
     ```
     在 bookstore/models.py 应用中添加两个model类

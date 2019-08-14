@@ -1,11 +1,32 @@
 ### file :mysite1/views.py
 
 from django.http import HttpResponse
+from django.http import HttpResponseRedirect
 
+index_html='''
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>zstarling</title>
+</head>
+<body>
+<a href="/mypage?a=100&b=999">进入mypage</a>
+<form action="/mypage" method="get">
+    <input type="text" name="a">
+    <input type="text" name="b">
+    <input type="submit" value="提交">
+</form>
+</body>
+</html>
+'''
 
 def index_view(request):
-    html = "<h1>这是我的首页</h1>"
-    return HttpResponse(html)
+    return HttpResponse(index_html)
+
+# def index_view(request):
+#     html = "<h1>这是我的首页</h1>"
+#     return HttpResponse(html)
 
 
 def page1_view(request):
@@ -34,9 +55,17 @@ def math_view(request, x, op, y):
     elif op == 'mul':
         result = x * y
     if result is None:
-        return HttpResponse("出错了")
         # return HttpResponse("出错了")
-    return HttpResponse("结果：" + str(result))
+        # 出错了直接跳到百度
+        return HttpResponseRedirect("https://www.baidu.com")
+
+    # return HttpResponse("结果：" + str(result))
+
+    html = "结果：" + str(result)
+    # html = "您的IP地址是" + request.META['REMOTE_ADDR']
+    html += "您的IP地址是" + request.META['REMOTE_ADDR']
+    print(html)
+    return HttpResponse()
 
 
 def person_view(request, name=None, age=None):
@@ -58,6 +87,7 @@ def birthday1_view(request, m, d, y):
     html = "生日为：" + y + "年" + m + "月" + d + "日"
     return HttpResponse(html)
 
+
 def mypage_views(request):
     '''
     此视图函数用来示意得到的get请求中的查询参数
@@ -67,10 +97,10 @@ def mypage_views(request):
         # a = request.GET['a']  ##此时拿到是字符串
         # a = request.GET.get('a','没有对应的值')  ##此时拿到仍旧是字符串，且get不会报错，而且可以自己传参
         # html = "a=" + a
-        a=request.GET.getlist('a')  ##['100']
+        a = request.GET.getlist('a')  ##['100']
         html = "a=" + str(a)
-        b=request.GET.getlist('b')  ##['100']
-        html = "b=" + str(b)
+        b = request.GET.getlist('b')  ##['200','400']
+        html += "b=" + str(b)
         # html = str(dict(request.GET))
         return HttpResponse(html)
     else:

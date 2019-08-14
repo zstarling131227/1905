@@ -18,7 +18,7 @@ from django.contrib import admin
 from . import views
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^index', views.index_view),
+    url(r'^$', views.index_view),
     url(r'^page1', views.page1_view),
     url(r'^page2', views.page2_view),
     ##http://127.0.0.1:8000/page3，/page4，……
