@@ -100,9 +100,11 @@
     **补充**
     ```
     0.0.0.0 让其它电脑可连接到开发服务器，8000 为端口号。如果不说明，那么端口号默认为 8000。
-    tarena@tarena:~/1905/month03/code/code3/day01/mysite1$ python3 manage.py runserver 
-    tarena@tarena:~/1905/month03/code/code3/day01/mysite1$ python3 manage.py runserver 0.0.0.0:8000
-    tarena@tarena:~/1905/month03/code/code3/day01/mysite1$ python3 manage.py runserver 176.23.4.102:8000
+    tarena@tarena:~/1905/month03/code/code3/day01/mysite1$
+    
+     python3 manage.py runserver  5000 ###重新建立一个端口
+     python3 manage.py runserver 0.0.0.0:8000
+     python3 manage.py runserver 176.23.4.102:8000  #只有内网才可以访问该端口号
     ```
 ### Django项目的目录结构
 - 示例:
@@ -142,7 +144,7 @@
             - 此配置文件中也可以定义一些自定义的变量用于作用全局作用域的数据传递
 
 - `settings.py` 文件介绍
-    
+  
     1. `BASE_DIR`
        
         - 用于绑定当前项目的绝对路径(动态计算出来的), 所有文件都可以依懒此路径
@@ -157,11 +159,14 @@
             2. ['*']，表示任何网络地址都能访问到当前项目
             3. ['*.tedu.cn', 'weimingze.com'] 表示只有当前两个主机能访问当前项目
             - 注意:
-                
+              
                 - 如果要在局域网其它主机也能访问此主机,启动方式应使用如下模式:
             - `python3 manage.py runserver 0.0.0.0:5000` # 指定网络设备所有主机都可以通过5000端口访问(需加`ALLOWED_HOSTS = ['*']`) 
                 ```
                 tarena@tarena:~/1905/month03/code/code3/day01/mysite1$ python3 manage.py runserver 5000
+                ```
+            ```
+            
             ```
         
     4. `INSTALLED_APPS`
@@ -196,7 +201,7 @@
 ### URL 介绍
 - url 即统一资源定位符 Uniform Resource Locator
 - 作用:
-    
+  
     - 用来表示互联网上某个资源的地址。
 - 说明:
   
@@ -241,8 +246,8 @@
         return HttpResponse对象
     ```
 - 参数:
-    
-    - request用于绑定HttpRequest对象，通过此对象可以获取浏览器的参数和数据
+  
+    - request用于绑定HttpRequest对象，通过此对象 可以获取浏览器的参数和数据
 - 示例:
     - 视图处理函数 `views.py`
         ```python
@@ -314,7 +319,7 @@
 #### 带有命名分组的路由和视图函数
 - 在url 的正则表达式中可以使用命名分组(捕获分组)
 - 说明:
-    
+  
     - 在视图函数内，可以用正则表达式分组 `(?P<name>pattern)` 提取参数后用函数位置传参传递给视图函数
 - 示例:
     - 路由配置文件
@@ -418,10 +423,10 @@
 
 - Django中的响应对象HttpResponse:
     - 构造函数格式:
-        
+      
         - `HttpResponse(content=响应体, content_type=响应体数据类型, status=状态码)`
     - 作用:
-        
+      
         - 向客户端浏览器返回响应，同时携带响应体内容
     - 参数:
         - content：表示返回的内容。
@@ -452,7 +457,7 @@
 ### GET方式传参
 - GET请求方式中可以通过查询字符串(Query String)将数据传递给服务器    
 - URL 格式: `xxx?参数名1=值1&参数名2=值2...`
-    
+  
     - 如: `http://127.0.0.1:8000/page1?a=100&b=200`
 - 服务器端接收参数
     1. 判断 request.method 的值判断请求方式是否是get请求
@@ -489,7 +494,7 @@
     - 输出结果为sum(range(start, step, stop)) 和:
     - 如:
         - 输入网址: http://127.0.0.1:8000/sum?start=1&stop=101&step=1   ###不包含101
-        - 页面显示: 结果: 5050
+        - 页面显示: 结果: 5050（http://127.0.0.1:8000/sum?stop=101）输出结果也为5050
         - 输入网址: http://127.0.0.1:8000/sum?stop=101&step=2
         - 页面显示: 结果: 2550
         - 输入网址: http://127.0.0.1:8000/sum?start=1&stop=101&step=2
@@ -515,6 +520,7 @@
 ```html
 <form method='post' action="/user/login">
     姓名:<input type="text" name="username">
+    <input type='button' value='登录'>
 </form>
 ```
 - 服务器端接收参数
@@ -529,9 +535,9 @@
 - 使用post方式接收客户端数据
     1. 方法
     ```python
-    request.POST['参数名']
+    request.POST['参数名']   ##request.POST 绑定QueryDict,字典中的键为字符串，值为列表。
     request.POST.get('参数名','')
-    request.POST.getlist('参数名')
+    request.POST.getlist('参数名')  ##返回值是列表
     ```
 - 取消csrf验证,否则Django将会拒绝客户端发来的POST请求
     - 取消 csrf 验证

@@ -1,10 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+{% extends 'base.html' %}
+
+{% block sport_title %}
+<title>xixi</title>
+{% endblock %}
+
+{% block sport_info %}
+{% block new_info %}
+<h2 style="background-color:yellow;">sport首页</h2>
+<a href="/">返回首页</a>
+<a href="/new">返回新闻页</a>
+{% endblock new_info %}
+{% endblock sport_info %}
+

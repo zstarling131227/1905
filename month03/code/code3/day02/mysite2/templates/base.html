@@ -2,9 +2,20 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    {% block sport_title %}
+    <title>zstarling</title>
+    {% endblock %}
 </head>
 <body>
-$END$
+    <h1 style="background-color:orange">注册，登录</h1>
+    {% block sport_info %}
+    <h1 style="background-color:blue">网站主页</h1>
+    <a href="/sport">返回运动页</a>
+    <a href="{% url 'sport' %}">返回运动页</a>
+    <a href="/new">返回新闻页</a>
+    <a href="{% url 'pagen' '1' %}">返回第1页</a>
+    <a href="{% url 'pagen' '2' %}">返回第2页</a>
+    {% endblock %}
+    <h1 style="background-color:green">联系我们：tedu.cn</h1>
 </body>
 </html>
