@@ -1,5 +1,7 @@
 
+
 # 《Django Web框架教学笔记》
+
  - 讲师: 魏明择
  - 时间: 2019
 
@@ -120,7 +122,7 @@
     - ![](/home/tarena/1905/month03/code/code3/day03/day03_note/day03_note/images/urls.png)
 #### include 函数
 - 作用:
-    
+  
     - 用于分发将当前路由转到各个应用的路由配置文件的 urlpatterns 进行分布式处理
     
 - 函数格式
@@ -129,9 +131,9 @@
     > 使用前需要使用 `from django.conf.urls import include` 导入此函数
 
 - http://127.0.0.1:8000/music/page1
-    
+  
 - 练习:
-    
+  
     ```
     1.创建四个应用
         1.创建 index 应用,并注册
@@ -532,3 +534,56 @@ Book.objects.create(title='sanguo',price=100)
             | 吕老师 | 31 | lvze@tedu.cn |
             | 祁老师 | 30 | qitx@tedu.cn |
         
+    - 添加代码
+    
+        - book数据
+    
+            ```ipython3
+            In [24]: from bookstore import models
+            
+            In [25]: Book.objects.create(title='Python',price=20,market_price=25,pub='清华大
+                ...: 学出版社') 
+            Out[25]: <Book: Book object>
+            
+            In [26]: Book.objects.create(title='Python3',price=60,market_price=65,pub='清华
+                ...: 大学出版社') 
+            Out[26]: <Book: Book object>
+            
+            In [27]: Book.objects.create(title='Django',price=70,market_price=75,pub='清华大
+                ...: 学出版社') 
+            Out[27]: <Book: Book object>
+            
+            In [28]: Book.objects.create(title='JQuery',price=90,market_price=85,pub='机械工
+                ...: 业出版社') 
+            Out[28]: <Book: Book object>
+            
+            In [29]: Book.objects.create(title='Linux',price=80,market_price=65,pub='机械工
+                ...: 业出版社') 
+            Out[29]: <Book: Book object>
+            
+            In [30]: Book.objects.create(title='Windows',price=50,market_price=35,pub='机械
+                ...: 工业出版社') 
+            Out[30]: <Book: Book object>
+            
+            In [31]: Book.objects.create(title='HTML5',price=90,market_price=105,pub='清华大
+                ...: 学出版社') 
+            Out[31]: <Book: Book object>
+            ```
+    
+            
+    
+        - author数据
+    
+            ```ipython3
+            In [32]: Author.objects.create(name='王老师',age=28,email='wangweichao@tedu.cn')
+                ...:  
+            Out[32]: <Author: Author object>
+            
+            In [33]: Author.objects.create(name='吕老师',age=31,email='lvze@tedu.cn') 
+            Out[33]: <Author: Author object>
+            
+            In [34]: Author.objects.create(name='祁老师',age=30,email='qitx@tedu.cn') 
+            Out[34]: <Author: Author object>
+            ```
+    
+            

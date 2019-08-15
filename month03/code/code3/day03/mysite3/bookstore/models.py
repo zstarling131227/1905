@@ -22,3 +22,4 @@ class Author(models.Model):
     name=models.CharField(max_length=30,db_index=True,null=False)
     age=models.IntegerField(null=False,default=1)
     email=models.EmailField(max_length=30,null=True)
+
