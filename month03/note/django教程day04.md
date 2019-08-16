@@ -192,7 +192,17 @@
     ```
 
 - 练习:（**~~补充~~**）
-    1. 查询Book表中price大于等于50的图书信息                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
+    
+    1. 查询Book表中price大于等于50的图书信息
+       - price__gte = 50
+    
+           2. 查询清华大学的书
+              - pub__contains='清华大学'
+    
+           3. 查询零售价小于40的书
+              - market_price__lt=40
+    
+    1. 查询Author表中age大于等于50的图书信息                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
         - `Book.objects.filter(age__gte=85)`
     2. 查询Author表中姓王的人的信息
         - `Author.objects.filter(name__startswith='王')`
@@ -296,7 +306,7 @@
         In [6]: books.delete()
         ```
         
-        
+    
 2. 删除查询结果集
     - 步骤
         1. 查找查询结果集中满足条件的全部QuerySet查询集合对象
