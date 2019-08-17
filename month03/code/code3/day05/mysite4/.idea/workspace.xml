@@ -1,36 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="70534a6c-d2f2-4f9a-8104-716398ddbbea" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../../day04/mywebsite_bookstore/templates/down_book.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../day04/mywebsite_bookstore/templates/not_pub.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../day04/mywebsite_bookstore/templates/price_book.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../day04/mywebsite_bookstore/templates/search.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../day04/mywebsite_bookstore/templates/title_book.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user/templates/user/register.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../day04/mywebsite_bookstore/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../day04/mywebsite_bookstore/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../day04/mywebsite_bookstore/bookstore/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../day04/mywebsite_bookstore/bookstore/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../day04/mywebsite_bookstore/bookstore/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../day04/mywebsite_bookstore/bookstore/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../day04/mywebsite_bookstore/bookstore/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../day04/mywebsite_bookstore/bookstore/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../day04/mywebsite_bookstore/mywebsite_bookstore/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../day04/mywebsite_bookstore/mywebsite_bookstore/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../day04/mywebsite_bookstore/mywebsite_bookstore/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../day04/mywebsite_bookstore/mywebsite_bookstore/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../day04/mywebsite_bookstore/templates/book_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../day04/mywebsite_bookstore/templates/book_list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../day04/mywebsite_bookstore/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../day04/mywebsite_bookstore/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../day04/mywebsite_bookstore/templates/mod_price.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../day04/mywebsite_bookstore/templates/mod_price.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../day04/mywebsite_bookstore/templates/new_book.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../day04/mywebsite_bookstore/templates/new_book.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bookstore/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/bookstore/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bookstore/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/bookstore/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bookstore/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/bookstore/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bookstore2/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/bookstore2/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bookstore2/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/bookstore2/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bookstore2/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/bookstore2/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bookstore2/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/bookstore2/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite4/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite4/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite4/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite4/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../../note/django教程day04.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../note/django教程day04.md" afterDir="false" />
-    </list>
+    <list default="true" id="70534a6c-d2f2-4f9a-8104-716398ddbbea" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,13 +13,13 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/user/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="115">
-              <caret line="26" lean-forward="true" selection-start-line="26" selection-end-line="26" />
+            <state relative-caret-position="150">
+              <caret line="26" selection-start-line="26" selection-end-line="26" />
               <folding>
-                <element signature="e#149#774#0" />
-                <element signature="e#427#964#0" />
-                <element signature="e#461#853#0" />
-                <element signature="e#469#796#0" />
+                <element signature="e#149#861#0" />
+                <element signature="e#273#861#0" />
+                <element signature="e#448#804#0" />
+                <element signature="e#469#723#0" />
               </folding>
             </state>
           </provider>
@@ -57,7 +28,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/user/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="80">
+            <state relative-caret-position="90">
               <caret line="4" column="33" selection-start-line="4" selection-start-column="33" selection-end-line="4" selection-end-column="33" />
               <folding>
                 <element signature="e#0#32#0" expanded="true" />
@@ -115,7 +86,7 @@
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="238" />
-    <option name="y" value="38" />
+    <option name="y" value="28" />
     <option name="width" value="1201" />
     <option name="height" value="872" />
   </component>
@@ -124,29 +95,11 @@
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
-    <panes>
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="mysite4" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mysite4" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="mysite4" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mysite4" type="462c0819:PsiDirectoryNode" />
-              <item name="user" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="Scope" />
-    </panes>
+    <panes />
   </component>
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../../test" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
@@ -203,7 +156,8 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="238" y="38" width="1201" height="872" extended-state="0" />
+    <frame x="238" y="28" width="1201" height="872" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" weight="0.24787053" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -551,25 +505,25 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/user/urls.py">
+    <entry file="file://$PROJECT_DIR$/user/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="4" column="33" selection-start-line="4" selection-start-column="33" selection-end-line="4" selection-end-column="33" />
+        <state relative-caret-position="150">
+          <caret line="26" selection-start-line="26" selection-end-line="26" />
           <folding>
-            <element signature="e#0#32#0" expanded="true" />
+            <element signature="e#149#861#0" />
+            <element signature="e#273#861#0" />
+            <element signature="e#448#804#0" />
+            <element signature="e#469#723#0" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/user/views.py">
+    <entry file="file://$PROJECT_DIR$/user/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
-          <caret line="26" lean-forward="true" selection-start-line="26" selection-end-line="26" />
+        <state relative-caret-position="90">
+          <caret line="4" column="33" selection-start-line="4" selection-start-column="33" selection-end-line="4" selection-end-column="33" />
           <folding>
-            <element signature="e#149#774#0" />
-            <element signature="e#427#964#0" />
-            <element signature="e#461#853#0" />
-            <element signature="e#469#796#0" />
+            <element signature="e#0#32#0" expanded="true" />
           </folding>
         </state>
       </provider>
