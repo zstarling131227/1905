@@ -15,7 +15,6 @@ import os
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
 
@@ -26,7 +25,6 @@ SECRET_KEY = 'l+n(l-axhw)jeen))jq%z^+5k#+xfqreqay+st%g!)_%0tn^e0'
 DEBUG = True
 
 ALLOWED_HOSTS = []
-
 
 # Application definition
 
@@ -70,18 +68,17 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'mywebsite_bookstore.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
 DATABASES = {
-    'default' : {
+    'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'my_bookstore',  # 数据库名称,需要自己定义
         'USER': 'root',  # 修改为自己的用户名
         'PASSWORD': '123456',  # 管理员密码
         'HOST': '127.0.0.1',  # 修改自己的IP地址
-        'PORT': 3306,   # 一般不要修改
+        'PORT': 3306,  # 一般不要修改
     }
 }
 
@@ -103,7 +100,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/1.11/topics/i18n/
 
@@ -116,7 +112,6 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
-
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/

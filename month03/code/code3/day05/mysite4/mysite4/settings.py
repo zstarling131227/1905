@@ -14,8 +14,7 @@ import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
-
+# print(BASE_DIR)
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
 
@@ -26,7 +25,6 @@ SECRET_KEY = '3w7v#(0g7j(t2zi391i&rf!!dphoi1^77nul!84902&oa73fa)'
 DEBUG = True
 
 ALLOWED_HOSTS = []
-
 
 # Application definition
 
@@ -39,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'bookstore',
     'bookstore2',
+    'user',
 ]
 
 MIDDLEWARE = [
@@ -56,7 +55,7 @@ ROOT_URLCONF = 'mysite4.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR,'templates')],
+        'DIRS': [],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -68,9 +67,9 @@ TEMPLATES = [
         },
     },
 ]
+# print(TEMPLATES[0]['DIRS'])
 
 WSGI_APPLICATION = 'mysite4.wsgi.application'
-
 
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
@@ -85,12 +84,12 @@ WSGI_APPLICATION = 'mysite4.wsgi.application'
 
 DATABASES = {
     'default': {
-    'ENGINE': 'django.db.backends.mysql',
-    'NAME': 'mysite4_db',  # 数据库名称,需要自己定义
-    'USER': 'root',
-    'PASSWORD': '123456',  # 管理员密码
-    'HOST': '127.0.0.1',
-    'PORT': 3306,
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'mysite4_db',  # 数据库名称,需要自己定义
+        'USER': 'root',
+        'PASSWORD': '123456',  # 管理员密码
+        'HOST': '127.0.0.1',
+        'PORT': 3306,
     }
 }
 
@@ -112,7 +111,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/1.11/topics/i18n/
 
@@ -128,11 +126,11 @@ USE_L10N = True
 
 USE_TZ = True
 
-
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = '/static/'
-STATICFILES_DIRS=(
-    os.path.join(BASE_DIR,'static'),
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'static'),
 )
+# print(STATICFILES_DIRS)

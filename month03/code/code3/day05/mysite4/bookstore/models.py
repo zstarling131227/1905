@@ -1,5 +1,6 @@
 from django.db import models
 
+
 # Create your models here.
 
 class Book(models.Model):
@@ -19,68 +20,41 @@ class Book(models.Model):
                            null=True,
                            verbose_name="出版社")
 
-
     def __str__(self):
-        return "书名："+self.title
+        return "书名：" + self.title
+
     class Meta:
         # 将数据库的bookstore_book表名改为'mybook'
-        db_table='mybook'
+        db_table = 'mybook'
         ##将类名book定义的显示改为下列字符（后台管理时显示）
         # verbose_name='boooooooooook'
         ##自带复数名是加s，此时是直接替换（后台管理时显示）
         # verbose_name_plural='booooookkook'
 
 
-
 class Author(models.Model):
-    name=models.CharField(max_length=30,
-                          db_index=True,
-                          verbose_name="作者姓名",
-                          null=False)
-    age=models.IntegerField(null=False,
-                            default=1,
-                            verbose_name="作者年龄")
-    email=models.EmailField(null=True,
-                            verbose_name="作者邮箱",
-                            default='xxx@tedu.cn')
+    name = models.CharField(max_length=30,
+                            db_index=True,
+                            verbose_name="作者姓名",
+                            null=False)
+    age = models.IntegerField(null=False,
+                              default=1,
+                              verbose_name="作者年龄")
+    email = models.EmailField(null=True,
+                              verbose_name="作者邮箱",
+                              default='xxx@tedu.cn')
 
     def __str__(self):
-        return "作者："+self.name
+        return "作者：" + self.name
 
     # class Meta:
     #     db_name="myauthor"
 
 
 class Wife(models.Model):
-    name=models.CharField(max_length=30,verbose_name="妻子姓名")
-    age=models.IntegerField(verbose_name="妻子年龄")
-    author=models.OneToOneField(Author)
+    name = models.CharField(max_length=30, verbose_name="妻子姓名")
+    age = models.IntegerField(verbose_name="妻子年龄")
+    author = models.OneToOneField(Author)
 
     def __str__(self):
-        return "妻子："+self.name
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        return "妻子：" + self.name

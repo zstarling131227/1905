@@ -191,22 +191,21 @@
     # 等同于 SELECT ... WHERE id > 4;
     ```
 
-- 练习:（**~~补充~~**）
-    
+- 练习:
+  
     1. 查询Book表中price大于等于50的图书信息
        - price__gte = 50
     
-           2. 查询清华大学的书
-              - pub__contains='清华大学'
+    2. 查询清华大学的书
+       - pub__contains='清华大学'
     
-           3. 查询零售价小于40的书
-              - market_price__lt=40
-    
-    1. 查询Author表中age大于等于50的图书信息                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
+    3. 查询零售价小于40的书
+       - market_price__lt=40
+    4. 查询Author表中age大于等于50的图书信息                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
         - `Book.objects.filter(age__gte=85)`
-    2. 查询Author表中姓王的人的信息
+    5. 查询Author表中姓王的人的信息
         - `Author.objects.filter(name__startswith='王')`
-    3. 查询Author表中Email中包含"wc"的人的信息
+    6. 查询Author表中Email中包含"wc"的人的信息
         - `Author.objects.filter(email__contains='wc')`
 
 2. 不等的条件筛选

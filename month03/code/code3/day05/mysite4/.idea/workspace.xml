@@ -2,15 +2,33 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="70534a6c-d2f2-4f9a-8104-716398ddbbea" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../../day04/mywebsite_bookstore/.idea/codeStyles/Project.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../day04/mywebsite_bookstore/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../day04/mywebsite_bookstore/bookstore/urls.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../day04/mywebsite_bookstore/templates/book_list.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../day04/mywebsite_bookstore/templates/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../day04/mywebsite_bookstore/templates/mod_price.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../day04/mywebsite_bookstore/templates/new_book.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bookstore2/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../day04/mysite4/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../day04/mysite4/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../day04/mywebsite_bookstore/templates/down_book.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../day04/mywebsite_bookstore/templates/not_pub.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../day04/mywebsite_bookstore/templates/price_book.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../day04/mywebsite_bookstore/templates/search.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../day04/mywebsite_bookstore/templates/title_book.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user/templates/user/register.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../day04/mywebsite_bookstore/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../day04/mywebsite_bookstore/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../day04/mywebsite_bookstore/bookstore/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../day04/mywebsite_bookstore/bookstore/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../day04/mywebsite_bookstore/bookstore/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../day04/mywebsite_bookstore/bookstore/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../day04/mywebsite_bookstore/bookstore/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../day04/mywebsite_bookstore/bookstore/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../day04/mywebsite_bookstore/mywebsite_bookstore/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../day04/mywebsite_bookstore/mywebsite_bookstore/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../day04/mywebsite_bookstore/mywebsite_bookstore/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../day04/mywebsite_bookstore/mywebsite_bookstore/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../day04/mywebsite_bookstore/templates/book_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../day04/mywebsite_bookstore/templates/book_list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../day04/mywebsite_bookstore/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../day04/mywebsite_bookstore/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../day04/mywebsite_bookstore/templates/mod_price.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../day04/mywebsite_bookstore/templates/mod_price.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../day04/mywebsite_bookstore/templates/new_book.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../day04/mywebsite_bookstore/templates/new_book.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookstore/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/bookstore/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookstore/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/bookstore/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookstore/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/bookstore/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookstore2/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/bookstore2/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookstore2/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/bookstore2/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookstore2/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/bookstore2/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookstore2/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/bookstore2/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysite4/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite4/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysite4/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite4/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../../note/django教程day04.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../note/django教程day04.md" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -22,41 +40,28 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/bookstore/views.py">
+        <entry file="file://$PROJECT_DIR$/user/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="358">
-              <caret line="141" column="30" lean-forward="true" selection-start-line="141" selection-start-column="30" selection-end-line="141" selection-end-column="30" />
+            <state relative-caret-position="115">
+              <caret line="26" lean-forward="true" selection-start-line="26" selection-end-line="26" />
               <folding>
-                <element signature="e#193#828#0" />
-                <element signature="e#319#828#0" />
-                <element signature="e#528#755#0" />
-                <element signature="e#859#979#0" />
-                <element signature="e#1010#1100#0" />
-                <element signature="e#1133#1696#0" />
-                <element signature="e#1133#1157#0" />
-                <element signature="e#1730#2243#0" />
-                <element signature="e#1986#2243#0" />
-                <element signature="e#2277#2462#0" />
-                <element signature="e#2495#3011#0" />
-                <element signature="e#2623#3011#0" />
-                <element signature="e#2754#2938#0" />
-                <element signature="e#3042#3169#0" />
-                <element signature="e#3200#3294#0" />
-                <element signature="e#3329#3565#0" />
-                <element signature="e#3329#3379#0" />
-                <element signature="e#3599#4007#0" />
-                <element signature="e#3869#4007#0" />
-                <element signature="e#4042#4233#0" />
+                <element signature="e#149#774#0" />
+                <element signature="e#427#964#0" />
+                <element signature="e#461#853#0" />
+                <element signature="e#469#796#0" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/bookstore/urls.py">
+        <entry file="file://$PROJECT_DIR$/user/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="328">
-              <caret line="17" column="1" lean-forward="true" selection-start-line="17" selection-start-column="1" selection-end-line="17" selection-end-column="1" />
+            <state relative-caret-position="80">
+              <caret line="4" column="33" selection-start-line="4" selection-start-column="33" selection-end-line="4" selection-end-column="33" />
+              <folding>
+                <element signature="e#0#32#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -66,8 +71,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="Python Script" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -89,23 +94,30 @@
         <option value="$PROJECT_DIR$/bookstore/templates/bookstore/addau.html" />
         <option value="$PROJECT_DIR$/bookstore/templates/bookstore/modau.html" />
         <option value="$PROJECT_DIR$/bookstore/admin.py" />
-        <option value="$PROJECT_DIR$/bookstore/models.py" />
-        <option value="$PROJECT_DIR$/mysite4/settings.py" />
-        <option value="$PROJECT_DIR$/mysite4/urls.py" />
-        <option value="$PROJECT_DIR$/bookstore2/urls.py" />
-        <option value="$PROJECT_DIR$/bookstore2/models.py" />
-        <option value="$PROJECT_DIR$/bookstore2/views.py" />
-        <option value="$PROJECT_DIR$/bookstore2/admin.py" />
         <option value="$PROJECT_DIR$/bookstore/views.py" />
         <option value="$PROJECT_DIR$/bookstore/urls.py" />
+        <option value="$PROJECT_DIR$/bookstore/models.py" />
+        <option value="$PROJECT_DIR$/bookstore2/admin.py" />
+        <option value="$PROJECT_DIR$/bookstore2/models.py" />
+        <option value="$PROJECT_DIR$/bookstore2/urls.py" />
+        <option value="$PROJECT_DIR$/bookstore2/views.py" />
+        <option value="$PROJECT_DIR$/mysite4/urls.py" />
+        <option value="$PROJECT_DIR$/user/templates/index.html" />
+        <option value="$PROJECT_DIR$/user/templates/user/index.html" />
+        <option value="$PROJECT_DIR$/mysite4/settings.py" />
+        <option value="$PROJECT_DIR$/user/templates/user/register.html" />
+        <option value="$PROJECT_DIR$/user/admin.py" />
+        <option value="$PROJECT_DIR$/user/models.py" />
+        <option value="$PROJECT_DIR$/user/views.py" />
+        <option value="$PROJECT_DIR$/user/urls.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="1">
-    <option name="x" value="-21" />
-    <option name="y" value="62" />
-    <option name="width" value="1375" />
-    <option name="height" value="715" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="238" />
+    <option name="y" value="38" />
+    <option name="width" value="1201" />
+    <option name="height" value="872" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -123,7 +135,7 @@
             <path>
               <item name="mysite4" type="b2602c69:ProjectViewProjectNode" />
               <item name="mysite4" type="462c0819:PsiDirectoryNode" />
-              <item name="bookstore" type="462c0819:PsiDirectoryNode" />
+              <item name="user" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -134,8 +146,13 @@
   </component>
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../day04/mywebsite_bookstore" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/user/templates/user" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -186,17 +203,16 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-21" y="62" width="1375" height="715" extended-state="1" />
-    <editor active="true" />
+    <frame x="238" y="38" width="1201" height="872" extended-state="0" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.109792285" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.24787053" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info id="DB Browser" order="3" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32967034" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.38110235" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.39918256" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.3287483" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.29711142" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39889959" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -246,33 +262,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file:///usr/local/lib/python3.6/dist-packages/django/core/handlers/base.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="186" selection-start-line="186" selection-end-line="186" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mysite4/views.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bookstore/tests.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bookstore/apps.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/bookstore/templates/bookstore/modbo.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="112">
           <caret line="4" column="32" lean-forward="true" selection-start-line="4" selection-start-column="32" selection-end-line="4" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bookstore/templates/bookstore/add_book.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="5" column="7" selection-start-line="5" selection-start-column="7" selection-end-line="5" selection-end-column="7" />
         </state>
       </provider>
     </entry>
@@ -283,71 +276,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bookstore/templates/bookstore/add_author.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="8" column="2" selection-start-line="8" selection-start-column="2" selection-end-line="8" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bookstore/templates/bookstore/addau.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="271">
-          <caret line="23" column="52" selection-start-line="23" selection-start-column="52" selection-end-line="23" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/bookstore/templates/bookstore/modau.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-90">
           <caret line="6" column="6" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bookstore/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="53" column="25" selection-start-line="53" selection-start-column="25" selection-end-line="53" selection-end-column="25" />
-          <folding>
-            <element signature="e#88#1106#0" />
-            <element signature="e#841#863#0" />
-            <element signature="e#889#1106#0" />
-            <element signature="e#957#986#0" />
-            <element signature="e#1142#1615#0" />
-            <element signature="e#1308#1330#0" />
-            <element signature="e#1585#1598#0" />
-            <element signature="e#1707#1907#0" />
-            <element signature="e#1885#1907#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mysite4/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="570">
-          <caret line="32" column="18" selection-start-line="32" selection-start-column="18" selection-end-line="32" selection-end-column="18" />
-          <folding>
-            <element signature="e#0#309#1" />
-            <element signature="e#467#529#0" />
-            <element signature="e#882#1105#0" />
-            <element signature="e#1103#1504#0" />
-            <element signature="e#1549#2054#0" />
-            <element signature="e#1555#2051#0" />
-            <element signature="e#1726#2044#0" />
-            <element signature="e#1762#2033#0" />
-            <element signature="e#2104#2114#0" />
-            <element signature="e#2348#2556#0" />
-            <element signature="e#2365#2554#0" />
-            <element signature="e#2558#2579#0" />
-            <element signature="e#2688#3084#0" />
-            <element signature="e#2694#2793#0" />
-            <element signature="e#2799#2888#0" />
-            <element signature="e#2894#2984#0" />
-            <element signature="e#2990#3081#0" />
-            <element signature="e#3087#3109#0" />
-            <element signature="e#3191#3216#0" />
-            <element signature="e#3259#3299#0" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -358,92 +290,286 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mysite4/urls.py">
+    <entry file="file://$PROJECT_DIR$/bookstore/apps.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="20" column="37" lean-forward="true" selection-start-line="20" selection-start-column="37" selection-end-line="20" selection-end-column="37" />
+        <state>
           <folding>
-            <element signature="e#0#640#1" />
-            <element signature="e#641#673#0" expanded="true" />
+            <element signature="e#74#92#0" />
           </folding>
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bookstore/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="298">
+          <caret line="53" column="25" selection-start-line="53" selection-start-column="25" selection-end-line="53" selection-end-column="25" />
+          <folding>
+            <element signature="e#88#1106#0" />
+            <element signature="e#841#864#0" />
+            <element signature="e#889#1106#0" />
+            <element signature="e#957#986#0" />
+            <element signature="e#1142#1674#0" />
+            <element signature="e#1604#1626#0" />
+            <element signature="e#1632#1645#0" />
+            <element signature="e#1707#1907#0" />
+            <element signature="e#1885#1907#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bookstore/tests.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bookstore2/admin.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="22" column="41" selection-start-line="22" selection-start-column="41" selection-end-line="22" selection-end-column="41" />
+          <folding>
+            <element signature="e#200#256#0" />
+            <element signature="e#350#407#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bookstore2/apps.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#75#94#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bookstore2/tests.py">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/bookstore2/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="4" column="15" selection-start-line="4" selection-start-column="15" selection-end-line="4" selection-end-column="15" />
+        <state relative-caret-position="60">
+          <caret line="3" column="15" selection-start-line="3" selection-start-column="15" selection-end-line="3" selection-end-column="15" />
           <folding>
-            <element signature="e#0#32#0" expanded="true" />
+            <element signature="e#65#150#0" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bookstore2/models.py">
+    <entry file="file://$PROJECT_DIR$/user/apps.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/user/tests.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/manage.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="21" column="22" lean-forward="true" selection-start-line="21" selection-start-column="22" selection-end-line="21" selection-end-column="22" />
+        <state>
           <folding>
-            <element signature="e#92#216#0" />
-            <element signature="e#194#216#0" />
-            <element signature="e#248#412#0" />
-            <element signature="e#389#412#0" />
+            <element signature="e#75#804#0" />
+            <element signature="e#253#764#0" />
+            <element signature="e#253#319#0" />
+            <element signature="e#505#750#0" />
+            <element signature="e#540#736#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mysite4/wsgi.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#222#1" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mysite4/views.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bookstore/templates/bookstore/add_author.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="8" column="2" selection-start-line="8" selection-start-column="2" selection-end-line="8" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bookstore/templates/bookstore/add_book.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="115">
+          <caret line="5" column="7" selection-start-line="5" selection-start-column="7" selection-end-line="5" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bookstore/templates/bookstore/addau.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2">
+          <caret line="2" column="6" lean-forward="true" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mysite4/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-853">
+          <caret line="20" column="66" lean-forward="true" selection-start-line="20" selection-start-column="66" selection-end-line="20" selection-end-column="66" />
+          <folding>
+            <element signature="e#0#309#1" />
+            <element signature="e#880#1116#0" />
+            <element signature="e#1131#1532#0" />
+            <element signature="e#1755#2073#0" />
+            <element signature="e#1791#2062#0" />
+            <element signature="e#2132#2142#0" />
+            <element signature="e#2376#2608#0" />
+            <element signature="e#2393#2606#0" />
+            <element signature="e#2610#2631#0" />
+            <element signature="e#2740#3136#0" />
+            <element signature="e#2746#2845#0" />
+            <element signature="e#2851#2940#0" />
+            <element signature="e#2946#3036#0" />
+            <element signature="e#3042#3133#0" />
+            <element signature="e#3138#3160#0" />
+            <element signature="e#3242#3267#0" />
+            <element signature="e#3367#3407#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mysite4/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="25" selection-start-line="25" selection-end-line="25" />
+          <folding>
+            <element signature="e#0#640#1" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/bookstore2/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="15" column="40" lean-forward="true" selection-start-line="15" selection-start-column="40" selection-end-line="15" selection-end-column="40" />
+        <state relative-caret-position="210">
+          <caret line="17" column="29" selection-start-line="17" selection-start-column="29" selection-end-line="17" selection-end-column="29" />
           <folding>
-            <element signature="e#0#35#0" expanded="true" />
+            <element signature="e#156#517#0" />
+            <element signature="e#554#1004#0" />
+            <element signature="e#667#796#0" />
+            <element signature="e#859#959#0" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bookstore2/admin.py">
+    <entry file="file://$PROJECT_DIR$/bookstore2/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="13" column="40" lean-forward="true" selection-start-line="13" selection-start-column="40" selection-end-line="13" selection-end-column="40" />
+        <state relative-caret-position="75">
+          <caret line="22" column="28" selection-start-line="22" selection-start-column="28" selection-end-line="22" selection-end-column="28" />
+          <folding>
+            <element signature="e#31#57#0" />
+            <element signature="e#111#242#0" />
+            <element signature="e#217#242#0" />
+            <element signature="e#276#448#0" />
+            <element signature="e#423#448#0" />
+            <element signature="e#490#606#0" />
+            <element signature="e#582#606#0" />
+            <element signature="e#640#802#0" />
+            <element signature="e#777#802#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/user/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="3" column="25" selection-start-line="3" selection-start-column="25" selection-end-line="3" selection-end-column="25" />
+          <folding>
+            <element signature="e#87#262#0" />
+            <element signature="e#235#262#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/user/admin.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="4" column="27" lean-forward="true" selection-start-line="4" selection-start-column="27" selection-end-line="4" selection-end-column="27" />
           <folding>
             <element signature="e#0#32#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bookstore/urls.py">
+    <entry file="file://$PROJECT_DIR$/user/templates/user/register.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="328">
-          <caret line="17" column="1" lean-forward="true" selection-start-line="17" selection-start-column="1" selection-end-line="17" selection-end-column="1" />
+        <state relative-caret-position="15">
+          <caret line="1" column="15" selection-start-line="1" selection-start-column="15" selection-end-line="1" selection-end-column="15" />
+          <folding>
+            <element signature="n#html#0;n#!!top" />
+            <element signature="n#head#0;n#html#0;n#!!top" />
+            <element signature="n#body#0;n#html#0;n#!!top" />
+            <element signature="n#form#0;n#body#0;n#html#0;n#!!top" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/bookstore/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="358">
-          <caret line="141" column="30" lean-forward="true" selection-start-line="141" selection-start-column="30" selection-end-line="141" selection-end-column="30" />
+        <state relative-caret-position="170">
+          <caret line="145" column="4" selection-start-line="145" selection-start-column="4" selection-end-line="145" selection-end-column="4" />
           <folding>
-            <element signature="e#193#828#0" />
-            <element signature="e#319#828#0" />
-            <element signature="e#528#755#0" />
-            <element signature="e#859#979#0" />
-            <element signature="e#1010#1100#0" />
-            <element signature="e#1133#1696#0" />
-            <element signature="e#1133#1157#0" />
-            <element signature="e#1730#2243#0" />
-            <element signature="e#1986#2243#0" />
-            <element signature="e#2277#2462#0" />
-            <element signature="e#2495#3011#0" />
-            <element signature="e#2623#3011#0" />
-            <element signature="e#2754#2938#0" />
-            <element signature="e#3042#3169#0" />
-            <element signature="e#3200#3294#0" />
-            <element signature="e#3329#3565#0" />
-            <element signature="e#3329#3379#0" />
-            <element signature="e#3599#4007#0" />
-            <element signature="e#3869#4007#0" />
-            <element signature="e#4042#4233#0" />
+            <element signature="e#194#844#0" />
+            <element signature="e#325#844#0" />
+            <element signature="e#544#771#0" />
+            <element signature="e#876#1000#0" />
+            <element signature="e#1032#1126#0" />
+            <element signature="e#1160#1727#0" />
+            <element signature="e#1160#1184#0" />
+            <element signature="e#1763#2292#0" />
+            <element signature="e#2030#2292#0" />
+            <element signature="e#2328#2515#0" />
+            <element signature="e#2547#3074#0" />
+            <element signature="e#2680#3074#0" />
+            <element signature="e#2817#3001#0" />
+            <element signature="e#3106#3237#0" />
+            <element signature="e#3269#3367#0" />
+            <element signature="e#3403#3643#0" />
+            <element signature="e#3403#3453#0" />
+            <element signature="e#3679#4087#0" />
+            <element signature="e#3949#4087#0" />
+            <element signature="e#4123#4314#0" />
+            <element signature="e#4425#4441#0" />
+            <element signature="e#4627#4697#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/lib/python3.6/dist-packages/django/core/handlers/base.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="184" selection-start-line="184" selection-end-line="184" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bookstore/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/user/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="80">
+          <caret line="4" column="33" selection-start-line="4" selection-start-column="33" selection-end-line="4" selection-end-column="33" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/user/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="115">
+          <caret line="26" lean-forward="true" selection-start-line="26" selection-end-line="26" />
+          <folding>
+            <element signature="e#149#774#0" />
+            <element signature="e#427#964#0" />
+            <element signature="e#461#853#0" />
+            <element signature="e#469#796#0" />
           </folding>
         </state>
       </provider>
