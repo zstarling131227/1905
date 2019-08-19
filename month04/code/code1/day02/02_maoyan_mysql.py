@@ -1,8 +1,8 @@
 from urllib import request
 
 import csv, time, re, random
-
-
+import pymongo
+import pymysql
 class MaoyanSpider(object):
     def __init__(self):
         self.url = "https://maoyan.com/board/4?offset={}"
@@ -10,6 +10,8 @@ class MaoyanSpider(object):
             "User-Agent": "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:6.0) Gecko/20100101 Firefox/6.0"
         }
         self.page = 1
+        self.db = pymysql.connect('localhost', 'root', '123456', 'maoyandb', charset='utf8')
+        self.cursor = self.db.cursor()
 
     def get_page(self, url):
         req = request.Request(
@@ -26,33 +28,17 @@ class MaoyanSpider(object):
         film_list = pattern.findall(html)
         # print(film_list)
         # print(len(film_list))
-        self.write_page(film_list)
-        # self.write_csv(film_list)
+        self.write_mysql(film_list)
 
-    # 使用writerow()方法
-    def write_page(self, film_list):
-        with open("maoyanfilm1.csv", 'a') as f:
-            writer = csv.writer(f)
-            for film in film_list:
-                L = [
-                    film[0].strip(),
-                    film[1].strip(),
-                    film[2].strip()
-                ]
-                writer.writerow(L)
-
-    # 使用writerows()方法
-    def write_csv(self, film_list):
-        film_last_list = []
+    def write_mysql(self, film_list):
+        ins = 'insert into filmset values(%s,%s,%s)'
+        data_list=[]
         for film in film_list:
-            L = (film[0].strip(), film[1].strip(), film[2].strip())
-            film_last_list.append(L)
+            L=[film[0].strip(),film[1].strip(),film[2].strip()[5:15]]
+            data_list.append(L)
+        self.cursor.executemany(ins,data_list)
+        self.db.commit()
 
-        with open('maoyanfilm.csv', 'a') as f:
-            # 初始化写入对象
-            writer = csv.writer(f)
-            writer.writerows(film_last_list)
-            # film_last_list : [(),(),()]
 
     def main(self):
         # self.get_page('https://maoyan.com/board/4?offset=10')
@@ -63,6 +49,9 @@ class MaoyanSpider(object):
             print('%d页完成' % self.page)
             self.page += 1
             time.sleep(random.randint(1, 3))
+
+        self.cursor.close()
+        self.db.close()
 
 
 if __name__ == '__main__':

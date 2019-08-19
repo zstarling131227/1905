@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>zstarling注册</title>
+    <style>
+     div>span{color:red;}
+    </style>
+</head>
+<body>
+<form action="reg/" method="post">
+    <div>
+        <label>用户名：</label>
+        <input type="text" name="username" value="{{username}}">
+        <span>{{username_error}}</span>
+    </div>
+    <div>
+        <label>密&nbsp;&nbsp;&nbsp;&nbsp;码：</label>
+        <input type="password" name="password" value="{{password}}">
+        <span>{{password_error}}</span>
+    </div>
+    <div>
+        <label>密&nbsp;&nbsp;&nbsp;&nbsp;码：</label>
+        <input type="password" name="passwd" value="{{passwd}}"><br>
+        <span>{{passwd_error}}</span>
+    </div>
+    <input type="submit" value="注册">
+</form>
+</body>
+</html>

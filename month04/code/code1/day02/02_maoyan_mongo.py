@@ -1,7 +1,7 @@
 from urllib import request
 
 import csv, time, re, random
-
+import pymongo
 
 class MaoyanSpider(object):
     def __init__(self):
@@ -10,6 +10,9 @@ class MaoyanSpider(object):
             "User-Agent": "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:6.0) Gecko/20100101 Firefox/6.0"
         }
         self.page = 1
+        self.conn=pymongo.MongoClient('localhost',27017)
+        self.db = self.conn['maoyandb']
+        self.myset =self.db['filmset']
 
     def get_page(self, url):
         req = request.Request(
@@ -26,33 +29,16 @@ class MaoyanSpider(object):
         film_list = pattern.findall(html)
         # print(film_list)
         # print(len(film_list))
-        self.write_page(film_list)
-        # self.write_csv(film_list)
+        self.write_mongo(film_list)
 
-    # 使用writerow()方法
-    def write_page(self, film_list):
-        with open("maoyanfilm1.csv", 'a') as f:
-            writer = csv.writer(f)
-            for film in film_list:
-                L = [
-                    film[0].strip(),
-                    film[1].strip(),
-                    film[2].strip()
-                ]
-                writer.writerow(L)
-
-    # 使用writerows()方法
-    def write_csv(self, film_list):
-        film_last_list = []
+    def write_mongo(self, film_list):
         for film in film_list:
-            L = (film[0].strip(), film[1].strip(), film[2].strip())
-            film_last_list.append(L)
-
-        with open('maoyanfilm.csv', 'a') as f:
-            # 初始化写入对象
-            writer = csv.writer(f)
-            writer.writerows(film_last_list)
-            # film_last_list : [(),(),()]
+            film_dict={
+                '名称':film[0].strip(),
+                '主演':film[1].strip(),
+                '时间':film[2].strip()
+            }
+            self.myset.insert_one(film_dict)
 
     def main(self):
         # self.get_page('https://maoyan.com/board/4?offset=10')
