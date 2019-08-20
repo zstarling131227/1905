@@ -370,9 +370,10 @@ if __name__ == '__main__':
 
 ```mysql
 1、查询20年以前的电影的名字和上映时间
-   select name,time from film where time<=(now()-interval 20 year);
+   select name,time from filmset where time<=(now()-interval 20 year);
 2、查询1990-2000年的电影名字和上映时间
-   select name,time from film where time>='1990-01-01' and time<='2000-12-31';
+   select name,time from filmset where time>='1990-01-01' and time<='2000-12-31';
+      select name,time from filmset where time>='19900101' and time<='20001231';
 ```
 
 ## **电影天堂案例（二级页面抓取）**

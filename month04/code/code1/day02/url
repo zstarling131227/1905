@@ -1,0 +1,8 @@
+https://www.dygod.net/html/gndy/dyzz/index_2.html
+
+magnet:?xt=urn:btih:2d9294ee650939ddc0e466e8233b734dd357f271&dn=[电影天堂www.dy2018.com]全民追女王BD中英双字.mp4
+
+r'<table width="100%".*?<a href="(.*?)".*?>(.*?)</a>'
+
+
+r'<td style="WORD-WRAP:.*?<a href="(.*?)".*?</a>'
