@@ -76,12 +76,3 @@ def logout_view(request):
     if 'user' in request.session:
         del request.session['user']
     return HttpResponseRedirect('/')
-
-from . import forms
-
-def reg2_view(request):
-    myform1=forms.RegForm()
-    # html=myform1.as_p()
-    # print(html)
-    # return HttpResponse(html)
-    return render(request,'user/register2.html',locals())
