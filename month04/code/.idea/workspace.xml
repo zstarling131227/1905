@@ -2,30 +2,27 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="19983b49-a67c-444b-bce8-13df3a4f2642" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../../month03/code/code3/day06/mysite6/.idea/codeStyles/Project.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../month03/code/code3/day06/mysite6/.idea/dbnavigator.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../month03/code/code3/day06/mysite6/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../month03/code/code3/day06/mysite6/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../month03/code/code3/day06/mysite6/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../month03/code/code3/day06/mysite6/.idea/mysite6.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../month03/code/code3/day06/mysite6/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../month03/code/code3/day06/mysite6/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../month03/code/code3/day06/mysite6/index/templates/index/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../month03/code/code3/day06/mysite6/user/templates/user/login.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../month03/code/code3/day06/mysite6/user/templates/user/register.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../month03/code/code3/day06/mysite6/user/urls.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/code1/day02/02-mongo.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/code1/day02/02_maoyan_mongo.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/code1/day02/02_maoyan_mysql.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/code1/day02/02_pymysql_executemany.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../month03/code/code3/day05/mysite4/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../month03/code/code3/day05/mysite4/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../month03/code/code3/day06/day06_all/day06/code/mysite6/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../month03/code/code3/day06/mysite6/index/middleware/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../month03/code/code3/day06/mysite6/index/middleware/mymiddleware.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../month03/code/code3/day06/mysite6/note/templates/note/add_note.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../month03/code/code3/day06/mysite6/note/templates/note/list_note.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../month03/code/code3/day06/mysite6/note/templates/note/mod_note.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../month03/code/code3/day06/mysite6/note/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../month03/code/code3/day06/mysite6/user/forms.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../month03/code/code3/day06/mysite6/user/templates/user/register2.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../month03/code/code3/day06/mysite6/.idea/codeStyles/Project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../month03/code/code3/day06/mysite6/.idea/codeStyles/Project.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../month03/code/code3/day06/mysite6/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../month03/code/code3/day06/mysite6/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../month03/code/code3/day06/mysite6/index/templates/index/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../month03/code/code3/day06/mysite6/index/templates/index/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../month03/code/code3/day06/mysite6/index/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../month03/code/code3/day06/mysite6/index/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../month03/code/code3/day06/mysite6/mysite6/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../month03/code/code3/day06/mysite6/mysite6/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../month03/code/code3/day06/mysite6/mysite6/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../month03/code/code3/day06/mysite6/mysite6/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../month03/code/code3/day06/mysite6/user/templates/user/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../month03/code/code3/day06/mysite6/user/templates/user/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../month03/code/code3/day06/mysite6/user/templates/user/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../month03/code/code3/day06/mysite6/user/templates/user/register.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../month03/code/code3/day06/mysite6/user/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../month03/code/code3/day06/mysite6/user/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../month03/code/code3/day06/mysite6/user/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../month03/code/code3/day06/mysite6/user/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/code1/day02/02_csv_example.py" beforeDir="false" afterPath="$PROJECT_DIR$/code1/day02/02_csv_example.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/code1/day02/02_maoyan_film.py" beforeDir="false" afterPath="$PROJECT_DIR$/code1/day02/02_maoyan_film.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/code1/day02/maoyanfilm.csv" beforeDir="false" afterPath="$PROJECT_DIR$/code1/day02/maoyanfilm.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/code1/day02/test.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/code1/day02/test1.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/code1/day02/02_maoyan_mysql.py" beforeDir="false" afterPath="$PROJECT_DIR$/code1/day02/02_maoyan_mysql.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -47,7 +44,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/code1/day02/02_pymysql_executemany.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
+            <state relative-caret-position="150">
               <caret line="5" selection-start-line="5" selection-end-line="5" selection-end-column="42" />
             </state>
           </provider>
@@ -56,16 +53,11 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/code1/day02/02_maoyan_mysql.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="292">
-              <caret line="49" column="26" lean-forward="true" selection-start-line="49" selection-start-column="26" selection-end-line="49" selection-end-column="26" />
+            <state relative-caret-position="228">
+              <caret line="59" selection-start-line="59" selection-end-line="59" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
-                <element signature="e#133#474#0" />
-                <element signature="e#206#316#0" />
-                <element signature="e#513#701#0" />
-                <element signature="e#743#1018#0" />
-                <element signature="e#932#950#0" />
-                <element signature="e#1633#1674#0" />
+                <element signature="e#119#1715#0" />
               </folding>
             </state>
           </provider>
@@ -114,7 +106,7 @@
   <component name="ProjectFrameBounds" extendedState="1">
     <option name="x" value="61" />
     <option name="y" value="42" />
-    <option name="width" value="899" />
+    <option name="width" value="947" />
     <option name="height" value="873" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -294,7 +286,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="61" y="42" width="899" height="873" extended-state="1" />
+    <frame x="61" y="42" width="947" height="873" extended-state="1" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" weight="0.27895597" />
@@ -402,12 +394,8 @@
     <entry file="file://$PROJECT_DIR$/code1/day01/exercise01.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/code1/day02/test.csv">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/code1/day02/test1.csv">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/code1/day02/test.csv" />
+    <entry file="file://$PROJECT_DIR$/code1/day02/test1.csv" />
     <entry file="file://$PROJECT_DIR$/code1/day01/01_baidu_query_sting.py">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -456,13 +444,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/code1/day02/02-mongo.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="14" selection-start-column="14" selection-end-line="2" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/code1/day02/02_maoyan_mongo.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="110">
@@ -474,25 +455,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/code1/day02/02-mongo.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="14" selection-start-column="14" selection-end-line="2" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/code1/day02/02_pymysql_executemany.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
+        <state relative-caret-position="150">
           <caret line="5" selection-start-line="5" selection-end-line="5" selection-end-column="42" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/code1/day02/02_maoyan_mysql.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="292">
-          <caret line="49" column="26" lean-forward="true" selection-start-line="49" selection-start-column="26" selection-end-line="49" selection-end-column="26" />
+        <state relative-caret-position="228">
+          <caret line="59" selection-start-line="59" selection-end-line="59" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
-            <element signature="e#133#474#0" />
-            <element signature="e#206#316#0" />
-            <element signature="e#513#701#0" />
-            <element signature="e#743#1018#0" />
-            <element signature="e#932#950#0" />
-            <element signature="e#1633#1674#0" />
+            <element signature="e#119#1715#0" />
           </folding>
         </state>
       </provider>

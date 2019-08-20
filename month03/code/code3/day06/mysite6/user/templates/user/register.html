@@ -9,6 +9,7 @@
 </head>
 <body>
 <form action="reg/" method="post">
+     {% csrf_token %}
     <div>
         <label>用户名：</label>
         <input type="text" name="username" value="{{username}}">

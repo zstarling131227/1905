@@ -1,8 +1,9 @@
 from urllib import request
-
 import csv, time, re, random
 import pymongo
 import pymysql
+
+
 class MaoyanSpider(object):
     def __init__(self):
         self.url = "https://maoyan.com/board/4?offset={}"
@@ -32,13 +33,12 @@ class MaoyanSpider(object):
 
     def write_mysql(self, film_list):
         ins = 'insert into filmset values(%s,%s,%s)'
-        data_list=[]
+        data_list = []
         for film in film_list:
-            L=[film[0].strip(),film[1].strip(),film[2].strip()[5:15]]
+            L = [film[0].strip(), film[1].strip(), film[2].strip()[5:15]]
             data_list.append(L)
-        self.cursor.executemany(ins,data_list)
+        self.cursor.executemany(ins, data_list)
         self.db.commit()
-
 
     def main(self):
         # self.get_page('https://maoyan.com/board/4?offset=10')
