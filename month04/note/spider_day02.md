@@ -569,6 +569,7 @@ with open('颖宝.jpg','wb') as f:
 
 ```python
 1、Xpath Helper: 轻松获取HTML元素的xPath路径
+    		打开或关闭：CTRL+shift+x
 2、Proxy SwitchyOmega: Chrome浏览器中的代理管理扩展程序
 3、JsonView: 格式化输出json格式数据
 ```

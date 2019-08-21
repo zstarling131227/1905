@@ -32,8 +32,6 @@ db.close()
 
 ## **持久化存储之MongoDB**
 
-
-
 ```python
 conn = pymongo.MongoClient('IP',27017)
 db = conn['库名']
