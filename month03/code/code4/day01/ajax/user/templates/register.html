@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>zstarling</title>
+</head>
+<body>
+<script src="/static/js/common.js"></script>
+<script src="/static/js/jquery-1.11.3.js"></script>
+<script>
+    $(function(){
+        $('#uname').blur(function(){
+            var xhr=createXhr();
+            var url='/user/checkuname/?uname='+$("#uname").val();
+            xhr.open('get',url,true);
+            xhr.onreadystatechange=function(){
+                if (xhr.readyState==4 && xhr.status==200){
+                    $('#show').html(xhr.responseText);
+                }
+            }
+            xhr.send(null);
+        })
+    })
+</script>
+<p>
+    用户名：<input type="text" id="uname">
+    <span id="show"></span>
+</p>
+<p>
+    密码：<input type="password" id="pwd">
+</p>
+<p>
+    <button id="btn">提交</button>
+</p>
+</body>
+</html>

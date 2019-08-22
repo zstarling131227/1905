@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>zstarling</title>
+</head>
+<body>
+
+<script src="/static/js/common.js"></script>
+<a href="/user/get-xhr-server/">普通请求</a>
+<button onclick="getXhr()">xhr-get</button>
+<div id="show"></div>
+
+<input type="text" id="uname">
+<button onclick="getXhrP()">xhr-get-prparams</button>
+<div id="show_p"></div>
+
+<script>
+    function getXhrP(){
+        var xhr=createXhr();
+        var uname=document.getElementById('uname').value
+        var url='/user/get-xhr-server/?uname='+uname
+        xhr.open('get',url,true);
+        xhr.onreadystatechange=function(){
+            if (xhr.readyState==4 && xhr.status==200){
+                var res=xhr.responseText;
+                var show=document.getElementById('show_p');
+                show.innerHTML=res;
+            }
+        }
+        xhr.send(null);
+    }
+
+    function getXhr(){
+        var xhr=createXhr();
+        xhr.open('get','/user/get-xhr-server/',true);
+        xhr.onreadystatechange = function(){
+            if (xhr.readyState == 4 && xhr.status == 200){
+                document.getElementById('show').innerHTML = xhr.responseText;
+            }
+        }
+        xhr.send(null);
+    }
+
+</script>
+</body>
+</html>

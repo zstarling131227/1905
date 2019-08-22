@@ -2,46 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="349b19cf-961c-47bd-b1ad-86beeef82f89" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../../../../month03/code/code3/day08/.idea/codeStyles/Project.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../../month03/code/code3/day08/.idea/day08.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../../month03/code/code3/day08/.idea/dbnavigator.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../../month03/code/code3/day08/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../../month03/code/code3/day08/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../../month03/code/code3/day08/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../../month03/code/code3/day08/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../../month03/code/code3/day08/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../../month03/code/code3/day08/mysite6/.idea/codeStyles/Project.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../../month03/code/code3/day08/mysite6/.idea/dbnavigator.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../../month03/code/code3/day08/mysite6/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../../month03/code/code3/day08/mysite6/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../../month03/code/code3/day08/mysite8/.idea/codeStyles/Project.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../../month03/code/code3/day08/mysite8/.idea/dbnavigator.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../../month03/code/code3/day08/mysite8/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../../month03/code/code3/day08/mysite8/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../../month03/code/code3/day08/mysite8/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../../month03/code/code3/day08/mysite8/.idea/mysite8.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../../month03/code/code3/day08/mysite8/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../../month03/code/code3/day08/mysite8/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../../month03/code/code3/day08/mysite8/mysite8/static/img1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../../month03/code/code3/day08/mysite8/mysite8/static/img2.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../../month03/code/code3/day08/mysite8/mysite8/uwsgi.ini" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../../month03/code/code3/day08/mysite8/templates/404.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../day02/02-xpath.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../day02/02_request.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../day02/02_res_content.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/03_lianjia_xpath.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/03_maoyan_xpath.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/03_xpath.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cancel.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/url" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../day02/.idea/codeStyles/Project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../day02/.idea/codeStyles/Project.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../day02/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../day02/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../day02/02-filmsky.py" beforeDir="false" afterPath="$PROJECT_DIR$/../day02/02-filmsky.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../day02/cancel.py" beforeDir="false" afterPath="$PROJECT_DIR$/../day02/cancel.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../day02/url" beforeDir="false" afterPath="$PROJECT_DIR$/../day02/url" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../note/spider_day02.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../../note/spider_day02.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../month03/code/code4/day01/ajax/.idea/codeStyles/Project.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../month03/code/code4/day01/ajax/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../month03/code/code4/day01/ajax/static/js/common.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../month03/code/code4/day01/ajax/user/templates/get-xhr.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../month03/code/code4/day01/ajax/user/templates/make1_post.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../month03/code/code4/day01/ajax/user/templates/make_post.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../month03/code/code4/day01/ajax/user/templates/register.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../month03/code/code4/day01/ajax/user/templates/xhr.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../month03/code/code4/day01/ajax/user/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -50,12 +21,12 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/url">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="278">
-              <caret line="23" selection-start-line="23" selection-end-line="23" />
+            <state relative-caret-position="96">
+              <caret line="4" selection-start-line="4" selection-end-line="4" />
             </state>
           </provider>
         </entry>
@@ -63,8 +34,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/03_lianjia_xpath.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="960">
-              <caret line="40" lean-forward="true" selection-start-line="40" selection-end-line="40" />
+            <state relative-caret-position="912">
+              <caret line="40" selection-start-line="40" selection-end-line="40" />
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
               </folding>
@@ -95,8 +66,8 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="42" />
+  <component name="ProjectFrameBounds" extendedState="1">
+    <option name="x" value="124" />
     <option name="y" value="45" />
     <option name="width" value="1253" />
     <option name="height" value="855" />
@@ -106,23 +77,10 @@
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
-    <panes>
-      <pane id="Scope" />
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="day03" type="b2602c69:ProjectViewProjectNode" />
-              <item name="day03" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-    </panes>
+    <panes />
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../month03/code/code4/day01/ajax" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
@@ -206,17 +164,13 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="42" y="45" width="1253" height="855" extended-state="0" />
+    <frame x="124" y="45" width="1253" height="855" extended-state="1" />
+    <editor active="true" />
     <layout>
-      <window_info id="DB Browser" />
-      <window_info id="Favorites" side_tool="true" />
       <window_info content_ui="combo" id="Project" order="0" weight="0.24959217" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="DB Execution Console" />
-      <window_info anchor="bottom" id="Version Control" />
-      <window_info anchor="bottom" id="Python Console" />
-      <window_info anchor="bottom" id="Terminal" />
-      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info id="DB Browser" order="3" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32957748" />
@@ -224,6 +178,11 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Version Control" order="7" />
+      <window_info anchor="bottom" id="DB Execution Console" order="8" />
+      <window_info anchor="bottom" id="Terminal" order="9" />
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info anchor="bottom" id="Python Console" order="11" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -253,20 +212,20 @@
     <entry file="file://$PROJECT_DIR$/cancel.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/03_lianjia_xpath.py">
+    <entry file="file://$PROJECT_DIR$/url">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="960">
-          <caret line="40" lean-forward="true" selection-start-line="40" selection-end-line="40" />
-          <folding>
-            <element signature="e#0#15#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="96">
+          <caret line="4" selection-start-line="4" selection-end-line="4" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/url">
+    <entry file="file://$PROJECT_DIR$/03_lianjia_xpath.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="278">
-          <caret line="23" selection-start-line="23" selection-end-line="23" />
+        <state relative-caret-position="912">
+          <caret line="40" selection-start-line="40" selection-end-line="40" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
