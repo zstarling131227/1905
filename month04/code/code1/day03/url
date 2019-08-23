@@ -37,3 +37,10 @@ url=https://hz.lianjia.com/ershoufang/pg2/
 单价：
 .//div[@class="unitPrice"]/span[1]/text()
 //*[@id="content"]/div[1]/ul/li[1]/div[1]/div[6]/div[2]/span
+
+
+https://tieba.baidu.com/f?kw=%E7%BB%8F%E5%85%B8%E6%AE%B5%E5%AD%90%E7%AC%91%E8%AF%9D%E7%BD%91&ie=utf-8&pn=250
+https://tieba.baidu.com/f?kw=%E7%BB%8F%E5%85%B8%E6%AE%B5%E5%AD%90%E7%AC%91%E8%AF%9D%E7%BD%91&ie=utf-8&pn=300
+
+
+//*[@id="thread_list"]/li[4]/div/div[2]/div[1]/div[1]/a

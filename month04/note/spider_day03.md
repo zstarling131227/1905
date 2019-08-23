@@ -465,6 +465,29 @@ res.encoding = 'utf-8'
 print(res.text)
 ```
 
+```python
+
+# 过去
+baseurl = 'http://tieba.baidu.com/f?'
+params = {
+    'kw' : '杨幂吧',
+    'pn' : '50'
+}
+params = parse.urlencode(params) # '%E8XXXX'
+url = baseurl + params
+
+# 现在
+baseurl = 'http://tieba.baidu.com/f?'
+params = {
+    'kw' : '杨幂吧',
+    'pn' : '50'
+}
+res = requests.get(baseurl,params=params,headers=xxx)
+# 先对params进行编码,然后和baseurl进行拼接,发请求
+```
+
+
+
 ### **代理参数-proxies**
 
 - 定义
