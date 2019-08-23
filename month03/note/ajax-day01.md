@@ -115,11 +115,11 @@
 
 ​			作用：每当xhr的readyState发生改变的时候都要触发的操作；
 
-​			也称作回调函数；当readyState的值为4且status值为200的时候，才可			以获取响应数据
+​			也称作回调函数；当readyState的值为4且status值为200的时候，才可以获取响应数据
 
 ### 	3.AJAX的操作步骤
 
-#### 		1.GET请求	
+#### 		1. GET请求	
 
 ```javascript
 //1.创建xhr请求
@@ -140,7 +140,9 @@ xhr.send(null);
 //ex: xhr.open('get','/url?key=value&key=value',asyn)
 ```
 
-#### 		2.POST请求
+#### 		2. POST请求
+
+<u>*request.POST只适用于表单提交*</u>
 
 ```javascript
 //1.创建xhr请求
@@ -161,6 +163,20 @@ xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
 xhr.send('请求数据');
 //请求数据同查询字符串 "uname=guoxiaonao&age=18"
 ```
+
+#### 3. xhr排错指南
+
+1. 检查浏览器调试工具 控制台、console；若发现红色报错，代表js有问题;
+
+2. 执行发请求的事件，查看调试工具-网络/network;观察所有请求情况。
+
+   200 -- 预期的正常状态；
+
+   业务请求出现404 --url映射有问题【xhr写的url错误、django 路由分发有问题】；
+
+   304--静态资源缓存【正常的浏览器行为，若想关闭浏览器缓存，打开调试工具-网络-禁用缓存/disable ache】；
+
+   500--
 
 ## 2.JSON
 
@@ -292,7 +308,40 @@ return JsonResponse(d)
 ​	服务器端响应回来的数据是 String，需进行转换
 
 ```javascript
-JSON对象=JSON.parse(JSON字符串)
+JSON对象=JSON.parse(JSON字符串)　　// 反序列化
 ```
 
+#### 7.补充
 
+```
+参数 sort_keys=True, 让输出的json串有序
+参数 separators=(',', ':'))，分隔符，第一个表示（键值对）与（键值对）元素之间的分隔符。第二个是元素内部（键值对）对应的分隔符。
+```
+
+#### 2.Jquery 对ajax的支持
+
+1. $obj.load()
+
+   作用：把指定的url的HTML内容加载到你指定的元素中。
+
+   语法：
+
+   ```
+   $obj.load(url, data, callback)
+   
+   $obj:显示内容的元素【jq对象】
+   url:请求地址
+   data: 向url传入的参数【可选择】
+   		方式一：
+   				查询字符串
+   				key=value&key1=value1...
+   				#注意：用该方式传参，则为get请求
+   		方式二：
+   				使用js对象/json对象
+   				{name:'xixi'}
+   				#注意：用该方式传参，则为post请求
+   				
+   callback:响应成功回调该函数【可选择】
+   ```
+
+   

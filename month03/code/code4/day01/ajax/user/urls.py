@@ -10,4 +10,8 @@ urlpatterns = [
     url(r'^checkuname/$', views.checkuname, name='checkuname'),
     url(r'^make_post/$', views.make_post, name='make_post'),
     url(r'^make1_post/$', views.make1_post, name='make1_post'),
+    url(r'^get_user/$', views.get_user, name='get_user'),
+    url(r'^get_user_server/$', views.get_user_server, name='get_user_server'),
+    url(r'^json_obj/$', views.json_obj, name='json_obj'),
+    url(r'^json_dumps/$', views.json_dumps, name='json_dumps'),
 ]

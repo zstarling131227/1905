@@ -19,7 +19,8 @@ xpath='//*[@id="app"]/div/div/div[1]/dl/dd[1]/div/div/div[1]/p[3]/text()'
 xpath='./div/div/div[1]/p[3]/text()'
 
 
-//li[@class="clear LOGCLICKDATA"]
+url=https://hz.lianjia.com/ershoufang/pg2/
+
 
 #一级地址
 //*[@id="content"]/div[1]/ul/li

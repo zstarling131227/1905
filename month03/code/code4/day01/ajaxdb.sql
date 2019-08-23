@@ -307,7 +307,7 @@ CREATE TABLE `user_user` (
   `pwd` varchar(30) NOT NULL,
   `nickname` varchar(30) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -316,7 +316,7 @@ CREATE TABLE `user_user` (
 
 LOCK TABLES `user_user` WRITE;
 /*!40000 ALTER TABLE `user_user` DISABLE KEYS */;
-INSERT INTO `user_user` VALUES (1,'xixi','123','xixi'),(2,'xixihaha','123','xixiha');
+INSERT INTO `user_user` VALUES (1,'xixi','123','xixi'),(2,'xixihaha','123','xixiha'),(3,'yaoyue','123','yaoyue'),(4,'HAHA','123','HA'),(5,'wangbadan','123','wang');
 /*!40000 ALTER TABLE `user_user` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -329,4 +329,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-08-22 18:48:24
+-- Dump completed on 2019-08-23 18:31:55
