@@ -1,0 +1,54 @@
+43.254.90.134
+
+url；https://www.xicidaili.com
+
+xpath表达式：
+    //tbody/tr[@class="odd"]
+    //*[@id="ip_list"]/tbody/
+    ip:
+    //*[@id="ip_list"]/tbody/tr/td[2]
+    ./td[2]/text()
+    port:
+    //*[@id="ip_list"]/tbody/tr/td[3]
+    ./td[3]/text()
+
+
+http://code.tarena.com.cn/
+//a/@href
+http://code.tarena.com.cn/AIDCode/aid1905/11_ajax/day02/ajax_pm1.zip
+
+正则：(.*): (.*),
+替换："$1": "$2",
+
+headers={
+""Accept"": ""application/json, text/javascript, */*; q=0.01",",
+""Accept-Encoding"": ""gzip, deflate",",
+""Accept-Language"": ""zh-CN,zh;q=0.9",",
+""Cache-Control"": ""no-cache",",
+""Connection"": ""keep-alive",",
+""Content-Length"": ""244",",
+""Content-Type"": ""application/x-www-form-urlencoded; charset=UTF-8",",
+""Cookie"": ""_ntes_nnid=753292a885f26a669e6c259a451c2a05,1565779212369; OUTFOX_SEARCH_USER_ID_NCOO=1256349591.9709954; OUTFOX_SEARCH_USER_ID=-1944207920@122.224.206.179; JSESSIONID=aaa0NEXRcckFtaVH0kcZw; ___rl__test__cookies=1566625747693",",
+""Host"": ""fanyi.youdao.com",",
+""Origin"": ""http://fanyi.youdao.com",",
+""Pragma"": ""no-cache",",
+""Referer"": ""http://fanyi.youdao.com/",",
+""User-Agent"": ""Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.100 Safari/537.36",",
+"""X-Requested-With""": """XMLHttpRequest",",",
+}
+
+data={
+"i": "elent",
+"from": "AUTO",
+"to": "AUTO",
+"smartresult": "dict",
+"client": "fanyideskweb",
+"salt": "15666257476985",
+"sign": "5129c01a775ddf2ca1e91935db324866",
+"ts": "1566625747698",
+"bv": "e2baf4b7602e0ecc32bd1350facecf0b",
+"doctype": "json",
+"version": "2.1",
+"keyfrom": "fanyi.web",
+"action": "FY_BY_REALTlME",
+}

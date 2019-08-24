@@ -152,6 +152,7 @@ print(res.text)
 
 ```python
 西刺代理、快代理、全网代理、代理精灵、... ... 
+https://www.xicidaili.com
 ```
 
 **参数类型**
@@ -224,10 +225,6 @@ proxies = {
 
 **示例代码**
 
-```python
-
-```
-
 ### **Web客户端验证 参数-auth**
 
 - 作用及类型
@@ -273,6 +270,8 @@ proxies = {
 
 ```
 Post类型请求的网站
+1. GET 请求：查询参数在URL地址上显示
+2. POST请求：参数在form表单里。
 ```
 
 - 参数-data
@@ -368,7 +367,7 @@ js代码实现:  ts + parseInt(10 * Math.random(), 10);
 python实现:  ts + str(random.randint(0,9))
 
 # sign（设置断点调试，来查看 e 的值，发现 e 为要翻译的单词）
-js代码实现: n.md5("fanyideskweb" + e + salt + "@6f#X3=cCuncYssPsuRUE")
+js代码实现: n.md5("fanyideskweb" + e + salt + "n%A-rKaT5fb[Gy?;N5@Tj")
 python实现:
 from hashlib import md5
 s = md5()

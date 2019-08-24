@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="349b19cf-961c-47bd-b1ad-86beeef82f89" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/03-baidumageSpider.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/03-video-test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../../month03/note/ajax-day01.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../month03/note/ajax-day01.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/url" beforeDir="false" afterPath="$PROJECT_DIR$/url" afterDir="false" />
-    </list>
+    <list default="true" id="349b19cf-961c-47bd-b1ad-86beeef82f89" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,7 +13,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/url">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="540">
+            <state relative-caret-position="1080">
               <caret line="45" column="55" selection-start-line="45" selection-start-column="55" selection-end-line="45" selection-end-column="55" />
             </state>
           </provider>
@@ -28,26 +22,11 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/03-baidumageSpider.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="70" lean-forward="true" selection-start-line="70" selection-end-line="70" />
+            <state relative-caret-position="322">
+              <caret line="70" selection-start-line="70" selection-end-line="70" />
               <folding>
-                <element signature="e#83#2138#0" />
                 <element signature="e#112#436#0" />
-                <element signature="e#173#434#0" />
                 <element signature="e#442#450#0" />
-                <element signature="e#519#1038#0" />
-                <element signature="e#729#761#0" />
-                <element signature="e#853#1010#0" />
-                <element signature="e#896#911#0" />
-                <element signature="e#1070#1794#0" />
-                <element signature="e#1485#1500#0" />
-                <element signature="e#1577#1794#0" />
-                <element signature="e#1740#1794#0" />
-                <element signature="e#1844#2138#0" />
-                <element signature="e#1989#2138#0" />
-                <element signature="e#2019#2103#0" />
-                <element signature="e#2172#2230#0" />
-                <element signature="e#2225#2241#0" />
               </folding>
             </state>
           </provider>
@@ -56,8 +35,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/03-video-test.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+            <state relative-caret-position="216">
+              <caret line="10" selection-start-line="10" selection-end-line="10" />
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
               </folding>
@@ -68,7 +47,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/03_lianjia_xpath.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="97">
+            <state relative-caret-position="432">
               <caret line="20" column="29" selection-start-line="20" selection-start-column="29" selection-end-line="20" selection-end-column="29" />
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
@@ -113,23 +92,10 @@
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
-    <panes>
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="day03" type="b2602c69:ProjectViewProjectNode" />
-              <item name="day03" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="Scope" />
-    </panes>
+    <panes />
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/.." />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
@@ -280,6 +246,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="116" y="81" width="1253" height="855" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" weight="0.24959217" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -328,25 +295,25 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/url">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
+        <state relative-caret-position="1080">
           <caret line="45" column="55" selection-start-line="45" selection-start-column="55" selection-end-line="45" selection-end-column="55" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/03_lianjia_xpath.py">
+    <entry file="file://$PROJECT_DIR$/03-video-test.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="97">
-          <caret line="20" column="29" selection-start-line="20" selection-start-column="29" selection-end-line="20" selection-end-column="29" />
+        <state relative-caret-position="216">
+          <caret line="10" selection-start-line="10" selection-end-line="10" />
           <folding>
             <element signature="e#0#15#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/03-video-test.py">
+    <entry file="file://$PROJECT_DIR$/03_lianjia_xpath.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+        <state relative-caret-position="432">
+          <caret line="20" column="29" selection-start-line="20" selection-start-column="29" selection-end-line="20" selection-end-column="29" />
           <folding>
             <element signature="e#0#15#0" expanded="true" />
           </folding>
@@ -355,26 +322,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/03-baidumageSpider.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="70" lean-forward="true" selection-start-line="70" selection-end-line="70" />
+        <state relative-caret-position="322">
+          <caret line="70" selection-start-line="70" selection-end-line="70" />
           <folding>
-            <element signature="e#83#2138#0" />
             <element signature="e#112#436#0" />
-            <element signature="e#173#434#0" />
             <element signature="e#442#450#0" />
-            <element signature="e#519#1038#0" />
-            <element signature="e#729#761#0" />
-            <element signature="e#853#1010#0" />
-            <element signature="e#896#911#0" />
-            <element signature="e#1070#1794#0" />
-            <element signature="e#1485#1500#0" />
-            <element signature="e#1577#1794#0" />
-            <element signature="e#1740#1794#0" />
-            <element signature="e#1844#2138#0" />
-            <element signature="e#1989#2138#0" />
-            <element signature="e#2019#2103#0" />
-            <element signature="e#2172#2230#0" />
-            <element signature="e#2225#2241#0" />
           </folding>
         </state>
       </provider>

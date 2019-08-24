@@ -1,0 +1,30 @@
+Request URL: https://movie.douban.com/j/chart/top_list?type=13&interval_id=100%3A90&action=&start=80&limit=20
+User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.100 Safari/537.36
+
+
+type: 13
+interval_id: 100:90
+action:
+start: 80
+limit: 20
+
+
+一级界面
+Request URL: https://careers.tencent.com/tencentcareer/api/post/Query?timestamp=1566648462054&countryId=&cityId=&bgIds=&productId=&categoryId=&parentCategoryId=&attrId=&keyword=&pageIndex=2&pageSize=10&language=zh-cn&area=cn
+
+'https://careers.tencent.com/tencentcareer/api/post/Query?timestamp=1559294378106&countryId=&cityId=&bgIds=&productId=&categoryId=&parentCategoryId=&attrId=&keyword=&pageIndex={}&pageSize=10&language=zh-cn&area=cn'
+
+user-agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.100 Safari/537.36
+
+params={pageIndex: 2}
+
+二级界面
+Request URL: https://careers.tencent.com/tencentcareer/api/post/ByPostId?timestamp=1566648749160&postId=1123178103418392576&language=zh-cn
+
+'https://careers.tencent.com/tencentcareer/api/post/ByPostId?timestamp=1559&postId={}&language=zh-cn'
+
+params={
+timestamp: 1566648749160
+postId: 1123178103418392576(在一级页面preview中查找。)
+language: zh-cn
+}
