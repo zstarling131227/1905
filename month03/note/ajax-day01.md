@@ -35,6 +35,8 @@
 
 ​		[xhr 是由JS来提供的]
 
+**注意：浏览器只能发同步请求**
+
 #### 	2.创建 异步对象 (xhr)
 
 ​		1.IE7+,Chrome,Firefox,Safari,Opera)  -> 调用 XMLHttpRequest 生成 xhr对象
@@ -52,6 +54,18 @@
 	}
 </script>
 ```
+
+示例（模块导入快捷键：alt+enter）
+
+```
+ajax项目----user（app)
+修改配置文件：installed-APP[:]     templates(可配可不配)     路由url   staticfiles_dirs
+
+def xhr(request):
+xhr.html
+```
+
+
 
 #### 	3.xhr 的成员
 
@@ -110,6 +124,7 @@
 |  200   | 表示服务器正确处理所有的请求以及给出响应 |
 |  404   |              请求资源不存在              |
 |  500   |              服务器内部错误              |
+|  403   |         JS出问题，没有验证(csrf)         |
 
 ​		6.事件 - onreadystatechange
 
@@ -120,6 +135,25 @@
 ### 	3.AJAX的操作步骤
 
 #### 		1. GET请求	
+
+示例
+
+```
+ajax项目----user（app)
+
+def get_xhr(request):
+get-xhr.html
+def get_xhr_server(request):
+```
+
+```
+ajax项目----user（app)
+修改配置databases----在mysql中创建数据库ajaxdb;----在models中创建数据表User.-----在主项目ajax下导入pymysql----迁移（2步）(迁移时可以指定单个模块迁移 ：makemigrations/migrate 后面直接跟迁移模块)
+
+def register(request)
+register.html
+def checkuname(rerquest)
+```
 
 ```javascript
 //1.创建xhr请求

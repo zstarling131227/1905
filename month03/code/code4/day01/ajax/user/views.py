@@ -1,7 +1,7 @@
 import json
 
 from django.shortcuts import render
-from django.http import HttpResponse,JsonResponse
+from django.http import HttpResponse, JsonResponse
 
 # Create your views here.
 from .models import User
@@ -47,8 +47,10 @@ def checkuname(request):
     uname = request.GET.get('uname')
     users = User.objects.filter(uname=uname).all()
     if users:
-        return HttpResponse("1")
-    return HttpResponse('0')
+        return HttpResponse("用户名已存在")
+        # return HttpResponse("1")
+    return HttpResponse('OK')
+    # return HttpResponse('0')
 
 
 def make1_post(request):
@@ -109,21 +111,19 @@ def json_dumps(request):
     json_str_arr = json.dumps(s)
     # return HttpResponse(json_str_arr, content_type='application/json')
 
-
     from django.core import serializers
-    users=User.objects.all()
-    json_str_all=serializers.serialize('json',users)
+    users = User.objects.all()
+    json_str_all = serializers.serialize('json', users)
     return HttpResponse(json_str_all, content_type='application/json')
 
-
     # 用非serializers得到相同结果方法
-    l=[]
-    users=User.objects.all()
+    l = []
+    users = User.objects.all()
     for i in users:
-        d={}
-        d['username']=i.name
+        d = {}
+        d['username'] = i.name
         l.append(d)
-    all_json=json.dumps(l)
+    all_json = json.dumps(l)
     return HttpResponse(all_json, content_type='application/json')
 
     # return JsonResponse({'UNMAE':'wulaio'})
