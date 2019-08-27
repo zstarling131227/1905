@@ -191,3 +191,60 @@ def cross_server(request):
 def cross_server_json(request):
 cross.html
 ```
+
+补充：
+
+虚拟环境
+
+```linux
+安装：
+tarena@tarena:~$ pip3 install virtualenv
+Collecting virtualenv
+  Downloading https://files.pythonhosted.org/packages/f7/69/1ad2d17560c4fc60170056dcd0a568b83f3453a2ac91155af746bcdb9a07/virtualenv-16.7.4-py2.py3-none-any.whl (3.3MB)
+    100% |████████████████████████████████| 3.3MB 235kB/s 
+Installing collected packages: virtualenv
+Successfully installed virtualenv-16.7.4
+
+创建环境：
+tarena@tarena:~$ virtualenv  virtual
+tarena@tarena:~/1905/month03/project03/projectb$ virtualenv virtual
+
+Using base prefix '/usr'
+New python executable in /home/tarena/virtual/bin/python3
+Also creating executable in /home/tarena/virtual/bin/python
+Installing setuptools, pip, wheel...
+done.
+
+
+激活：
+tarena@tarena:~$ source virtual/bin/activate
+(virtual) tarena@tarena:~$ 
+
+关闭：
+deactivate
+
+删除：
+tarena@tarena:~/1905/month03/project03/projectb$ rm -R virtual
+
+
+安装：virtualenvwrapper
+tarena@tarena:~$ pip3 install virtualenvwrapper
+subl .bashrc
+
+workon 切换虚拟环境：
+
+
+export WORKON_HOME=~/my_env
+export　VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
+source
+/usr/local/bin/virtualenvwrapper.sh
+
+
+
+source .bashrc
+tarena@tarena:~$ which python3
+/usr/bin/python3
+
+gedit　.txt　打开文件
+```
+

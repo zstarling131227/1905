@@ -146,10 +146,14 @@ get-xhr.html
 def get_xhr_server(request):
 ```
 
-```
+```text
 ajax项目----user（app)
 修改配置databases----在mysql中创建数据库ajaxdb;----在models中创建数据表User.-----在主项目ajax下导入pymysql----迁移（2步）(迁移时可以指定单个模块迁移 ：makemigrations/migrate 后面直接跟迁移模块)
+```
 
+示例
+
+```
 def register(request)
 register.html
 def checkuname(rerquest)
@@ -196,6 +200,14 @@ xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
 //5.发送请求
 xhr.send('请求数据');
 //请求数据同查询字符串 "uname=guoxiaonao&age=18"
+```
+
+示例
+
+```
+def make_post(request)
+def make_post1(request)
+make_post.html
 ```
 
 #### 3. xhr排错指南~~（补充）~~
