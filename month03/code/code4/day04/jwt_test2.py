@@ -51,20 +51,13 @@ class Jwt():
         # s=jwt.b64decode(token).decode().split('.')
         # header_bs, payload_bs, sign_bs = token.decode().split('.')
         header_bs, payload_bs, sign_bs = token.split(b'.')
-
         if isinstance(key, str):
-            print(key)
             key = key.encode()
-            print(key)
         str_ = header_bs + b'.' + payload_bs
-        print(str_)
         h = hmac.new(key, str_, digestmod='SHA256')
-        print(h)
         sign = h.digest()
-        print(sign)
         if sign_bs != Jwt.b64encode(sign):
             raise ValueError
-
         payload_json = Jwt.b64decode(payload_bs)  ##结果为字节串
         payload = json.loads(payload_json)
         if 'exp' in payload:
@@ -72,9 +65,6 @@ class Jwt():
             if now > payload['exp']:
                 raise ValueError('已过期')
         return payload
-
-
-
 
 
 if __name__ == '__main__':

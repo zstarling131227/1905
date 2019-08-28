@@ -192,7 +192,7 @@ def cross_server_json(request):
 cross.html
 ```
 
-补充：
+4,   补充：
 
 虚拟环境
 
@@ -226,13 +226,11 @@ deactivate
 删除：
 tarena@tarena:~/1905/month03/project03/projectb$ rm -R virtual
 
-
 安装：virtualenvwrapper
 tarena@tarena:~$ pip3 install virtualenvwrapper
 subl .bashrc
 
 workon 切换虚拟环境：
-
 
 export WORKON_HOME=~/my_env
 export　VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
@@ -240,11 +238,12 @@ source
 /usr/local/bin/virtualenvwrapper.sh
 
 
-
 source .bashrc
 tarena@tarena:~$ which python3
 /usr/bin/python3
 
 gedit　.txt　打开文件
+
+
 ```
 

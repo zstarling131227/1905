@@ -386,14 +386,14 @@
     - 多对多Django shell操作
     
       ```django
-  xixi=models.Author3.objects.create(name='xixi')
+    xixi=models.Author3.objects.create(name='xixi')
       book=xixi.book3_set.create(title='windows')
-  wang=models.Author3.objects.get(id=4)
+    wang=models.Author3.objects.get(id=4)
       wang.book3_set.add(book)
       wang.book3_set.all()
       Out[20]: <QuerySet [<Book3: 书名：Java>, <Book3: 书名：Linux>, <Book3: 书名：windows>]>
       book.authors.all()
-  Out[21]: <QuerySet [<Author3: 作者：zhang>, <Author3: 作者：xixi>]>
+    Out[21]: <QuerySet [<Author3: 作者：zhang>, <Author3: 作者：xixi>]>
       ```
     
       
