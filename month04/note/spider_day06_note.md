@@ -225,6 +225,9 @@ function e(r) {
         var g = f.length;
         g > 30 && (r = f.slice(0, 10).join("") + f.slice(Math.floor(g / 2) - 5, Math.floor(g / 2) + 5).join("") + f.slice(-10).join(""))
     }
+    
+    
+//运行时报错:window....,分析页面源码，断点调试，找到了
 //    var u = void 0
 //    , l = "" + String.fromCharCode(103) + String.fromCharCode(116) + String.fromCharCode(107);
 //    u = null !== i ? i : (i = window[l] || "") || "";
@@ -256,6 +259,11 @@ var i = null;
 - **5、直接将代码写入本地js文件,利用pyexecjs模块执行js代码进行调试**
 
   ```python
+    1、安装pyexecjs
+       sudo pip3 install pyexecjs
+    2、安装js执行环境:nodejs
+       sudo apt-get install nodejs
+  
   import execjs
   
   with open('node.js','r') as f:
@@ -273,6 +281,7 @@ var i = null;
   # 在js中
   token: window.common.token
   # 在响应中想办法获取此值
+  # url地址为百度翻译的首页，响应中会有token
   token_url = 'https://fanyi.baidu.com/?aldtype=16047'
   regex: "token: '(.*?)'"
   ```
