@@ -2,135 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e8831cfe-ddf6-44a7-81e7-fd3285f0ca05" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../../day02/client/templates/.idea/codeStyles/Project.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../day02/client/templates/.idea/dbnavigator.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../day02/client/templates/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../day02/client/templates/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../day02/client/templates/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../day02/client/templates/.idea/templates.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../day02/client/templates/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../day02/client/templates/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../blog/.idea/dbnavigator.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../blog/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../blog/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../blog/btoken/urls.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../blog/tools/login_check.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../../../month04/code/code1/day06/.idea/codeStyles/Project.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../../../month04/code/code1/day06/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../../../month04/code/code1/day06/06-baidu_translate.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../../../month04/code/code1/day06/06-test-node.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../../../month04/code/code1/day06/node1.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../../month04/code/code1/day06/06-mzb_test.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../../../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../../../bytes.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../../code/code4/day05/blog/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../PyJWT-1.4.0-py2.py3-none-any.whl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../blog/.idea/blog.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../blog/.idea/codeStyles/Project.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../blog/.idea/dbnavigator.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../blog/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../blog/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../blog/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../blog/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../blog/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../blog/blog/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../blog/blog/settings.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../blog/blog/urls.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../blog/blog/views.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../blog/blog/wsgi.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../blog/manage.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../blog/user/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../blog/user/admin.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../blog/user/apps.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../blog/user/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../blog/user/migrations/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../blog/user/models.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../blog/user/tests.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../blog/user/urls.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../blog/user/views.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../bs64揭秘.xls" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../client.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../client/.idea/client.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../client/.idea/codeStyles/Project.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../client/.idea/dbnavigator.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../client/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../client/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../client/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../client/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../client/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../client/REDEME.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../client/flask_client.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../client/static/css/animate.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../client/static/css/base.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../client/static/css/comments.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../client/static/css/index.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../client/static/css/login_reglogin.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../client/static/css/m.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../client/static/images/5794.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../client/static/images/a.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../client/static/images/auicon.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../client/static/images/author.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../client/static/images/avatar.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../client/static/images/b.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../client/static/images/b04.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../client/static/images/b05.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../client/static/images/banner01.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../client/static/images/banner02.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../client/static/images/banner03.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../client/static/images/bi05.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../client/static/images/bitbug_favicon.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../client/static/images/blank.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../client/static/images/c.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../client/static/images/category.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../client/static/images/commentPhoto.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../client/static/images/comments.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../client/static/images/d.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../client/static/images/date.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../client/static/images/dsbz.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../client/static/images/dzbg.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../client/static/images/e.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../client/static/images/f.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../client/static/images/icons.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../client/static/images/newsbg03.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../client/static/images/page_bg.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../client/static/images/page_bg1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../client/static/images/page_photo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../client/static/images/page_time.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../client/static/images/re_bg.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../client/static/images/searchbg.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../client/static/images/tags.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../client/static/images/time.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../client/static/images/top.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../client/static/images/toppic01.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../client/static/images/toppic02.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../client/static/images/v1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../client/static/images/v2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../client/static/images/zd01.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../client/static/js/ckeditor.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../client/static/js/common.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../client/static/js/jquery.easyfader.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../client/static/js/jquery.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../client/static/js/scrollReveal.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../client/static/js/wangEditor.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../client/static/js/xcConfirm.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../client/templates/about.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../client/templates/change_info.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../client/templates/detail.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../client/templates/footer.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../client/templates/gbook.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../client/templates/header.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../client/templates/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../client/templates/list.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../client/templates/list_bak.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../client/templates/login.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../client/templates/photo.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../client/templates/register.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../client/templates/release.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../client/templates/time.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../django-cors-headers-3.0.2.tar.gz" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../博客-用户模块API.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../day03/blog/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../day03/blog/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../day03/blog/user/migrations/0001_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../day03/blog/user/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../day03/blog/user/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../blog/.idea/codeStyles/Project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../blog/.idea/codeStyles/Project.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../blog/blog/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/../blog/blog/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../blog/blog/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/../blog/blog/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../blog/user/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/../blog/user/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../blog/user/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/../blog/user/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../../../month04/code/code1/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../month04/code/code1/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../../../month04/code/code1/day06/urls" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../month04/code/code1/day06/urls" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../../../month04/note/spider_day06_note.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../month04/note/spider_day06_note.md" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -143,17 +27,33 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/flask_client.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="648">
-              <caret line="27" column="15" selection-start-line="27" selection-start-column="15" selection-end-line="27" selection-end-column="15" />
+            <state relative-caret-position="87">
+              <caret line="8" column="34" lean-forward="true" selection-start-line="8" selection-start-column="34" selection-end-line="8" selection-end-column="34" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/login.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="117">
+              <caret line="48" column="24" selection-start-line="48" selection-start-column="24" selection-end-line="48" selection-end-column="24" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/templates/login.html">
+        <entry file="file://$PROJECT_DIR$/templates/change_info.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="117">
-              <caret line="48" column="24" selection-start-line="48" selection-start-column="24" selection-end-line="48" selection-end-column="24" />
+            <state relative-caret-position="24">
+              <caret line="1" column="5" selection-start-line="1" selection-start-column="5" selection-end-line="1" selection-end-column="5" />
+              <folding>
+                <element signature="n#html#0;n#!!top" />
+                <element signature="e#23#296#0" />
+                <element signature="n#head#0;n#html#0;n#!!top" />
+                <element signature="n#body#0;n#html#0;n#!!top" />
+                <element signature="n#script#0;n#html#0;n#!!top" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -174,11 +74,12 @@
         <option value="$PROJECT_DIR$/templates/photo.html" />
         <option value="$PROJECT_DIR$/templates/about.html" />
         <option value="$PROJECT_DIR$/templates/login.html" />
+        <option value="$PROJECT_DIR$/templates/change_info.html" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="1">
-    <option name="x" value="187" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="71" />
     <option name="y" value="30" />
     <option name="width" value="1253" />
     <option name="height" value="870" />
@@ -189,6 +90,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -196,16 +98,10 @@
               <item name="client" type="b2602c69:ProjectViewProjectNode" />
               <item name="client" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="client" type="b2602c69:ProjectViewProjectNode" />
-              <item name="client" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -224,6 +120,34 @@
       </list>
     </option>
   </component>
+  <component name="RunManager">
+    <configuration name="flask_client" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="client" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/flask_client.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.flask_client" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -238,7 +162,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="187" y="30" width="1253" height="870" extended-state="1" />
+    <frame x="71" y="30" width="1253" height="870" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24959217" />
@@ -247,7 +171,7 @@
       <window_info id="DB Browser" order="3" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32965517" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -355,11 +279,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/change_info.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2313" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/register.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="327">
@@ -442,17 +361,31 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../../../code/code4/day05/jwt.py" />
-    <entry file="file://$PROJECT_DIR$/flask_client.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="648">
-          <caret line="27" column="15" selection-start-line="27" selection-start-column="15" selection-end-line="27" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/login.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="117">
           <caret line="48" column="24" selection-start-line="48" selection-start-column="24" selection-end-line="48" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/flask_client.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="87">
+          <caret line="8" column="34" lean-forward="true" selection-start-line="8" selection-start-column="34" selection-end-line="8" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/change_info.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="24">
+          <caret line="1" column="5" selection-start-line="1" selection-start-column="5" selection-end-line="1" selection-end-column="5" />
+          <folding>
+            <element signature="n#html#0;n#!!top" />
+            <element signature="e#23#296#0" />
+            <element signature="n#head#0;n#html#0;n#!!top" />
+            <element signature="n#body#0;n#html#0;n#!!top" />
+            <element signature="n#script#0;n#html#0;n#!!top" />
+          </folding>
         </state>
       </provider>
     </entry>

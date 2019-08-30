@@ -11,7 +11,6 @@ from tools.login_check import login_check
 
 # Create your views here.
 # （就是不带参数的）# #访问的是http://127.0.0.1:8000/v1/users
-@login_check('PUT')
 def users1(request):
     pass
 
@@ -22,6 +21,7 @@ def users_detail(request, username):
 
 
 # 为了不影响根目录的使用（也就是不带参数的），需要添加一个参数并给定默认值（关键字传参）。
+@login_check('PUT')
 def users(request, username=None):
     if request.method == 'GET':
         # 获取用户数据(测试：带参数和不带参数)

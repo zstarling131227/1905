@@ -1,10 +1,11 @@
 from django.db import models
 
+
 # Create your models here.
 
-#class -> UserProfile
-#表名 user_profile
-#username, nickname,email,password,sign,info,avatar
+# class -> UserProfile
+# 表名 user_profile
+# username, nickname,email,password,sign,info,avatar
 class UserProfile(models.Model):
     username = models.CharField(max_length=11, verbose_name='用户名', primary_key=True)
     nickname = models.CharField(max_length=30, verbose_name='昵称')
@@ -16,25 +17,3 @@ class UserProfile(models.Model):
 
     class Meta:
         db_table = 'user_profile'
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

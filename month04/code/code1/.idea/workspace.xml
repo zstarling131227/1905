@@ -2,136 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1b9b6adc-7022-4b3b-9c3e-38007a0f9b6d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../../../month03/project03/projectb/day02/client/templates/.idea/codeStyles/Project.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../month03/project03/projectb/day02/client/templates/.idea/dbnavigator.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../month03/project03/projectb/day02/client/templates/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../month03/project03/projectb/day02/client/templates/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../month03/project03/projectb/day02/client/templates/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../month03/project03/projectb/day02/client/templates/.idea/templates.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../month03/project03/projectb/day02/client/templates/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../month03/project03/projectb/day02/client/templates/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../month03/project03/projectb/day03/blog/.idea/codeStyles/Project.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../month03/project03/projectb/day03/blog/.idea/dbnavigator.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../month03/project03/projectb/day03/blog/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../month03/project03/projectb/day03/blog/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../month03/project03/projectb/day03/blog/btoken/urls.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../month03/project03/projectb/day03/blog/tools/login_check.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/day06/.idea/codeStyles/Project.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/day06/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/day06/06-baidu_translate.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/day06/06-test-node.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/day06/node1.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../month03/project03/projectb/day04/blog/topic/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day06/06-mzb_test.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../bytes.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../month03/code/code4/day05/blog/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../month03/project03/projectb/PyJWT-1.4.0-py2.py3-none-any.whl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../month03/project03/projectb/blog/.idea/blog.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../month03/project03/projectb/blog/.idea/codeStyles/Project.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../month03/project03/projectb/blog/.idea/dbnavigator.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../month03/project03/projectb/blog/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../month03/project03/projectb/blog/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../month03/project03/projectb/blog/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../month03/project03/projectb/blog/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../month03/project03/projectb/blog/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../month03/project03/projectb/blog/blog/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../month03/project03/projectb/blog/blog/settings.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../month03/project03/projectb/blog/blog/urls.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../month03/project03/projectb/blog/blog/views.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../month03/project03/projectb/blog/blog/wsgi.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../month03/project03/projectb/blog/manage.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../month03/project03/projectb/blog/user/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../month03/project03/projectb/blog/user/admin.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../month03/project03/projectb/blog/user/apps.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../month03/project03/projectb/blog/user/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../month03/project03/projectb/blog/user/migrations/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../month03/project03/projectb/blog/user/models.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../month03/project03/projectb/blog/user/tests.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../month03/project03/projectb/blog/user/urls.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../month03/project03/projectb/blog/user/views.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../month03/project03/projectb/bs64揭秘.xls" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../month03/project03/projectb/client.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../month03/project03/projectb/client/.idea/client.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../month03/project03/projectb/client/.idea/codeStyles/Project.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../month03/project03/projectb/client/.idea/dbnavigator.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../month03/project03/projectb/client/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../month03/project03/projectb/client/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../month03/project03/projectb/client/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../month03/project03/projectb/client/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../month03/project03/projectb/client/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../month03/project03/projectb/client/REDEME.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../month03/project03/projectb/client/flask_client.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../month03/project03/projectb/client/static/css/animate.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../month03/project03/projectb/client/static/css/base.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../month03/project03/projectb/client/static/css/comments.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../month03/project03/projectb/client/static/css/index.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../month03/project03/projectb/client/static/css/login_reglogin.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../month03/project03/projectb/client/static/css/m.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../month03/project03/projectb/client/static/images/5794.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../month03/project03/projectb/client/static/images/a.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../month03/project03/projectb/client/static/images/auicon.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../month03/project03/projectb/client/static/images/author.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../month03/project03/projectb/client/static/images/avatar.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../month03/project03/projectb/client/static/images/b.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../month03/project03/projectb/client/static/images/b04.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../month03/project03/projectb/client/static/images/b05.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../month03/project03/projectb/client/static/images/banner01.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../month03/project03/projectb/client/static/images/banner02.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../month03/project03/projectb/client/static/images/banner03.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../month03/project03/projectb/client/static/images/bi05.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../month03/project03/projectb/client/static/images/bitbug_favicon.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../month03/project03/projectb/client/static/images/blank.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../month03/project03/projectb/client/static/images/c.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../month03/project03/projectb/client/static/images/category.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../month03/project03/projectb/client/static/images/commentPhoto.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../month03/project03/projectb/client/static/images/comments.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../month03/project03/projectb/client/static/images/d.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../month03/project03/projectb/client/static/images/date.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../month03/project03/projectb/client/static/images/dsbz.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../month03/project03/projectb/client/static/images/dzbg.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../month03/project03/projectb/client/static/images/e.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../month03/project03/projectb/client/static/images/f.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../month03/project03/projectb/client/static/images/icons.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../month03/project03/projectb/client/static/images/newsbg03.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../month03/project03/projectb/client/static/images/page_bg.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../month03/project03/projectb/client/static/images/page_bg1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../month03/project03/projectb/client/static/images/page_photo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../month03/project03/projectb/client/static/images/page_time.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../month03/project03/projectb/client/static/images/re_bg.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../month03/project03/projectb/client/static/images/searchbg.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../month03/project03/projectb/client/static/images/tags.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../month03/project03/projectb/client/static/images/time.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../month03/project03/projectb/client/static/images/top.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../month03/project03/projectb/client/static/images/toppic01.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../month03/project03/projectb/client/static/images/toppic02.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../month03/project03/projectb/client/static/images/v1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../month03/project03/projectb/client/static/images/v2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../month03/project03/projectb/client/static/images/zd01.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../month03/project03/projectb/client/static/js/ckeditor.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../month03/project03/projectb/client/static/js/common.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../month03/project03/projectb/client/static/js/jquery.easyfader.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../month03/project03/projectb/client/static/js/jquery.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../month03/project03/projectb/client/static/js/scrollReveal.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../month03/project03/projectb/client/static/js/wangEditor.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../month03/project03/projectb/client/static/js/xcConfirm.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../month03/project03/projectb/client/templates/about.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../month03/project03/projectb/client/templates/change_info.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../month03/project03/projectb/client/templates/detail.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../month03/project03/projectb/client/templates/footer.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../month03/project03/projectb/client/templates/gbook.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../month03/project03/projectb/client/templates/header.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../month03/project03/projectb/client/templates/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../month03/project03/projectb/client/templates/list.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../month03/project03/projectb/client/templates/list_bak.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../month03/project03/projectb/client/templates/login.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../month03/project03/projectb/client/templates/photo.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../month03/project03/projectb/client/templates/register.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../month03/project03/projectb/client/templates/release.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../month03/project03/projectb/client/templates/time.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../month03/project03/projectb/django-cors-headers-3.0.2.tar.gz" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../month03/project03/projectb/博客-用户模块API.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../month03/project03/projectb/day03/blog/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../month03/project03/projectb/day03/blog/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../month03/project03/projectb/day03/blog/user/migrations/0001_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../month03/project03/projectb/day03/blog/user/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../../month03/project03/projectb/day03/blog/user/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../month03/project03/projectb/day04/blog/.idea/codeStyles/Project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../month03/project03/projectb/day04/blog/.idea/codeStyles/Project.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../month03/project03/projectb/day04/blog/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../month03/project03/projectb/day04/blog/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../month03/project03/projectb/day04/blog/blog/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../../month03/project03/projectb/day04/blog/blog/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../month03/project03/projectb/day04/blog/blog/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../../month03/project03/projectb/day04/blog/blog/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../month03/project03/projectb/day04/blog/user/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../../month03/project03/projectb/day04/blog/user/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../month03/project03/projectb/day04/blog/user/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../../month03/project03/projectb/day04/blog/user/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../month03/project03/projectb/day04/blog/user/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../../month03/project03/projectb/day04/blog/user/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../month03/project03/projectb/day04/client/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../month03/project03/projectb/day04/client/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../month03/project03/projectb/day04/client/templates/change_info.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../month03/project03/projectb/day04/client/templates/change_info.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/day06/urls" beforeDir="false" afterPath="$PROJECT_DIR$/day06/urls" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../note/spider_day06_note.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../note/spider_day06_note.md" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -141,34 +29,22 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/day06/urls">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="432">
-              <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
+            <state relative-caret-position="816">
+              <caret line="34" column="63" selection-start-line="34" selection-start-column="63" selection-end-line="34" selection-end-column="63" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/day06/06-baidu_translate.py">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/day06/06-mzb_test.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="133">
-              <caret line="84" lean-forward="true" selection-start-line="84" selection-end-line="84" />
+            <state relative-caret-position="264">
+              <caret line="11" column="11" selection-start-line="11" selection-start-column="11" selection-end-line="11" selection-end-column="11" />
               <folding>
-                <element signature="e#82#2947#0" />
-                <element signature="e#110#200#0" />
-                <element signature="e#198#1767#0" />
-                <element signature="e#234#433#0" />
-                <element signature="e#2127#2307#0" />
-                <element signature="e#2357#3046#0" />
-                <element signature="e#2474#2770#0" />
-                <element signature="e#2488#2505#0" />
-                <element signature="e#2596#2613#0" />
-                <element signature="e#2663#2852#0" />
-                <element signature="e#3182#3210#0" />
-                <element signature="e#3243#3271#0" />
-                <element signature="e#3318#3330#0" />
+                <element signature="e#0#15#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -222,44 +98,27 @@
         <option value="$PROJECT_DIR$/day06/node.js" />
         <option value="$PROJECT_DIR$/day06/06-test-node.py" />
         <option value="$PROJECT_DIR$/day06/node1.js" />
-        <option value="$PROJECT_DIR$/day06/urls" />
         <option value="$PROJECT_DIR$/day06/06-baidu_translate.py" />
+        <option value="$PROJECT_DIR$/day06/urls" />
+        <option value="$PROJECT_DIR$/day06/06-mzb_test.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="50" />
-    <option name="y" value="27" />
+  <component name="ProjectFrameBounds" extendedState="7">
+    <option name="x" value="93" />
+    <option name="y" value="50" />
     <option name="width" value="1253" />
-    <option name="height" value="873" />
+    <option name="height" value="850" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
-    <panes>
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="code1" type="b2602c69:ProjectViewProjectNode" />
-              <item name="code1" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="code1" type="b2602c69:ProjectViewProjectNode" />
-              <item name="code1" type="462c0819:PsiDirectoryNode" />
-              <item name="day06" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="Scope" />
-    </panes>
+    <panes />
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/day06" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../month03/project03/projectb/day04/blog" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
@@ -279,7 +138,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.06-baidu_translate">
+  <component name="RunManager" selected="Python.06-mzb_test">
     <configuration name="05-renren_cookie_1" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="code1" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -314,6 +173,27 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/day06/06-baidu_translate.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="06-mzb_test" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="code1" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/day06" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/day06/06-mzb_test.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -364,34 +244,13 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="getip" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="code1" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/day04" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/day04/getip.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.06-mzb_test" />
         <item itemvalue="Python.06-baidu_translate" />
         <item itemvalue="Python.06-test-node" />
         <item itemvalue="Python.06-renren-session" />
         <item itemvalue="Python.05-renren_cookie_1" />
-        <item itemvalue="Python.getip" />
       </list>
     </recent_temporary>
   </component>
@@ -409,16 +268,16 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="50" y="27" width="1253" height="873" extended-state="0" />
+    <frame x="39" y="25" width="1401" height="875" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.31222707" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.3115824" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info id="DB Browser" order="3" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32965517" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32005495" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.5452055" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -673,30 +532,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/day06/06-baidu_translate.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="84" lean-forward="true" selection-start-line="84" selection-end-line="84" />
+        <state relative-caret-position="1728">
+          <caret line="84" selection-start-line="84" selection-end-line="84" />
           <folding>
-            <element signature="e#82#2947#0" />
-            <element signature="e#110#200#0" />
             <element signature="e#198#1767#0" />
-            <element signature="e#234#433#0" />
-            <element signature="e#2127#2307#0" />
-            <element signature="e#2357#3046#0" />
-            <element signature="e#2474#2770#0" />
-            <element signature="e#2488#2505#0" />
-            <element signature="e#2596#2613#0" />
-            <element signature="e#2663#2852#0" />
-            <element signature="e#3182#3210#0" />
-            <element signature="e#3243#3271#0" />
-            <element signature="e#3318#3330#0" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/day06/urls">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
+        <state relative-caret-position="816">
+          <caret line="34" column="63" selection-start-line="34" selection-start-column="63" selection-end-line="34" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/day06/06-mzb_test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="11" column="11" selection-start-line="11" selection-start-column="11" selection-end-line="11" selection-end-column="11" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
