@@ -2,16 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5cc0d891-ad97-4251-85c6-d5ddc9474386" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../../../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../../../bytes.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../day04/blog/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../day04/blog/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../day04/blog/blog/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../day04/blog/blog/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../day04/blog/tools/login_check.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../day04/blog/tools/login_check.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../day04/blog/topic/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../day04/blog/topic/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../../../month04/code/code1/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../month04/code/code1/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -103,8 +95,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="663" />
-    <option name="y" value="49" />
+    <option name="x" value="166" />
+    <option name="y" value="48" />
     <option name="width" value="1253" />
     <option name="height" value="851" />
   </component>
@@ -168,7 +160,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="663" y="49" width="1253" height="851" extended-state="0" />
+    <frame x="166" y="48" width="1253" height="851" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="DB Browser" />

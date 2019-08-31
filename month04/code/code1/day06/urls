@@ -27,11 +27,22 @@ self.headers={
 
 Request URL: https://fanyi.baidu.com/v2transapi
 
-
+首页
 http://www.mca.gov.cn
+一级页面
 http://www.mca.gov.cn/article/sj/xzqh/2019/
+二级页面
+http://www.mca.gov.cn/article/sj/xzqh/2019/201908/201908271607.html
+
 
 //*[@id="list_content"]/div[2]/div/ul/table/tbody/tr[15]/td[2]/a/@href
 //*[@id="list_content"]/div[2]/div/ul/table/tbody/tr[2]/td[2]/a
 
 http://www.mca.gov.cn/article/sj/xzqh/2019/201908/20190800019143.shtml
+
+2019年7月中华人民共和国县以上行政区划代码
+正则：.*中华人民共和国县以上行政区划代码
+//*[@id="2019年6月份县以上行政区划代码_10750"]/table/tbody/tr[10]/td[3]/text()
+//tr[@height="19"]
+./td[2]/text()
+./td[3]/text()

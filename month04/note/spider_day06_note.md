@@ -30,7 +30,7 @@
 
 ```python
 1、适用网站类型: 爬取网站页面时需要登录后才能访问，否则获取不到页面的实际响应数据
-2、方法1（利用cookie）
+2、方法1（利用cookie）### cookie易过期
    1、先登录成功1次,获取到携带登陆信息的Cookie（处理headers） 
    2、利用处理的headers向URL地址发请求
 3、方法2（利用session会话保持）
@@ -499,6 +499,34 @@ for article in article_list:
 ```python
 1、多进程 ：CPU密集程序
 2、多线程 ：爬虫(网络I/O)、本地磁盘I/O
+
+lock = Lock()
+n = 5000
+
+def f1():
+    for i in range(2000):
+        lock.acquire()###加锁
+        n = n + 1
+        lock.release()
+
+def f2():
+    for i in range(2000):
+        lock.acquire()
+        n = n - 1
+        lock.release()
+
+t1 = Thread(target=f1)
+t1.start()
+t2 = Thread(target=f2)
+t2.start()
+
+##线程的切换不确定，语句执行顺序不一定。
+
+# x = n + 1  x=5001,n=5000
+# x = n - 1  n=5000,x=4999  
+# n = x      n=4999
+# n = x      n=4999
+
 ```
 
 ### **知识点回顾**
@@ -507,11 +535,13 @@ for article in article_list:
 
 ```python
 # 导入模块
-from queue import Queue
+from queue import Queue ##python标准库队列
+from multiprocessing import Queue  ##多进程队列
 # 使用
 q = Queue()
 q.put(url)
 q.get() # 当队列为空时，阻塞
+q.get(timeout=2) ##超时2s后退出
 q.empty() # 判断队列是否为空，True/False
 ```
 
@@ -531,6 +561,18 @@ for i in range(5):
     t = Thread(target=函数名)
     t.start()
     t.join()
+    
+    
+  
+##创建线程正常用法
+for i in range(5):
+    t = Thread(target=函数名)
+    t_list.append(t)
+    t.start()
+    
+for i in t_list:
+    i.join()
+    
 ```
 
 ### **小米应用商店抓取(多线程)**
