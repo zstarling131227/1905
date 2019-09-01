@@ -269,6 +269,28 @@ Windows: python -m pip install selenium
 
 ### **phantomjs浏览器**
 
+
+
+- 安装
+
+  ```
+  tarena@tarena:~$ cd software/phantomjs-2.1.1-linux-x86_64/
+  tarena@tarena:~/software/phantomjs-2.1.1-linux-x86_64$ ls
+  bin  ChangeLog  examples  LICENSE.BSD  README.md  third-party.txt
+  tarena@tarena:~/software/phantomjs-2.1.1-linux-x86_64$ cd bin
+  tarena@tarena:~/software/phantomjs-2.1.1-linux-x86_64/bin$ ls
+  phantomjs
+  tarena@tarena:~/software/phantomjs-2.1.1-linux-x86_64/bin$ sudo cp phantomjs /usr/bin/
+  tarena@tarena:~/software/phantomjs-2.1.1-linux-x86_64/bin$ sudo -i
+  root@tarena:~# cd /usr/bin/
+  root@tarena:/usr/bin# chmod 777 phantomjs
+  
+  测试
+  tarena@tarena:~$ phantomjs 
+  phantomjs> 
+  
+  ```
+
 - **定义**
 
 ```python
@@ -288,6 +310,8 @@ Windows: python -m pip install selenium
 
 # 下载地址
 chromedriver : 下载对应版本
+# 1. 查看浏览器版本: 右上角 - 帮助 - 关于Google Chrome
+# 2. 网站中查看对应版本(notes.txt)
 http://chromedriver.storage.googleapis.com/index.html
 
 geckodriver
@@ -305,9 +329,52 @@ https://github.com/mozilla/geckodriver/releases
    sudo -i
    cd /usr/bin/
    chmod 777 geckodriver
+4、 测试
+ipython3 
+In [2]: from selenium import webdriver
+In [3]: browser=webdriver.Chrome()
 ```
 
-- **使用**
+- 安装goole
+
+```
+tarena@tarena:~/software$ cd chromedriver_linux64/
+tarena@tarena:~/software/chromedriver_linux64$ ls
+chromedriver
+tarena@tarena:~/software/chromedriver_linux64$ sudo cp chromedriver /usr/bin/
+tarena@tarena:~/software/chromedriver_linux64$ sudo -i
+root@tarena:~# cd /usr/bin/
+root@tarena:/usr/bin# chmod 777 chromedriver
+root@tarena:/usr/bin# ll chromedriver 
+
+ipython3
+In [6]: from selenium import webdriver
+In [7]: browser=webdriver.Chrome()
+
+```
+
+- fixfore
+
+```
+tarena@tarena:~/software/chromedriver_linux64$ cd
+tarena@tarena:~$ cd software/geckodriver-v0.24.0-linux64/
+tarena@tarena:~/software/geckodriver-v0.24.0-linux64$ ls
+geckodriver
+tarena@tarena:~/software/geckodriver-v0.24.0-linux64$ sudo cp geckodriver /usr/bin/
+[sudo] tarena 的密码： 
+tarena@tarena:~/software/geckodriver-v0.24.0-linux64$ sudo -i
+root@tarena:~# cd /usr/bin/
+root@tarena:/usr/bin# chmod 777 geckodriver 
+root@tarena:/usr/bin# ll geckodriver 
+
+ipython3
+In [6]: from selenium import webdriver
+In [8]: browser=webdriver.Firefox()
+```
+
+
+
+- 使用**
 
 示例代码一：使用 selenium+浏览器 打开百度
 
@@ -319,6 +386,11 @@ browser = webdriver.Chrome()
 browser.get('http://www.baidu.com/')
 browser.save_screenshot('baidu.png')
 browser.quit()
+
+from selenium import webdriver
+browser = webdriver.Chrome(excutable_path='/xxx/geckodriver')
+# windows: executable_path= 'D:\\browser\\geckodriver'   
+
 ```
 
 示例代码二：打开百度，搜索赵丽颖，查看
@@ -353,6 +425,7 @@ browser.quit()
 3、browser.page_source # 查看响应内容
 4、browser.page_source.find('字符串')
    # 从html源码中搜索指定字符串,没有找到返回：-1
+       # 应用场景: 判断是否为最后1页
 5、browser.quit() # 关闭浏览器
 ```
 
@@ -361,7 +434,7 @@ browser.quit()
 **单元素查找(1个节点对象)**
 
 ```python
-1、browser.find_element_by_id('')
+1、browser.find_element_by_id('')  ##只要找到第一个满足条件的节点就返回
 2、browser.find_element_by_name('')
 3、browser.find_element_by_class_name('')
 4、browser.find_element_by_xpath('')
@@ -427,6 +500,54 @@ browser.execute_script(
 ```
 
 3. **代码实现**
+
+   ```
+   # 第1种情况
+   ￥69.80
+   Python基础教程（第3版） 书中岁月多,悠悠夏日长,品质图书每满100减50（具体优惠信息以商品详情页为准)点击购买
+   25万+条评价
+   人民邮电出版社
+   自营
+   放心购
+   关注
+   加入购物车
+   电子书
+   ￥49.99
+   # 第2种情况
+   每满100减50 (7.22-7.28)
+   ￥112.10
+   疯狂Python讲义 书中岁月多,悠悠夏日长,品质图书每满100减50（具体优惠信息以商品详情页为准)点击购买
+   4万+条评价
+   电子工业出版社
+   自营
+   放心购
+   关注
+   加入购物车
+   # 第3种情况
+   单件
+   套装3件
+   每满100减50 (7.22-7.28)
+   ￥46.60
+   Python 3爬虫、数据清洗与可视化实战 书中岁月多,悠悠夏日长,品质图书每满100减50（具体优惠信息以商品详情页为准)点击购买
+   1.6万+条评价
+   电子工业出版社
+   自营
+   放心购
+   关注
+   加入购物车
+   电子书
+   ￥34.30
+   # 第4种情况
+   ￥78.30
+   ￥71.90
+   Python从小白到大牛 书中岁月多,悠悠夏日长,品质图书每满100减50（具体优惠信息以商品详情页为准)点击购买
+   16万+条评价
+   清华大学出版社
+   自营
+   放心购
+   关注
+   加入购物车
+   ```
 
 ```python
 from selenium import webdriver
@@ -505,11 +626,7 @@ browser.get('http://www.baidu.com/')
 browser.save_screenshot('baidu.png')
 ```
 
-
-
 ## **scrapy框架**
-
-
 
 - 定义
 
@@ -531,11 +648,15 @@ browser.save_screenshot('baidu.png')
 	7、sudo pip3 install -I -U service_identity
 2、安装scrapy框架
 	1、sudo pip3 install Scrapy
+
+3、查看版本    
+  tarena@tarena:~$ scrapy -v
 ```
 
 ```python
 # Windows安装
 cmd命令行(管理员): python -m pip install Scrapy
+# Visual C++ 14.0 xxx is required
 ```
 
 - Scrapy框架五大组件
@@ -543,12 +664,20 @@ cmd命令行(管理员): python -m pip install Scrapy
 ```python
 1、引擎(Engine)      ：整个框架核心
 2、调度器(Scheduler) ：维护请求队列
+（存储的是url地址，作用是对比url，去重【爬过之后不会再爬取】）
 3、下载器(Downloader)：获取响应对象
+（向互联网（页面）发送请求，获得响应response）
 4、爬虫文件(Spider)  ：数据解析提取
+（根据所得响应内容response提取数据【xpath】，数据类型有需要继续跟进的url地址和需要保存的数据）
 5、项目管道(Pipeline)：数据入库处理
+（专门对提取的需要保存或处理的数据做处理）
+
+下载器是基于多线程的。爬虫文件部分是基于协程的。
 **********************************
 # 下载器中间件(Downloader Middlewares) : 引擎->下载器,包装请求(随机代理等)
 # 蜘蛛中间件(Spider Middlewares) : 引擎->爬虫文件,可修改响应对象属性
+
+ 中间件的作用是拦截，需要先执行中间件，再继续执行
 ```
 
 - scrapy爬虫工作流程
@@ -619,6 +748,10 @@ ITEM_PIPELINES={
 7、全局配置(settings.py)
 8、运行爬虫 ：scrapy crawl 爬虫名
 
+tarena@tarena:~/1905/month04/code/code1/day07$ scrapy startproject Baidu
+tarena@tarena:~/1905/month04/code/code1/day07$ cd Baidu/
+tarena@tarena:~/1905/month04/code/code1/day07/Baidu$ scrapy genspider baidu www.baidu.com
+tarena@tarena:~/1905/month04/code/code1/day07/Baidu$ scrapy crawl baidu
 ```
 
 - pycharm运行爬虫项目
