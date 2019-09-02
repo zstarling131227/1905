@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>zstarling</title>
+</head>
+<body>
+<script src="/static/js/common.js"></script>
+<script src="/static/js/jquery-1.11.3.js"></script>
+<script>
+    $(function(){
+        $("#btn").click(function(){
+            var xhr=createXhr();
+            xhr.open('post','/user/make_post/',true);
+            xhr.onreadystatechange=function(){
+                if(xhr.readyState==4 && xhr.status == 200){
+                    alert(xhr.responseText);
+                }
+            }
+            xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
+            var uname=$('#uname').val();
+            var pwd=$('#pwd').val();
+            var csrf=$("[name='csrfmiddlewaretoken']").val();
+            var params="uname="+uname+"&pwd="+pwd+"&csrfmiddlewaretoken="+csrf;
+            xhr.send(params);
+        })
+    })
+
+</script>
+{% csrf_token %}
+<p>
+    用户名：<input type="text" id="uname" name="uname">
+    <span id="show"></span>
+</p>
+<p>
+    密码：<input type="password" id="pwd" name="pwd">
+</p>
+<p>
+    <input type="button" value="提交" id="btn">
+</p>
+</body>
+</html>

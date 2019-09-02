@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>zstarling</title>
+</head>
+<body>
+    <div id="tip">
+
+    </div>
+    <div>
+        <input type="text" name="" id="txt">
+    </div>
+
+    <!-- script与button不必同时出现，因为button中的内容是从<script></script>中复制过去的 -->
+    <button onclick='a=document.getElementById("tip");a.innerText="hello world!";'>点我一下</button>
+    <!-- 将<script></script>中的内容直接复制在<button></button>中的onclick里面 -->
+    <!-- <script>
+            //获取指定id的元素
+             a=document.getElementById("tip");
+            // 设置a内部显示内容
+            a.innerText="hello world!";
+    </script> -->
+
+    <script>
+    a=document.getElementById("txt")
+    b=document.getElementById("tip")
+    b.innerText=a.value;
+    </script>
+    <button onclick='a=document.getElementById("txt");b=document.getElementById("tip");  b.innerText=a.value;'>点我一下</button>
+
+    <script>
+            // 单行注释
+            a==1;   //定义一个写小字母变量：
+          /*多行注释
+            b=3;
+            c=4;
+            d=5;
+            */
+           a1=2;  //全局性变量
+           var a2=3; //页面局部变量
+           var a3,a4,a5; //定义多个变量，但并未赋值
+           a3=4;a4=5;a5=6; //定义后赋值
+           var a6=a7=a8=7;
+           var a9=10,a11=11;
+           //定义一个常量
+           const PI=3.1415916;
+           //只保留两位并显示在页面
+           alert(PI.toFixed(2));
+    </script>
+         <button onclick='a=document.getElementById("tip");a.innerText=PI.toFixed(2);'>点我一下</button>
+    
+    <script>
+           //定义字符变量
+           var strname="tgrong"
+           typeof(strname)
+           var isSave=false
+    </script>
+     <button onclick='a=document.getElementById("tip");a.innerText=typeof(strname);'>点我一下</button>
+     <button onclick='a=document.getElementById("tip");a.innerText=typeof(isSave);'>点我一下</button>
+
+     <script>
+         var a=2;
+         console.log(a++);
+         console.log(a)
+         var b='A',c='a';
+         console.log(b.charCodeAt(0));
+         console.log(b.codePointAt(0))
+         console.log(b>c);
+        var x=10,y=20,z=30;
+        console.log(!(x>y&&y>z || x<y&&z>y))
+        var result=x>y?x:y
+        console.log(result)
+     </script>
+    </body>
+</html>

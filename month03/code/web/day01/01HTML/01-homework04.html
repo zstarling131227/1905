@@ -1,0 +1,53 @@
+<!--http://localhost:63342/code/day01/01-homework04.html?-->
+<!--name=%E5%BC%A0%E6%80%BB&pass=123&marry=on&sex=1&zxl=%E6%9C%AC%E7%A7%91-->
+<!--&zxl=%E4%B8%BA%E4%BA%8C%E4%BD%8D+&%E6%8F%90%E4%BA%A4=%E6%8F%90%E4%BA%A4-->
+<!--存入的是name属性-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ZXL</title>
+</head>
+<body>
+    <form>
+        <h2><b>用户注册：</b></h2>
+        <div>
+            <label for="name">名称：</label>
+            <input type="text" id="name" name="name">
+        </div>
+        <div>
+            <label for="pass">密码：</label>
+            <input type="password" id="pass" name="pass">
+        </div>
+        <div>
+            <label for="marry">婚否：</label>
+            <input type="checkbox" id="marry" name="marry">
+        </div>
+        <div>
+            <label for="sex">性别：</label>
+            <input type="radio" id="sex" name="sex" value="1" checked>男
+            <input type="radio" id="" name="sex" value="2">女
+        </div>
+        <div>
+            <label for="name">学历：</label>
+            <select name="zxl" id="zxl">
+                <option>请选择</option>
+                <option>小学</option>
+                <option>中学</option>
+                <option>本科</option>
+                <option>研究生</option>
+                <option>博士生</option>
+                <option>博士后</option>
+            </select>
+        </div>
+        <div>
+            <label for="content">简介：</label>
+            <textarea name="zxl" id="content" cols="30" rows="10"></textarea>
+        </div>
+        <div>
+            <input type="submit" name="提交">
+            <input type="reset" name="重置">
+        </div>
+    </form>
+</body>
+</html>

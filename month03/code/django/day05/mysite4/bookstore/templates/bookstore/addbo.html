@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>zstarling添加</title>
+</head>
+<body>
+    <a href="/bookstore/add_book">添加图书</a>
+    <table>
+        <tr>
+            <td>id</td>
+            <td>title</td>
+            <td>pub</td>
+            <td>price</td>
+            <td>market_price</td>
+            <td>删除</td>
+            <td>修改</td>
+        </tr>
+        {% for abook in books %}
+        <tr>
+            <td>{{ abook.id }}</td>
+            <td>{{ abook.title }}</td>
+            <td>{{ abook.pub }}</td>
+            <td>{{ abook.price }}</td>
+            <td>{{ abook.market_price }}</td>
+            <!--##都是路由名字，不是HTML名字-->
+            <td><a href="/bookstore/delbo/{{abook.id}}">删除</a></td>
+            <td><a href="/bookstore/modbo/{{abook.id}}">修改</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>zstarling</title>
+</head>
+<body>
+    <div>
+        <h5>s={{ s }}</h5>
+        <h5>s|upper = {{ s| upper }}</h5>
+        <h5>s|lower = {{ s| lower }}</h5>
+        <h5>w={{ w }}</h5>
+        <h5>w|safe={{ w|safe }}</h5>
+        <h5>v ={{ v }}</h5>
+        <!--一个汉字是一个字符，空格也算是一个字符，…是三个字符-->
+        <h5>v|truncatechars:4={{ v |truncatechars:'4' }}</h5>
+        <h5>v|truncatechars:6={{ v |truncatechars:'6' }}</h5>
+        <h5>v|truncatechars:8={{ v |truncatechars:'8' }}</h5>
+        <h5>u ={{ u }}</h5>
+        <h5>u|truncatechars:4={{ u |truncatechars:'4' }}</h5>
+        <h5>u|truncatechars:6={{ u |truncatechars:'6' }}</h5>
+        <h5>u|truncatechars:8={{ u |truncatechars:'8' }}</h5>
+        <!--只有add没有减乘除-->
+        <h5>n+2={{ n | add:'2'}}</h5>
+        <h5>n+2={{ n | add:'2' |add:"7"}}</h5>
+        <h5>n+2={{ n | add:'2' |add:'3' | add:'8'}}</h5>
+    </div>
+    <ul>
+        {% for city in lst %}
+        <li>{{ city }}</li>
+        {% empty %}
+        <li>没有城市</li>
+        {% endfor %}
+    </ul>
+    <ol>
+        {% for city in lst %}
+        <li>{{ city }}</li>
+        {% empty %}
+        <li>没有城市</li>
+        {% endfor %}
+    </ol>
+    <ul>
+        {% for city in lst %}
+        {% if forloop.first %}
+        <li>====</li>
+        {% endif %} <!-- ###是第一次循坏，所以显示-->
+        <li>{{forloop.counter}}、{{ city }}</li>
+        {% if forloop.last %}
+        <li>----</li>
+        {% endif %}  <!--###是最后一次循坏，所以显示-->
+        {% empty %}
+        <li>没有城市</li>
+        {% endfor %}
+    </ul>
+    <ul>
+        {% for city in lst %}
+        <li>{{forloop.counter}}、{{ city }}</li>
+        {% empty %}
+        <li>没有城市</li>
+        {% endfor %}
+    </ul>
+    <ul>
+        {% for city in lst %}
+        <li>{{forloop.counter0}}、{{ city }}</li>
+        {% empty %}
+        <li>没有城市</li>
+        {% endfor %}
+    </ul>
+    <ul>
+        {% for city in lst %}
+        <li>{{forloop.revcounter}}、{{ city }}</li>
+        {% empty %}
+        <li>没有城市</li>
+        {% endfor %}
+    </ul>
+    <ul>
+        {% for city in lst %}
+        {% if forloop.first %}
+        <li>====</li>
+        {% endif %}  <!--###是第一次循坏，所以显示-->
+        <li>{{forloop.revcounter0}}、{{ city }}</li>
+        {% if forloop.last %}
+        <li>----</li>
+        {% endif %}  <!--###是最后一次循坏，所以显示-->
+        {% empty %}
+        <li>没有城市</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

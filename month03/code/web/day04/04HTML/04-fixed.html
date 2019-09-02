@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>zstarling</title>
+    <style>
+        /* *代表全部页面的元素 */
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #top,#bottom{
+            /* 有了背景色一般不设置边框 */
+            /* border: solid 1px red; */
+            text-align: center;
+            background-color: #01204f;
+            color: #fff;
+            padding: 10px 0px;
+            position: fixed;
+            width: 100%;
+            height: 25px;
+        }
+        #right,#left{
+            background-color: #530736;
+            width: 100px;
+            /* height与paddin高度会累加 */
+            /* height: 150px; */
+            top:180px;
+            color: #fff;
+            text-align: center;
+            padding:50px  0px;
+        }
+        #left{
+            position: fixed;
+            left: 0;
+        }
+        #right{
+            position: fixed;
+            right: 0;
+        }
+        #top{
+            top: 0;
+        }
+        #bottom{
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- div#top -->
+    <div id="top">
+        从你的全世界路过！
+    </div>
+    <div id="left">
+        waiting for you!
+    </div>
+    <div id="right">
+        bad guy!
+    </div>
+    <div id="bottom">
+        welcome back!
+    </div>
+        <!-- （我是一个标题）被（ 从你的全世界路过！）一行所覆盖 -->
+    <div style="margin-top: 45px;">
+        我是一个标题
+    </div>
+    <!-- 出现拖动条 -->
+    <div style="height:1000px;">
+
+    </div>
+</body>
+</html>

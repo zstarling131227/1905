@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        /* #news{width: 308px;border: solid 1px black;overflow: hidden;margin-bottom: 8px;} */
+        .news{width: 308px;border: solid 1px black;overflow: hidden;margin-bottom: 8px;}
+        /* img{float:right;width: 146px;}  */
+        /* p{float:left;width: 154px;padding: 0;margin:0;margin-left: 8px;margin-top: 8px;} */
+        /* 将浮动方向左右提出，可任意切换 */
+        .fl{float: left;}
+        .fr{float: right;}
+        img{width: 146px;} 
+        p{width: 154px;padding: 0;margin:0;margin-left: 8px;margin-top: 8px;}
+    </style>
+</head>
+<body>
+    <!-- id 与#news相对应 -->
+    <!-- <div id="news">
+        <img src="day03/imgs/img02.png" alt="">
+        <p>&nbsp;&nbsp;&nbsp;"文字环绕"：浮动元素遮挡正常元素的位置，无法遮挡正常内容的显示，内容围绕在浮动元素周围显示</p>
+</div> -->
+<!-- class 与.news相对应 -->
+<div class="news">
+        <!-- 未标明浮动方向时，默认在下面 -->
+        <img src="/home/tarena/1905/month03/code/day03/day03/imgs/img02.png" alt="路径不正确">
+        <p>&nbsp;&nbsp;&nbsp;"文字环绕"：浮动元素遮挡正常元素的位置，无法遮挡正常内容的显示，内容围绕在浮动元素周围显示</p>
+</div>
+<div class="news">
+        <img class="fr" src="/home/tarena/1905/month03/code/day03/day03/imgs/img02.png" alt="路径不正确">
+        <p class="fl">&nbsp;&nbsp;&nbsp;"文字环绕"：浮动元素遮挡正常元素的位置，无法遮挡正常内容的显示，内容围绕在浮动元素周围显示</p>
+</div>
+<div class="news">
+        <img class="fl" src="/home/tarena/1905/month03/code/day03/day03/imgs/img02.png" alt="路径不正确">
+        <p class="fr">&nbsp;&nbsp;&nbsp;"文字环绕"：浮动元素遮挡正常元素的位置，无法遮挡正常内容的显示，内容围绕在浮动元素周围显示</p>
+</div>
+</body>
+</html>

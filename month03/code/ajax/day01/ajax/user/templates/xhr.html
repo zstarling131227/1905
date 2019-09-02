@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>zstarling</title>
+</head>
+<body>
+<p>this is xhr!</p>
+<button onclick="createXhr()">xhr</button>
+
+
+<button onclick="testXhr()">xhr</button>
+<script src="/static/js/common.js"></script>
+<script>
+
+    function createXhr(){
+        if (window.XMLHttpRequest){
+            var xhr=new XMLHttpRequest();
+        }else{
+            var xhr=new ActiveXObject('Microsoft.XMLHTTP');
+        }
+        console.log(xhr);
+    }
+
+
+    function testXhr(){
+        var xhr=createXhr();
+        console.log(xhr)
+    }
+
+</script>
+</body>
+</html>

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>zstarling修改作者</title>
+</head>
+<body>
+<form action="/bookstore/modau/{{ author.id }}" method="post">
+    姓名：<input type="text" value="{{author.name}}"><br>
+    年龄：<input type="text" name="age" value="{{author.age}}"><br>
+    邮箱：<input type="text" value="{{author.email}}"><br>
+    <input type="submit" value="确认修改">
+</form>
+    <a href="/bookstore/addau">返回列表</a>
+</body>
+</html>

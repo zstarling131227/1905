@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>zstarling</title>
+    <style>
+        #wb{
+            width: 122px;
+            border: 1px solid #eee;
+            margin: 0 auto;
+        }
+        #wb>.cls{
+            text-align: right;
+        }
+    </style>
+</head>
+<body>
+<div id="wb">
+    <div id="nav" class="top">
+        <img src="/home/tarena/1905/month03/code/day05/day05/imgs/img02.png" alt="王八蛋">    
+    </div>
+    <div class="cls">
+        <img id="cls" src="/home/tarena/1905/month03/code/day05/day05/imgs/img01.png" alt="王八蛋">
+    </div>
+    <script>
+        // 参数id表面元素的id值
+        function $$(id){
+            // return用于返回指定id名称的dom对象。
+            return document.getElementById(id);
+        }
+        var btncls=$$('cls');
+        btncls.onclick=function(){
+            // 添加一个询问对话框
+            var yesno=confirm('确认关闭吗？');
+            // 如果选择了确定要关闭
+            if(yesno){
+                // 隐藏显示的元素
+               $$('wb').style.display='none'; 
+            }   
+        }
+    </script>
+</div>
+</body>
+</html>

@@ -17,6 +17,7 @@ from django.conf import settings
 from django.conf.urls import url, include
 from django.conf.urls.static import static
 from django.contrib import admin
+
 from . import views
 
 urlpatterns = [
@@ -24,8 +25,8 @@ urlpatterns = [
     url(r'^test/$', views.test_api),
     url(r'^v1/users', include('user.urls')),
     url(r'^v1/tokens', include('btoken.urls')),
-    url(r'^v1/topics', include('topic.urls'))
+    url(r'^v1/topics', include('topic.urls')),
+    url(r'^v1/messages', include('message.urls')),
 ]
 
-#生成媒体资源路由
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

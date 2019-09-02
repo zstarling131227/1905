@@ -1,0 +1,12 @@
+# file:music/urls.py
+
+from django.conf.urls import url
+from . import views
+
+##urlpatterns名称跟主路由的名字urlpatterns必须一样
+urlpatterns = [
+    url(r'^$', views.index_view),
+    url(r'^page1', views.page1_view),
+    url(r'^page2', views.page2_view),
+    url(r'^page3', views.page3_view),
+]

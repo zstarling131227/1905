@@ -10,8 +10,8 @@ class Topic(models.Model):
     limit = models.CharField(max_length=10, verbose_name='权限')
     introduce = models.CharField(max_length=90, verbose_name='博客简介')
     content = models.TextField(verbose_name='博客內容')
-    created_time = models.DateField(auto_now_add=True, verbose_name='博客创建时间')
-    modified_time = models.DateField(auto_now=True, verbose_name='博客修改时间')
+    created_time = models.DateTimeField(auto_now_add=True, verbose_name='博客创建时间')
+    modified_time = models.DateTimeField(auto_now=True, verbose_name='博客修改时间')
     author = models.ForeignKey(UserProfile, verbose_name='作者')
 
     class Meta:

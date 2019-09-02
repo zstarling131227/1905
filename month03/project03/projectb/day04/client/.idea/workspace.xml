@@ -2,19 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e8831cfe-ddf6-44a7-81e7-fd3285f0ca05" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../../../../../month04/code/code1/day06/06-mzb_test.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../../../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../../../bytes.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../day03/blog/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../day03/blog/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../day03/blog/user/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../day03/blog/user/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../day03/blog/user/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../blog/.idea/codeStyles/Project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../blog/.idea/codeStyles/Project.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../blog/blog/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/../blog/blog/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../blog/blog/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/../blog/blog/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../blog/user/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/../blog/user/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../blog/user/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/../blog/user/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../day05/blog/.idea/codeStyles/Project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../day05/blog/.idea/codeStyles/Project.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../day05/blog/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../day05/blog/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../day05/blog/btoken/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../day05/blog/btoken/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../day05/blog/tools/login_check.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../day05/blog/tools/login_check.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../day05/blog/topic/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../day05/blog/topic/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../day05/blog/user/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../day05/blog/user/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../day05/client/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../day05/client/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../../../month04/code/code1/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../month04/code/code1/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../../../month04/code/code1/day06/urls" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../month04/code/code1/day06/urls" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -24,36 +22,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/flask_client.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="87">
-              <caret line="8" column="34" lean-forward="true" selection-start-line="8" selection-start-column="34" selection-end-line="8" selection-end-column="34" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/login.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="117">
-              <caret line="48" column="24" selection-start-line="48" selection-start-column="24" selection-end-line="48" selection-end-column="24" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/templates/change_info.html">
+        <entry file="file://$PROJECT_DIR$/templates/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="24">
-              <caret line="1" column="5" selection-start-line="1" selection-start-column="5" selection-end-line="1" selection-end-column="5" />
-              <folding>
-                <element signature="n#html#0;n#!!top" />
-                <element signature="e#23#296#0" />
-                <element signature="n#head#0;n#html#0;n#!!top" />
-                <element signature="n#body#0;n#html#0;n#!!top" />
-                <element signature="n#script#0;n#html#0;n#!!top" />
-              </folding>
+            <state relative-caret-position="2619">
+              <caret line="142" column="26" selection-start-line="142" selection-start-column="26" selection-end-line="142" selection-end-column="26" />
             </state>
           </provider>
         </entry>
@@ -66,7 +39,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/templates/index.html" />
         <option value="$PROJECT_DIR$/templates/list_bak.html" />
         <option value="$PROJECT_DIR$/flask_client.py" />
         <option value="$PROJECT_DIR$/templates/release.html" />
@@ -75,12 +47,13 @@
         <option value="$PROJECT_DIR$/templates/about.html" />
         <option value="$PROJECT_DIR$/templates/login.html" />
         <option value="$PROJECT_DIR$/templates/change_info.html" />
+        <option value="$PROJECT_DIR$/templates/index.html" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="71" />
-    <option name="y" value="30" />
+    <option name="x" value="90" />
+    <option name="y" value="73" />
     <option name="width" value="1253" />
     <option name="height" value="870" />
   </component>
@@ -90,7 +63,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -98,10 +70,27 @@
               <item name="client" type="b2602c69:ProjectViewProjectNode" />
               <item name="client" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="client" type="b2602c69:ProjectViewProjectNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="client" type="b2602c69:ProjectViewProjectNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="images" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="client" type="b2602c69:ProjectViewProjectNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -162,8 +151,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="71" y="30" width="1253" height="870" extended-state="0" />
-    <editor active="true" />
+    <frame x="90" y="73" width="1253" height="870" extended-state="0" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24959217" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -241,13 +229,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/gbook.html">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-10905">
-          <caret line="37" column="17" selection-start-line="37" selection-start-column="17" selection-end-line="37" selection-end-column="17" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/list.html">
       <provider selected="true" editor-type-id="text-editor">
@@ -353,25 +334,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/about.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1727">
-          <caret line="19" column="45" lean-forward="true" selection-start-line="19" selection-start-column="45" selection-end-line="19" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../../../code/code4/day05/jwt.py" />
-    <entry file="file://$PROJECT_DIR$/templates/login.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="117">
-          <caret line="48" column="24" selection-start-line="48" selection-start-column="24" selection-end-line="48" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/flask_client.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="87">
-          <caret line="8" column="34" lean-forward="true" selection-start-line="8" selection-start-column="34" selection-end-line="8" selection-end-column="34" />
+          <caret line="8" column="34" selection-start-line="8" selection-start-column="34" selection-end-line="8" selection-end-column="34" />
         </state>
       </provider>
     </entry>
@@ -386,6 +353,27 @@
             <element signature="n#body#0;n#html#0;n#!!top" />
             <element signature="n#script#0;n#html#0;n#!!top" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-960">
+          <caret line="17" column="26" selection-start-line="17" selection-start-column="18" selection-end-line="17" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/about.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1704">
+          <caret line="19" column="45" lean-forward="true" selection-start-line="19" selection-start-column="45" selection-end-line="19" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2619">
+          <caret line="142" column="26" selection-start-line="142" selection-start-column="26" selection-end-line="142" selection-end-column="26" />
         </state>
       </provider>
     </entry>

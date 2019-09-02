@@ -90,7 +90,7 @@ def topics(request, author_id):
     elif request.method == "DELETE":
         author = request.user
         token_author_id = author.username
-        if author != token_author_id:
+        if author_id != token_author_id:
             result = {'code': 309, 'error': 'You don`t have privilege!'}
             return JsonResponse(result)
         topic_id = request.GET.get('topic_id')

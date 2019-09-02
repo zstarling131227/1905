@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>zstarling</title>
+    <style>
+        #search{
+            width: 260px;
+            margin:0 auto;
+        }
+        p>span{
+            color: aqua;
+        }
+    </style>
+</head>
+<body>
+    <div id="search">
+        <input type="text" name="" id="key">
+        <button id="ser">查询</button>
+        <p id="p1">
+                如果。所有的伤痕都能够痊愈。 如果。所有的真心都能够换来真意。 如果。所有的相信都能够坚持。如果。所有的情感都能够完美。如果。依然能相遇在某座城。单纯的微笑。微微的幸福。肆意的拥抱。 该多好。可是真的只是如果。
+        </p>
+    </div>
+    <script>
+        function $$(id){
+            return document.getElementById(id)
+        }
+        //获取查询按钮，并绑定单击事件
+        var btnserach=$$('ser');
+        // 获取文本框对象并保存
+        var key=$$('key');
+        var p1=$$('p1');
+        btnserach.onclick=function(){
+            //定义一个正则对象
+            var reg=new RegExp(key.value,"ig");
+            // 获取内容
+            var newStr=p1.innerHTML.replace(reg,"<span>"+key.value+"</span>");
+            console.log(newStr);
+            //重置新的字符内容
+            p1.innerHTML=newStr;
+        }
+    </script>
+</body>
+</html>

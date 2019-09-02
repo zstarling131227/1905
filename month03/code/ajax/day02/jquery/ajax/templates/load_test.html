@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>zstarling</title>
+</head>
+<body>
+<script src="/static/jquery-1.11.3.js"></script>
+<p>This is load test!</p>
+<button id="btn">show jquery load</button>
+<div id="show"></div>
+<script>
+    $(function(){
+        $('#btn').click(function(){
+           /*  $('#show').load('/ajax/load_test_server/');*/
+           $('#show').load('/ajax/load_test_server/ #btn2');
+        })
+    })
+
+</script>
+</body>
+</html>

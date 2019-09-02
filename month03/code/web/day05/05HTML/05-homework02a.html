@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>zstarling</title>
+    <style>
+        body{
+            font-size: 13px;
+        }
+        #bg{
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            border: 0px solid #cccccc;
+            width: 100%;
+            height: 100%;
+            display: none;
+        }
+        #box{
+            border: 0px solid #cccccc;
+            width: 260px;
+            position: absolute;
+            margin-left: -130px;
+            margin-top:-80px;
+            border-radius: 5px;
+            z-index: 2;
+            left: 50%;
+            top: 50%;
+            display: none;
+            /* box-shadow: -3px -3px 3px #cccccc;  */
+        }
+        #box .title{
+            border: 0px solid red;
+            color: #ffffff;
+            background-color: #008081;
+            padding:10px 20px;
+        }
+        /* #box>.title>button{
+            background-color:  #008081;
+            float: right;
+            font-size: 13px;
+            margin-right: 15px;
+            border: none;
+            outline: none;
+        } */
+       #box .con{
+            border: 1px solid red;
+            overflow: hidden;
+            background-color: #ffffff;
+        }
+        #box .con .img{
+            float: left;
+            margin: 10px 10px 0px 10px;
+
+        }
+        #box .con .rright{
+            float: left;
+            margin-bottom: 30px;
+            margin-top:10px;
+        }
+        #box .con .rright .btn{
+            text-align: center;
+        }
+        #box .con .rright .btn>button{
+            width: 62px;
+            color: #ffffff;
+            background-color: #008081;
+            /* text-align: center; */
+            border: none;
+            padding: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <button id="btnshow">弹出</button>
+    <div id="bg"></div>
+    <div id="box">
+        <div class="title">提示
+            <!-- <button onclick='a=document.getElementById("box");a.style.display="none";'>x</button> -->
+        </div>
+        <div class="con">
+            <div class="img">
+                <img src="/home/tarena/1905/month03/code/day05/day05/imgs/img03.png" alt="图片不存在">
+            </div>
+            <div class="rright">
+                <p>你看到的是SimplePop</p>
+                <div class="btn">
+                    <button  id="cls">确定</button>                  
+                </div>
+           </div>           
+        </div>
+    </div>
+    <script>
+        var btnshow=document.getElementById('btnshow');
+        var divbg=document.getElementById('bg');
+        var divbox=document.getElementById('box');
+        var btncls=document.getElementById("cls");
+        btnshow.onclick=function(){
+            divbg.style.display='block';
+            divbox.style.display='block';
+        }
+        btncls.onclick=function(){
+            divbg.style.display='none';
+            divbox.style.display='none';
+        }
+    </script>
+</body>
+</html>

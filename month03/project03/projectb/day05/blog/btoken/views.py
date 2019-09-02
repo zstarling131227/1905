@@ -15,12 +15,12 @@ def tokens(request):
     :return:
     '''
     if not request.method == 'POST':
-        result = {'code': 101 , 'error': 'Please use POST'}
+        result = {'code': 101, 'error': 'Please use POST'}
         return JsonResponse(result)
-    #前端地址 http://127.0.0.1:5000/login
-    #获取前端传来的数据/生成token
-    #获取-校验密码-生成token
-    #获取前端提交的数据
+    # 前端地址 http://127.0.0.1:5000/login
+    # 获取前端传来的数据/生成token
+    # 获取-校验密码-生成token
+    # 获取前端提交的数据
     json_str = request.body
     if not json_str:
         result = {'code': 102, 'error': 'Please give me json'}
@@ -29,16 +29,16 @@ def tokens(request):
     username = json_obj.get('username')
     password = json_obj.get('password')
     if not username:
-        result = {'code':103, 'error': 'Please give me username'}
+        result = {'code': 103, 'error': 'Please give me username'}
         return JsonResponse(result)
     if not password:
-        result = {'code':104, 'error': 'Please give me password'}
+        result = {'code': 104, 'error': 'Please give me password'}
         return JsonResponse(result)
 
     #####校验数据#####
     user = UserProfile.objects.filter(username=username)
     if not user:
-        result = {'code':105, 'error': 'username or password is wrong !! '}
+        result = {'code': 105, 'error': 'username or password is wrong !! '}
         return JsonResponse(result)
 
     user = user[0]
@@ -47,11 +47,10 @@ def tokens(request):
     if m.hexdigest() != user.password:
         result = {'code': 106, 'error': 'username or password is wrong'}
         return JsonResponse(result)
-    #make token
+    # make token
     token = make_token(username)
-    result = {'code':200, 'username':username, 'data':{'token':token.decode()}}
+    result = {'code': 200, 'username': username, 'data': {'token': token.decode()}}
     return JsonResponse(result)
-
 
 
 def make_token(username, expire=3600 * 24):
@@ -61,36 +60,3 @@ def make_token(username, expire=3600 * 24):
     now = time.time()
     payload = {'username': username, 'exp': int(now + expire)}
     return jwt.encode(payload, key, algorithm='HS256')
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
