@@ -10,7 +10,7 @@ wangweichao@tedu.cn
 
 ```python
 1、开源的，使用C编写，基于内存且支持持久化
-2、高性能的Key-Value的NoSQL数据库
+2、高性能的Key-Value的NoSQL（非关系型数据库）数据库
 3、支持数据类型丰富，字符串strings，散列hashes，列表lists，集合sets，有序集合sorted sets 等等
 4、支持多种编程语言（C C++ Python Java PHP ... ）
 ```
@@ -66,7 +66,22 @@ sudo apt-get install redis-server
 # 服务端启动
 sudo /etc/init.d/redis-server status | start | stop | restart
 # 客户端连接
-redis-cli -h IP地址 -p 6379 -a 密码
+redis-cli -h IP地址 -p（指port） 6379 -a 密码
+```
+
+示例
+
+```
+tarena@tarena:~$ redis-server -v
+Redis server v=4.0.9 sha=00000000:0 malloc=jemalloc-3.6.0 bits=64 build=9435c3c2879311f3
+tarena@tarena:~$ redis-cli -h 127.0.0.1 -p 6379
+127.0.0.1:6379> ping
+PONG
+127.0.0.1:6379> exit
+
+tarena@tarena:~$ sudo /etc/init.d/redis-server status start
+tarena@tarena:~$ sudo /etc/init.d/mysql status start
+
 ```
 
 - Windows
@@ -80,22 +95,32 @@ redis-cli -h IP地址 -p 6379 -a 密码
 4、客户端连接
    双击解压后的 redis-cli.exe
 
-# Windows下产生的问题：关闭终端后服务终止
-# 解决方案：将Redis服务安装到本地服务
+# Windows下产生的问题：关闭终端后服务终止（cmd命令行）
+# 解决方案：将Redis服务安装到本地服务（右键-管理-服务）
+# 配置文件后缀：cnf,conf
 1、重命名 redis.windows.conf 为 redis.conf,作为redis服务的配置文件
 2、cmd命令行，进入到redis-server.exe所在目录
-3、执行：redis-server --service-install redis.conf --loglevel verbose
-4、计算机-管理-服务-Redis-启动
+cmd命令行：cd 路径
+3、执行：redis-server --service.exe-install redis.conf --loglevel verbose
+4、计算机-管理-服务-Redis-启动-确定
+5、客户端添加环境变量（右键--属性-高级设置-环境变量-path-编辑-添加），加入redis-cli.exe的路径，确定，然后重启cmd,输入redis-cli。（也可以在客户端所在路径下启动，直接在cmd中输入redis-cil.exe
 
 # 卸载
 到 redis-server.exe 所在路径执行：
 1、redis-server --service-uninstall
-2、sc delete Redis
+2、sc delete Redis（彻底删除，配置文件。）
+
+
+# 补充：
+1、sudo apt-get install xxx
+2、sudo apt-get autostore xxx
+3、sudo pip3 install xxx
+4、sudo pip3 uninstall xxx
 ```
 
 ## **配置文件详解**
 
-- **配置文件所在路径**
+- **配置文件所在路径**(一般在etc下)
 
 ```python
 1、Ubuntu
@@ -106,6 +131,21 @@ redis-cli -h IP地址 -p 6379 -a 密码
 	redis.windows.conf 
 	redis.conf
 ```
+
+- 修改配置文件
+
+  ```
+  tarena@tarena:~$ sudo -i
+  [sudo] tarena 的密码： 
+  root@tarena:~# cd /etc/redis/
+  root@tarena:/etc/redis# ls
+  redis.conf
+  root@tarena:/etc/redis# cp redis.conf redis.conf.bak 
+  root@tarena:/etc/redis# vim redis.conf
+  
+  # 可以直接打开
+  tarena@tarena:~$ sudo vi /etc/redis/redis.conf
+  ```
 
 - **设置连接密码**
 
@@ -131,7 +171,7 @@ redis-cli -h IP地址 -p 6379 -a 密码
 
 - 远程连接测试
 
-  **Windows连接Ubuntu的Redis服务**
+  **Windows连接Ubuntu的Redis服务**（未添加到环境变量的写法）
 
 ```python
 # cmd命令行
@@ -139,6 +179,25 @@ redis-cli -h IP地址 -p 6379 -a 密码
 2、cd Redis3.0
 3、redis-cli -h x.x.x.x -a 123456
 4、x.x.x.x:6379>ping
+```
+
+- 总结（补充）
+
+```
+# redis特点
+1、非关系型数据库
+2、基于内存,并且支持持久化
+3、数据类型丰富
+# 配置文件 - 配置 /etc/redis/redis.conf
+1、requirepass 密码
+2、bind 127.0.0.1 ::1 # 禁止远程连接
+3、protected-mode yes # 保护模式,默认开启,no
+
+# 假如说配置远程连接后连接不上
+1、查看网络是否通畅 : ping IP地址
+2、防火墙
+   windows: 关闭防火墙 - 控制面板 - 关闭
+   ubuntu:  sudo ufw disable
 ```
 
 ## **数据类型**
@@ -196,7 +255,7 @@ mget key1 key2 key3
 ```python
 # 1.获取长度
 strlen key
-# 2.获取指定范围切片内容
+# 2.获取指定范围切片内容（包含结束值）
 getrange key start stop
 # 3.从索引值开始，value替换原内容
 setrange key index value
@@ -343,7 +402,7 @@ persist key
 10、列表尾部,阻塞弹出,列表为空时阻塞
 	BRPOP key timeout
   # 关于BLPOP 和 BRPOP
-  	1、如果弹出的列表不存在或者为空，就会阻塞
+    	1、如果弹出的列表不存在或者为空，就会阻塞
 		2、超时时间设置为0，就是永久阻塞，直到有数据可以弹出
 		3、如果多个客户端阻塞再同一个列表上，使用First In First Service原则，先到先服务
 11、删除指定元素
@@ -351,7 +410,7 @@ persist key
   count>0：表示从头部开始向表尾搜索，移除与value相等的元素，数量为count
 	count<0：表示从尾部开始向表头搜索，移除与value相等的元素，数量为count
 	count=0：移除表中所有与value相等的值
-12、保留指定范围内的元素
+12、保留指定范围内的元素（包含终止值）
 	LTRIM key start stop
   LRTIM mylist1 0 2 # 只保留前3条
   # 应用场景: 保存微博评论最后500条
@@ -359,6 +418,35 @@ persist key
 
 # 改
 13、LSET key index newvalue
+```
+
+列表插入顺序（两头往中间靠）
+
+```
+127.0.0.1:6379> lpush name xixi yaoyue
+(integer) 2
+127.0.0.1:6379> rpush name haha wangbadan
+(integer) 4
+127.0.0.1:6379> rpoplpush name name
+"wangbadan"
+127.0.0.1:6379> linsert name after xixi zizi
+(integer) 5
+127.0.0.1:6379> lrange name 0 -1
+1) "wangbadan"
+2) "yaoyue"
+3) "xixi"
+4) "zizi"
+5) "haha"
+```
+
+**总结-必须掌握**
+
+```
+1、LPUSH、RPUSH
+2、LPOP、RPOP
+3、BLPOP key timeout
+4、BRPOP key timeout
+5、LRANGE key 0 -1
 ```
 
 **练习**
@@ -477,7 +565,7 @@ r = redis.Redis(host='192.168.153.146',port=6379,db=0)
 # 生产者开始生产url地址
 for page in range(0,67):
   url = 'http://app.mi.com/category/2#page=%s' % str(page)
-  r.lpush('spider:urls',url)
+  r.lpush('spider:urls',url)   
   time.sleep(random.randint(1,3))
 ```
 
@@ -569,7 +657,21 @@ print(r.get('age'))
 r.delete('username')
 ```
 
+**redis数据类型**
 
+```
+# mysql
+1、数值类型
+2、字符类型
+3、枚举类型
+4、日期时间类型
+# redis
+1、字符串 - GET、SET、MGET、MSET、STRLEN、DECR、INCR、DECRBY、INCRBY、INCRBYFLOAT
+2、列表   - LPUSH、RPUSH、LPOP、RPOP、BLPOP、BRPOP、LREM、LINSERT、LLEN、LTRIM、LINDEX
+3、哈希(散列)
+4、集合
+5、有序集合 - redis特有数据类型
+```
 
 
 

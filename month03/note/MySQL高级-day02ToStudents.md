@@ -634,7 +634,7 @@ scoreTable.csv  user2.txt
 root@tarena:/var/lib/mysql-files# mv user2.txt /home/tarena/1905/month03/code/code2/day02/
 root@tarena:/var/lib/mysql-files# ls
 scoreTable.csv
-```
+ ```
 *不可以直接从mysql中直接导入到自己指定位置，否则会报错*
 ```
 select user,host  from user

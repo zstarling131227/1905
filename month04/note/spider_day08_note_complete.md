@@ -1,4 +1,4 @@
-# **Day06回顾**
+# **Day07回顾**
 
 
 
@@ -165,7 +165,7 @@ Baidu
 ```
 
 ***************************************************
-# **Day07笔记**
+# **Day08笔记**
 
 ## **selenium补充**
 
@@ -351,7 +351,7 @@ select province.p_name,city.c_name,county.x_name from province inner join city o
 
 ```python
 from selenium import webdriver
-
+##注意在协议后添加用户名，密码
 url = 'http://tarenacode:code_2013@code.tarena.com.cn/AIDCode/aid1903/12-spider/spider_day07_note.zip'
 browser = webdriver.Chrome()
 browser.get(url)
