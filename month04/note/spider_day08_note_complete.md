@@ -487,6 +487,27 @@ time = scrapy.Field()
 	上映时间 = dd.xpath('.//p[@class="releasetime"]/text()')
 ```
 
+4. 思路梳理
+
+   ```
+   1、items.py : 定义爬取的数据结构
+   2、maoyan.py: 提取数据
+      from ..items import MaoyanItem
+      item = MaoyanItem()
+      item['name'] = xpathxxxxxx
+      yield item # 把item对象（数据）交给管道文件处理
+   3、pipelines.py: 处理数据
+     class MaoyanPipeline(object):
+       def process_item(self,item,spider):
+           # 处理item数据（从爬虫文件传过来的item对象）
+           return item 
+   4、settings.py: 开启管道
+      ITEM_PIPELINES = {
+          # 优先级1-1000，数字越小优先级越高
+          'Maoyan.pipelines.MaoyanPipeline':200
+      }
+   ```
+
    代码实现一
 
 ```python
@@ -727,7 +748,7 @@ LOG_FILE = '文件名.log'
 # 注意: 只显示当前级别的日志和比当前级别日志更严重的
 ```
 
-- **管道文件使用**
+- **管道数据处理流程**
 
 ```python
 1、在爬虫文件中为items.py中类做实例化，用爬下来的数据给对象赋值
@@ -735,7 +756,7 @@ LOG_FILE = '文件名.log'
 	item = MaoyanItem()
 2、管道文件（pipelines.py）
 3、开启管道（settings.py）
-	ITEM_PIPELINES = { '项目目录名.pipelines.类名':优先级 }
+	ITEM_PIPELINES = { '项目目录名.pipelines.类名':优先级 }#（优先级越小越先执行）
 ```
 
 ## **数据持久化存储(MySQL)**
@@ -995,9 +1016,14 @@ class SoPipeline(ImagesPipeline):
 
 ```python
 1、把今天内容过一遍
-2、Daomu错误调一下(看规律,做条件判断)
-3、腾讯招聘尝试改写为scrapy
+2、腾讯招聘尝试改写为scrapy（值爬取以及页面，start_request）
    response.text ：获取页面响应内容
+    
+    scrapy shell www.baidu.com  # (进入交互界面)
+    
+    可以直接进行数据提取
+    response.text  #( 获取相应内容,类型为string)
+    response.xpath("").get()
 ```
 
 

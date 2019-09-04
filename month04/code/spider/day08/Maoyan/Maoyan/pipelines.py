@@ -8,4 +8,7 @@
 
 class MaoyanPipeline(object):
     def process_item(self, item, spider):
+        print(item['name'])
+        print(item['star'])
+        print(item['time'])
         return item
