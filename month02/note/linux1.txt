@@ -1,0 +1,251 @@
+day01回顾
+1、Linux命令
+	1、基本格式
+		命令名 [选项] [参数]
+	2、pwd
+		查看当前目录
+	3、ls：查看当前目录下的文件及子目录
+		-l  以列表形式显示文件或目录详细信息
+		-a  显示所有内容(包含隐藏文件) 
+				隐藏文件：第一个字符是以 . 开头的文件
+		-t  以修改时间排序
+		参数：指定一个目录
+			查看指定目录下的内容
+	
+	4、路径(补充)
+		1、定义：
+			表示文件或目录所在位置形成的字符串
+		2、绝对路径: 以 / 开头的路径
+		3、相对路径: 不以 / 开头的路径
+	5、cd：切换工作目录
+		cd 目录
+		cd 直接回车
+		cd ..
+		cd - 
+		cd .
+	6、mkdir：创建目录
+		mkdir 目录1 目录2 目录3 ... ...
+		mkdir -p aa/aaa/aaaa
+	7、touch：创建文件
+		touch 文件1 文件2 文件3 ... ...
+	8、输出重定向 >
+		命令 > 文件
+		作用：将前面命令的输出输出到指定的文件
+	9、输出追加重定向 >>
+		命令 >> 文件
+		作用：将前面命令的输出输出追加到指定的文件的末尾
+	10、cat ：查看文件内容
+		cat 文件名
+	11、head：查看文件头几行内容
+	12、tail：查看文件末尾几行内容
+		head -n 文件
+		tail -n 文件
+	13、find：查找文件及目录
+		find 要查找的路径 -name "文件/目录"
+	14、cp：复制文件/目录
+		cp 源文件 目标文件
+		cp -r 目录1 目录2
+	15、mv：剪切/重名命
+		重命名：mv 文件名1 文件名2
+		剪切：  mv 文件名1 路径/文件名2
+	16、rm ：删除文件或文件夹
+		格式：rm 选项 文件/目录
+		选项：
+			-r  递归删除
+			-i  
+			-f
+	17、tar
+		1、打包压缩
+			tar -zcvf 被压缩后的名称 将要压缩的文件/目录
+		2、解压
+			tar -zxvf 将要被解压的文件 [-C 指定路径]
+		3、选项
+			-z  调用gzip程序来进程解压缩文件
+			-c  创建压缩包
+			-x  解压
+			-v  显示详细处理的文件信息
+			-f  要操作的文件名
+	18、文件/目录的权限
+		ls -l 文件
+
+		
++++++++++++++++++++++++++++++++++++++++++++
+day02笔记
+1、ifconfig
+	1、作用：查看本机的IP地址
+2、ping
+	1、作用：测试网络的连通性
+	2、格式：ping 对方主机地址
+	3、功能：ping命令通过网络主动向对方发送数据包，对方收到之后，应答相同数量的数据包，依次来判断彼此是否连通
+3、whoami
+	1、作用：查看当前用户名称
+4、adduser 
+	1、作用：添加用户
+	2、格式：adduser [新用户名称]
+	3、说明：添加xiaoming的用户，如果没有错误信息，则创建成功，用户名保存到/etc/passwd文件中，可以使用如下命令查看：
+		1、补充：
+			grep命令
+			1、作用：查找文件中指定内容的行
+			2、格式：gerp "指定的内容" 文件
+			3、示例：grep "xiaoming" /etc/passwd
+		2、cat /etc/passwd | grep "xiaoming"
+			管道符：|
+			格式：命令1 | 命令2
+			作用：将前面命令的输出，做为后面命令的一个标准输入
+5、passwd
+	1、作用：
+		修改用户密码
+	2、格式
+		passwd 待修改密码的用户名
+6、sudo
+	1、作用
+		使用root用户执行命令
+	2、格式
+		sudo 待执行的命令
+	3、说明
+		Linux系统权限较为严格，有时当前用户没有某个操作的执行权限，这时需要使用更高的管理员用户权限来执行，这就需在前面加sudo
+7、df
+	1、作用
+		查看磁盘的使用率
+	2、格式
+		df [选项]
+	3、选项
+		-h 以合适的单位显示空间大小
+8、开关机
+	关机：shutdown
+	重启：reboot
+9、常用的快捷键
+	1、Tab：自动补全
+	2、Ctrl + c ：终止当前命令的执行
+	3、Ctrl + l ：清屏
+	4、上下键：翻出之前执行过的命令
+	5、Ctrl + shift + "+" ：终端字体放大
+	6、Ctrl + "-" ：终端字体缩小
+	7、Ctrl + shift + t ：增加一个终端
+	8、exit ：退出终端 (Ctrl + d)
+
+10、vi编辑器
+	1、格式
+		vi 文件名
+	2、vi编辑器的三种工作模式
+		1、正常模式(浏览模式)
+			打开之后进入的模式
+		2、插入模式
+			编辑文本
+		3、命令行模式
+			输入命令
+	3、vi编辑器的编辑流程
+		1、vi 文件名
+		2、由正常模式 --> 插入模式
+			a  在当前光标的后面插入
+			i  在当前光标的前面插入
+			o  在当前光标的下一行插入
+			A  行尾插入
+			I  行首插入
+		3、编辑完成之后，按ESC键，变回到正常模式
+		4、shift + : 进入到命令行模式
+		5、在命令行模式之下输入以下命令
+			w    保存
+			q    退出
+			wq   保存并退出
+			q!   强制退出
+	4、光标的移动
+		j  向下移动
+		k  向上移动
+		h  向左移动
+		l  向右移动
+		g  文章开头
+		G  文字末尾
+		/xx 查询 （n/N 上一个，下一个）
+	5、复制粘贴
+		yy 复制一行内容
+		p  粘贴
+	6、显示/隐藏行号
+		set nu    显示行号
+		set nonu  不显示行号
+
+1、练习
+	1、从当前目录切换到 /usr/local
+		cd /usr/local
+	2、使用绝对路径,从当前目录切换到 /usr/local/lib
+		cd /usr/local/lib
+	3、使用相对路径，从当前路径切换到 /usr
+		cd ../../
+	4、切换到上一次访问的目录
+		cd -
+	5、切换到当前目录的上一级
+		cd ..
+	6、从任何目录返回到用户主目录
+		cd
+	7、查看 /home 目录内容
+		ls /home
+	8、以列表形式显示 /home目录内容
+		ls -l /home
+	9、查看/home所有内容，包含隐藏文件
+		ls -a /home
+	10、进入到用户主目录，查看当前路径
+		cd
+		pwd
+	11、用户主目录下创建目录a和b
+		mkdir a b
+	12、进入a目录后，一个命令创建2级目录aa/aaa
+		mkdir -p a/aa/aaa
+	13、使用绝对路径进入用户主目录下的a/aa/aaa目录，并创建rain_rain_go_away和little_star
+		cd /home/tarena/a/aa/aaa
+		touch rain_rain_go_away little_star
+	14、用vi编辑题13中的rain_rain_go_away，写入如下内容
+	Rain rain go away
+	Come again another day
+	Little Bada wants to play
+	So come again another day
+
+		vi rain_rain_go_away
+		按a
+		输入内容
+		按ESC键
+		shift + :
+		wq
+
+	15、使用两种方式查看文件rain_rain_go_away的文件内容
+		cat rain_rain_go_away
+		vi rain_rain_go_away
+	16、进入 /home/tarena/a/aa/aaa下，拷贝little_star，副本名为little_star_cp
+		cp little_star little_star_cp
+	17、将rain_rain_go_away文件移动到11题中的b目录下
+		mv rain_rain_go_away ../../../b
+	18、复制/etc目录下的所有l(小写L)开头,以.conf结尾的文件到/home/tarena/a中
+		补充：通配符
+			*  匹配任意多个任意字符
+			？ 匹配一个任意字符
+		cp /etc/l*.conf /home/tarena/a
+	19、查找/bin下r结尾的文件
+		find /bin -name "*r"
+	20、将ls命令的打印结果重定向到ls_out
+		ls > ls_out
+	21、使用命令将little_star文件内容追加到ls_out
+		cat little_star >> ls_out
+	22、查看文件/var/log/boot.log前10行内容
+		head /var/log/boot.log
+	23、将用户主目录下的a目录打包为a.tar.gz
+		tar -zcvf a.tar.gz ../../../a
+	24、将a.tar.gz解压到b目录
+		tar -zxvf a.tar.gz -C ~/b
+	25、查看文件little_star文件权限
+		ls -l little_star
+	26、增加little_star文件其他用户写的权限
+		chmod o+w little_star
+	27、以数字的方式修改little_star访问权限：文件所属用户可读可写不可执行，同组用户可读不可写不可执行，其他用户不可读不可写不可执行
+		chmod 640 little_star
+
+
+
+
+
+
+
+
+
+
+
+
+

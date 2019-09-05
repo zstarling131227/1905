@@ -17,6 +17,17 @@ all_handles = browser.window_handles
 browser.switch_to_window(all_handles[1])
 ```
 
+3、设置无界面模式
+
+```
+1、options = webdriver.ChromeOptions()
+2、options.add_argument('--headless')
+3、options.add_arugment('--proxy=http://1.1.1.1:1111')
+
+4、browser = webdriver.Chrome(options=options)
+5、browser.get(url)
+```
+
 ## **创建项目流程**
 
 ```python
@@ -24,18 +35,41 @@ browser.switch_to_window(all_handles[1])
 2、cd Tencent
 3、scrapy genspider tencent tencent.com
 4、items.py(定义爬取数据结构)
+ import scrapy
+   class TencentItem(scrapy.Item):
+       name = scrapy.Field()
 5、tencent.py（写爬虫文件）
+ import scrapy
+   class TencentSpider(scrapy.Spider):
+       name = 'tencent'
+       allowed_domains = ['hr.tencent.com']
+       start_urls = ['http://hr.tencent.com/']
+       def parse(self,response):
+           pass
 6、pipelines.py(数据处理)
+ class TencentPipeline(object):
+        def process_item(self,item,spider):
+            return item
 7、settings.py(全局配置)
-8、终端：scrapy crawl tencent
+ROBOSTXT_OBEY = False
+   USER_AGENT = 'Mozilla/5.0'
+   DEFAULT_REQUEST_HEADERS = {}
+   ITEM_PIPELINES = {
+       '项目目录名.pipelines.TencentPipeline' : 250,
+   }
+8、1)终端：scrapy crawl tencent
+8、2)pycharm:
+  run.py(和scrapy.cfg同路径)
+  from scrapy import cmdline
+  cmdline.exexute('scrapy crawl tencnet'.split())
 ```
 
-## **响应对象属性及方法**
+## **响应对象属性及方	法**
 
 ```python
 # 属性
-1、response.text ：获取响应内容
-2、response.body ：获取bytes数据类型
+1、response.text ：获取响应内容# 结果是(json格式的字符串)
+2、response.body ：获取bytes数据类型# (requests中content)
 3、response.xpath('')
 
 # response.xpath('')调用方法
@@ -64,6 +98,7 @@ browser.switch_to_window(all_handles[1])
 1、# 去掉start_urls变量
 2、def start_requests(self):
       # 生成要爬取的URL地址，利用scrapy.Request()方法交给调度器 **
+              yiled scrapy.Request(url=url,callback=self.parse)
 ```
 
 # **Day09笔记**
@@ -73,6 +108,8 @@ browser.switch_to_window(all_handles[1])
 ```python
 # 日志相关变量
 LOG_LEVEL = ''
+# LOG_FILE: 本来应该输出在终端的信息,写入到了log文件中
+# 有问题,看日志!
 LOG_FILE = '文件名.log'
 
 # 日志级别
@@ -88,34 +125,75 @@ LOG_FILE = '文件名.log'
 
 ### **实现步骤**
 
-
-
 ```python
 1、在setting.py中定义相关变量
 2、pipelines.py中新建管道类，并导入settings模块
-	def open_spider(self,spider):
+	def open_spider(self,spider):  # 执行一次
 		# 爬虫开始执行1次,用于数据库连接
-	def process_item(self,item,spider):
+	def process_item(self,item,spider):# 执行n次
         # 用于处理抓取的item数据
-	def close_spider(self,spider):
+	def close_spider(self,spider):# 执行一次
 		# 爬虫结束时执行1次,用于断开数据库连接
 3、settings.py中添加此管道
 	ITEM_PIPELINES = {'':200}
 
 # 注意 ：process_item() 函数中一定要 return item ***
+# 第1个管道返回的item会继续交由下一个管道处理，否则返回并传入下一个管道的值为None
 ```
 
 **练习**
 
 把猫眼电影数据存储到MySQL数据库中
 
+**把数据存入MongoDB数据库**
+
+```python
+1、settings.py
+  MONGO_HOST = '127.0.0.1'
+  MONGO_PORT = 27017
+2、pipelines.py
+  import pymongo
+  class MaoyanMongoPipeline(object):
+    def open_spider(self,spider):
+        self.conn = pymongo.MongoClient(
+        	host = MONGO_HOST,
+            port = MONGO_PORT
+        )
+        self.db = self.conn['maoyandb']
+        self.myset = self.db['maoyantab']
+    def process_item(self,item,spider):
+        film_dict = {
+            'name':item['name'],
+            'star':item['star'],
+            'time':item['time']
+        }
+        self.myset.insert_one(film_dict)
+3、settings.py
+  ITEM_PIPELINES = {
+      'Maoyan.pipelines.MaoyanMongoPipeline':200,
+  }
+```
+
+### mongodb常用命令
+
+```
+终端: mongo
+>show dbs
+>use 库名
+>show collections（同show tables;）
+>db.集合名.find().pretty() # pretty是格式化输出
+>db.集合名.count() # 统计文档（mysql表记录）个数
+
+## 集合名是指表名。db是指当前库。
+```
+
 ## **保存为csv、json文件**
 
 - 命令格式
 
 ```python
-scrapy crawl maoyan -o maoyan.csv
-scrapy crawl maoyan -o maoyan.json
+scrapy crawl maoyan3 -o maoyan.csv
+scrapy crawl maoyan3 -o maoyan.json
 # settings.py  FEED_EXPORT_ENCODING = 'utf-8'
 ```
 

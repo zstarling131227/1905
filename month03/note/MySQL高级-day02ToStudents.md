@@ -532,12 +532,14 @@ root@tarena:/var/lib/mysql-files# ll |grep 'sc'
 -rw-rw-rw-  1 root  root  1719 8月  10 18:01 scoreTable.csv
 ```
 ### 补充
-#### 1)管道符操作：ll列表形式查看文件列表，grep 管道模糊匹配查询文件 'sc'为查询字符
+1)管道符操作：ll列表形式查看文件列表，grep 管道模糊匹配查询文件 'sc'为查询字符
+
 ```
 root@tarena:/var/lib/mysql-files# ll |grep 'sc'
 -rw-rw-rw-  1 root  root  1719 8月  10 18:01 
 ```
-#### 2)查看mysql进程：ps aux|grep "mysql"
+2)查看mysql进程：ps aux|grep "mysql"
+
 ```
 tarena@tarena:~$ ps aux|grep "mysql"
 mysql     1067  1.4  4.5 2072896 181744 ?      Sl   10:06   6:50 /usr/sbin/mysqld --daemonize --pid-file=/run/mysqld/mysqld.pid
@@ -545,11 +547,13 @@ tarena    7859  0.0  0.1  43216  4204 pts/0    S+   10:54   0:06 mysql -uroot -p
 tarena   14519  0.0  0.0  21532   996 pts/2    S+   18:08   0:00 grep --color=auto mysql
 
 ```
-#### 3)修改文件权限
+3)修改文件权限
+
 ```
 root@tarena:/var/lib/mysql-files# chmod 666 scoreTable.csv
 ```
-#### 4)目前系统下的所有ubantu用户和相应的密码，和相应的家在哪里。退出时输入：':q'回车
+4)目前系统下的所有ubantu用户和相应的密码，和相应的家在哪里。退出时输入：':q'回车
+
 ```
 tarena@tarena:~$ vim /etc/passwd
 
@@ -559,6 +563,7 @@ x是密码占位符；':'是分隔符；'/home/tarena'是家的位置；'/bin/ba
 **2、在数据库中创建对应的表**
 *该scoretab表在数据库db2中由于创建数据库时没有设置字符编码为charset=utf8,name一列出现乱码*
 *不乱码的scoretab表在数据库db22中*
+
 ```
   create table scoretab(
   rank int,
@@ -600,7 +605,8 @@ fields terminated by "分隔符"
 lines terminated by "分隔符";
 
 **练习**
-#### 1、把sanguo表中英雄的姓名、攻击值和国家三个字段导出来,放到 sanguo.csv中
+
+1、把sanguo表中英雄的姓名、攻击值和国家三个字段导出来,放到 sanguo.csv中
 
 先导出到指定位置，
 ```mysql
@@ -618,7 +624,7 @@ root@tarena:/var/lib/mysql-files# mv sanguo.csv /home/tarena/1905/month03/code/c
 root@tarena:/var/lib/mysql-files# ls
 scoreTable.csv
 ```
-#### 2、将mysql库下的user表中的 user、host两个字段的值导出到 user2.txt，将其存放在数据库目录下
+2、将mysql库下的user表中的 user、host两个字段的值导出到 user2.txt，将其存放在数据库目录下
 
  ```mysql
 

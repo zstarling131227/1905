@@ -14,6 +14,7 @@ class UserProfile(models.Model):
     sign = models.CharField(max_length=50, verbose_name='个性签名')
     info = models.CharField(max_length=150, verbose_name='个人描述')
     avatar = models.ImageField(upload_to='avatar/')
+    score = models.IntegerField(verbose_name=u'分数', null=True, default=0)
 
     class Meta:
         db_table = 'user_profile'
