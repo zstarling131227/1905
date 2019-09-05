@@ -214,6 +214,8 @@ scrapy crawl maoyan3 -o maoyan.json
 1、一级页面xpath（此处响应做了处理）：//ul[@class="sub-menu"]/li/a/@href
 2、二级页面xpath：/html/body/section/div[2]/div/article
   基准xpath ：//article
+  链接：./a/@href
+标题：./a/text()
 3、三级页面xpath：response.xpath('//article[@class="article-content"]//p/text()').extract()
 ```
 
@@ -223,7 +225,10 @@ scrapy crawl maoyan3 -o maoyan.json
 
 ```python
 创建项目 ：Daomu
+tarena@tarena:~/1905/month04/code/spider/day09$ scrapy startproject Daomu
+tarena@tarena:~/1905/month04/code/spider/day09$ cd Daomu/
 创建爬虫 ：daomu  www.daomubiji.com
+tarena@tarena:~/1905/month04/code/spider/day09/Daomu$ scrapy genspider daomu daomubiji.com
 ```
 
 2. 定义要爬取的数据结构（把数据交给管道）
