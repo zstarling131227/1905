@@ -421,8 +421,26 @@ class SoPipeline(ImagesPipeline):
 
 6. **创建run.py运行爬虫**
 
+   ```python
+   from scrapy import cmdline
+   
+   cmdline.execute('scrapy crawl so'.split())
    ```
    
+   **非结构化数据抓取流程**
+   
+   ```python
+   1、items.py
+      img_link = scrapy.Field()
+   2、spider : 提取链接，把链接yield到项目管道
+   3、pipelines.py
+      from scrapy.pipelines.images import ImagesPipeline
+      class SoPipeline(ImagesPipeline):
+           def get_media_requests(self,item,info):
+               yield scrapy.Request(item['img_link'])
+   4、settings.py
+      Linux: IMAGES_STORE = '/home/tarena/images/'
+      Windows: IMAGES_STORE = 'D:\\spider\\images' 
    ```
 
 ## **scrapy shell的使用**
@@ -431,22 +449,29 @@ class SoPipeline(ImagesPipeline):
 
 ```python
 1、scrapy shell URL地址
+tarena@tarena:~$ scrapy shell 'https://image.so.com/zjl?ch=beauty&sn=60&listtype=new&temp=1'
+
+# 请求对象属性
 *2、request.headers ：请求头(字典)
 *3、reqeust.meta    ：item数据传递，定义代理(字典)
+# 响应对象属性
 4、response.text    ：字符串
 5、response.body    ：bytes
 6、response.xpath('')
+
 ```
 
-- **scrapy.Request()**
+- **scrapy.Request()参数**
 
 ```python
+# response = requests.get(url,headers=headers)
+# scrapy.Request(url,callback=xx,headers=headers)
 1、url
 2、callback
 3、headers
 4、meta ：传递数据,定义代理
 5、dont_filter ：是否忽略域组限制
-   默认False,检查allowed_domains['']
+   默认False,检查allowed_domains['']，前提:未重写start_requests()方法
 ```
 
 ## **设置中间件(随机User-Agent)**
@@ -490,30 +515,30 @@ yield scrapy.Request(url,callback=函数名,headers={})
 
 ## **设置中间件(随机代理)**
 
-
-
 ```python
 request.meta['proxy'] = 'http://127.0.0.1:8888'
 ** 使用代理尝试 **
 ```
 
+**重要代码实现**
 
+```python
+# 1. 自定义 proxies.py 文件
+from .proxies import proxy_list
+import random
 
+class RandomProxyDownloaderMiddleware(object):
+    def process_request(self,request,spider):
+        proxy = random.choice(proxy_list)
+        # 为拦截下来的请求设置代理
+        request.meta['proxy'] = proxy
+        print(proxy)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    # 处理异常
+    def process_exception(self, request, exception, spider):
+        # 把请求重新交给调度器,再来一遍流程(process_request)
+        return request
+```
 
 
 

@@ -22,9 +22,14 @@ class DaomuSpider(scrapy.Spider):
         for article in article_list:
             item = DaomuItem()
             info_list = article.xpath('./a/text()').get().split()
-            item['volume_name'] = info_list[0]
-            item['zh_num'] = info_list[1]
-            item['zh_name'] = info_list[2]
+            if len(info_list) == 3:
+                item['volume_name'] = info_list[0]
+                item['zh_num'] = info_list[1]
+                item['zh_name'] = info_list[2]
+            else:
+                item['volume_name'] = info_list[0]
+                item['zh_name'] = info_list[1]
+                item['zh_num'] = ''
             item['zh_link'] = article.xpath('./@href').get()
             yield scrapy.Request(
                 url=item['zh_link'],

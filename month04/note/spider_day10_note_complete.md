@@ -12,8 +12,27 @@ DEBUG < INFO < WARNING < ERROR < CRITICAL
 
 ```python
 1、settings.py  : 定义相关变量
+  # MYSQL
+  MYSQL_HOST = '172.40.38.38'
+  MYSQL_USER = 'tiger'
+  MYSQL_PWD = '123456'
+  MYSQL_DB = 'spiderdb'
+  MYSQL_CHARSET = 'utf8'
+  # MongoDB
+  MONGO_HOST = '172.40.38.38'
+  MONGO_PORT = 27017
 2、pipelines.py : 新建类
+  class SpiderMysqlPipeline(object):
+    def open_spider(self,spider):
+        pass
+    def process_item(self,item,spider):
+        return item 
+    def close_spider(self,spider):
+        pass
 3、settings.py  : 添加管道
+   ITEM_PIPELINES = {
+       'spider.pipelines.SpiderPipeline' : 500,
+   }
 
 # 注意 ：process_item() 函数中一定要 return item
 ```
@@ -61,7 +80,14 @@ DOWNLOADER_MIDDLEWARES = {}
 ```python
 1、spider: yield item['链接']
 2、pipelines.py
+  import scrapy
+  from scrapy.pipelines.images import ImagesPipeline
+  class SpiderPipeline(ImagesPipeline):
+    def get_media_requests(self,item,info):
+        yield scrapy.Request(item['链接'])
 3、settings.py
+  IMAGES_STORE = ''
+  ITEM_PIPELINES = {}
 ```
 
 ## **scrapy.Request()参数**
@@ -73,6 +99,8 @@ DOWNLOADER_MIDDLEWARES = {}
 4、meta ：传递数据,定义代理
 5、dont_filter ：是否忽略域组限制
    默认False,检查allowed_domains['']
+       # Fasle: 检查
+   # True:  不检查
 ```
 
 ## **设置中间件**
@@ -122,6 +150,7 @@ class RandomProxyDownloaderMiddleware(object):
 
 ```python
 重写scrapy调度器(scrapy_redis模块)
+# 利用scrapy_redis实现分布式爬虫
 ```
 
 - **为什么使用redis**
@@ -316,7 +345,7 @@ SCHEDULER = "scrapy_redis.scheduler.Scheduler"
 # 使用scrapy_redis的去重机制
 DUPEFILTER_CLASS = "scrapy_redis.dupefilter.RFPDupeFilter"
 # 爬取完成后是否清除请求指纹,True:不清除 False:清除
-SCHEDULER_PERSIST = False
+SCHEDULER_PERSIST = True
 # 在ITEM_PIPELINES中添加redis管道
 'scrapy_redis.pipelines.RedisPipeline': 200
 # 定义redis主机地址和端口号
@@ -343,6 +372,34 @@ flushdb
 ```
 
 - 代码拷贝一份到分布式中其他机器，两台或多台机器同时执行此代码
+
+**改写分布式方法二(redis_key)**
+
+- 使用redis_key改写
+
+```python
+  # 第一步
+  settings.py和上面分布式代码一致
+  # 第二步:需要改动tencent.py
+  from scrapy_redis.spiders import RedisSpider
+  class TencentSpider(RedisSpider):
+      # 1. 去掉start_urls
+      # 2. 定义redis_key
+      redis_key = 'tencent:spider'
+  # 第三步:把代码复制到所有爬虫服务器，并启动项目
+  # 第四步
+    到redis命令行，执行LPUSH命令压入第一个要爬取的URL地址
+    >LPUSH tencent:spider 第1页的URL地址
+        127.0.0.1:6379> lpush tencent:spider  'https://careers.tencent.com/tencentcareer/api/post/Query?timestamp=1559294378106&countryId=&cityId=&bgIds=&productId=&categoryId=&parentCategoryId=&attrId=&keyword=&pageIndex=1&pageSize=10&language=zh-cn&area=cn'
+
+  
+  # 项目爬取结束后无法退出，如何退出？
+  setting.py
+  CLOSESPIDER_TIMEOUT = 3600
+  # 到指定时间(3600秒)时,会自动结束并退出
+```
+
+
 
 ## **机器视觉与tesseract**
 

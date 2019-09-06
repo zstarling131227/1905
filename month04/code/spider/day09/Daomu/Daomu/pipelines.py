@@ -8,5 +8,12 @@
 
 class DaomuPipeline(object):
     def process_item(self, item, spider):
-        print(dict(item))
+        filename = '/home/tarena/daomu/{}_{}_{}'.format(
+            item['volume_name'],
+            item['zh_name'],
+            item['zh_name'],
+        )
+        with open(filename, 'w') as f:
+            f.write(item['zh_content'])
+
         return item

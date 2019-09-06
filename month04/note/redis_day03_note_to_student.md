@@ -611,6 +611,7 @@ redis-cli -p 6300
 # 共3台redis的服务器，如果是不同机器端口号可以是一样的
 1、启动6379的redis服务器
    	sudo /etc/init.d/redis-server start
+    systemctl status redis-server # 查看状态
 2、启动6380的redis服务器，设置为6379的从
     redis-server --port 6380
     tarena@tedu:~$ redis-cli -p 6380

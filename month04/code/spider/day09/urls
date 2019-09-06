@@ -1,0 +1,40 @@
+Request URL: https://image.so.com/zjl?ch=beauty&sn=60&listtype=new&temp=1
+'https://image.so.com/zjl?ch=beauty&sn={}&listtype=new&temp=1'.format(str(sn))
+Request Method: GET
+
+
+https://image.so.com/
+
+
+list中的某一个元素：
+{id: "35be86ff0167697160155d26c899c287", index: 76, grpmd5: "39dc294169259392470fbe06d493b86f",…}
+dsptime: ""
+fnum: "0"
+grpcnt: "8"
+grpmd5: "39dc294169259392470fbe06d493b86f"
+grpseq: "1"
+height: "960"
+id: "35be86ff0167697160155d26c899c287"
+imgkey: "t01fce161f16986ae25.jpg"
+imgsize: "0"
+imgurl: "http://i1.umei.cc/uploads/tu/201608/80/dgswtfnbqko.jpg"
+index: 76
+ins_time: "2018-04-18 07:32:32"
+label: ""
+pic_desc: ""
+purl: "http://www.umei.cc/meinvtupian/meinvxiezhen/12307.htm"
+qhimg_downurl: "https://dl.image.so.com/d?imgurl=https%3A%2F%2Fp5.ssl.qhimgs1.com%2Ft01fce161f16986ae25.jpg&purl=https%3A%2F%2Fimage.so.com%2F%3Fsrc%3Ddl.image&key=a3a235d769"
+qhimg_qr_key: "4c3adca088"
+qhimg_thumb: "https://p5.ssl.qhimgs1.com/sdr/200_200_/t01fce161f16986ae25.jpg"
+qhimg_thumb_height: 200
+qhimg_thumb_width: 133
+qhimg_url: "https://p5.ssl.qhimgs1.com/t01fce161f16986ae25.jpg"
+rdate: "1524007952"
+site: "www.umei.cc"
+siteid: "1699444437"
+sitename: "www.umei.cc"
+src: "0"
+summary: []
+tag: "0"
+title: "短发少女教室唯美写真清纯迷人"
+width: "638"
