@@ -447,7 +447,10 @@ sudo apt-get install tesseract-ocr
 
 ```python
 1、下载安装包
-2、添加到环境变量(Path)
+2、添加到环境变量(Path
+   # 1. 先找到tesseract-ocr安装路径
+  # 2. 搜索: 环境变量 -> Path -> 编辑 -> 添加后确定
+  # 3. 新打开cmd命令行
 ```
 
 - 测试
@@ -644,3 +647,24 @@ if __name__ == '__main__':
 ## **移动端app数据抓取**
 
 -------让我来告诉你-------
+
+1、app反爬远低于PC端，PC端无法爬取时首先查看app
+
+Fiddler抓取手机app端数据的前提：
+
+Fiddler要和你的手机在同一个路由中
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

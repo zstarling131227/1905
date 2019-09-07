@@ -2,18 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1b9b6adc-7022-4b3b-9c3e-38007a0f9b6d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/day09/Baidu/Baidu/proxy.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/day09/Baidu/run.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/day09/So/run.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/day09/urls" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/day10/Tencent/run.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../bytes.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/code1.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/code1.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/day09/Daomu/Daomu/pipelines.py" beforeDir="false" afterPath="$PROJECT_DIR$/day09/Daomu/Daomu/pipelines.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/day09/Daomu/Daomu/spiders/daomu.py" beforeDir="false" afterPath="$PROJECT_DIR$/day09/Daomu/Daomu/spiders/daomu.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../note/redis_day03_note_to_student.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../note/redis_day03_note_to_student.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../note/spider_day09_note_complete.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../note/spider_day09_note_complete.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cancel/Maoyan/Maoyan/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cancel/Maoyan/Maoyan/items.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cancel/Maoyan/Maoyan/middlewares.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cancel/Maoyan/Maoyan/pipelines.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cancel/Maoyan/Maoyan/settings.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cancel/Maoyan/Maoyan/spiders/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cancel/Maoyan/Maoyan/spiders/maoyan.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cancel/Maoyan/Maoyan/spiders/maoyan2.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cancel/Maoyan/Maoyan/spiders/maoyan3.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cancel/Maoyan/maoyan.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cancel/Maoyan/run.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cancel/Maoyan/scrapy.cfg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../note/spider_day10_note_complete.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../note/spider_day10_note_complete.md" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -24,33 +28,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/day10/Tencent/Tencent/spiders/tencent.py">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/day10/PythonHTTP调用示例/01_ydm_verify.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="444">
-              <caret line="60" column="41" lean-forward="true" selection-start-line="60" selection-start-column="41" selection-end-line="60" selection-end-column="41" />
+            <state relative-caret-position="135">
+              <caret line="9" column="45" lean-forward="true" selection-start-line="9" selection-start-column="45" selection-end-line="9" selection-end-column="45" />
               <folding>
-                <element signature="e#24#37#0" expanded="true" />
-                <element signature="e#85#122#0" />
+                <element signature="e#36#66#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/day10/Tencent/Tencent/settings.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="208">
-              <caret line="103" lean-forward="true" selection-start-line="103" selection-end-line="103" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/day10/Tencent/run.py">
+        <entry file="file://$PROJECT_DIR$/day10/PythonHTTP调用示例/test_ydm.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
+            <state relative-caret-position="72">
+              <caret line="3" column="13" lean-forward="true" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -85,8 +79,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/day07/07-selenium-chrome-eg2.py" />
-        <option value="$PROJECT_DIR$/day07/07-selenium-chrome-eg3.py" />
         <option value="$PROJECT_DIR$/day07/07-qiushibaike.py" />
         <option value="$PROJECT_DIR$/day07/cancel.py" />
         <option value="$PROJECT_DIR$/day07/07-jd-selenuim.py" />
@@ -136,12 +128,14 @@
         <option value="$PROJECT_DIR$/day10/Tencent/run.py" />
         <option value="$PROJECT_DIR$/day10/Tencent/Tencent/spiders/tencent.py" />
         <option value="$PROJECT_DIR$/day10/Tencent/Tencent/settings.py" />
+        <option value="$PROJECT_DIR$/day10/PythonHTTP调用示例/ydmapi.py" />
+        <option value="$PROJECT_DIR$/day10/PythonHTTP调用示例/01_ydm_verify.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="774" />
-    <option name="y" value="27" />
+    <option name="x" value="183" />
+    <option name="y" value="92" />
     <option name="width" value="1106" />
     <option name="height" value="873" />
   </component>
@@ -151,6 +145,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -167,28 +162,12 @@
               <item name="spider" type="b2602c69:ProjectViewProjectNode" />
               <item name="spider" type="462c0819:PsiDirectoryNode" />
               <item name="day10" type="462c0819:PsiDirectoryNode" />
-              <item name="Tencent" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="spider" type="b2602c69:ProjectViewProjectNode" />
-              <item name="spider" type="462c0819:PsiDirectoryNode" />
-              <item name="day10" type="462c0819:PsiDirectoryNode" />
-              <item name="Tencent" type="462c0819:PsiDirectoryNode" />
-              <item name="Tencent" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="spider" type="b2602c69:ProjectViewProjectNode" />
-              <item name="spider" type="462c0819:PsiDirectoryNode" />
-              <item name="day10" type="462c0819:PsiDirectoryNode" />
-              <item name="Tencent" type="462c0819:PsiDirectoryNode" />
-              <item name="Tencent" type="462c0819:PsiDirectoryNode" />
-              <item name="spiders" type="462c0819:PsiDirectoryNode" />
+              <item name="PythonHTTP调用示例" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -215,8 +194,8 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.run (4)">
-    <configuration name="pipelines (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
+  <component name="RunManager" selected="Python.01_ydm_verify">
+    <configuration name="01_ydm_verify" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="code1" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -224,11 +203,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/day09/Daomu/Daomu" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/day10/PythonHTTP调用示例" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/day09/Daomu/Daomu/pipelines.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/day10/PythonHTTP调用示例/01_ydm_verify.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -250,27 +229,6 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/day09/So/run.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="run (3)" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="code1" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/day09/Daomu" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/day09/Daomu/run.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -321,13 +279,34 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="test_ydm" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="code1" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/day10/PythonHTTP调用示例" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/day10/PythonHTTP调用示例/test_ydm.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.01_ydm_verify" />
+        <item itemvalue="Python.test_ydm" />
         <item itemvalue="Python.run (4)" />
         <item itemvalue="Python.run" />
         <item itemvalue="Python.run (1)" />
-        <item itemvalue="Python.run (3)" />
-        <item itemvalue="Python.pipelines (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -354,8 +333,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="774" y="27" width="1106" height="873" extended-state="0" />
-    <editor active="true" />
+    <frame x="183" y="92" width="1106" height="873" extended-state="0" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" weight="0.26598704" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -363,8 +341,8 @@
       <window_info id="DB Browser" order="3" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32965517" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.41208792" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.41208792" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.48351648" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32965517" />
@@ -382,41 +360,6 @@
     <option featureType="com.intellij.fileTypeFactory" implementationName="*.js" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/day08/08_govement_selenium+chrome.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/day08/cancel.py" />
-    <entry file="file://$PROJECT_DIR$/day08/08_selenium+code.tarena.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="47" column="51" selection-start-line="47" selection-start-column="51" selection-end-line="47" selection-end-column="51" />
-          <folding>
-            <element signature="e#0#30#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/day01/01-baidu_tieba.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="14" column="128" selection-start-line="14" selection-start-column="12" selection-end-line="14" selection-end-column="128" />
-          <folding>
-            <element signature="e#0#33#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/day08/Baidu/Baidu/spiders/baidu.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/day08/Baidu/Baidu/settings.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="385">
@@ -747,13 +690,19 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/day10/Tencent/Tencent/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="515">
+          <caret line="103" selection-start-line="103" selection-end-line="103" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/day10/Tencent/Tencent/spiders/tencent.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="444">
-          <caret line="60" column="41" lean-forward="true" selection-start-line="60" selection-start-column="41" selection-end-line="60" selection-end-column="41" />
+        <state relative-caret-position="318">
+          <caret line="60" column="41" selection-start-line="60" selection-start-column="41" selection-end-line="60" selection-end-column="41" />
           <folding>
             <element signature="e#24#37#0" expanded="true" />
-            <element signature="e#85#122#0" />
           </folding>
         </state>
       </provider>
@@ -761,14 +710,37 @@
     <entry file="file://$PROJECT_DIR$/day10/Tencent/run.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
-          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
+          <caret line="5" selection-start-line="5" selection-end-line="5" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/day10/Tencent/Tencent/settings.py">
+    <entry file="file://$PROJECT_DIR$/day10/PythonHTTP调用示例/index.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/day10/PythonHTTP调用示例/ydmapi.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="103" lean-forward="true" selection-start-line="103" selection-end-line="103" />
+        <state relative-caret-position="456">
+          <caret line="100" column="3" selection-start-line="100" selection-start-column="3" selection-end-line="100" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/day10/PythonHTTP调用示例/test_ydm.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="3" column="13" lean-forward="true" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/day10/PythonHTTP调用示例/verify.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/day10/PythonHTTP调用示例/01_ydm_verify.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="45" lean-forward="true" selection-start-line="9" selection-start-column="45" selection-end-line="9" selection-end-column="45" />
+          <folding>
+            <element signature="e#36#66#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
