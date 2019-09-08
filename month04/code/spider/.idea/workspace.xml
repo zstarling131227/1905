@@ -5,20 +5,6 @@
       <change beforePath="$PROJECT_DIR$/../../../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../bytes.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/code1.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/code1.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cancel/Maoyan/Maoyan/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cancel/Maoyan/Maoyan/items.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cancel/Maoyan/Maoyan/middlewares.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cancel/Maoyan/Maoyan/pipelines.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cancel/Maoyan/Maoyan/settings.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cancel/Maoyan/Maoyan/spiders/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cancel/Maoyan/Maoyan/spiders/maoyan.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cancel/Maoyan/Maoyan/spiders/maoyan2.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cancel/Maoyan/Maoyan/spiders/maoyan3.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cancel/Maoyan/maoyan.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cancel/Maoyan/run.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cancel/Maoyan/scrapy.cfg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../note/spider_day10_note_complete.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../note/spider_day10_note_complete.md" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -31,8 +17,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/day10/PythonHTTP调用示例/01_ydm_verify.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="9" column="45" lean-forward="true" selection-start-line="9" selection-start-column="45" selection-end-line="9" selection-end-column="45" />
+            <state relative-caret-position="279">
+              <caret line="15" column="18" selection-start-line="15" selection-start-column="18" selection-end-line="15" selection-end-column="18" />
               <folding>
                 <element signature="e#36#66#0" expanded="true" />
               </folding>
@@ -44,7 +30,7 @@
         <entry file="file://$PROJECT_DIR$/day10/PythonHTTP调用示例/test_ydm.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="72">
-              <caret line="3" column="13" lean-forward="true" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
+              <caret line="3" column="13" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -153,17 +139,6 @@
               <item name="spider" type="b2602c69:ProjectViewProjectNode" />
               <item name="spider" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="spider" type="b2602c69:ProjectViewProjectNode" />
-              <item name="spider" type="462c0819:PsiDirectoryNode" />
-              <item name="day10" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="spider" type="b2602c69:ProjectViewProjectNode" />
-              <item name="spider" type="462c0819:PsiDirectoryNode" />
-              <item name="day10" type="462c0819:PsiDirectoryNode" />
-              <item name="PythonHTTP调用示例" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -171,7 +146,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../redis" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../month05/code/day01" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
@@ -335,7 +310,7 @@
   <component name="ToolWindowManager">
     <frame x="183" y="92" width="1106" height="873" extended-state="0" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.26598704" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26598704" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info id="DB Browser" order="3" />
@@ -453,23 +428,9 @@
     <entry file="file://$PROJECT_DIR$/day09/Maoyan/maoyan.log">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/cancel/Maoyan/run.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="48">
-          <caret line="2" column="27" lean-forward="true" selection-start-line="2" selection-start-column="27" selection-end-line="2" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cancel/Maoyan/maoyan.log">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2331" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cancel/Maoyan/Maoyan/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-153" />
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/cancel/Maoyan/run.py" />
+    <entry file="file://$PROJECT_DIR$/cancel/Maoyan/maoyan.log" />
+    <entry file="file://$PROJECT_DIR$/cancel/Maoyan/Maoyan/settings.py" />
     <entry file="file://$PROJECT_DIR$/day09/Maoyan/Maoyan/spiders/maoyan.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -724,23 +685,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/day10/PythonHTTP调用示例/test_ydm.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="3" column="13" lean-forward="true" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/day10/PythonHTTP调用示例/verify.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
     <entry file="file://$PROJECT_DIR$/day10/PythonHTTP调用示例/01_ydm_verify.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="45" lean-forward="true" selection-start-line="9" selection-start-column="45" selection-end-line="9" selection-end-column="45" />
+        <state relative-caret-position="279">
+          <caret line="15" column="18" selection-start-line="15" selection-start-column="18" selection-end-line="15" selection-end-column="18" />
           <folding>
             <element signature="e#36#66#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/day10/PythonHTTP调用示例/test_ydm.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="3" column="13" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
         </state>
       </provider>
     </entry>
