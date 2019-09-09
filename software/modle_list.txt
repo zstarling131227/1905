@@ -9,9 +9,6 @@ sudo apt install mongodb
 sudo apt install redis
 
 
-
-
-
 第三阶段：
 sudo pip3 install flask
 sudo pip3 install flask-sqlalchemy
@@ -70,5 +67,45 @@ unzip fiddler-linux.zip
 cd fiddler-linux
 mono Fiddler.exe
 
+
+༒
+文本编辑器：
+Typora-linux-x64.tar.gz
+sublime_text_3_build_3126_x64.tar.bz2
+pycharm-community-2018.3.5.tar.gz
+
+
+༒
+浏览器驱动器：
+fiddler-linux.zip
+phantomjs-2.1.1-linux-x86_64.tar.bz2
+geckodriver-v0.24.0-linux64.tar.gz
+chromedriver_linux64.zip
+
+
+༒
+chrome:
+Proxy-SwitchyOmega-Chromium-2.5.15.zip
+XPath Helper：chrome爬虫网页解析工具.zip
+JSONView：web开发格式化和高亮插件.zip
+google-access-helper-2.3.0.zip
+
+
+
+
+
+༒
+菜鸟教程：https://www.runoob.com/
+python文档：https://docs.python.org/zh-cn/3/
+python中文开发者社区：https://www.pythontab.com/
+CSDN:https://www.csdn.net/
+python从入门到放弃：http://www.inimei.cn/
+git hub:https://github.com/
+免费在线作图：https://www.processon.com/
+jack Cui:https://cuijiahua.com/
+廖雪峰的官方网站:https://www.liaoxuefeng.com/wiki/1016959663602400/1016959735620448
+codewars 刷题:https://www.codewars.com/dashboard
+剑指offer 刷题:https://www.cnblogs.com/yanmk/p/9130681.html
+vpn :https://chrome.google.com/webstore/detail/hoxx-vpn-proxy/nbcojefnccbanplpoffopkoepjmhgdgh
 
 
