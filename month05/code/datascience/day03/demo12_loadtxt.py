@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
+
 """
 demo12_loadtxt.py  aapl.csv文件读取
 """
@@ -9,24 +10,28 @@ import matplotlib.pyplot as mp
 import matplotlib.dates as md
 
 
-def dmy2ymd(dmy):
+# 日月年转年月日的函数
+def dmy2ymd(dmy):  # 传过来的是第一列的值
     dmy = str(dmy, encoding='utf-8')
     time = dt.datetime.strptime(dmy, '%d-%m-%Y')
     t = time.date().strftime('%Y-%m-%d')
     return t
 
+
+# 读文件
 dates, opening_prices, highest_prices, \
-    lowest_prices, closing_prices = np.loadtxt(
-        '../da_data/aapl.csv', delimiter=',',
-        usecols=(1, 3, 4, 5, 6), unpack=True,
-        dtype='M8[D], f8, f8, f8, f8',
-        converters={1: dmy2ymd})
+lowest_prices, closing_prices = np.loadtxt(
+    '../da_data/aapl.csv', delimiter=',',
+    usecols=(1, 3, 4, 5, 6), unpack=True,
+    dtype='M8[D], f8, f8, f8, f8',
+    converters={1: dmy2ymd})
 
 # 绘制收盘价折线图
 mp.figure('AAPL', facecolor='lightgray')
 mp.title('AAPL', fontsize=16)
 mp.xlabel('Date', fontsize=14)
-mp.ylabel('Price', fontsize=14)
+mp.ylabel('Price', fontsize=14)# 日月年转年月日的函数
+
 mp.tick_params(labelsize=10)
 mp.grid(linestyle=':')
 # 设置x轴刻度定位器

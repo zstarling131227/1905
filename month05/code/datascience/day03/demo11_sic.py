@@ -22,7 +22,7 @@ def update(data):
     # 重新设置数据源
     pl.set_data(x, y)
     # 移动坐标轴
-    if(x[-1] > 10):
+    if (x[-1] > 10):
         mp.xlim(x[-1] - 10, x[-1])
 
 
@@ -31,6 +31,7 @@ def y_generator():
     y = np.sin(2 * np.pi * x) * np.exp(np.sin(0.2 * np.pi * x))
     yield (x, y)
     x += 0.05
+
 
 anim = ma.FuncAnimation(
     mp.gcf(), update, y_generator, interval=20)
