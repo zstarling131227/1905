@@ -30,7 +30,7 @@ lowest_prices, closing_prices = np.loadtxt(
 mp.figure('AAPL', facecolor='lightgray')
 mp.title('AAPL', fontsize=16)
 mp.xlabel('Date', fontsize=14)
-mp.ylabel('Price', fontsize=14)# 日月年转年月日的函数
+mp.ylabel('Price', fontsize=14) # 日月年转年月日的函数
 
 mp.tick_params(labelsize=10)
 mp.grid(linestyle=':')
