@@ -102,6 +102,7 @@ tarena@tarena:~$ sudo /etc/init.d/mysql status start
 2、cmd命令行，进入到redis-server.exe所在目录
 cmd命令行：cd 路径
 3、执行：redis-server --service.exe-install redis.conf --loglevel verbose
+或者redis-service.exe --server-install redis.conf --loglevel verbose
 4、计算机-管理-服务-Redis-启动-确定
 5、客户端添加环境变量（右键--属性-高级设置-环境变量-path-编辑-添加），加入redis-cli.exe的路径，确定，然后重启cmd,输入redis-cli。（也可以在客户端所在路径下启动，直接在cmd中输入redis-cil.exe
 

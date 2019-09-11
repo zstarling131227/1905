@@ -1,4 +1,4 @@
-#   ***git笔记整理*** 
+#   ***git笔记整理***
 
 ## 1. git 安装
         sudo apt-get install git
@@ -100,10 +100,10 @@
                 位于分支 master
 
                 尚无提交
-
+    
                 未跟踪的文件:
                 （使用 "git add <文件>..." 以包含要提交的内容）
-
+    
                 README.md
                 bitree.py
                 day02_am.rar
@@ -113,7 +113,7 @@
                 img3.jpg
                 mythread.py
                 test/
-
+    
                  提交为空，但是存在尚未跟踪的文件（使用 "git add" 建立跟踪）
             ```
     3.     将工作内容记录到暂存区
@@ -126,22 +126,22 @@
             tarena@tarena:~/gitproject$ git status
             >>>
                 位于分支 master
-
+    
                 尚无提交
-
+    
                 要提交的变更：
                 （使用 "git rm --cached <文件>..." 以取消暂存）
-
+    
                     新文件：   bitree.py
                     新文件：   img1.jpg
                     新文件：   mythread.py
                     新文件：   test/exercise.py
                     新文件：   test/test1.py
                     新文件：   test/test2.py
-
+    
                 未跟踪的文件:
                 （使用 "git add <文件>..." 以包含要提交的内容）
-
+    
                     README.md
                     day02_am.rar
                     httpserver (1).py
@@ -156,12 +156,12 @@
             tarena@tarena:~/gitproject$ git status
             >>> 未在pycahrm中打开时的状态
                 位于分支 master
-
+    
                 尚无提交
-
+    
                 要提交的变更：
                 （使用 "git rm --cached <文件>..." 以取消暂存）
-
+    
                     新文件：   README.md
                     新文件：   bitree.py
                     新文件：   day02_am.rar
@@ -184,9 +184,9 @@
             ……
             未跟踪的文件:
             （使用 "git add <文件>..." 以包含要提交的内容）
-
+    
                 README.md
-
+    
     5.     将文件同步到本地仓库
         git commit [file] -m [message]
         说明: -m表示添加一些同步信息，表达同步内容
@@ -220,11 +220,11 @@
                     位于分支 master
                     未跟踪的文件:
                     （使用 "git add <文件>..." 以包含要提交的内容）
-
+    
                         README1.md
-
+    
                     提交为空，但是存在尚未跟踪的文件（使用 "git add" 建立跟踪）
-
+    
         >>查看commit 日志记录
                >>>显示全部 git log
                 ```
@@ -233,13 +233,13 @@
                     commit 4c6573744351370eca85a78f6bbc12175066a41c (HEAD -> master)
                     Author: Tedu <1239269939@qq.com>
                     Date:   Thu Jul 18 11:02:05 2019 +0800
-
+    
                         add readme
-
+    
                     commit c47f6be03b0dda5b3c767fc8c4e0ff66c5c77989
                     Author: Tedu <1239269939@qq.com>
                     Date:   Thu Jul 18 10:57:29 2019 +0800
-
+    
                         add files
                 ```
                 >>>只显示部分 git log --pretty=oneline
@@ -248,22 +248,22 @@
                     >>>
                         4c6573744351370eca85a78f6bbc12175066a41c (HEAD -> master) add readme
                         c47f6be03b0dda5b3c767fc8c4e0ff66c5c77989 add files
-
+    
                 ```
-
+    
     6.     比较工作区文件和仓库文件差异
         git diff [file]
         >>
             tarena@tarena:~/gitproject$ git diff readme.md
             >>>
-
+    
     7.     将暂存区或者某个commit点文件恢复到工作区
         git checkout [commit] -- [file]
         ***********
         --是为了防止误操作，checkout还有切换分支的作用
         移动或者删除文件
         git mv [file] [path]
-        git rm [files]
+        git rm [files]      #连同工作区就是本地上也会删除
         注意: 这两个操作会修改工作区内容，同时将操作记录提交到暂存区。
         >>git rm [files]
             ```
@@ -291,11 +291,11 @@
                     位于分支 master
                     要提交的变更：
                     （使用 "git reset HEAD <文件>..." 以取消暂存）
-
+    
                         新文件：   README1.md
                         删除：     day02_am.rar
                         重命名：   mythread.py -> test/mythread.py
-
+    
                 tarena@tarena:~/gitproject$ git commit -m "mv and rm"
                  >>>
                     [master ed9f169] mv and rm
@@ -325,10 +325,10 @@
             位于分支 master
 
             尚无提交
-
+    
             要提交的变更：
             （使用 "git rm --cached <文件>..." 以取消暂存）
-
+    
                 新文件：   README.md
                 新文件：   bitree.py
                 新文件：   day02_am.rar
@@ -340,10 +340,10 @@
                 新文件：   test/exercise.py
                 新文件：   test/test1.py
                 新文件：   test/test2.py
-
+    
             未跟踪的文件:
             （使用 "git add <文件>..." 以包含要提交的内容）
-
+    
                 .idea/
         ```
     >> 在pycahrm中新建一个隐藏文件.gitignore（new--file--输入 .gitignore回车），在 .gitignore中输入.idea.
@@ -355,7 +355,7 @@
             尚未暂存以备提交的变更：
             （使用 "git add <文件>..." 更新要提交的内容）
             （使用 "git checkout -- <文件>..." 丢弃工作区的改动）
-
+    
                 修改：     .gitignore
     ```
     >> 添加隐藏文件 .gitignore。git add .gitignore或者 git add *均可以
@@ -365,12 +365,12 @@
         tarena@tarena:~/gitproject$ git status
         >>>
             位于分支 master
-
+    
             尚无提交
-
+    
             要提交的变更：
             （使用 "git rm --cached <文件>..." 以取消暂存）
-
+    
                 新文件：   .gitignore
                 新文件：   README.md
                 新文件：   bitree.py
@@ -389,7 +389,7 @@
 ###版本控制
 > 
     1.退回到上一个commit节点
-        git reset --hard HEAD^
+        git reset --hard HEAD^ 
         注意 ： 一个^表示回退1个版本，依次类推。当版本回退之后工作区会自动和当前commit版本保持一致
         >>
         ```
@@ -422,11 +422,11 @@
                     Date:   Thu Jul 18 11:02:05 2019 +0800
 
                         add readme
-
+    
                     commit c47f6be03b0dda5b3c767fc8c4e0ff66c5c77989
                     Author: Tedu <1239269939@qq.com>
                     Date:   Thu Jul 18 10:57:29 2019 +0800
-
+    
                         add files
             ```
     3.查看所有操作记录
@@ -451,7 +451,7 @@
             tarena@tarena:~/gitproject$  git tag v1.0 -m '版本1'
             tarena@tarena:~/gitproject$ git tag
             v1.0
-
+    
             ```
     5.查看标签
         git tag 查看标签列表
@@ -463,7 +463,7 @@
                         tag v1.0
                         Tagger: Tedu <1239269939@qq.com>
                         Date:   Thu Jul 18 11:41:21 2019 +0800
-
+    
                         版本1
                         ……
             ```
@@ -477,7 +477,7 @@
             tarena@tarena:~/gitproject$ git reset --hard v1.0
             >>>
                 HEAD 现在位于 4c65737 add readme
-
+    
             ```
     7.删除标签
         git tag -d [tag]
@@ -537,7 +537,7 @@
                 （使用 "git checkout -- <文件>..." 丢弃工作区的改动）
 
                     修改：     readme.md
-
+    
                 修改尚未加入提交（使用 "git add" 和/或 "git commit -a"）
             tarena@tarena:~/gitproject$ git add *
             tarena@tarena:~/gitproject$ git commit -m 'charge readme'
@@ -593,11 +593,11 @@
             joy_dev
             * master
         ```
-
+    
     3.  切换工作分支
         git checkout [branch]
         说明: 2,3可以同时操作，即创建并切换分支
-
+    
         git checkout -b [branch_name]
         >>
         ```
@@ -634,9 +634,9 @@
             ```
     4.  合并分支
         git merge [branch]
-
+    
         冲突问题是合并分支过程中最为棘手的问题
-
+    
         当分支合并时，原分支和以前发生了变化就会产生冲突
         当合并分支时添加新的模块（文件），这种冲突可以自动解决，只需自己决定commit操作即可。
         当合并分支时两个分支修改了同一个文件，则需要手动解决冲突。
@@ -716,7 +716,7 @@
                     为保持兼容，请用 'current' 代替 'simple'）
                     fatal: unable to access 'http://github.com/zstarling131227/wangbadan.git/': Recv failure: 
                     连接被对方重设***
-
+    
             ```
             tarena@tarena:~/gitproject$ git add *
             tarena@tarena:~/gitproject$ git commit -m 'change2'
@@ -739,7 +739,7 @@
             tarena@tarena:~/gitproject$ git push -u origin ALex_dev
         >>将标签v1.0上传
             tarena@tarena:~/gitproject$ git push origin v1.0
-
+    
     5.    删除远程分支
         git branch -a 查看所有分支
         git push origin [:branch] 删除远程分支
@@ -756,7 +756,7 @@
                     Password for 'https://zstarling131227@github.com': 
                     To https://github.com/zstarling131227/https-github.com-new.git
                     - [deleted]         v1.0
-
+    
     6.    其他推送方法
         git push --force origin 用于本地版本比远程版本旧时强行推送本地版本
         git push origin [tag] 推送本地标签到远程
@@ -770,7 +770,7 @@
                     位于分支 master
                     您的分支落后 'origin/master' 共 1 个提交，并且可以快进。
                     （使用 "git pull" 来更新您的本地分支）
-
+    
                     无文件要提交，干净的工作区
             tarena@tarena:~/gitproject$ git push --force origin
                 >>>
@@ -779,12 +779,12 @@
                     Total 0 (delta 0), reused 0 (delta 0)
                     To https://github.com/zstarling131227/https-github.com-new.git
                     + b1d6f0d...37359eb master -> master (forced update)
-
+    
     7.    从远程获取代码
         git pull
         将远程分支master拉取到本地，作为tmp分支
         git fetch origin master:tmp
-
+    
         ***区别***
         pull将远程内容直接拉取到本地，并和对应分支内容进行合并
         fetch将远程分支内容拉取到本地，但是不会和本地对应分支合并，可以自己判断后再使用merge合并。

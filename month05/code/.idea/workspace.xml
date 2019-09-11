@@ -5,10 +5,8 @@
       <change beforePath="$PROJECT_DIR$/../../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../bytes.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/datascience/day03/demo12_loadtxt.py" beforeDir="false" afterPath="$PROJECT_DIR$/datascience/day03/demo12_loadtxt.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/datascience/day05/demo01_boll.py" beforeDir="false" afterPath="$PROJECT_DIR$/datascience/day05/demo01_boll.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/datascience/day05/demo02_lp.py" beforeDir="false" afterPath="$PROJECT_DIR$/datascience/day05/demo02_lp.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/datascience/day05/demo03_trend.py" beforeDir="false" afterPath="$PROJECT_DIR$/datascience/day05/demo03_trend.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../software/google-access-helper-2.3.0.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../software/phantomjs-2.1.1-linux-x86_64.tar.bz2" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -21,7 +19,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/datascience/day05/demo03_trend.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="378">
+            <state relative-caret-position="1272">
               <caret line="53" selection-start-line="53" selection-end-line="53" />
             </state>
           </provider>
@@ -30,7 +28,7 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/datascience/day03/demo12_loadtxt.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="260">
+            <state relative-caret-position="352">
               <caret line="57" column="49" selection-start-line="57" selection-start-column="49" selection-end-line="57" selection-end-column="49" />
             </state>
           </provider>
@@ -78,9 +76,9 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="767" />
-    <option name="y" value="27" />
+  <component name="ProjectFrameBounds" extendedState="1">
+    <option name="x" value="103" />
+    <option name="y" value="144" />
     <option name="width" value="879" />
     <option name="height" value="873" />
   </component>
@@ -261,7 +259,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="767" y="27" width="879" height="873" extended-state="0" />
+    <frame x="103" y="144" width="879" height="873" extended-state="1" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" weight="0.3802817" />
@@ -270,7 +268,7 @@
       <window_info id="DB Browser" order="3" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32967034" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32967034" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3997253" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -368,9 +366,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/datascience/day04/01-k">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/datascience/day04/01-k" />
     <entry file="file://$PROJECT_DIR$/datascience/day03/demo11_sic.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="72">
@@ -452,13 +448,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/datascience/day05/demo03_trend.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="53" selection-start-line="53" selection-end-line="53" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/datascience/day05/demo02_lp.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="130">
@@ -466,9 +455,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/datascience/day05/demo03_trend.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1272">
+          <caret line="53" selection-start-line="53" selection-end-line="53" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/datascience/day03/demo12_loadtxt.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
+        <state relative-caret-position="352">
           <caret line="57" column="49" selection-start-line="57" selection-start-column="49" selection-end-line="57" selection-end-column="49" />
         </state>
       </provider>
