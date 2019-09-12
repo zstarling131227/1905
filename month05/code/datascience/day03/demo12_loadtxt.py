@@ -44,7 +44,7 @@ ax.xaxis.set_minor_locator(md.DayLocator())
 
 # 为了日期显示合理，修改dates的dtype
 dates = dates.astype(md.datetime.datetime)
-mp.plot(dates, closing_prices,alpha=0.3,
+mp.plot(dates, closing_prices, alpha=0.3,
         color='dodgerblue', linewidth=2,
         linestyle='--', label='AAPL CP')
 

@@ -2,10 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="51c2c851-5338-4b6f-8459-a4272c125720" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../../.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../../.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datascience/day06/demo01_obv.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datascience/day06/demo02_piecewise.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datascience/day06/demo03_vec.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datascience/day06/demo04_profit.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datascience/day06/demo05_matrix.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datascience/day06/demo06_clip.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datascience/day06/demo07_add.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datascience/day06/demo08_bitwise.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datascience/day06/demo09_sin.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../cancel/urls.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datascience/day03/demo12_loadtxt.py" beforeDir="false" afterPath="$PROJECT_DIR$/datascience/day03/demo12_loadtxt.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datascience/day05/demo03_trend.py" beforeDir="false" afterPath="$PROJECT_DIR$/datascience/day05/demo03_trend.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datascience/day05/demo04_cov.py" beforeDir="false" afterPath="$PROJECT_DIR$/datascience/day05/demo04_cov.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datascience/day05/demo05_poly.py" beforeDir="false" afterPath="$PROJECT_DIR$/datascience/day05/demo05_poly.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datascience/day05/demo06-polyfit.py" beforeDir="false" afterPath="$PROJECT_DIR$/datascience/day05/demo06-polyfit.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datascience/day05/demo07_profit.py" beforeDir="false" afterPath="$PROJECT_DIR$/datascience/day05/demo07_profit.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../note/data/数据分析总.md" beforeDir="false" afterPath="$PROJECT_DIR$/../note/data/数据分析总.md" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -15,20 +29,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/datascience/day05/demo03_trend.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1272">
-              <caret line="53" selection-start-line="53" selection-end-line="53" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/datascience/day03/demo12_loadtxt.py">
+        <entry file="file://$PROJECT_DIR$/datascience/day06/demo05_matrix.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="352">
-              <caret line="57" column="49" selection-start-line="57" selection-start-column="49" selection-end-line="57" selection-end-column="49" />
+            <state relative-caret-position="288">
+              <caret line="16" column="10" selection-start-line="16" selection-start-column="10" selection-end-line="16" selection-end-column="10" />
             </state>
           </provider>
         </entry>
@@ -38,6 +43,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Python Unit Test" />
         <option value="Python Script" />
       </list>
     </option>
@@ -64,21 +70,31 @@
         <option value="$PROJECT_DIR$/datascience/day04/06-weekend.py" />
         <option value="$PROJECT_DIR$/datascience/day04/01-k.py" />
         <option value="$PROJECT_DIR$/datascience/day04/07-ma5.py" />
-        <option value="$PROJECT_DIR$/datascience/day05/demo04_cov.py" />
-        <option value="$PROJECT_DIR$/datascience/day05/demo05_poly.py" />
         <option value="$PROJECT_DIR$/datascience/day05/demo6-polyfit.py" />
-        <option value="$PROJECT_DIR$/datascience/day05/demo07_profit.py" />
         <option value="$PROJECT_DIR$/datascience/day05/demo01_boll.py" />
         <option value="$PROJECT_DIR$/datascience/day05/demo02_lp.py" />
-        <option value="$PROJECT_DIR$/datascience/day05/demo03_trend.py" />
         <option value="$PROJECT_DIR$/datascience/day03/demo12_loadtxt.py" />
+        <option value="$PROJECT_DIR$/datascience/day05/demo03_trend.py" />
+        <option value="$PROJECT_DIR$/datascience/day05/demo04_cov.py" />
+        <option value="$PROJECT_DIR$/datascience/day05/demo05_poly.py" />
+        <option value="$PROJECT_DIR$/datascience/day05/demo06-polyfit.py" />
+        <option value="$PROJECT_DIR$/datascience/day05/demo07_profit.py" />
+        <option value="$PROJECT_DIR$/datascience/day06/demo06_clip.py" />
+        <option value="$PROJECT_DIR$/datascience/day06/demo07_add.py" />
+        <option value="$PROJECT_DIR$/datascience/day06/demo08_bitwise.py" />
+        <option value="$PROJECT_DIR$/datascience/day06/demo09_sin.py" />
+        <option value="$PROJECT_DIR$/datascience/day06/demo01_obv.py" />
+        <option value="$PROJECT_DIR$/datascience/day06/demo02_piecewise.py" />
+        <option value="$PROJECT_DIR$/datascience/day06/demo03_vec.py" />
+        <option value="$PROJECT_DIR$/datascience/day06/demo04_profit.py" />
+        <option value="$PROJECT_DIR$/datascience/day06/demo05_matrix.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="1">
-    <option name="x" value="103" />
-    <option name="y" value="144" />
-    <option name="width" value="879" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="428" />
+    <option name="y" value="27" />
+    <option name="width" value="880" />
     <option name="height" value="873" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -86,7 +102,31 @@
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
-    <panes />
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="code" type="b2602c69:ProjectViewProjectNode" />
+              <item name="code" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="code" type="b2602c69:ProjectViewProjectNode" />
+              <item name="code" type="462c0819:PsiDirectoryNode" />
+              <item name="datascience" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="code" type="b2602c69:ProjectViewProjectNode" />
+              <item name="code" type="462c0819:PsiDirectoryNode" />
+              <item name="datascience" type="462c0819:PsiDirectoryNode" />
+              <item name="day03" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../.." />
@@ -104,8 +144,8 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.demo12_loadtxt">
-    <configuration name="06-weekend" type="PythonConfigurationType" factoryName="Python" temporary="true">
+  <component name="RunManager" selected="Python.demo05_matrix">
+    <configuration name="demo01_obv" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="code" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -113,11 +153,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/datascience/day04" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/datascience/day06" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/datascience/day04/06-weekend.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/datascience/day06/demo01_obv.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -126,7 +166,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="07-ma5" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="demo02_piecewise" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="code" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -134,11 +174,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/datascience/day04" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/datascience/day06" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/datascience/day04/07-ma5.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/datascience/day06/demo02_piecewise.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -147,7 +187,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="demo01_boll" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="demo03_vec" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="code" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -155,11 +195,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/datascience/day05" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/datascience/day06" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/datascience/day05/demo01_boll.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/datascience/day06/demo03_vec.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -168,7 +208,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="demo02_lp" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="demo04_profit" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="code" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -176,11 +216,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/datascience/day05" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/datascience/day06" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/datascience/day05/demo02_lp.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/datascience/day06/demo04_profit.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -189,7 +229,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="demo12_loadtxt" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="demo05_matrix" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="code" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -197,11 +237,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/datascience/day03" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/datascience/day06" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/datascience/day03/demo12_loadtxt.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/datascience/day06/demo05_matrix.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -212,11 +252,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.demo12_loadtxt" />
-        <item itemvalue="Python.demo02_lp" />
-        <item itemvalue="Python.demo01_boll" />
-        <item itemvalue="Python.07-ma5" />
-        <item itemvalue="Python.06-weekend" />
+        <item itemvalue="Python.demo05_matrix" />
+        <item itemvalue="Python.demo04_profit" />
+        <item itemvalue="Python.demo03_vec" />
+        <item itemvalue="Python.demo02_piecewise" />
+        <item itemvalue="Python.demo01_obv" />
       </list>
     </recent_temporary>
   </component>
@@ -234,16 +274,15 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="103" y="144" width="879" height="873" extended-state="1" />
-    <editor active="true" />
+    <frame x="428" y="27" width="880" height="873" extended-state="0" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.3802817" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.37983587" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info id="DB Browser" order="3" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32967034" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.5302198" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3997253" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -257,6 +296,27 @@
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
     </layout>
+    <layout-to-restore>
+      <window_info content_ui="combo" id="Project" order="0" weight="0.37983587" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info id="DB Browser" order="3" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32967034" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.3997253" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Version Control" order="7" />
+      <window_info anchor="bottom" id="DB Execution Console" order="8" />
+      <window_info anchor="bottom" id="Terminal" order="9" />
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info anchor="bottom" id="Python Console" order="11" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+    </layout-to-restore>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/day02/images/F(x).png" />
@@ -397,18 +457,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/datascience/day05/demo04_cov.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/datascience/day05/demo05_poly.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/datascience/day05/demo06-polyfit.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/datascience/day05/demo07_profit.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/datascience/day04/07-ma5.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
@@ -425,22 +473,109 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/datascience/day05/demo02_lp.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="130">
-          <caret line="49" column="6" lean-forward="true" selection-start-line="49" selection-start-column="6" selection-end-line="49" selection-end-column="6" />
+        <state relative-caret-position="100">
+          <caret line="52" column="21" lean-forward="true" selection-start-line="52" selection-start-column="21" selection-end-line="52" selection-end-column="21" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/datascience/day05/demo03_trend.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1272">
-          <caret line="53" selection-start-line="53" selection-end-line="53" />
+        <state relative-caret-position="810">
+          <caret line="63" column="9" selection-start-line="63" selection-start-column="9" selection-end-line="63" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/datascience/day05/demo05_poly.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="354">
+          <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
+          <folding>
+            <element signature="e#70#88#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/datascience/day05/demo07_profit.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="918">
+          <caret line="57" column="46" lean-forward="true" selection-start-line="57" selection-start-column="46" selection-end-line="57" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/datascience/day05/demo06-polyfit.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="52">
+          <caret line="41" lean-forward="true" selection-end-line="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/datascience/day06/demo07_add.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/datascience/day06/demo08_bitwise.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/datascience/day06/demo09_sin.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/datascience/day06/demo06_clip.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/datascience/day05/demo04_cov.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="11" selection-start-line="11" selection-end-line="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/datascience/day06/demo02_piecewise.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="8" selection-start-line="8" selection-end-line="8" />
+          <folding>
+            <element signature="e#0#30#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/datascience/day03/demo12_loadtxt.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="57" column="49" selection-start-line="57" selection-start-column="49" selection-end-line="57" selection-end-column="49" />
+        <state relative-caret-position="216">
+          <caret line="35" column="16" lean-forward="true" selection-end-line="66" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/datascience/day06/demo03_vec.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="18" column="14" lean-forward="true" selection-start-line="18" selection-start-column="14" selection-end-line="18" selection-end-column="14" />
+          <folding>
+            <element signature="e#28#58#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/datascience/day06/demo04_profit.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="127">
+          <caret line="55" lean-forward="true" selection-start-line="55" selection-end-line="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/datascience/day06/demo01_obv.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="1" selection-end-column="18" />
+          <folding>
+            <element signature="e#0#30#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/datascience/day06/demo05_matrix.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="16" column="10" selection-start-line="16" selection-start-column="10" selection-end-line="16" selection-end-column="10" />
         </state>
       </provider>
     </entry>
