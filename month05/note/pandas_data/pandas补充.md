@@ -71,14 +71,14 @@ Series.dt.weekofyear	The week ordinal of the year.
 Series.dt.dayofweek	The day of the week with Monday=0, Sunday=6.
 Series.dt.weekday	The day of the week with Monday=0, Sunday=6.
 Series.dt.dayofyear	The ordinal day of the year.
-Series.dt.quarter	The quarter of the date.
-Series.dt.is_month_start	Indicates whether the date is the first day of the month.
+Series.dt.quarter	The quarter of the date.    # 季度
+Series.dt.is_month_start	Indicates whether the date is the first day of the month. #月初
 Series.dt.is_month_end	Indicates whether the date is the last day of the month.
 Series.dt.is_quarter_start	Indicator for whether the date is the first day of a quarter.
 Series.dt.is_quarter_end	Indicator for whether the date is the last day of a quarter.
 Series.dt.is_year_start	Indicate whether the date is the first day of a year.
-Series.dt.is_year_end	Indicate whether the date is the last day of the year.
-Series.dt.is_leap_year	Boolean indicator if the date belongs to a leap year.
+Series.dt.is_year_end	Indicate whether the date is the last day of the year.　
+Series.dt.is_leap_year	Boolean indicator if the date belongs to a leap year.　＃　
 Series.dt.days_in_month	The number of days in the month.
 ```
 
@@ -419,7 +419,7 @@ print(df.describe(include=['number']))
 import pandas as pd
 import numpy as np
 
-unsorted_df=pd.DataFrame(np.random.randn(10,2),
+unsorted_df=pd.DataFrame(np.random.randn(10,2),    # 随机生成10行两列的数据
                          index=[1,4,6,2,3,5,9,8,0,7],columns=['col2','col1'])
 print(unsorted_df)
 ```
@@ -642,7 +642,6 @@ print(data.pivot_table(index=['class_id', 'gender'], values=['score'],
 ```python
 # 按照class_id分组，针对不同的gender，统计数量
 print(pd.crosstab(data.class_id, data.gender, margins=True))
-
 ```
 
 

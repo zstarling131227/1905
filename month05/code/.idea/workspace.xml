@@ -2,19 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="51c2c851-5338-4b6f-8459-a4272c125720" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/datascience/day07/demo10_random.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/datascience/day07/demo01_eig.py" beforeDir="false" afterPath="$PROJECT_DIR$/datascience/day07/demo01_eig.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/datascience/day07/demo02_eig.py" beforeDir="false" afterPath="$PROJECT_DIR$/datascience/day07/demo02_eig.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/datascience/day07/demo03_svd.py" beforeDir="false" afterPath="$PROJECT_DIR$/datascience/day07/demo03_svd.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/datascience/day07/demo04_svd.py" beforeDir="false" afterPath="$PROJECT_DIR$/datascience/day07/demo04_svd.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/datascience/day07/demo05_fft.py" beforeDir="false" afterPath="$PROJECT_DIR$/datascience/day07/demo05_fft.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/datascience/day07/demo06_filter.py" beforeDir="false" afterPath="$PROJECT_DIR$/datascience/day07/demo06_filter.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/datascience/day07/demo07_lexsort.py" beforeDir="false" afterPath="$PROJECT_DIR$/datascience/day07/demo07_lexsort.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/datascience/day07/demo08_interp.py" beforeDir="false" afterPath="$PROJECT_DIR$/datascience/day07/demo08_interp.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/datascience/day07/demo09_int.py" beforeDir="false" afterPath="$PROJECT_DIR$/datascience/day07/demo09_int.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../note/data/数据分析总.md" beforeDir="false" afterPath="$PROJECT_DIR$/../note/data/数据分析总.md" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -23,7 +11,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -105,7 +93,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -122,10 +109,11 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../.." />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/pandas" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
@@ -640,9 +628,6 @@
           </folding>
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/datascience/day07/demo10_random.py">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/datascience/day07/demo07_lexsort.py">
       <provider selected="true" editor-type-id="text-editor">
