@@ -1,110 +1,77 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 """
-demo01_lr.py  线性回归
+demo01_adaboost.py  正向激励
 """
 import numpy as np
+import sklearn.datasets as sd
+import sklearn.utils as su
+import sklearn.tree as st
+import sklearn.metrics as sm
 import matplotlib.pyplot as mp
-from mpl_toolkits.mplot3d import axes3d
 
-train_x = np.array([0.5, 0.6, 0.8, 1.1, 1.4])
-train_y = np.array([5.0, 5.5, 6.0, 6.8, 7.0])
+# 加载波士顿地区房价数据集
+boston = sd.load_boston()
+print(boston.data.shape)
+print(boston.target.shape)
+print(boston.feature_names)
+names = boston.feature_names
+# |CRIM|ZN|INDUS|CHAS|NOX|RM|AGE|DIS|RAD|TAX|PTRATIO|B|LSTAT|
+# 犯罪率|住宅用地比例|商业用地比例|是否靠河|空质气量|房间数|年限|距中心区距离|路网密度|房产税|师生比|黑人比例|低地位人口比例|
 
-# 梯度下降求得回归线
-times = 1000
-lrate = 0.01  # 学习率
-w0, w1 = [1], [1]
-epoches, losses = [], []
-for i in range(1, times + 1):
-    # 计算当前w0与w1下 损失函数值
-    loss = ((w0[-1] + w1[-1] * train_x -
-             train_y)**2).sum() / 2
-    print('{:4}> w0={:.6f}, '
-          'w1={:.6f}, loss={:.6f}'.format(
-              i, w0[-1], w1[-1], loss))
-    epoches.append(i)
-    losses.append(loss)
+# 打乱原始样本数据集
+# random_state: 随机种子
+# 随机种子相同时，shuffle随机打乱的结果也相同
+x, y = su.shuffle(boston.data, boston.target,
+                  random_state=7)
+# 划分训练集与测试集   8:2
+train_size = int(len(x) * 0.8)
+train_x, test_x, train_y, test_y = \
+    x[:train_size], x[train_size:], \
+    y[:train_size], y[train_size:]
 
-    # 求w0方向上的偏导数
-    d0 = (w0[-1] + w1[-1] * train_x - train_y).sum()
-    # 求w1方向上的偏导数
-    d1 = (train_x * (w0[-1] + w1[-1] *
-                     train_x - train_y)).sum()
-    w0.append(w0[-1] - lrate * d0)
-    w1.append(w1[-1] - lrate * d1)
+# 构建决策树模型 使用训练集训练
+model = st.DecisionTreeRegressor(max_depth=4)
+# 使用测试集测试，输出r2_score
+model.fit(train_x, train_y)
+pred_test_y = model.predict(test_x)
+print(sm.r2_score(test_y, pred_test_y))
+dt_fi = model.feature_importances_
 
-# 通过最优的w0与w1，求得所有样本x的预测输出y
-pred_y = w0[-1] + w1[-1] * train_x
+# 构建基于决策树的正向激励模型，训练并预测结果
+import sklearn.ensemble as se
+model = se.AdaBoostRegressor(
+    model, n_estimators=400, random_state=7)
+model.fit(train_x, train_y)
+pred_test_y = model.predict(test_x)
+print(sm.r2_score(test_y, pred_test_y))
+adaboost_fi = model.feature_importances_
 
-# 绘制样本点
-mp.figure('Linear Regression', facecolor='lightgray')
-mp.title('Linear Regression', fontsize=16)
-mp.xlabel('X', fontsize=14)
-mp.ylabel('Y', fontsize=14)
-mp.grid(linestyle=':')
-mp.scatter(train_x, train_y, marker='D', s=70,
-           label='Samples', color='dodgerblue')
-mp.plot(train_x, pred_y, color='orangered',
-        label='Regression Line', linewidth=2)
-mp.legend()
-
-# 绘制w0 w1 loss的变化曲线图
-mp.figure('Training Progress', facecolor='lightgray')
-mp.title('Training Progress', fontsize=16)
-# w0
-mp.subplot(311)
-mp.ylabel('w0', fontsize=14)
-mp.grid(linestyle=':')
-mp.plot(epoches, w0[:-1], color='dodgerblue',
-        label='w0')
-mp.legend()
-# w1
-mp.subplot(312)
-mp.ylabel('w1', fontsize=14)
-mp.grid(linestyle=':')
-mp.plot(epoches, w1[:-1], color='dodgerblue',
-        label='w1')
-mp.legend()
-# loss
-mp.subplot(313)
-mp.ylabel('loss', fontsize=14)
-mp.grid(linestyle=':')
-mp.plot(epoches, losses, color='orangered',
-        label='loss')
-mp.legend()
-mp.tight_layout()
-
-# 基于三维曲面绘制梯度下降的过程中的每个散点
-n = 500
-w0_grid, w1_grid = np.meshgrid(np.linspace(0, 9, n),
-                               np.linspace(0, 3.5, n))
-loss = np.zeros_like(w0_grid)
-for x, y in zip(train_x, train_y):
-    loss += (w0_grid + w1_grid * x - y)**2 / 2
-mp.figure('Loss Function', facecolor='lightgray')
-ax3d = mp.gca(projection='3d')
-ax3d.set_xlabel('w0', fontsize=14)
-ax3d.set_ylabel('w1', fontsize=14)
-ax3d.set_zlabel('loss', fontsize=14)
-ax3d.plot_surface(w0_grid, w1_grid, loss, cmap='jet')
-ax3d.plot(w0[:-1], w1[:-1], losses, 'o-',
-          color='orangered')
-mp.tight_layout()
-
-# 以等高线的方式绘制梯度下降的过程。
-mp.figure('Batch Gradient Descent', facecolor='lightgray')
-mp.title('Batch Gradient Descent', fontsize=20)
-mp.xlabel('w0', fontsize=14)
-mp.ylabel('w1', fontsize=14)
+# 绘制特征重要性
+mp.figure('Feature Importance', facecolor='lightgray')
+mp.subplot(211)
+mp.title('DT Feature Importances', fontsize=14)
+mp.ylabel('Importances', fontsize=12)
 mp.tick_params(labelsize=10)
 mp.grid(linestyle=':')
-mp.contourf(w0_grid, w1_grid, loss, 10, cmap='jet')
-cntr = mp.contour(w0_grid, w1_grid, loss, 10,
-                  colors='black', linewidths=0.5)
-mp.clabel(cntr, inline_spacing=0.1, fmt='%.2f',
-          fontsize=8)
-mp.plot(w0, w1, 'o-', c='orangered', label='BGD')
+xs = np.arange(len(dt_fi))
+sorted_ind = dt_fi.argsort()[::-1]
+mp.bar(xs, dt_fi[sorted_ind], color='dodgerblue',
+       label='DT Feature Importances')
+mp.xticks(xs, names[sorted_ind])
 mp.legend()
 
+mp.subplot(212)
+mp.title('AdaBoost Feature Importances', fontsize=14)
+mp.ylabel('Importances', fontsize=12)
+mp.tick_params(labelsize=10)
+mp.grid(linestyle=':')
+sorted_ind = adaboost_fi.argsort()[::-1]
+mp.bar(xs, adaboost_fi[sorted_ind],
+       color='orangered',
+       label='AdaBoost Feature Importances')
+mp.xticks(xs, names[sorted_ind])
+mp.legend()
 
+mp.tight_layout()
 mp.show()

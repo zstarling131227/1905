@@ -6,9 +6,11 @@ import sklearn.tree as st
 import sklearn.datasets as sd
 import sklearn.utils as su
 
-# 加载波士顿地区房价数据集
+# 加载波士顿地区房价数据集（字典类型）
 boston = sd.load_boston()
 # print(boston,sep="")
+for i in boston:
+    print(i)
 print(boston.data.shape)
 print(boston.target.shape)
 print(boston.feature_names)
