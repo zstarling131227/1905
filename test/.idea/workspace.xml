@@ -2,6 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8f1a2b02-a171-4f75-a548-348eb53c90b3" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../month05/code/AI/day13/demo01_tts.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../month05/code/AI/day13/demo02_cv.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../month05/code/AI/day13/demo03_cm.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../month05/code/AI/day13/demo04_cr.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../month05/code/AI/day13/demo05_car.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../month05/code/AI/day13/demo06_vc.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../month05/code/AI/day13/demo07_lc.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../month05/code/AI/day13/demo08_svmlinear.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../month05/code/AI/day13/demo09_svmpoly.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../month05/code/AI/day13/demo10_svmrbf.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../.idea/1905.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/1905.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../.idea/codeStyles/Project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/codeStyles/Project.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../.idea/dbnavigator.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/dbnavigator.xml" afterDir="false" />
@@ -10,11 +20,8 @@
       <change beforePath="$PROJECT_DIR$/../.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../month05/code/AI/day12/demo03_ac.py" beforeDir="false" afterPath="$PROJECT_DIR$/../month05/code/AI/day12/demo03_ac.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../month05/code/AI/day12/demo04_sigmoid.py" beforeDir="false" afterPath="$PROJECT_DIR$/../month05/code/AI/day12/demo04_sigmoid.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../month05/code/AI/day12/demo05_lr.py" beforeDir="false" afterPath="$PROJECT_DIR$/../month05/code/AI/day12/demo05_lr.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../month05/code/AI/day12/demo06_mlr.py" beforeDir="false" afterPath="$PROJECT_DIR$/../month05/code/AI/day12/demo06_mlr.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../month05/code/AI/day12/demo07_nb.py" beforeDir="false" afterPath="$PROJECT_DIR$/../month05/code/AI/day12/demo07_nb.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../month04/code/spider/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../month04/code/spider/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../month05/note/机器学习DAY03.md" beforeDir="false" afterPath="$PROJECT_DIR$/../month05/note/机器学习DAY03.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -38,7 +45,7 @@
         <entry file="file://$PROJECT_DIR$/cancel.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="185">
-              <caret line="53" column="37" lean-forward="true" selection-start-line="53" selection-start-column="37" selection-end-line="53" selection-end-column="37" />
+              <caret line="53" column="37" selection-start-line="53" selection-start-column="37" selection-end-line="53" selection-end-column="37" />
             </state>
           </provider>
         </entry>
@@ -191,7 +198,7 @@
     <entry file="file://$PROJECT_DIR$/cancel.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="185">
-          <caret line="53" column="37" lean-forward="true" selection-start-line="53" selection-start-column="37" selection-end-line="53" selection-end-column="37" />
+          <caret line="53" column="37" selection-start-line="53" selection-start-column="37" selection-end-line="53" selection-end-column="37" />
         </state>
       </provider>
     </entry>
