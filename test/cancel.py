@@ -1,77 +1,56 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 """
-demo01_adaboost.py  正向激励
+demo08_svmlinear.py  svm分类器
 """
 import numpy as np
-import sklearn.datasets as sd
-import sklearn.utils as su
-import sklearn.tree as st
-import sklearn.metrics as sm
 import matplotlib.pyplot as mp
+import sklearn.svm as svm
+import sklearn.model_selection as ms
+import sklearn.metrics as sm
 
-# 加载波士顿地区房价数据集
-boston = sd.load_boston()
-print(boston.data.shape)
-print(boston.target.shape)
-print(boston.feature_names)
-names = boston.feature_names
-# |CRIM|ZN|INDUS|CHAS|NOX|RM|AGE|DIS|RAD|TAX|PTRATIO|B|LSTAT|
-# 犯罪率|住宅用地比例|商业用地比例|是否靠河|空质气量|房间数|年限|距中心区距离|路网密度|房产税|师生比|黑人比例|低地位人口比例|
-
-# 打乱原始样本数据集
-# random_state: 随机种子
-# 随机种子相同时，shuffle随机打乱的结果也相同
-x, y = su.shuffle(boston.data, boston.target,
-                  random_state=7)
-# 划分训练集与测试集   8:2
-train_size = int(len(x) * 0.8)
+# 读取数据
+data = np.loadtxt('/home/tarena/zxl/1905/month05/code/AI/ml_data/multiple2.txt',
+                  delimiter=',', dtype='f8')
+print(data.shape)
+# 整理数据集
+x = data[:, :2]
+y = data[:, 2]
+# 训练模型
 train_x, test_x, train_y, test_y = \
-    x[:train_size], x[train_size:], \
-    y[:train_size], y[train_size:]
-
-# 构建决策树模型 使用训练集训练
-model = st.DecisionTreeRegressor(max_depth=4)
-# 使用测试集测试，输出r2_score
+    ms.train_test_split(
+        x, y, test_size=0.25, random_state=7)
+model = svm.SVC(kernel='linear')
 model.fit(train_x, train_y)
+# 针对测试集预测结果   评估分类效果
 pred_test_y = model.predict(test_x)
-print(sm.r2_score(test_y, pred_test_y))
-dt_fi = model.feature_importances_
+# print(sm.refusion_matrix(test_y, pred_test_y))
+print(sm.classification_report(test_y, pred_test_y))
 
-# 构建基于决策树的正向激励模型，训练并预测结果
-import sklearn.ensemble as se
-model = se.AdaBoostRegressor(
-    model, n_estimators=400, random_state=7)
-model.fit(train_x, train_y)
-pred_test_y = model.predict(test_x)
-print(sm.r2_score(test_y, pred_test_y))
-adaboost_fi = model.feature_importances_
+# 绘制分类边界线
+# 把区间分为500*500网格矩阵，为每个网格预测类别
+# 并设置颜色
+l, r = x[:, 0].min() - 1, x[:, 0].max() + 1
+b, t = x[:, 1].min() - 1, x[:, 1].max() + 1
+n = 500
+grid_x, grid_y = np.meshgrid(
+    np.linspace(l, r, n), np.linspace(b, t, n))
 
-# 绘制特征重要性
-mp.figure('Feature Importance', facecolor='lightgray')
-mp.subplot(211)
-mp.title('DT Feature Importances', fontsize=14)
-mp.ylabel('Importances', fontsize=12)
+# 针对每个grid_x与grid_y预测所属类别
+mesh_x = np.column_stack(
+    (grid_x.ravel(), grid_y.ravel()))
+mesh_z = model.predict(mesh_x)
+grid_z = mesh_z.reshape(grid_x.shape)
+
+# 绘制
+mp.figure('SVM Classifier', facecolor='lightgray')
+mp.title('SVM Classifier', fontsize=16)
+mp.xlabel('x', fontsize=14)
+mp.ylabel('y', fontsize=14)
 mp.tick_params(labelsize=10)
-mp.grid(linestyle=':')
-xs = np.arange(len(dt_fi))
-sorted_ind = dt_fi.argsort()[::-1]
-mp.bar(xs, dt_fi[sorted_ind], color='dodgerblue',
-       label='DT Feature Importances')
-mp.xticks(xs, names[sorted_ind])
-mp.legend()
-
-mp.subplot(212)
-mp.title('AdaBoost Feature Importances', fontsize=14)
-mp.ylabel('Importances', fontsize=12)
-mp.tick_params(labelsize=10)
-mp.grid(linestyle=':')
-sorted_ind = adaboost_fi.argsort()[::-1]
-mp.bar(xs, adaboost_fi[sorted_ind],
-       color='orangered',
-       label='AdaBoost Feature Importances')
-mp.xticks(xs, names[sorted_ind])
-mp.legend()
-
-mp.tight_layout()
+# 调用pcolormesh填充网格化背景
+mp.pcolormesh(grid_x, grid_y, grid_z, cmap='gray')
+mp.scatter(test_x[:, 0], test_x[:, 1],
+           label='Samples', s=60, c=test_y,
+           cmap='jet')
 mp.show()
