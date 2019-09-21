@@ -66,6 +66,15 @@ prob_x = np.array([
 pred_prob_y = model.predict(prob_x)
 probs = model.predict_proba(prob_x)
 print(probs)
+probs的输出值为:
+[[3.00000090e-14 1.00000000e+00]
+ [3.00000090e-14 1.00000000e+00]
+ [9.77046830e-01 2.29531701e-02]
+ [5.50787562e-01 4.49212438e-01]
+ [1.16333362e-02 9.88366664e-01]
+ [1.92967952e-11 1.00000000e+00]
+ [9.58717270e-01 4.12827302e-02]]
+左列为0类别，右列为1类别
 
 # 绘制每个测试样本，并给出标注
 mp.scatter(prob_x[:,0], prob_x[:,1], c=pred_prob_y, cmap='jet_r', s=80, marker='D')
@@ -101,6 +110,7 @@ model.fit(输入集，输出集)
 model.cv_results_['params']
 # 获取网格搜索每个参数组合所对应的平均测试分值
 model.cv_results_['mean_test_score']
+'params'与'mean_test_score'同维
 # 获取最好的参数
 model.best_params_
 model.best_score_

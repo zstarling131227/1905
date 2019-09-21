@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 """
-demo08_svmlinear.py  svm分类器
+demo03_gscv.py  GridSearchCV 网格搜索
 """
 import numpy as np
 import matplotlib.pyplot as mp
@@ -20,8 +20,29 @@ y = data[:, 2]
 train_x, test_x, train_y, test_y = \
     ms.train_test_split(
         x, y, test_size=0.25, random_state=7)
-model = svm.SVC(kernel='linear')
+
+# 网格搜索获取最优模型
+model = svm.SVC(probability=True)
+# 整理网格搜索所需要的超参数列表
+params = [
+    {'kernel': ['linear'], 'C':[1, 10, 100, 1000]},
+    {'kernel': ['poly'], 'C':[1],
+     'degree': [2, 3]},
+    {'kernel': ['rbf'], 'C':[1, 10, 100, 1000],
+     'gamma':[1, 0.1, 0.01, 0.001]}]
+model = ms.GridSearchCV(model, params, cv=5)
 model.fit(train_x, train_y)
+# 获取GridSearch的副产品
+print(model.best_params_)
+print(model.best_score_)
+print(model.best_estimator_)
+# 输出每组超参数的测试集得分
+params = model.cv_results_['params']
+scores = model.cv_results_['mean_test_score']
+for p, s in zip(params, scores):
+    print(p, '-->', s)
+
+
 # 针对测试集预测结果   评估分类效果
 pred_test_y = model.predict(test_x)
 # print(sm.refusion_matrix(test_y, pred_test_y))
@@ -42,6 +63,22 @@ mesh_x = np.column_stack(
 mesh_z = model.predict(mesh_x)
 grid_z = mesh_z.reshape(grid_x.shape)
 
+# 新增样本，得到每个样本的预测输出与置信概率
+prob_x = np.array([
+    [2, 1.5],
+    [8, 9],
+    [4.8, 5.2],
+    [4, 4],
+    [2.5, 7],
+    [7.6, 2],
+    [5.4, 5.9]])
+pred_prob_y = model.predict(prob_x)
+print(pred_prob_y)
+# 置信概率矩阵
+probs = model.predict_proba(prob_x)
+print(probs)
+
+
 # 绘制
 mp.figure('SVM Classifier', facecolor='lightgray')
 mp.title('SVM Classifier', fontsize=16)
@@ -53,4 +90,23 @@ mp.pcolormesh(grid_x, grid_y, grid_z, cmap='gray')
 mp.scatter(test_x[:, 0], test_x[:, 1],
            label='Samples', s=60, c=test_y,
            cmap='jet')
+
+# 绘制每个测试样本，并给出标注
+mp.scatter(prob_x[:, 0], prob_x[:, 1],
+           c=pred_prob_y,
+           cmap='jet_r', s=80, marker='D')
+for i in range(len(probs)):
+    mp.annotate(
+        '{}% {}%'.format(
+            round(probs[i, 0] * 100, 2),
+            round(probs[i, 1] * 100, 2)),
+        xy=(prob_x[i, 0], prob_x[i, 1]),
+        xytext=(12, -12),
+        textcoords='offset points',
+        horizontalalignment='left',
+        verticalalignment='top',
+        fontsize=9,
+        bbox={'boxstyle': 'round,pad=0.6',
+              'fc': 'orange', 'alpha': 0.8})
+
 mp.show()
