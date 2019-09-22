@@ -7,7 +7,7 @@
 凝聚层次算法的特点：
 
 1. 聚类数k必须事先已知。借助某些评估指标，优选最好的聚类数。
-2. 没有聚类中心的概念，因此只能在训练集中划分聚类，但不能对训练集以外的未知样本确定其聚类归属（预测）。
+2. 没有聚类中心的概念，因此只能在训练集中划分聚类，但**不能**对训练集以外的未知样本确定其聚类归属（预测）。
 3. 在确定被凝聚的样本时，除了以距离作为条件以外，还可以根据连续性来确定被聚集的样本。
 
 凝聚层次算法相关API：
@@ -159,9 +159,10 @@ best_model = models[best_index]
 pred_y = best_model.fit_predict(x)
 
 core_mask = np.zeros(len(x), dtype=bool)
-core_mask[best_model.core_sample_indices_] = True
-offset_mask = best_model.labels_ == -1
-periphery_mask = ~(core_mask | offset_mask)
+# 核心样本的索引数组的掩码
+core_mask[best_model.core_sample_indices_] = True　　＃　核心样本
+offset_mask = best_model.labels_ == -1　　＃　孤立样本
+periphery_mask = ~(core_mask | offset_mask)　＃　外周样本
 mp.figure('DBSCAN Cluster', facecolor='lightgray')
 mp.title('DBSCAN Cluster', fontsize=20)
 mp.xlabel('x', fontsize=14)
