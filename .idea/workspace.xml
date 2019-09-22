@@ -2,12 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6341f5b4-0cb5-4a3e-b4be-089b832d6eae" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/month03/code/code3/day01/mysite1/mysite1/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/1905.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/1905.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dbnavigator.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/month03/code/code3/day01/mysite1/mysite1/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/month03/code/code3/day01/mysite1/mysite1/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/month03/code/code3/day01/mysite1/mysite1/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/month03/code/code3/day01/mysite1/mysite1/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/month03/note/django教程day01.md" beforeDir="false" afterPath="$PROJECT_DIR$/month03/note/django教程day01.md" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -16,33 +19,12 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/month03/code/code3/day01/mysite1/mysite1/settings.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2331">
-              <caret line="118" column="7" selection-start-line="118" selection-start-column="7" selection-end-line="118" selection-end-column="7" />
-            </state>
-          </provider>
-        </entry>
-      </file>
+    <leaf>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/month03/code/code3/day01/mysite1/mysite1/views.py">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="6" selection-start-line="6" selection-end-line="6" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/month03/code/code3/day01/mysite1/mysite1/urls.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="381">
-              <caret line="18" column="15" lean-forward="true" selection-start-line="18" selection-start-column="15" selection-end-line="18" selection-end-column="15" />
-              <folding>
-                <element signature="e#641#673#0" expanded="true" />
-              </folding>
+            <state>
+              <caret column="6" selection-start-column="6" selection-end-column="6" />
             </state>
           </provider>
         </entry>
@@ -72,13 +54,17 @@
         <option value="$PROJECT_DIR$/month03/code/code3/day01/first_django/first_django/urls.py" />
         <option value="$PROJECT_DIR$/month03/code/code3/day01/mysite1/mysite1/views.py" />
         <option value="$PROJECT_DIR$/month03/code/code3/day01/mysite1/mysite1/urls.py" />
+        <option value="$PROJECT_DIR$/bytes.py" />
+        <option value="$PROJECT_DIR$/cancel/urls.py" />
+        <option value="$PROJECT_DIR$/delete/ue" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="179" />
-    <option name="y" value="65" />
-    <option name="width" value="1013" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="67" />
+    <option name="y" value="91" />
+    <option name="width" value="1003" />
     <option name="height" value="804" />
   </component>
   <component name="ProjectView">
@@ -101,8 +87,13 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/month03/code/code3" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -116,7 +107,28 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.insert_data">
+  <component name="RunManager" selected="Python.bytes">
+    <configuration name="bytes" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="1905" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/bytes.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="day01" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="1905" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -182,6 +194,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.bytes" />
         <item itemvalue="Python.insert_data" />
         <item itemvalue="Python.day01" />
         <item itemvalue="Python.review01" />
@@ -202,15 +215,16 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="39" y="25" width="1401" height="875" extended-state="6" />
+    <frame x="67" y="91" width="1003" height="804" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24308588" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.34186286" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info id="DB Browser" order="3" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.4520548" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.5007587" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -226,33 +240,12 @@
     </layout>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/month01/code/day01/review01.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="3" column="7" lean-forward="true" selection-start-line="3" selection-start-column="7" selection-end-line="3" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/month01/code/day01/review01.py" />
     <entry file="file://$PROJECT_DIR$/month04/code/华晨宇.html" />
     <entry file="file://$PROJECT_DIR$/month04/code/王八蛋.html" />
     <entry file="file://$PROJECT_DIR$/month04/code/day01.py" />
-    <entry file="file://$PROJECT_DIR$/month02/code/code4/day02/review02.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="6" selection-start-line="4" selection-end-line="6" />
-          <folding>
-            <element signature="e#0#14#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/month03/code/code2/day01/insert_data.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="14" selection-start-line="10" selection-start-column="14" selection-end-line="10" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/month02/code/code4/day02/review02.py" />
+    <entry file="file://$PROJECT_DIR$/month03/code/code2/day01/insert_data.py" />
     <entry file="file:///usr/local/lib/python3.6/dist-packages/django/http/response.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="201">
@@ -260,58 +253,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/month03/code/code3/day01/mysite1/mysite1/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2331">
-          <caret line="118" column="7" selection-start-line="118" selection-start-column="7" selection-end-line="118" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/month03/code/code3/day01/first_django/first_django/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="501">
-          <caret line="25" column="36" lean-forward="true" selection-start-line="25" selection-start-column="36" selection-end-line="25" selection-end-column="36" />
-          <folding>
-            <element signature="e#646#678#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/month03/code/code3/day01/first_django/first_django/view2.py">
+    <entry file="file://$PROJECT_DIR$/month03/code/code3/day01/first_django/first_django/urls.py" />
+    <entry file="file://$PROJECT_DIR$/month03/code/code3/day01/first_django/first_django/view2.py" />
+    <entry file="file://$PROJECT_DIR$/month03/code/code3/day01/first_django/first_django/view1.py" />
+    <entry file="file://$PROJECT_DIR$/month03/code/code3/day01/first_django/first_django/views.py" />
+    <entry file="file://$PROJECT_DIR$/month03/code/code3/day01/mysite1/mysite1/settings.py" />
+    <entry file="file://$PROJECT_DIR$/month03/code/code3/day01/mysite1/mysite1/urls.py" />
+    <entry file="file://$PROJECT_DIR$/month03/code/code3/day01/mysite1/mysite1/views.py" />
+    <entry file="file://$PROJECT_DIR$/bytes.py" />
+    <entry file="file://$PROJECT_DIR$/cancel/urls.py" />
+    <entry file="file://$PROJECT_DIR$/delete/ue" />
+    <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state>
-          <caret selection-end-line="3" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/month03/code/code3/day01/first_django/first_django/view1.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="3" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/month03/code/code3/day01/first_django/first_django/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="2" column="14" lean-forward="true" selection-start-line="2" selection-start-column="14" selection-end-line="2" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/month03/code/code3/day01/mysite1/mysite1/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="381">
-          <caret line="18" column="15" lean-forward="true" selection-start-line="18" selection-start-column="15" selection-end-line="18" selection-end-column="15" />
-          <folding>
-            <element signature="e#641#673#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/month03/code/code3/day01/mysite1/mysite1/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="6" selection-start-line="6" selection-end-line="6" />
+          <caret column="6" selection-start-column="6" selection-end-column="6" />
         </state>
       </provider>
     </entry>
