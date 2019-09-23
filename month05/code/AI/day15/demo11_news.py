@@ -26,7 +26,7 @@ bow = cv.fit_transform(train_x)
 # 获取TF-IDF模型训练器,生成tfidf
 tt = ft.TfidfTransformer()
 tfidf = tt.fit_transform(bow)
-print(tfidf.sahpe)
+print(tfidf.shape)
 
 # 使用基于多项式分布的不素贝叶斯训练模型
 model = nb.MultinomialNB()

@@ -20,5 +20,5 @@ print(words)
 # 生成tfidf
 tt = ft.TfidfTransformer()
 tfidf = tt.fit_transform(bow).toarray()
-tfidf = np.round(tfidf.toarray(), 2)
+tfidf = np.round(tfidf, 2)
 print(tfidf)

@@ -15,7 +15,7 @@ print(sentences)
 cv = ft.CountVectorizer()
 # 训练模型，把句子中所有可能出现的单词作为特征名，
 # 每一个句子为一个样本，单词在句子中出现的次数为特征值。
-bow = cv.fit_transform(sentences).toarray()
+bow = cv.fit_transform(sentences)
 print(bow)
 print(bow.toarray())  # 输出为稀疏矩阵
 print(cv.get_feature_names())  # 输出为特征名称
