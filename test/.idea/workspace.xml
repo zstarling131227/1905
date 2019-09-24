@@ -2,27 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8f1a2b02-a171-4f75-a548-348eb53c90b3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../month05/code/AI/day16/demo01_moviereviews.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../month05/code/AI/day16/demo02_freq.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../month05/code/AI/day16/demo03_mfcc.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../month05/code/AI/day16/demo04_speeches.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../month05/code/AI/day16/demo05_music.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../month05/code/AI/day16/demo06_cv.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../month05/code/AI/day16/demo07_canny.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../month05/code/AI/day16/demo08_equalhist.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../month05/code/AI/day16/demo09_box.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../month05/code/AI/day16/demo10_star.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../month05/code/AI/day16/demo11_sift.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../month05/code/AI/day16/demo12_descf.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../month05/code/AI/day16/demo13_objects.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../month05/code/AI/day16/demo14_vc.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../month05/code/AI/day16/demo15_face.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../month05/code/AI/day15/demo09_bow.py" beforeDir="false" afterPath="$PROJECT_DIR$/../month05/code/AI/day15/demo09_bow.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../month05/code/AI/day15/demo10_tfidf.py" beforeDir="false" afterPath="$PROJECT_DIR$/../month05/code/AI/day15/demo10_tfidf.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../month05/code/AI/day15/demo11_news.py" beforeDir="false" afterPath="$PROJECT_DIR$/../month05/code/AI/day15/demo11_news.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../month05/note/机器学习DAY07.md" beforeDir="false" afterPath="$PROJECT_DIR$/../month05/note/机器学习DAY07.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cancel.py" beforeDir="false" afterPath="$PROJECT_DIR$/cancel.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/面试题.rar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cancel.py" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -31,26 +12,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/python_basic.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1612">
-              <caret line="62" column="37" selection-start-line="62" selection-start-column="37" selection-end-line="62" selection-end-column="37" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/cancel.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="169">
-              <caret line="79" column="6" lean-forward="true" selection-start-line="79" selection-start-column="6" selection-end-line="79" selection-end-column="6" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -70,9 +32,9 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="1">
-    <option name="x" value="-20" />
-    <option name="y" value="27" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="627" />
+    <option name="y" value="33" />
     <option name="width" value="1201" />
     <option name="height" value="1047" />
   </component>
@@ -82,12 +44,22 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="ProjectPane" />
       <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="test" type="b2602c69:ProjectViewProjectNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../month05/code/AI" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RunDashboard">
@@ -166,16 +138,15 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-20" y="27" width="1201" height="1047" extended-state="1" />
-    <editor active="true" />
+    <frame x="627" y="33" width="1201" height="1047" extended-state="0" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.24936171" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24936171" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info id="DB Browser" order="3" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32896176" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32896176" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39889959" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -200,8 +171,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/cancel.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="169">
-          <caret line="79" column="6" lean-forward="true" selection-start-line="79" selection-start-column="6" selection-end-line="79" selection-end-column="6" />
+        <state relative-caret-position="445">
+          <caret line="79" column="6" selection-start-line="79" selection-start-column="6" selection-end-line="79" selection-end-column="6" />
         </state>
       </provider>
     </entry>

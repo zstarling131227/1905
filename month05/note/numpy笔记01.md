@@ -107,3 +107,46 @@ array([[ 1, 10],
        [ 4, 40]])
 
 ```
+### 3. np.append()
+- 简介
+函数np.append(arr, values, axis=None)
+作用：
+为原始array添加一些values
+
+参数：
+arr:需要被添加values的数组
+values:添加到数组arr中的值（array_like，类数组）
+axis:可选参数，如果axis没有给出，那么arr，values都将先展平成一维数组。注：如果axis被指定了，那么arr和values需要有相同的shape，否则报错：ValueError: arrays must have same number of dimensions
+
+- eg:
+```
+In [2]: import numpy as np
+
+In [3]: a=[1,23,4]
+
+In [4]: b=[3,6,9]
+
+In [5]: c=[[7,9],[5,8]]
+
+In [6]: np.append(a,b)
+Out[6]: array([ 1, 23,  4,  3,  6,  9])
+
+In [7]: np.append(a,c)
+Out[7]: array([ 1, 23,  4,  7,  9,  5,  8])
+
+In [15]: d
+Out[15]: [[5, 6], [7, 8]]
+
+In [16]: np.append(d,c,axis=0)
+Out[16]: 
+array([[5, 6],
+       [7, 8],
+       [7, 9],
+       [5, 8]])
+
+In [17]: np.append(d,c,axis=1)
+Out[17]: 
+array([[5, 6, 7, 9],
+       [7, 8, 5, 8]])
+
+```
