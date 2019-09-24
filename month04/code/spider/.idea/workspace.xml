@@ -2,9 +2,27 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1b9b6adc-7022-4b3b-9c3e-38007a0f9b6d" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../../../month05/code/AI/day13/demo01_tts.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../month05/code/AI/day13/demo02_cv.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../month05/code/AI/day13/demo03_cm.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../month05/code/AI/day13/demo04_cr.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../month05/code/AI/day13/demo05_car.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../month05/code/AI/day13/demo06_vc.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../month05/code/AI/day13/demo07_lc.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../month05/code/AI/day13/demo08_svmlinear.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../month05/code/AI/day13/demo09_svmpoly.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../month05/code/AI/day13/demo10_svmrbf.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../.idea/1905.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../.idea/1905.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../.idea/codeStyles/Project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../.idea/codeStyles/Project.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../.idea/dbnavigator.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../.idea/dbnavigator.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../bytes.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/code1.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/code1.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../month05/note/机器学习DAY03.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../../month05/note/机器学习DAY03.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../test/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../test/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -14,10 +32,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/day10/PythonHTTP调用示例/01_ydm_verify.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="279">
+            <state relative-caret-position="312">
               <caret line="15" column="18" selection-start-line="15" selection-start-column="18" selection-end-line="15" selection-end-column="18" />
               <folding>
                 <element signature="e#36#66#0" expanded="true" />
@@ -26,10 +44,19 @@
           </provider>
         </entry>
       </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/day10/Tencent/run.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="26">
+              <caret line="1" selection-start-line="1" selection-end-line="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/day10/PythonHTTP调用示例/test_ydm.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="72">
+            <state relative-caret-position="78">
               <caret line="3" column="13" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
             </state>
           </provider>
@@ -119,11 +146,11 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="183" />
-    <option name="y" value="92" />
-    <option name="width" value="1106" />
-    <option name="height" value="873" />
+  <component name="ProjectFrameBounds" extendedState="5">
+    <option name="x" value="482" />
+    <option name="y" value="27" />
+    <option name="width" value="917" />
+    <option name="height" value="1053" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -139,6 +166,11 @@
               <item name="spider" type="b2602c69:ProjectViewProjectNode" />
               <item name="spider" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="spider" type="b2602c69:ProjectViewProjectNode" />
+              <item name="spider" type="462c0819:PsiDirectoryNode" />
+              <item name="day10" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -146,7 +178,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../month05/code/day01" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
@@ -308,9 +340,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="183" y="92" width="1106" height="873" extended-state="0" />
+    <frame x="482" y="27" width="917" height="1053" extended-state="5" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26598704" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.31762066" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info id="DB Browser" order="3" />
@@ -668,13 +701,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/day10/Tencent/run.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="5" selection-start-line="5" selection-end-line="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/day10/PythonHTTP调用示例/index.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
@@ -690,7 +716,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/day10/PythonHTTP调用示例/01_ydm_verify.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="279">
+        <state relative-caret-position="312">
           <caret line="15" column="18" selection-start-line="15" selection-start-column="18" selection-end-line="15" selection-end-column="18" />
           <folding>
             <element signature="e#36#66#0" expanded="true" />
@@ -700,8 +726,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/day10/PythonHTTP调用示例/test_ydm.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
+        <state relative-caret-position="78">
           <caret line="3" column="13" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/day10/Tencent/run.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="26">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
         </state>
       </provider>
     </entry>

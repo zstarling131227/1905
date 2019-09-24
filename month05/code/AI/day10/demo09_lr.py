@@ -4,6 +4,7 @@ demo09_lr.py 线性回归
 import numpy as np
 import matplotlib.pyplot as mp
 
+
 # 计算损失函数#xs，ys是矢量
 xs = np.array([0.5, 0.6, 0.8, 1.1, 1.4])
 ys = np.array([5.0, 5.5, 6.0, 6.8, 7.0])
@@ -18,7 +19,7 @@ for i in range(1, times + 1):
     # 求w1方向上的偏导数
     d1 = (xs * (w0[-1] + w1[-1] * xs - ys)).sum()
     w0.append(w0[-1] - lrate * d0)
-    w1.append(w0[-1] - lrate * d1)
+    w1.append(w1[-1] - lrate * d1)
 print(w0[-1], w1[-1])
 
 # （目标回归函数）通过最优的w0,w1，求得所有样本的预测输出y

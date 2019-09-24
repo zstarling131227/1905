@@ -66,6 +66,15 @@ prob_x = np.array([
 pred_prob_y = model.predict(prob_x)
 probs = model.predict_proba(prob_x)
 print(probs)
+probs的输出值为:
+[[3.00000090e-14 1.00000000e+00]
+ [3.00000090e-14 1.00000000e+00]
+ [9.77046830e-01 2.29531701e-02]
+ [5.50787562e-01 4.49212438e-01]
+ [1.16333362e-02 9.88366664e-01]
+ [1.92967952e-11 1.00000000e+00]
+ [9.58717270e-01 4.12827302e-02]]
+左列为0类别，右列为1类别
 
 # 绘制每个测试样本，并给出标注
 mp.scatter(prob_x[:,0], prob_x[:,1], c=pred_prob_y, cmap='jet_r', s=80, marker='D')
@@ -101,6 +110,7 @@ model.fit(输入集，输出集)
 model.cv_results_['params']
 # 获取网格搜索每个参数组合所对应的平均测试分值
 model.cv_results_['mean_test_score']
+'params'与'mean_test_score'同维
 # 获取最好的参数
 model.best_params_
 model.best_score_
@@ -238,15 +248,27 @@ pred_y = model.predict(x)
 print(int(pred_y))
 ```
 
-回归模型：线性回归、岭回归、多项式回归、决策树、正向激励、随机森林、svm.SVR()。
+回归模型：
 
-分类模型：逻辑分类、朴素贝叶斯、决策树、随机森林、svm.SVC()。
+线性回归、岭回归、多项式回归、（数据连续）
+
+决策树、正向激励、随机森林、svm.SVR()。（离散数据，实例化数据）
+
+分类模型：
+
+逻辑分类（基础是多元线性回归）、
+
+朴素贝叶斯（高斯分布）、
+
+决策树、随机森林（基于实例做处理，就是输入什么，输出什么，适用于特征数量多的）、
+
+svm.SVC()（连续数据，可将连续数据离散化）（特征数量多的时候不适用）。
 
 
 
 ### 聚类
 
-分类（class）与聚类（cluster）不同，分类是有监督学习模型，聚类属于无监督学习模型。聚类讲究使用一些算法把样本划分为n个群落。一般情况下，这种算法都需要计算欧氏距离。
+分类（class）与聚类（cluster）不同，分类是**有监督学习模型**，聚类属于**无监督学习模型**。聚类讲究使用一些算法把样本划分为n个群落。一般情况下，这种算法都需要计算欧氏距离。
 
 欧氏距离即欧几里得距离。
 $$
@@ -380,7 +402,7 @@ mp.show()
 # n_samples：样本数量
 # quantile：量化宽度（直方图一条的宽度）
 bw = sc.estimate_bandwidth(x, n_samples=len(x), quantile=0.1)
-# 均值漂移聚类器
+# 均值漂移聚类器。bin_seeding=True是指按照量化带宽的长度做y平移
 model = sc.MeanShift(bandwidth=bw, bin_seeding=True)
 model.fit(x)
 ```

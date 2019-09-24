@@ -54,7 +54,7 @@ for review in reviews:
     print(review, '->', pcls)
 ```
 
-#### 主题抽取
+#### 主题抽取（jieba）
 
 经过分词、单词清洗、词干提取后，基于TF-IDF算法可以抽取一段文本中的核心主题词汇，从而判断出当前文本的主题。属于无监督学习。gensim模块提供了主题抽取的常用工具 。
 
@@ -170,10 +170,14 @@ mp.show()
 梅尔频率倒谱系数相关API：
 
 ```python
+#读取.wav文件的库
 import scipy.io.wavfile as wf
+# 做特征提取的库
 import python_speech_features as sf
 
+# 采样率  采样位移 
 sample_rate, sigs = wf.read('../data/freq.wav')
+# 自动做傅里叶变换得到矩阵
 mfcc = sf.mfcc(sigs, sample_rate)
 ```
 
@@ -204,7 +208,7 @@ mp.show()
 
 ```
 
-隐马尔科夫模型相关API：
+隐马尔科夫模型相关API（Application Programming Interface）：
 
 ```python
 import hmmlearn.hmm as hl
