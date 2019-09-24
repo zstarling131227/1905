@@ -57,7 +57,6 @@ blue[:6, :6, 0] = test
 print(blue)
 print(blue.shape)
 
-'''
 # 第一个'img'是标题，第二个是显示的图片
 cv.imshow('img', img)
 
@@ -103,4 +102,3 @@ cv.waitKey()
 
 # 保存图片
 cv.imwrite('../ml_data/blue.jpg', blue)
-'''

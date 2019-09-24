@@ -417,7 +417,7 @@ cv.Sobel(original, cv.CV_64F, 1, 0, ksize=5)
 # 拉普拉斯边缘识别
 cv.Laplacian(original, cv.CV_64F)
 # Canny边缘识别
-# 50:水平方向阈值  240:垂直方向阈值
+# 50:水平方向阈值  240:垂直方向阈值，上边跟下边差值大于50时是边缘，左边跟右边差值大于240时是边缘，
 cv.Canny(original, 50, 240)
 ```
 
@@ -425,7 +425,7 @@ cv.Canny(original, 50, 240)
 
 ```python
 import cv2 as cv
-
+# cv.IMREAD_GRAYSCALE读图片的时候做灰度处理，把3维数组变成2维数组，只保留亮度通道
 original = cv.imread( '../data/chair.jpg', cv.IMREAD_GRAYSCALE)
 cv.imshow('Original', original)
 hsobel = cv.Sobel(original, cv.CV_64F, 1, 0, ksize=5)
@@ -443,6 +443,8 @@ cv.waitKey()
 ```
 
 #### 亮度提升
+
+YUV：亮度 色度 饱和度
 
 OpenCV提供了直方图均衡化的方式实现亮度提升，更有利于边缘识别与物体识别模型的训练。
 
@@ -578,8 +580,8 @@ cv.waitKey()
 
 ```python
 sift = cv.xfeatures2d.SIFT_create()
-keypoints = sift.detect(gray)
-_, desc = sift.compute(gray, keypoints)
+keypoints = sift.detect(gray)  # 特征点
+_, desc = sift.compute(gray, keypoints) # 特征值矩阵。n行128列
 ```
 
 案例：
@@ -773,11 +775,11 @@ faces = fd.detectMultiScale(frame, 1.3, 5)
 face = faces[0] # 第一张脸
 # 绘制椭圆
 cv.ellipse(
-    image, 				# 原始大图像
-    (l + a, t + b), 	# 椭圆心
-    (a, b), 			# 半径
+    image, 				# 原始大图像（图片的大小）
+    (l + a, t + b), 	# 椭圆心（相对于图片的大小）
+    (a, b), 			# 半径（相对于人脸椭圆的大小）
     0, 					# 椭圆旋转角度
-    0, 360, 			# 起始角, 终止角
+    0, 360, 			# 起始角, 终止角（0-360是闭合椭圆，也可以是不闭合的）
     (255, 0, 255), 		# 颜色
     2					# 线宽
 )
