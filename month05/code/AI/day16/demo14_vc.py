@@ -3,7 +3,6 @@ demo14_vc.py　视频捕捉
 """
 import cv2 as cv
 
-
 # 报错，因为没有摄像头
 # 获取视频捕捉设备
 vc = cv.VideoCapture(0)

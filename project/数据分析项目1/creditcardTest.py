@@ -8,7 +8,7 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 
-pd.set_option('display.height', 1000)
+# pd.set_option('display.height', 1000)
 pd.set_option('display.max_rows', 1000)
 pd.set_option('display.max_columns', 1000)
 pd.set_option('display.width', 1000)
@@ -46,7 +46,8 @@ from sklearn.preprocessing import StandardScaler
 # print(type(data['Amount'].reshape(-1, 1)))  # numpy.ndarray
 
 # fit_transform转换为一个合适的数据
-data['normAmount'] = StandardScaler().fit_transform(data['Amount'].reshape(-1, 1))  # -1表示行数程序推断,1表示列数
+data_amount=np.array(data['Amount']).reshape(-1, 1)
+data['normAmount'] = StandardScaler().fit_transform(data_amount)  # -1表示行数程序推断,1表示列数
 # print(help(data.drop))
 data.drop(['Time', 'Amount'], axis=1)
 # print(data.head())
@@ -79,7 +80,7 @@ y_undersample = under_sample_data.ix[:, under_sample_data.columns == 'Class']
 # print("Total number of transactions in resampled data: ", len(under_sample_data))
 
 
-from sklearn.cross_validation import train_test_split
+from sklearn.model_selection import train_test_split
 
 # cross_validation 交叉验证模块
 # test_size:测试集占30%，random_state=0 每次随机切分的结果一样
@@ -101,7 +102,7 @@ print("Number transactions test dataset: ", len(X_test_undersample))
 print("Total number of transactions: ", len(X_train_undersample) + len(X_test_undersample))
 
 from sklearn.linear_model import LogisticRegression  # LogisticRegression逻辑回归
-from sklearn.cross_validation import KFold, cross_val_score  # KFold模型建立做几倍的交叉验证 cross_val_score交叉验证评估结果
+from sklearn.model_selection import KFold, cross_val_score  # KFold模型建立做几倍的交叉验证 cross_val_score交叉验证评估结果
 from sklearn.metrics import confusion_matrix, recall_score, classification_report  # confusion_matrix混淆矩阵
 
 
@@ -194,7 +195,7 @@ y_pred_undersample = lr.predict(X_test_undersample.values)
 cnf_matrix = confusion_matrix(y_test_undersample, y_pred_undersample)
 np.set_printoptions(precision=2)
 
-print("Recall metric in the testing dataset: ", cnf_matrix[1, 1] / (cnf_matrix[1, 0] + cnf_matrix[1, 1]))
+# print("Recall metric in the testing dataset: ", cnf_matrix[1, 1] / (cnf_matrix[1, 0] + cnf_matrix[1, 1]))
 
 # Plot non-normalized confusion matrix
 class_names = [0, 1]
@@ -202,7 +203,7 @@ plt.figure()
 plot_confusion_matrix(cnf_matrix
                       , classes=class_names
                       , title='Confusion matrix')
-plt.show()
+# plt.show()
 
 lr = LogisticRegression(C=best_c, penalty='l1')
 lr.fit(X_train_undersample, y_train_undersample.values.ravel())
@@ -212,7 +213,7 @@ y_pred = lr.predict(X_test.values)
 cnf_matrix = confusion_matrix(y_test, y_pred)
 np.set_printoptions(precision=2)
 
-print("Recall metric in the testing dataset: ", cnf_matrix[1, 1] / (cnf_matrix[1, 0] + cnf_matrix[1, 1]))
+# print("Recall metric in the testing dataset: ", cnf_matrix[1, 1] / (cnf_matrix[1, 0] + cnf_matrix[1, 1]))
 
 # Plot non-normalized confusion matrix
 class_names = [0, 1]
@@ -220,7 +221,7 @@ plt.figure()
 plot_confusion_matrix(cnf_matrix
                       , classes=class_names
                       , title='Confusion matrix')
-plt.show()
+# plt.show()
 
 lr = LogisticRegression(C=best_c, penalty='l1')
 lr.fit(X_train_undersample, y_train_undersample.values.ravel())
@@ -230,7 +231,7 @@ y_pred = lr.predict(X_test.values)
 cnf_matrix = confusion_matrix(y_test, y_pred)
 np.set_printoptions(precision=2)
 
-print("Recall metric in the testing dataset: ", cnf_matrix[1, 1] / (cnf_matrix[1, 0] + cnf_matrix[1, 1]))
+# print("Recall metric in the testing dataset: ", cnf_matrix[1, 1] / (cnf_matrix[1, 0] + cnf_matrix[1, 1]))
 
 # Plot non-normalized confusion matrix
 class_names = [0, 1]
@@ -238,7 +239,7 @@ plt.figure()
 plot_confusion_matrix(cnf_matrix
                       , classes=class_names
                       , title='Confusion matrix')
-plt.show()
+# plt.show()
 
 # 拿到数据不处理就开始给机器学习
 best_c = printing_Kfold_scores(X_train, y_train)
@@ -251,7 +252,7 @@ y_pred_undersample = lr.predict(X_test.values)
 cnf_matrix = confusion_matrix(y_test, y_pred_undersample)
 np.set_printoptions(precision=2)
 
-print("Recall metric in the testing dataset: ", cnf_matrix[1, 1] / (cnf_matrix[1, 0] + cnf_matrix[1, 1]))
+# print("Recall metric in the testing dataset: ", cnf_matrix[1, 1] / (cnf_matrix[1, 0] + cnf_matrix[1, 1]))
 
 # Plot non-normalized confusion matrix
 class_names = [0, 1]
@@ -259,7 +260,7 @@ plt.figure()
 plot_confusion_matrix(cnf_matrix
                       , classes=class_names
                       , title='Confusion matrix')
-plt.show()
+# plt.show()
 
 lr = LogisticRegression(C=0.01, penalty='l1')
 lr.fit(X_train_undersample, y_train_undersample.values.ravel())
@@ -280,7 +281,7 @@ for i in thresholds:
     cnf_matrix = confusion_matrix(y_test_undersample, y_test_predictions_high_recall)
     np.set_printoptions(precision=2)
 
-    print("Recall metric in the testing dataset: ", cnf_matrix[1, 1] / (cnf_matrix[1, 0] + cnf_matrix[1, 1]))
+    # print("Recall metric in the testing dataset: ", cnf_matrix[1, 1] / (cnf_matrix[1, 0] + cnf_matrix[1, 1]))
 
     # Plot non-normalized confusion matrix
     class_names = [0, 1]
@@ -323,7 +324,7 @@ y_pred = lr.predict(features_test.values)
 cnf_matrix = confusion_matrix(labels_test, y_pred)
 np.set_printoptions(precision=2)
 
-print("Recall metric in the testing dataset: ", cnf_matrix[1, 1] / (cnf_matrix[1, 0] + cnf_matrix[1, 1]))
+# print("Recall metric in the testing dataset: ", cnf_matrix[1, 1] / (cnf_matrix[1, 0] + cnf_matrix[1, 1]))
 
 # Plot non-normalized confusion matrix
 class_names = [0, 1]
@@ -331,7 +332,7 @@ plt.figure()
 plot_confusion_matrix(cnf_matrix
                       , classes=class_names
                       , title='Confusion matrix')
-plt.show()
+# plt.show()
 
 '''
 样本数据不均衡，优先采用过采样

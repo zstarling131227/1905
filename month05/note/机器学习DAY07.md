@@ -787,6 +787,8 @@ cv.ellipse(
 
 案例：
 
+
+
 ```python
 import cv2 as cv
 # 哈尔级联人脸定位器

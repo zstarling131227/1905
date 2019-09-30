@@ -2,6 +2,7 @@
 demo15_face.py 人脸定位
 """
 import cv2 as cv
+
 # 哈尔级联人脸定位器
 # 通过特征描述文件构建哈尔级联人脸识别器
 fd = cv.CascadeClassifier('../ml_data/haar/face.xml')
@@ -9,7 +10,7 @@ ed = cv.CascadeClassifier('../ml_data/haar/eye.xml')
 nd = cv.CascadeClassifier('../ml_data/haar/nose.xml')
 vc = cv.VideoCapture(0)
 while True:
-    frame = vc.read()[1] # 第一张人脸
+    frame = vc.read()[1]  # 第一张人脸
     # 从一个图像中识别出所有的人脸区域
     # 	1.3：为最小的人脸尺寸
     # 	5：最多找5张脸
