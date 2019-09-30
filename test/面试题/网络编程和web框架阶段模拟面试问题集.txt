@@ -1,0 +1,88 @@
+请解释或描述一下Django的架构
+
+对于Django框架遵循MVC设计，并且有一个专有名词：MVT
+　　　M全拼为Model，与MVC中的M功能相同，负责数据处理，内嵌了ORM框架，
+　　　V全拼为View，与MVC中的C功能相同，接收HttpRequest，业务处理，返回HttpResponse
+　　　T全拼为Template，与MVC中的V功能相同，负责封装构造要返回的html，内嵌了模板引擎
+
+django对数据查询结果排序怎么做，降序怎么做，查询字段大于某个值怎么做
+排序使用order_by()
+降序需要在排序字段名前加-
+查询字段大于某个值：使用filter(字段名_gt=值)
+你对Django的认识？
+　　　Django是走大而全的方向，它最出名的是其全自动化的管理后台：只需要使用起ORM，做简单的对象定义，它就能自动生成数据库结构、以及全功能的管理后台。
+Django内置的ORM跟框架内的其他模块耦合程度高。
+应用程序必须使用Django内置的ORM，否则就不能享受到框架内提供的种种基于其ORM的便利；理论上可以切换掉其ORM模块，但这就相当于要把装修完毕的房子拆除重新装修，倒不如一开始就去毛胚房做全新的装修。
+　　　Django的卖点是超高的开发效率，其性能扩展有限；采用Django的项目，在流量达到一定规模后，都需要对其进行重构，才能满足性能的要求。
+Django适用的是中小型的网站，或者是作为大型网站快速实现产品雏形的工具。
+Django模板的设计哲学是彻底的将代码、样式分离； Django从根本上杜绝在模板中进行编码、处理数据的可能
+
+Django重定向你是如何实现的？用的什么状态码？
+使用HttpResponseRedirect
+redirect和reverse
+状态码：302,301
+
+描述一下ngnix的正向代理与反向代理？
+正向代理?是一个位于客户端和原始服务器(origin server)之间的服务器，为了从原始服务器取得内容，客户端向代理发送一个请求并指定目标(原始服务器)，然后代理向原始服务器转交请求并将获得的内容返回给客户端。客户端必须要进行一些特别的设置才能使用正向代理。
+反向代理正好相反，对于客户端而言它就像是原始服务器，并且客户端不需要进行任何特别的设置。客户端向反向代理的命名空间中的内容发送普通请求，接着反向代理将判断向何处(原始服务器)转交请求，并将获得的内容返回给客户端，就像这些内容原本就是它自己的一样。
+
+Tornado 的核心是什么？
+Tornado 的核心是 ioloop 和 iostream 这两个模块，前者提供了一个高效的 I/O 事件循环，后者则封装了 一个无阻塞的 socket 。通过向 ioloop 中添加网络 I/O 事件，利用无阻塞的 socket ，再搭配相应的回调 函数，便可达到梦寐以求的高效异步执行。
+10.Django 本身提供了 runserver，为什么不能用来部署？
+runserver 方法是调试 Django 时经常用到的运行方式，它使用 Django 自带的
+WSGI Server 运行，主要在测试和开发中使用，并且 runserver 开启的方式也是单进程 。
+?uWSGI 是一个 Web 服务器，它实现了 WSGI 协议、uwsgi、http 等协议。注意 uwsgi 是一种通信协议，而 uWSGI 是实现 uwsgi 协议和 WSGI 协议的 Web 服务器。uWSGI 具有超快的性能、低内存占用和多 app 管理等优点，并且搭配着 Nginx
+就是一个生产环境了，能够将用户访问请求与应用?app 隔离开，实现真正的部署 。相比来讲，支持的并发量更高，方便管理多进程，发挥多核的优势，提升性能。
+【网络编程部分】
+
+
+网络模型有几层  分别是什么？
+　　　【参考】
+　　　osi参考模型   物理层、数据链路层、网络层、传输层、会话层、表示层、应用层
+
+　　　【】简述三次握手 四次挥手的过程
+　　　【git相关】
+　　　git常见命令和作用
+　　　git 中 merge 和 rebase命令 的区别。
+　　　
+
+AJAX是什么，如何使用AJAX？
+ajax(异步的javascript 和xml) 能够刷新局部网页数据而不是重新加载整个网页。
+第一步，创建xmlhttprequest对象，var xmlhttp =new XMLHttpRequest（);XMLHttpRequest对象用来和服务器交换数据。
+第二步，使用xmlhttprequest对象的open（）和send（）方法发送资源请求给服务器。
+第三步，使用xmlhttprequest对象的responseText或responseXML属性获得服务器的响应。
+第四步，onreadystatechange函数，当发送请求到服务器，我们想要服务器响应执行一些功能就需要使用onreadystatechange函数，每次xmlhttprequest对象的readyState发生改变都会触发onreadystatechange函数。
+
+?常见的HTTP状态码有哪些？
+200 OK
+301 Moved Permanently
+302 Found
+304 Not Modified
+307 Temporary Redirect
+400 Bad Request
+401 Unauthorized
+403 Forbidden
+404 Not Found
+410 Gone
+500 Internal Server Error
+501 Not Implemented
+
+Post和get区别？
+GET请求，请求的数据会附加在URL之后，以?分割URL和传输数据，多个参数用&连接。URL的编码格式采用的是ASCII编码，而不是uniclde，即是说所有的非ASCII字符都要编码之后再传输。
+POST请求：POST请求会把请求的数据放置在HTTP请求包的包体中。上面的item=bandsaw就是实际的传输数据。
+因此，GET请求的数据会暴露在地址栏中，而POST请求则不会。
+
+传输数据的大小
+在HTTP规范中，没有对URL的长度和传输的数据大小进行限制。但是在实际开发过程中，对于GET，特定的浏览器和服务器对URL的长度有限制。因此，在使用GET请求时，传输数据会受到URL长度的限制。
+对于POST，由于不是URL传值，理论上是不会受限制的，但是实际上各个服务器会规定对POST提交数据大小进行限制，Apache、IIS都有各自的配置。
+
+安全性
+POST的安全性比GET的高。这里的安全是指真正的安全，而不同于上面GET提到的安全方法中的安全，上面提到的安全仅仅是不修改服务器的数据。比如，在进行登录操作，通过GET请求，用户名和密码都会暴露再URL上，因为登录页面有可能被浏览器缓存以及其他人查看浏览器的历史记录的原因，此时的用户名和密码就很容易被他人拿到了。除此之外，GET请求提交的数据还可能会造成Cross-site request frogery攻击。
+
+创建一个简单tcp服务器需要的流程
+1.socket创建一个套接字
+2.bind绑定ip和port
+3.listen使套接字变为可以被动链接
+4.accept等待客户端的链接
+5.recv/send接收发送数据
+
