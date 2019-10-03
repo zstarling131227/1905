@@ -1,0 +1,63 @@
+ubuntu18.04下安装matlab2018a
+一、下载
+百度网盘链接：https://pan.baidu.com/s/1M6KafnsljmYV9_5m_1pXMw 
+
+提取玛：jp76
+
+
+二、安装
+下载下来的文件夹中有三个文件，分别是破解文文件与映像文件。
+
+新建一个文件夹用于挂载映像文件（我这里新建文件夹matlab与下载文件在同一目录下）：mkdir maltab
+
+挂载dvd1：sudo mount -t auto -o loop ./Linux/R2018a_glnxa64_dvd1.iso ./matlab/
+
+以管理员权限启动安装：sudo ./matlab/install（注：这里不能进入cd matlab然后启动安装，会显示不能在dvd主目录进行安装）
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+1.使用文件安装密匙>下一步
+
+2.是>下一步
+
+3.我已有我的许可证的文件安装密匙（解压Matlab 2018a Linux64 Crack.tar.gz文件：tar -xzvf ./Matlab\ 2018a\ Linux64\ Crack.tar.gz）密匙在解压后的readme.txt中，我这里使用：09806-07443-53955-64350-21751-41297 >下一步
+
+4.安装文件夹我这里是/usr/local/MATLAB/R2018a（建议选择默认）>下一步
+
+5.默认全选所有安装产品>下一步
+
+5.安装
+
+6.安装中途将提示：弹出dvd1，插入dvd2。我们终端键入：sudo mount -t auto -o loop ./Linux/R2018a_glnxa64_dvd2.iso ./matlab/  将dvd2挂载到matlab文件夹中。点击ok
+
+7.等待安装完毕
+
+8.解除挂载，因为我们将dvd1，dvd2都挂载到matlab文件夹中，两次键入：sudo umount -l ./matlab/   matlab文件夹为空，即解除挂载完成
+
+ 
+
+三、激活
+1.键入：sudo /usr/local/MATLAB/R2018a/bin/matlab
+
+2.手动激活>下一步
+
+3.输入许可证文件的完整路径：选择之前解压得到的license_standalone.lic文件>下一步
+
+4.激活完成
+
+5.进入解压后的文件夹R2018a/bin/glnxalab_startup_plugins/lmgrimpl，命令：cd R2018a/bin/glnxalab_startup_plugins/lmgrimpl
+
+该目录下有libmwlmgrimpl.so文件，将其复制到/usr/local/MATLAB/R2018a/bin/glnxa64/matlab_startup_plugins/lmgrimpl下，完成破解。
+
+命令为：sudo cp ./libmwlmgrimpl.so /usr/local/MATLAB/R2018a/bin/glnxa64/matlab_startup_plugins/lmgrimpl
+
+ 
+
+四、创建桌面图标
+到这里你可能发现个问题，你只能cd到/usr/local/MATLAB/R2018a/bin然后sudo ./matlab启动Matlab。。。这看其来似乎有点蠢QAQ
+
+那么我们需要创建一个桌面快捷方式
+
+matlab图标路径：/usr/local/MATLAB/R2018a/toolbox/shared/dastudio/resources/MatlabIcon.png
+
+启动脚本路径：/usr/local/MATLAB/R2018a/bin/matlab
