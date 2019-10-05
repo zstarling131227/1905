@@ -49,8 +49,8 @@ border:width style color;
 1. 特殊：取none可以取消文本输入框默认轮廓线
 ### 6. 盒阴影
 1. 属性：box-shadow
-1. 取值：h-shadow v-shadow blur spread color;
-1. 使用：不管是浏览器窗口还是元素自身都可以构建坐标系，统一以左上角为原点，向右向下为X轴和Y轴的正方向
+2. 取值：h-shadow v-shadow blur spread color;
+3. 使用：不管是浏览器窗口还是元素自身都可以构建坐标系，统一以左上角为原点，向右向下为X轴和Y轴的正方向
 ```
 h-shadow 	取像素值，阴影的水平偏移距离
 v-shadow 	取像素值，阴影的垂直偏移距离
@@ -136,6 +136,7 @@ float
 
 ```css
 float:left/right;
+clear:left/right/both用于清除浮动
 ```
 
 #### 3）特点
@@ -154,5 +155,11 @@ float:left/right;
 - 在父元素的末尾添加空的块元素。设置 clear:both; 清除浮动
 - 为父元素设置 overflow:hidden; 解决高度为0
 
-  	​		
+## 7.补充
+
+1. 固定宽度元素的居中实现方式: margin:0 auto;
+2. 实现一个圆的步骤：
+    1. 必须是一个正方形元素
+    2. 将边框设置为宽度和高度的一半
+
 
