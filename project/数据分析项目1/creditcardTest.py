@@ -49,7 +49,7 @@ from sklearn.preprocessing import StandardScaler
 data_amount=np.array(data['Amount']).reshape(-1, 1)
 data['normAmount'] = StandardScaler().fit_transform(data_amount)  # -1表示行数程序推断,1表示列数
 # print(help(data.drop))
-data.drop(['Time', 'Amount'], axis=1)
+data = data.drop(['Time', 'Amount'], axis=1)
 # print(data.head())
 
 X = data.ix[:, data.columns != 'Class']
@@ -66,13 +66,13 @@ random_normal_indices = np.random.choice(normal_indices, len(fraud_indices), rep
 
 # 把两个样本合并
 under_sample_indices = np.concatenate([fraud_indices, random_normal_indices])
-
+print(data)
 #  下采样之后的数据 iloc根据索引位置取值
 under_sample_data = data.iloc[under_sample_indices, :]
 
 X_undersample = under_sample_data.ix[:, under_sample_data.columns != 'Class']
 y_undersample = under_sample_data.ix[:, under_sample_data.columns == 'Class']
-
+print(X_undersample)
 # print("Percentage of normal transactions: ",
 #       len(under_sample_data[under_sample_data.Class == 0]) / len(under_sample_data))
 # print("Percentage of fraud transactions: ",
@@ -107,7 +107,7 @@ from sklearn.metrics import confusion_matrix, recall_score, classification_repor
 
 
 def printing_Kfold_scores(x_train_data, y_train_data):
-    fold = KFold(len(y_train_data), 5, shuffle=False)  # 把原始训练集切分为5份
+    fold = KFold(5)  # 把原始训练集切分为5份
 
     # Different C parameters
     c_param_range = [0.01, 0.1, 1, 10, 100]  # 正则化惩罚项
@@ -124,7 +124,7 @@ def printing_Kfold_scores(x_train_data, y_train_data):
         print('')
 
         recall_accs = []
-        for iteration, indices in enumerate(fold, start=1):  # 进行交叉验证
+        for iteration, indices in enumerate(fold.split(x_train_data, y_train_data), start=1):  # 进行交叉验证
 
             # Call the logistic regression model with a certain C parameter
             lr = LogisticRegression(C=c_param, penalty='l1')
@@ -147,8 +147,8 @@ def printing_Kfold_scores(x_train_data, y_train_data):
         print('')
         print('Mean recall score ', np.mean(recall_accs))
         print('')
-
-    best_c = results_table.loc[results_table['Mean recall score'].idxmax()]['C_parameter']
+    # print(results_table)
+    best_c = results_table.loc[np.array(results_table['Mean recall score']).argmax()]['C_parameter']
 
     # Finally, we can check which C parameter is the best amongst the chosen.
     print('*********************************************************************************')
