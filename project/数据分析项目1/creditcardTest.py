@@ -46,7 +46,7 @@ from sklearn.preprocessing import StandardScaler
 # print(type(data['Amount'].reshape(-1, 1)))  # numpy.ndarray
 
 # fit_transform转换为一个合适的数据
-data_amount=np.array(data['Amount']).reshape(-1, 1)
+data_amount = np.array(data['Amount']).reshape(-1, 1)
 data['normAmount'] = StandardScaler().fit_transform(data_amount)  # -1表示行数程序推断,1表示列数
 # print(help(data.drop))
 data = data.drop(['Time', 'Amount'], axis=1)
@@ -205,41 +205,6 @@ plot_confusion_matrix(cnf_matrix
                       , title='Confusion matrix')
 # plt.show()
 
-lr = LogisticRegression(C=best_c, penalty='l1')
-lr.fit(X_train_undersample, y_train_undersample.values.ravel())
-y_pred = lr.predict(X_test.values)
-
-# Compute confusion matrix
-cnf_matrix = confusion_matrix(y_test, y_pred)
-np.set_printoptions(precision=2)
-
-# print("Recall metric in the testing dataset: ", cnf_matrix[1, 1] / (cnf_matrix[1, 0] + cnf_matrix[1, 1]))
-
-# Plot non-normalized confusion matrix
-class_names = [0, 1]
-plt.figure()
-plot_confusion_matrix(cnf_matrix
-                      , classes=class_names
-                      , title='Confusion matrix')
-# plt.show()
-
-lr = LogisticRegression(C=best_c, penalty='l1')
-lr.fit(X_train_undersample, y_train_undersample.values.ravel())
-y_pred = lr.predict(X_test.values)
-
-# Compute confusion matrix
-cnf_matrix = confusion_matrix(y_test, y_pred)
-np.set_printoptions(precision=2)
-
-# print("Recall metric in the testing dataset: ", cnf_matrix[1, 1] / (cnf_matrix[1, 0] + cnf_matrix[1, 1]))
-
-# Plot non-normalized confusion matrix
-class_names = [0, 1]
-plt.figure()
-plot_confusion_matrix(cnf_matrix
-                      , classes=class_names
-                      , title='Confusion matrix')
-# plt.show()
 
 # 拿到数据不处理就开始给机器学习
 best_c = printing_Kfold_scores(X_train, y_train)
