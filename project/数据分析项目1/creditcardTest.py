@@ -8,6 +8,8 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 
+
+# 参数设置
 # pd.set_option('display.height', 1000)
 pd.set_option('display.max_rows', 1000)
 pd.set_option('display.max_columns', 1000)
@@ -28,6 +30,7 @@ Class 0正常 1异常
 4   2.0 -1.158233  0.877737  1.548718  0.403034 -0.407193  0.095921  0.592941 -0.270533  0.817739  0.753074 -0.822843  0.538196  1.345852 -1.119670  0.175121 -0.451449 -0.237033 -0.038195  0.803487  0.408542 -0.009431  0.798278 -0.137458  0.141267 -0.206010  0.502292  0.219422  0.215153   69.99      0
 '''
 # help(pd.value_counts)
+# value_count以series形式返回指定列的不同取值的频率
 count_classes = pd.value_counts(data["Class"])  # 默认按照值排序
 # print(count_classes)
 '''
@@ -40,18 +43,22 @@ plt.xlabel("Class")
 plt.ylabel("Frequency")
 # plt.show()
 
+# # 标准化数据(归一化)
 from sklearn.preprocessing import StandardScaler
 
 # print(type(data['Amount']))  # pandas.core.series.Series
 # print(type(data['Amount'].reshape(-1, 1)))  # numpy.ndarray
 
 # fit_transform转换为一个合适的数据
+# -1表示行数程序推断,1表示列数
 data_amount = np.array(data['Amount']).reshape(-1, 1)
-data['normAmount'] = StandardScaler().fit_transform(data_amount)  # -1表示行数程序推断,1表示列数
+data['normAmount'] = StandardScaler().fit_transform(data_amount)
 # print(help(data.drop))
 data = data.drop(['Time', 'Amount'], axis=1)
 # print(data.head())
 
+
+# ix类似于loc,返回参数在标签中查找,返回标签参数值之前的数值,iloc参数是指索引,返回参数值之前的数值
 X = data.ix[:, data.columns != 'Class']
 y = data.ix[:, data.columns == 'Class']
 
@@ -92,6 +99,8 @@ print("Number transactions test dataset: ", len(X_test))
 print("Total number of transactions: ", len(X_train) + len(X_test))
 
 # 下采样数据集
+
+#random_state=0为了保证程序每次运行都分割一样的训练集和测试集，否则，同样的算法模型在不同的训练集和测试集上的效果不一样
 X_train_undersample, X_test_undersample, y_train_undersample, y_test_undersample = train_test_split(X_undersample
                                                                                                     , y_undersample
                                                                                                     , test_size=0.3
@@ -189,6 +198,8 @@ def plot_confusion_matrix(cm, classes,
 
 lr = LogisticRegression(C=best_c, penalty='l1')
 lr.fit(X_train_undersample, y_train_undersample.values.ravel())
+
+#values以array形式返回指定列的所有取值
 y_pred_undersample = lr.predict(X_test_undersample.values)
 
 # Compute confusion matrix
